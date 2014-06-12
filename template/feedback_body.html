@@ -1,0 +1,437 @@
+<!-- INCLUDE overall_header.html -->
+
+
+<!-- IF FB_PAGE === 'index' -->
+<h2>{L_FB_FEEDBACK}&nbsp;{L_FB_MAIN}</h2>
+</div> <!-- end of overall header-->
+<div class="row">
+    <form action="{FB_ACTION}" method="post"{S_FORM_ENCTYPE}>
+        <div >{L_FB_SEARCH}</div>
+        <div >
+            <div class="form-inline">
+                <label>{L_USERNAME}</label>
+                <input class="search" type="text" class="post" name="un" />
+                <input class="btn btn-primary" name="submit" type="submit" value="{L_SEARCH}" />
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+   
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+
+            <h2>{L_FB_BEST_USERS}</h2>
+            <div class="forumbg">
+                <div class="inner">
+                        <div class="row">
+                            <div class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_RANK}</div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_USER}</div>
+                            <!-- IF FB_S_SCORE == 0 -->
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_POS}</div>
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_NEU}</div>
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_NEG}</div>
+                            <!-- ELSE -->
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_SCORE}</div>
+                            <!-- ENDIF -->
+                        </div>
+                        <div>
+                            <!-- BEGIN best(1) -->
+                            <div class="row <!-- IF best.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->" >
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{best.S_ROW_COUNT}</div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <!--    <ul class="profile-icons" >
+                                        <li class="msnm-icon"><a href="{best.FB_PROFILE}" title="{L_READ_PROFILE}"><span>{L_READ_PROFILE}</span></a></li>
+                                    </ul>-->
+                                    <a href="{best.FB_LINK}" style="color:{best.FB_USER_COL}; ">{best.FB_USER}</a>
+                                </div>
+                                <!-- IF FB_S_SCORE == 0 -->
+                                    <span class="positive col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{best.FB_POS}</span>
+                                    <span class="neudival col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{best.FB_NEU}</span>
+                                    <span class="negative col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{best.FB_NEG}</span>
+                                    <!-- ELSE -->
+                                        <!-- IF best.FB_SCORE > 0-->
+                                        <span class="positive col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{best.FB_SCORE}</span>
+                                        <!-- ELSEIF best.FB_SCORE == 0-->
+                                        <span class="neudival col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{best.FB_SCORE}</span>
+                                        <!-- ELSE -->
+                                        <span class="negative col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{best.FB_SCORE}</span>
+                                    <!-- ENDIF -->
+                                <!-- ENDIF -->
+                            </div>
+                            <!-- END -->
+                                <div class="bg1 row" ><a href="{FB_MOREBEST}">{L_FB_VIEWMORE}</a></div>
+                            </div>
+                    </div>
+            </div>
+
+        </div>
+       
+   
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+
+            <h2>{L_FB_WORST_USERS}</h2>
+            <div class="forumbg">
+                <div class="inner">
+                            <div class="row">
+                                <div class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_RANK}</div>
+                                <div class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_USER}</div>
+                                <!-- IF FB_S_SCORE == 0 -->
+                                 <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_POS}</div>
+                                 <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_NEU}</div>
+                                 <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_NEG}</div>
+                                <!-- ELSE -->
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_SCORE}</div>
+                                <!-- ENDIF -->
+                            </div>
+                            <!-- BEGIN worst(1) -->
+                            <div class="row <!-- IF worst.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->" >
+                                <div class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{worst.S_ROW_COUNT}</div>
+                                <div class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <!--<ul class="profile-icons" style="padding:0;">
+                                        <li class="msnm-icon"><a href="{worst.FB_PROFILE}" title="{L_READ_PROFILE}"><span>{L_READ_PROFILE}</span></a></li>
+                                    </ul>-->
+                                    <a href="{worst.FB_LINK}" style="color:{worst.FB_USER_COL}; vertical-align:middle;">{worst.FB_USER}</a>
+                                </div>
+                                <!-- IF FB_S_SCORE == 0 -->
+                                <span class="positive col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{worst.FB_POS}</span>
+                                <span class="neudival col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{worst.FB_NEU}</span>
+                                <span class="negative col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{worst.FB_NEG}</span>
+                                <!-- ELSE -->
+                                <!-- IF worst.FB_SCORE > 0-->
+                                <span class="positive">{worst.FB_SCORE}</span>
+                                <!-- ELSEIF worst.FB_SCORE == 0-->
+                                <span class="neudival">{worst.FB_SCORE}</span>
+                                <!-- ELSE -->
+                                <span class="negative">{worst.FB_SCORE}</span>
+                                <!-- ENDIF -->
+                                <!-- ENDIF -->
+                            </div>
+                            <!-- END -->
+                            <div><div class="bg1 row" ><a href="{FB_MOREWORST}">{L_FB_VIEWMORE}</a></div>
+            </div>
+        </div>
+<!-- ENDIF -->
+
+<!-- IF FB_PAGE === 'show' -->
+<h2>{L_FB_FEEDBACKOF}&nbsp;{FB_TOUSER}</h2>
+</div><!-- End of overall Header -->
+<!-- IF FB_SCORE !== false -->
+<div class="forumbg row text-center">
+    <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+        <div class=" row table1" >
+              <h4 class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 ">{L_FB_SCORE}</h4>
+              <h4 class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 ">{L_FB_PERCENTAGE}</h4>
+        </div>
+        <div class="bg1 row" >
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+                <span class="<!-- IF FB_SCORE > 0 -->positive<!-- ELSEIF FB_SCORE < 0 -->negative<!-- ELSE -->neudival<!-- ENDIF -->">{FB_SCORE}</span>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 ">{FB_PERCENTAGE}%</div>
+        </div>
+    </div>
+</div>
+<!-- ENDIF -->
+<form action="{FB_ACTION}" method="post"{S_FORM_ENCTYPE}>
+    <div class="forumbg row text-center">
+        <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="table1 row" >
+                    <h4 class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 ">{L_FB_POS}</h4>
+                    <h4 class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_NEU}</h4>
+                    <h4 class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_NEG}</h4>
+                </div>
+                    <div class="bg1 row" >
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4"><span class="positive">{FB_POS}</span></div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4"><span class="neudival">{FB_NEU}</span></div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4"><span class="negative">{FB_NEG}</span></div>
+                    </div>
+                    <div class="bg2 row" >
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <input class="btn btn-primary" type="submit" value="{L_FB_ADD}" />
+                        </div>
+                    </div>
+            </div>
+    </div>
+</form>
+
+<h3 class="right-box">
+    {L_FB_FILTER}:&nbsp;
+    <a href="{FB_FILTER_ALL}#fb_details">{L_FB_FILTER_ALL}</a>&nbsp;|&nbsp;
+    <a href="{FB_FILTER_POS}#fb_details">{L_FB_FILTER_POS}</a>&nbsp;|&nbsp;
+    <a href="{FB_FILTER_NEU}#fb_details">{L_FB_FILTER_NEU}</a>&nbsp;|&nbsp;
+    <a href="{FB_FILTER_NEG}#fb_details">{L_FB_FILTER_NEG}</a>
+</h3>
+<!-- IF FB_S_ROLE -->
+<h3 class="right-box" style="margin-right:20px;">
+    {L_FB_ROLE}:&nbsp;
+    <a href="{FB_ROLE_ALL}#fb_details">{L_FB_ROLE_ALL}</a>&nbsp;|&nbsp;
+    <a href="{FB_ROLE_BUYER}#fb_details">{L_FB_ROLE_BUYER}</a>&nbsp;|&nbsp;
+    <a href="{FB_ROLE_SELLER}#fb_details">{L_FB_ROLE_SELLER}</a>&nbsp;|&nbsp;
+    <a href="{FB_ROLE_TRADE}#fb_details">{L_FB_ROLE_TRADE}</a>
+</h3>
+<!-- ENDIF -->
+<a name="fb_details"></a>
+<h2>{L_FB_DETAILS}</h2>
+<div class="forumbg row panel">
+    <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="table1 row panel-title">
+                    <h3 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_FROM} <a href="{FB_ORDER_FROMA}">[&and;]</a><a href="{FB_ORDER_FROMD}">[&or;]</a></h3>
+                    <!-- IF FB_SHOWIP -->
+                    <h3 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_IP} <a href="{FB_ORDER_IPA}">[&and;]</a><a href="{FB_ORDER_IPD}">[&or;]</a></h3>
+                    <!-- ENDIF -->
+                    <h3 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_ONDATE} <a href="{FB_ORDER_DATEA}">[&and;]</a><a href="{FB_ORDER_DATED}">[&or;]</a></h3>
+                    <!-- IF FB_S_ROLE --><h3 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_ROLE}</h3><!-- ENDIF -->
+                    <h3 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_FEEDBACK}</h3>
+                    <h3 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_COMMENT}</h3>
+        </div>
+        <!-- IF not .feedback -->
+        <div class="bg1 row">
+            <div <!-- IF FB_SHOWIP && FB_S_ROLE -->colspan="6"<!-- ELSEIF FB_SHOWIP || FB_S_ROLE -->colspan="5"<!-- ELSE -->colspan="4"<!-- ENDIF -->>{L_FB_NOFOUND}</div>
+        </div>
+                <!-- ELSE -->
+        <!-- BEGIN feedback -->
+        <div class="row <!-- IF feedback.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                <!--<ul class="profile-icons" style="padding:0;">
+                    <li class="msnm-icon"><a href="{feedback.FB_PROFILE}" title="{L_READ_PROFILE}"><span>{L_READ_PROFILE}</span></a></li>
+                </ul>-->
+                <!-- IF FB_S_LINK && feedback.FB_LINK -->
+                <a href="{feedback.FB_LINK}" title="{L_TOPIC}">{ATTACH_ICON_IMG}</a>
+                <!-- ENDIF -->
+                <a href="{feedback.FB_URL}" style="color:{feedback.FB_USER_COL};">{feedback.FB_USER}</a>
+            </div>
+            <!-- IF FB_SHOWIP -->
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{feedback.FB_IP}</div>
+            <!-- ENDIF -->			
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{feedback.FB_DATE}</div>
+            <!-- IF FB_S_ROLE -->
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{feedback.FB_ROLE}</div>
+            <!-- ENDIF -->
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{feedback.FB_VOTE}</div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                <!-- IF feedback.FB_DELETE -->
+                <!-- <ul class="profile-icons" style="float:{S_CONTENT_FLOW_END}; padding:0;">
+                    <li class="delete-icon"><a href="{feedback.FB_DELETEURL}" title="{L_FB_DELETE}"><span>{L_FB_DELETE}</span></a></li>
+                </ul> -->
+                <!-- ENDIF -->
+                <!-- IF feedback.FB_EDIT -->
+                <!--<ul class="profile-icons" style="float:{S_CONTENT_FLOW_END}; padding:0;">
+                    <li class="edit-icon"><a href="{feedback.FB_EDITURL}" title="{L_FB_EDIT}"><span>{L_FB_EDIT}</span></a></li>
+                </ul> -->
+                <!-- ENDIF -->
+                {feedback.FB_COMMENT}
+            </div>
+        
+        </div>    
+        <!-- END -->
+                <!-- ENDIF -->
+    </div>
+</div>
+<!-- ENDIF -->
+
+<!-- IF FB_PAGE === 'add' -->
+<h2>{L_FB_ADD}</h2>
+</div> <!-- End of overall header -->
+<form action="{FB_ACTION}" method="post"{S_FORM_ENCTYPE}>
+    <div class="forumbg row">
+        <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="bg1 row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><label >{L_USERNAME}</div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9">{FB_TOUSER}</div>
+            </div>
+            <!-- IF FB_S_ROLE -->
+            <div class="bg1 row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><label for="role">{L_FB_ROLE}</label></div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9 form-inline">
+                    <input type="radio" class="radio" name="role" value="1" >
+                        <span class="negative">{L_FB_BUYER}</span></input>
+                    <input type="radio" class="radio" name="role" value="2" >
+                        <span class="neudival">{L_FB_SELLER}</span></input>
+                    <input type="radio" class="radio" name="role" value="0" checked="checked" >
+                        <span class="positive">{L_FB_TRADE}</span></input>
+                </div>
+            </div>
+            <!-- ENDIF -->
+            <div class="bg1 row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><label for="vote">{L_FB_FEEDBACK}</label></div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9 form-inline">
+                    <input type="radio" class="radio" name="vote" value="0" >
+                        <span class="negative">{L_FB_NEG}</span></input>
+                    <input type="radio" class="radio" name="vote" value="2" checked="checked" >
+                        <span class="neudival">{L_FB_NEU}</span></input>
+                    <input type="radio" class="radio" name="vote" value="1" >
+                        <span class="positive">{L_FB_POS}</span></input>
+                </div>
+            </div>
+            <!-- IF FB_S_LINK -->
+            <div class="bg1 row">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><!-- IF FB_S_LINK_FORCE -->{L_FB_LINK}<!-- ELSE -->{L_FB_LINKOPT}<!-- ENDIF --></div>
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-9"><input class="inputbox tiny" name="link" type="text" maxlength="8" value="{FB_LINK}" /></div>
+            </div>
+            <!-- ENDIF -->
+            <div class="bg1 row">
+                <label for="comment"><!-- IF FB_S_COMM_OPT -->{L_FB_COMMENTOPT}<!-- ELSE -->{L_FB_COMMENT}<!-- ENDIF --></label>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"><textarea name="comment" rows="5" cols="50"></textarea></div>
+            </div>
+            <div class="bg2 row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    {FB_HIDDEN}{S_FORM_TOKEN}<input class="btn btn-primary" name="submit" type="submit" value="{L_FB_ADD}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- ENDIF -->
+
+<!-- IF FB_PAGE === 'edit' -->
+<h2>{L_FB_EDIT}</h2>
+</div> <!-- End of overall header -->
+<form action="{FB_ACTION}" method="post"{S_FORM_ENCTYPE}>
+    <div class="forumbg row">
+        <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="bg1 row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">{L_USERNAME}</div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">{FB_TOUSER}</div>
+                </div>
+                <!-- IF FB_S_ROLE -->
+                <div class="bg1 row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">{L_FB_ROLE}</div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <input type="radio" class="radio" name="role" value="1"<!-- IF FB_ROLE == 1 --> checked="checked"<!-- ENDIF --> />
+                               <span class="genmed"><span class="buyer">{L_FB_BUYER}</span></span>
+                        <input type="radio" class="radio" name="role" value="2"<!-- IF FB_ROLE == 2 --> checked="checked"<!-- ENDIF --> />
+                               <span class="genmed"><span class="seller">{L_FB_SELLER}</span></span>
+                        <input type="radio" class="radio" name="role" value="0"<!-- IF FB_ROLE == 0 --> checked="checked"<!-- ENDIF --> />
+                               <span class="genmed"><span class="divade">{L_FB_TRADE}</span></span>
+                    </div>
+                </div>
+                <!-- ELSE -->
+                <input type="hidden" name="role" value="{FB_ROLE}" />
+                <!-- ENDIF -->
+                <div class="bg1 row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">{L_FB_FEEDBACK}</div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <input type="radio" class="radio" name="vote" value="0"<!-- IF FB_VOTE == 0 --> checked="checked"<!-- ENDIF --> />
+                               <span class="genmed"><span class="negative">{L_FB_NEG}</span></span>
+                        <input type="radio" class="radio" name="vote" value="2"<!-- IF FB_VOTE == 2 --> checked="checked"<!-- ENDIF --> />
+                               <span class="genmed"><span class="neudival">{L_FB_NEU}</span></span>
+                        <input type="radio" class="radio" name="vote" value="1"<!-- IF FB_VOTE == 1 --> checked="checked"<!-- ENDIF --> />
+                               <span class="genmed"><span class="positive">{L_FB_POS}</span></span>
+                    </div>
+                </div>
+                <!-- IF FB_S_LINK -->
+                <div class="bg1 row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><!-- IF FB_S_LINK_FORCE -->{L_FB_LINK}<!-- ELSE -->{L_FB_LINKOPT}<!-- ENDIF --></div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><input class="inputbox tiny" name="link" type="text" maxlength="8" value="{FB_LINK}" /></div>
+                </div>
+                <!-- ENDIF -->
+                <div class="bg1 row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><!-- IF FB_S_COMM_OPT -->{L_FB_COMMENTOPT}<!-- ELSE -->{L_FB_COMMENT}<!-- ENDIF --></div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><textarea name="comment" rows="5" cols="50">{FB_COMM}</textarea></div>
+                </div>
+                <div class="bg2 row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        {FB_HIDDEN}{S_FORM_TOKEN}<input class="button2" name="submit" type="submit" value="{L_FB_EDIT}" />
+                    </div>
+                </div>
+            </div>
+    </div>
+</form>
+<!-- ENDIF -->
+
+<!-- IF FB_PAGE === 'best' -->
+<h2>{L_FB_FEEDBACK} {L_FB_BEST_USERS}</h2>
+</div> <!-- End of overall header -->
+<div class="forumbg row">
+    <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_RANK}</div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_USER}</div>
+                    <!-- IF FB_S_SCORE == 0 -->
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_POS}</div>
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_NEU}</div>
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_NEG}</div>
+                    <!-- ELSE -->
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_SCORE}</div><!-- ENDIF -->
+                </div>
+            
+            
+                <!-- BEGIN best(1) -->
+                <div class="row <!-- IF best.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->" >
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{best.S_ROW_COUNT}</div>
+                   <!-- <div style="text-align:left;">
+                        <ul class="profile-icons" style="padding:0;">
+                            <li class="msnm-icon"><a href="{best.FB_PROFILE}" title="{L_READ_PROFILE}"><span>{L_READ_PROFILE}</span></a></li>
+                        </ul>
+                        <a href="{best.FB_LINK}" style="color:{best.FB_USER_COL}; vertical-align:middle;">{best.FB_USER}</a>
+                    </div>-->
+                    <!-- IF FB_S_SCORE == 0 -->
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="positive">{best.FB_POS}</span></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="neudival">{best.FB_NEU}</span></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="negative">{best.FB_NEG}</span></div>
+                    <!-- ELSE -->
+                    <!-- IF best.FB_SCORE > 0-->
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="positive">{best.FB_SCORE}</span></div>
+                    <!-- ELSEIF best.FB_SCORE == 0-->
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="neudival">{best.FB_SCORE}</span></div>
+                    <!-- ELSE -->
+                    <div  class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="negative">{best.FB_SCORE}</span></div>
+                    <!-- ENDIF -->
+                    <!-- ENDIF -->
+                </div>
+                <!-- END -->
+       </div>
+</div>
+<!-- ENDIF -->
+
+<!-- IF FB_PAGE === 'worst' -->
+<h2>{L_FB_FEEDBACK} {L_FB_WORST_USERS}</h2>
+</div><!-- end of overall header-->
+<div class="forumbg row ">
+    <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            
+        <div class="row text-center">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_RANK}</div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_USER}</div>
+            <!-- IF FB_S_SCORE == 0 -->
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_POS}</div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_NEU}</div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_NEG}</div>
+            <!-- ELSE -->
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_SCORE}</div>
+            <!-- ENDIF -->
+        </div>
+
+
+        <!-- BEGIN worst(1) -->
+        <div class=" row <!-- IF best.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF --> text-center" >
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{worst.S_ROW_COUNT}</div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+               <!-- <ul class="profile-icons" style="padding:0;">
+                    <li class="msnm-icon"><a href="{worst.FB_PROFILE}" title="{L_READ_PROFILE}"><span>{L_READ_PROFILE}</span></a></li>
+                </ul> -->
+                <a href="{worst.FB_LINK}" style="color:{worst.FB_USER_COL}; vertical-align:middle;">{worst.FB_USER}</a>
+            </div>
+            <!-- IF FB_S_SCORE == 0 -->
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"><span class="positive">{worst.FB_POS}</span></div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"><span class="neudival">{worst.FB_NEU}</span></div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"><span class="negative">{worst.FB_NEG}</span></div>
+            <!-- ELSE -->
+            <!-- IF worst.FB_SCORE > 0-->
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"> <span class="positive">{worst.FB_SCORE}</span></div>
+            <!-- ELSEIF worst.FB_SCORE == 0-->
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="neudival">{worst.FB_SCORE}</span></div>
+            <!-- ELSE -->
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="negative">{worst.FB_SCORE}</span></div>
+            <!-- ENDIF -->
+            <!-- ENDIF -->
+        </div>
+        <!-- END -->
+</div>
+<!-- ENDIF -->
+
+<div class="copyright" style="text-align:right;"><small>ShMk User Feedback &copy; 2009 <a href="http://www.shockmaker.com">ShockMaker</a></small></div>
+</div>
+</div>
+
+<!-- INCLUDE overall_footer.html -->

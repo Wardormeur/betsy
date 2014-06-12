@@ -1,0 +1,125 @@
+<!-- INCLUDE overall_header.html -->
+
+<script type="text/javascript">
+// <![CDATA[
+	/**
+	* Change language
+	*/
+	function change_language(lang_iso)
+	{
+		document.forms['register'].change_lang.value = lang_iso;
+		document.forms['register'].submit.click();
+	}
+
+	<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_REFRESH -->
+	onload_functions.push('apply_onkeypress_event()');
+	<!-- ENDIF -->
+
+// ]]>
+</script>
+
+<form method="post" action="{S_UCP_ACTION}" id="register" class="form-horizontal">
+	<div class="panel row well">
+		<h3 class="box-heading">{SITENAME} - {L_REGISTRATION}</h3>
+		<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+		<!-- IF L_REG_COND -->
+			<p><strong>{L_REG_COND}</strong></p>
+		<!-- ENDIF -->
+		<div class="form-group">
+			<label for="username" class="col-sm-2 control-label">{L_USERNAME}:</label>
+			<div class="col-sm-6">
+				<input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="form-control" title="{L_USERNAME}" />
+			</div>
+			<div class="col-sm-4 form-explain">
+				{L_USERNAME_EXPLAIN}
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email" class="col-sm-2 control-label">{L_EMAIL_ADDRESS}:</label>
+			<div class="col-sm-6">
+				<input type="email" tabindex="2" name="email" id="email" size="25" maxlength="100" value="{EMAIL}" class="form-control" title="{L_EMAIL_ADDRESS}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email_confirm" class="col-sm-2 control-label">{L_CONFIRM_EMAIL}:</label>
+			<div class="col-sm-6">
+				<input type="text" tabindex="3" name="email_confirm" id="email_confirm" size="25" maxlength="100" value="{EMAIL_CONFIRM}" class="form-control" title="{L_CONFIRM_EMAIL}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="new_password" class="col-sm-2 control-label">{L_PASSWORD}:</label>
+			<div class="col-sm-6">
+				<input type="password" tabindex="4" name="new_password" id="new_password" size="25" value="{PASSWORD}" class="form-control" title="{L_NEW_PASSWORD}" />
+			</div>
+			<div class="col-sm-4 form-explain">
+				<span>{L_PASSWORD_EXPLAIN}</span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password_confirm" class="col-sm-2 control-label">{L_CONFIRM_PASSWORD}:</label>
+			<div class="col-sm-6">
+				<input type="password" tabindex="5" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" class="form-control" title="{L_CONFIRM_PASSWORD}" />
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="form-group">
+			<label for="lang" class="col-sm-2 control-label">{L_LANGUAGE}:</label>
+			<div class="col-sm-6">
+				<select name="lang" id="lang" class="form-control" onchange="change_language(this.value); return false;" tabindex="6" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="tz" class="col-sm-2 control-label">{L_TIMEZONE}:</label>
+			<div class="col-sm-6">
+				<select name="tz" id="tz" tabindex="7" class="form-control">{S_TZ_OPTIONS}</select>
+			</div>
+		</div>
+		
+		<hr />
+
+	<!-- IF .profile_fields -->
+		<p><strong>{L_ITEMS_REQUIRED}</strong></p>
+
+	<!-- BEGIN profile_fields -->
+		<div class="form-group">
+			<label class="col-sm-2 control-label" <!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
+			<!-- IF profile_fields.LANG_EXPLAIN --><br /><span>{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF -->
+			<!-- IF profile_fields.ERROR --><br /><span class="error">{profile_fields.ERROR}</span><!-- ENDIF -->
+			{profile_fields.FIELD}
+		</div>
+	<!-- END profile_fields -->
+	<!-- ENDIF -->
+
+		<hr />
+		<!-- IF CAPTCHA_TEMPLATE -->
+		<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
+		<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+	<!-- ENDIF -->
+
+
+		<hr />
+
+		<!-- IF S_COPPA -->
+		<h3 class="box-heading">{L_COPPA_COMPLIANCE}</h3>
+
+		<div class="form-group">
+			<p>{L_COPPA_EXPLAIN}</p>
+		</div>
+		
+		<!-- ENDIF -->
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-6">
+				{S_HIDDEN_FIELDS}
+				<button type="reset" name="reset" class="btn btn-default" >{L_RESET}</button>
+				<button type="submit" name="submit" tabindex="9" class="btn btn-default default-sunmit-action">{L_SUBMIT}</button>
+			</div>
+			{S_FORM_TOKEN}
+		</div>
+	</div>
+</form>
+
+
+<!-- INCLUDE overall_footer.html -->

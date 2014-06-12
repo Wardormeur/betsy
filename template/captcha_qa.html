@@ -1,0 +1,21 @@
+<!-- IF S_TYPE == 1 -->
+<div class="panel">
+	<div class="inner">
+
+	<h3>{L_CONFIRMATION}</h3>
+<!-- ENDIF -->
+		<div class="form-group">
+			<label for="qa_answer" class="col-sm-2 control-label">{QA_CONFIRM_QUESTION}:</label>
+			<div class="col-sm-6">
+				<input type="text" tabindex="{$CAPTCHA_TAB_INDEX}" name="qa_answer" id="answer" size="45"  class="form-control" title="{L_ANSWER}" />
+				<input type="hidden" name="qa_confirm_id" id="qa_confirm_id" value="{QA_CONFIRM_ID}" />
+			</div>
+			<div class="col-sm-4 form-explain">
+				{L_CONFIRM_QUESTION_EXPLAIN}
+			</div>
+		</div>
+
+<!-- IF S_TYPE == 1 -->
+	</div>
+</div>
+<!-- ENDIF -->

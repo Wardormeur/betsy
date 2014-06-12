@@ -1,0 +1,59 @@
+<!-- INCLUDE mcp_header.html -->
+
+<form id="mcp_ban" method="post" action="{U_ACTION}">
+
+<h2>{L_TITLE}</h2>
+
+<div class="panel">
+	<div class="inner"><span class="corners-top"><span></span></span>
+
+	<h3>{L_TITLE}</h3>
+	<p>{L_EXPLAIN}</p>
+
+	<fieldset>
+	<dl>
+		<dt><label for="ban">{L_MCP_BAN_HAMMER}:</label></dt>
+		<dd><textarea name="ban" id="ban" class="inputbox" cols="40" rows="3"></textarea></dd>
+	</dl>
+	<dl>
+		<dt><label for="banposts">{L_BAN_HAMMER_POST_REMOVE}:</label></dt>
+		<dd><input type="checkbox" id="banposts" name="banposts" value="1" /></dd>
+	</dl>
+	<dl>
+		<dt><label for="banpms">{L_BAN_HAMMER_PM_REMOVE}:</label></dt>
+		<dd><input type="checkbox" id="banpms" name="banpms" value="1" /></dd>
+	</dl>
+	<dl>
+		<dt><label for="banlength">{L_BAN_LENGTH}:</label></dt>
+		<dd><strong id="banlength">{L_BAN_HAMMER_LENGTH_ANS}</strong></dd>
+	</dl>
+	<dl>
+		<dt><label for="banreason">{L_BAN_REASON}:</label></dt>
+		<dd><strong id="banreason">{L_BAN_HAMMER_REASON_ANS}</strong></dd>
+	</dl>
+	<dl>
+		<dt><label for="bangivereason">{L_BAN_GIVE_REASON}:</label></dt>
+		<dd><strong id="bangivereason">{L_BAN_HAMMER_REASON_GIVE_ANS}</strong></dd>
+	</dl>
+	</fieldset>
+
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+
+<fieldset class="submit-buttons">
+	<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp; 
+	<input type="submit" name="bansubmit" value="{L_SUBMIT}" class="button1" />
+	{S_FORM_TOKEN}
+</fieldset>
+
+<div class="panel">
+	<div class="inner"><span class="corners-top"><span></span></span>
+
+	<h3>{L_UNBAN_TITLE}</h3>
+	<p>{L_UNBAN_EXPLAIN}</p>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+</form>
+
+<!-- INCLUDE mcp_footer.html -->

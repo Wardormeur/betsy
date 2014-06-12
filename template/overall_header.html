@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
+<head>
+{SEO_BASE_HREF}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="{S_USER_LANG}" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="keywords" content="casque,intra,dac,ampli,dap,test,feedback,review" />
+<meta name="description" content="Tellement Nomade, l'actu de l'audio nomade!" />
+{META}
+<title>{SITENAME}  <!-- IF S_IN_MCP -->{L_MCP}  <!-- ELSEIF S_IN_UCP -->{L_UCP}  <!-- ENDIF -->{PAGE_TITLE}</title>
+
+<!-- IF S_ENABLE_FEEDS -->
+	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
+<!-- ENDIF -->
+
+<!--
+	phpBB style name: proBoot3
+	Based on style:   proBoot (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:
+-->
+
+<script type="text/javascript" src="./mobiquo/tapatalkdetector.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+	var jump_page = '{LA_JUMP_PAGE}:';
+	var on_page = '{ON_PAGE}';
+	var per_page = '{PER_PAGE}';
+	var base_url = '{A_BASE_URL}';
+	var style_cookie = 'phpBBstyle';
+	var style_cookie_settings = '{A_COOKIE_SETTINGS}';
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+	// www.phpBB-SEO.com SEO TOOLKIT BEGIN
+	var seo_delim_start = '{SEO_START_DELIM}';
+	var seo_static_pagination = '{SEO_SATIC_PAGE}';
+	var seo_ext_pagination = '{SEO_EXT_PAGE}';
+	var seo_external = {SEO_EXTERNAL};
+	var seo_external_sub = {SEO_EXTERNAL_SUB};
+	var seo_ext_classes = {SEO_EXT_CLASSES};
+	var seo_hashfix = {SEO_HASHFIX};
+	// www.phpBB-SEO.com SEO TOOLKIT END
+	<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+		var url = '{UA_POPUP_PM}';
+		window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
+        <!-- ELSE -->
+		var url = '{UA_POPUP_PM}';
+		$('#new-pm').show((url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
+	<!-- ENDIF -->
+
+	/**
+	* Find a member
+	*/
+	function find_username(url)
+	{
+		popup(url, 760, 570, '_usersearch');
+		return false;
+	}
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	};
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	};
+
+// ]]>
+</script>
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/styleswitcher.js"></script>
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
+
+<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+
+<link href="{T_THEME_PATH}/font-awesome-4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<!-- MOD: GURU adaptation to bootstrap style -->
+<link href="{T_THEME_PATH}/tn.css" rel="stylesheet" type="text/css" />
+<!-- END: GURU adaptation to bootstrap style -->
+
+<!-- <link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" />
+<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+-->
+
+<!-- MOD: SHMK USER FEEDBACK -->
+<link href="{T_THEME_PATH}/feedback_style.css" rel="stylesheet" type="text/css" />
+<!-- END: SHMK USER FEEDBACK -->
+
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+	<!-- <link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /> -->
+<!-- ENDIF -->
+<!-- INCLUDE gallery/plugins_header.html -->
+</head>
+
+<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+
+	<a id="top" accesskey="t"></a>
+	<header role="banner" class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+		<div class="container">
+			<div class="navbar-header pull-left">
+    			<button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+    				<span class="sr-only">Dérouler la navigation</span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    				<span class="icon-bar"></span>
+    		    </button>
+    		    <a class="navbar-brand hidden-sm hidden-md hidden-lg hidden-xl" href="{U_INDEX}">TN</a>
+    		  
+		 	</div>
+		 	
+			<nav role="navigation"  >
+			    
+        		<div class="btn-group navbar-right">
+        			<a class="btn btn-success dropdown-toggle <!-- IF S_USER_NEW_PRIVMSG --> link-new<!-- ENDIF --> " data-toggle="dropdown" href="#">
+        				<!-- IF PRIVATE_MESSAGE_INFO_UNREAD --><i class="fa fa-envelope-o"></i><!-- ENDIF --> {S_USERNAME}
+        				<span class="caret"></span>
+        			</a>
+        			<div class="divider"></div>
+        		 
+        			<ul class="dropdown-menu">
+        			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+        				<!-- IF S_DISPLAY_PM --> 
+        				<li>	
+                                            <a href="{U_PRIVATEMSGS}" class="<!-- IF S_USER_NEW_PRIVMSG --> unread<!-- ENDIF -->"><!-- IF S_USER_UNREAD_PRIVMSG --><i class="fa fa-envelope-o"></i> <!-- ENDIF --> <!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->{PRIVATE_MESSAGE_INFO_UNREAD} <!-- ELSE --> {PRIVATE_MESSAGE_INFO}<!-- ENDIF --></a>
+        				</li><!-- ENDIF -->
+        	
+        				<!-- MOD: SHMK USER FEEDBACK -->
+        				<li>
+							<a href="{U_MY_FEEDBACK}"><i class="fa fa-thumbs-o-up"></i> {MY_FEEDBACK}</a> 
+        				</li>
+        				<!-- END: SHMK USER FEEDBACK -->
+        				<li class="bb-ucp">
+            							<a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user"></i> {L_PROFILE}</a>
+            			</li>
+            			<li class="divider"></li>
+        			<!-- ENDIF -->				
+            			<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
+            				<i class="fa fa-sign-in "></i> {L_LOGIN_LOGOUT}</a>
+            			</li>
+        			<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+            			<li class="bb-register">
+            				<a href="{U_REGISTER}"><i class="fa fa-user "></i> {L_REGISTER}</a>
+            					
+            			</li>
+            							
+        			<!-- ENDIF -->
+        		  </ul>
+        		  
+        		</div><!--btn group-->
+			    <div class="collapse navbar-collapse bs-navbar-collapse">
+    				<ul class="nav navbar-nav " >
+    				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+    					<li>
+    						<form action="{U_SEARCH}" method="get" id="search" class="navbar-search ">
+    							<fieldset>
+    								<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+    								 {S_SEARCH_HIDDEN_FIELDS}
+    						        <a class="" id="adv-search" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">
+    						     	    <i class="fa fa-plus-circle"></i>
+    						        </a >	
+    							</fieldset>
+    						</form>
+    					</li>
+    				
+    				<!-- ENDIF -->
+    				
+    			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Les news <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/">Voir le blog</a></li>
+                                <li><a href="/wp-admin/post-new.php">Ecrire une news</a></li>
+                                <li><a href="/forum/ucp.php?i=pm&mode=compose&action=post&add_to=Ajout+[A]&group_list[]=9">Informer les newsers</a></li>
+                            </ul>
+                        </li>
+	                    <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Forum <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            <!-- IF S_VIEWTOPIC -->
+                                <li><a href="{U_POST_REPLY_TOPIC}">Répondre au sujet</a></li>
+                            <!-- ENDIF -->
+                            <!-- IF S_VIEWFORUM -->
+                                <li><a href="{U_POST_NEW_TOPIC}">Nouveau sujet</a></li>
+                            <!-- ENDIF -->
+                                <li class="hidden-xl hidden-lg hidden-md"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
+        					<!-- MOD: SHMK USER FEEDBACK -->
+            					<li class="hidden-xl hidden-lg hidden-md"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
+        					<!-- END: SHMK USER FEEDBACK -->
+                                <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
+                                	<!-- IF S_DISPLAY_SEARCH -->
+        		<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
+        		<!-- IF S_LOAD_UNREADS --> <li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li><!-- ENDIF -->
+        		<!-- IF S_USER_LOGGED_IN --> <li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a></li><!-- ENDIF --> 
+        		<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
+        	<!-- ENDIF -->
+        	<!-- IF not S_IS_BOT and U_MARK_FORUMS --><li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li><!-- ENDIF -->
+        	<!-- IF S_HAS_SUBFORUM -->
+        <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+            	<li><a href="{U_MARK_FORUMS}">{L_MARK_SUBFORUMS_READ}</a></li>
+            <!-- ENDIF -->
+            <!-- ENDIF -->
+                                <!-- ENDIF -->
+                            </ul>
+                        </li>
+    					<li class="divider-vertical"></li>
+    					<li class="divider-vertical"></li>
+    					<li class=""><a href="http://wiki.tellementnomade.com">Wiki</a></li>
+    					<li class="divider-vertical"></li>
+    					<li class=""><a href="/kiwi/?nick={S_USERNAME}">IRC</a></li>
+    					<li class="divider-vertical"></li>
+    					<li class="hidden-xs hidden-sm"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
+        					<!-- MOD: SHMK USER FEEDBACK -->
+            			<li class="divider-vertical"></li>
+    				
+    					<li class="hidden-xs hidden-sm"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
+        					<!-- END: SHMK USER FEEDBACK -->
+    					<li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">L'asso <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/lassociation-tellement-nomade/">Son rôle</a></li>
+                                <li><a href="/tn-needs-you/">Join the dark side</a></li>
+                                <li><a href="/forum/memberlist.php?mode=group&g=29">Ses acolytes</a></li>
+                            </ul>
+                        </li>
+	                    
+    					<!-- IF not S_IS_BOT -->
+    						
+    						
+    						<!-- IF U_RESTORE_PERMISSIONS -->
+    					<li class="divider-vertical"></li>
+    							<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
+    						<!-- ENDIF -->
+    					</li>
+    			
+    					<!-- ENDIF -->
+    			
+    			<!-- ENDIF -->
+    				
+    			<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+    					<li class="divider-vertical"></li>
+    					<li class="bb-register"><a href="{U_REGISTER}"><i class=" "></i> {L_REGISTER}</a></li>
+    					<li class="divider-vertical"></li>
+    					<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa icon-minus-sign "></i> {L_LOGIN_LOGOUT}</a></li>
+                  <!-- ENDIF -->
+    					
+    			</ul><!-- ul -->
+    	    </div>
+		
+        
+	   </nav>
+	</div><!-- container-->
+</header>
+
+
+	<a id="start_here"></a>
+	<div  class="container" >
+		<div class="row">
+    		<div id="site-description">
+				<a href="{U_INDEX}" title="{L_INDEX}" id="logo" >
+				<!-- {SITE_LOGO_IMG}-->
+				    <img src="/forum/styles/proBoot/imageset/logo_new.svg" class="hidden-xs" />
+				</a>
+	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
+		    </div>
+    	</div>
+		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+		<div id="information" class=" row rules">
+			<div class="well">
+				<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
+			</div>
+		</div>
+		<!-- ENDIF -->
+        <div class="row">
+        	<ul class="breadcrumb hidden-xs pull-right ">
+            	<li>
+            	    <a href="{U_INDEX}" class="hidden-sm">{L_INDEX}</a><!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks -->
+    		    </li>
+            </ul>
+            <!--<a href="{PREVIOUS_PAGE}" class="btn btn-default hidden-sm hidden-md hidden-lg hidden-xl"><i class="fa fa-angle-left"></i> {L_PREVIOUS}</a> -->
+            <!-- We do not close the row so that we gain place with the next row that is containing actions-->

@@ -1,0 +1,75 @@
+<!-- BEGIN albumrow -->
+	<!-- IF (albumrow.S_IS_CAT and not albumrow.S_FIRST_ROW) or albumrow.S_NO_CAT -->
+</div>
+		</div>
+	<!-- ENDIF -->
+
+	<!-- IF albumrow.S_IS_CAT or albumrow.S_FIRST_ROW or albumrow.S_NO_CAT  -->
+            <div class="row">
+		<div class="panel panel-default forumpanel col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row panel-heading">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <h4><!-- IF albumrow.S_IS_CAT --><a href="{albumrow.U_VIEWALBUM}">{albumrow.ALBUM_NAME}</a>
+                                <!-- ELSE -->{L_ALBUM}<!-- ENDIF -->
+                            </h4>
+                        </div>
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 hidden-xs text-center"><h4>{L_IMAGES}</h4></div>
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-6 " ><h4>{L_LAST_IMAGE}</h4></div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="sd col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+                       
+			
+	<!-- ENDIF -->
+
+	<!-- IF not albumrow.S_IS_CAT -->
+                
+                    <div class="row">
+                        <div class="icon col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"  ><!--style="background-image: url({albumrow.ALBUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;">-->
+                            
+                                    <!-- IF albumrow.ALBUM_IMAGE --><span class="forum-image"><img src="{T_IMAGES_PATH}{albumrow.ALBUM_IMAGE}" alt="{albumrow.ALBUM_NAME}" /></span><!-- ENDIF -->
+                                    <a href="{albumrow.U_VIEWALBUM}" class="forumtitle"<!-- IF S_PERSONAL_GALLERY and albumrow.ALBUM_COLOUR --> style="color: {albumrow.ALBUM_COLOUR};"<!-- ENDIF -->>{albumrow.ALBUM_NAME}</a>
+                                    <span class="hidden-xs hidden-sm"></br >{albumrow.ALBUM_DESC}</span>
+                                    <!-- IF albumrow.MODERATORS --><strong>{albumrow.L_MODERATOR_STR}:</strong> {albumrow.MODERATORS}<!-- ENDIF -->
+                                    <!-- IF albumrow.SUBALBUMS and albumrow.S_LIST_SUBALBUMS -->
+                                    <ul>
+                                        <li class="dropdown list-unstyled list-inline hidden-md hidden-lg hidden-xl">
+                                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">{albumrow.L_SUBALBUM_STR} <b class="caret"></b></a>
+                                            <ul class="dropdown-menu list-unstyled dropdown-features list-inline">
+                                              {albumrow.SUBALBUMS}
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="hidden-xs hidden-sm list-unstyled list-inline">
+    					{albumrow.SUBALBUMS}
+                                    </ul>
+                                    <!--</br><strong>{albumrow.L_SUBALBUM_STR}</strong> 
+                                    {albumrow.SUBALBUMS}-->
+                                    <!-- ENDIF -->
+                        
+                        </div>
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 hidden-xs text-center">
+                                <span class="label label-success">{albumrow.IMAGES} </span>
+                                <!-- IF albumrow.UNAPPROVED_IMAGES --> 
+                                + <span class="reported-images-number">{albumrow.UNAPPROVED_IMAGES}</span><!-- ENDIF -->
+                            </div>        
+                            <div class="g_lastimage col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-6" ><span>
+                                <!-- IF albumrow.LAST_IMAGE_TIME -->
+                                <!-- IF albumrow.UC_FAKE_THUMBNAIL --><span style="float: left; text-align: center; width: {FAKE_THUMB_SIZE}px; padding-right: 5px;">{albumrow.UC_FAKE_THUMBNAIL}</span><!-- ENDIF -->
+                                <span class="hidden-sm hidden-xs"><dfn>{L_LAST_IMAGE}</dfn> {albumrow.UC_IMAGE_NAME}<br />
+                                {L_POST_BY_AUTHOR} {albumrow.LAST_USER_FULL} {albumrow.UC_LASTIMAGE_ICON}<br />
+                                {albumrow.LAST_IMAGE_TIME}<!-- ELSE -->{L_NO_IMAGES}<!-- ENDIF --></span>
+                            </div>
+                    </div>
+	<!-- ENDIF -->
+
+	<!-- IF albumrow.S_LAST_ROW -->
+            </div> <!-- panel -->
+        </div> <!-- row -->
+	<!-- ENDIF -->
+
+<!-- BEGINELSE -->
+	<div class="panel">
+		<strong>{L_NO_ALBUMS}</strong>
+	</div>
+<!-- END albumrow -->

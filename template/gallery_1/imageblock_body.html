@@ -1,0 +1,65 @@
+<!-- BEGIN imageblock -->
+<div class="forumbg well row">
+	<div class="inner">
+		<span class="corners-top"><span></span></span>
+		<ul class="row topiclist">
+			<li >
+                            <h3><!-- IF imageblock.U_BLOCK --><a href="{imageblock.U_BLOCK}">{imageblock.BLOCK_NAME}</a><!-- ELSE -->{imageblock.BLOCK_NAME}<!-- ENDIF --></h3>
+				
+			</li>
+		</ul>
+		<ul class="row  topiclist topics">
+			<li class="bg2 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="forumline">
+					<!-- BEGIN imagerow -->
+					<div class="row">
+						<!-- BEGIN image -->
+						<div class="bg2 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<div  class="forumline">
+								<div class="row">
+									<div  style="height: {S_THUMBNAIL_SIZE}px;" class="bg1<!-- IF imageblock.imagerow.image.S_UNAPPROVED --> g_unapproved<!-- ENDIF --><!-- IF imageblock.imagerow.image.S_LOCKED --> g_locked<!-- ENDIF --><!-- IF imageblock.imagerow.image.S_REPORTED --> g_reported<!-- ENDIF -->">
+										<span class="genmed">{imageblock.imagerow.image.UC_THUMBNAIL}</span>
+									</div>
+								</div >
+								<div class="row">
+									<div class="bg2" >
+										<div class="gensmall" style="overflow: hidden;">
+											<!-- IF imageblock.imagerow.image.CONTEST_RANK -->{L_CONTEST_RESULT}: <sdiv class="row"ong>{imageblock.imagerow.image.CONTEST_RANK}</sdiv class="row"ong><br /><!-- ENDIF -->
+											<!-- IF imageblock.imagerow.image.UC_IMAGE_NAME --> {imageblock.imagerow.image.UC_IMAGE_NAME}<br /><!-- ENDIF -->
+											<!-- IF imageblock.imagerow.image.POSTER -->{L_UPLOADED_BY_USER}: {imageblock.imagerow.image.POSTER}<br /><!-- ENDIF -->
+											<!-- IF imageblock.imagerow.image.VIEW > -1 -->{L_GALLERY_VIEWS}: {imageblock.imagerow.image.VIEW}<br /><!-- ENDIF -->
+											<!-- IF imageblock.imagerow.image.S_RATINGS -->{L_RATING}: <a href="{imageblock.imagerow.image.U_RATINGS}">{imageblock.imagerow.image.S_RATINGS}</a><br /><!-- ENDIF -->
+											<!-- IF imageblock.imagerow.image.S_COMMENTS -->{imageblock.imagerow.image.L_COMMENTS}: <a href="{imageblock.imagerow.image.U_COMMENTS}">{imageblock.imagerow.image.S_COMMENTS}</a><br /><!-- ENDIF -->
+											<!-- IF imageblock.imagerow.image.U_REPORT or imageblock.imagerow.image.U_STATUS or imageblock.imagerow.image.U_MOVE or  imageblock.imagerow.image.U_EDIT or imageblock.imagerow.image.U_DELETE -->
+											<a href="javascript: dE('moderate_imageblock_{imageblock.S_ROW_COUNT}_imagerow_{imageblock.imagerow.image.IMAGE_ID}');">{L_MODERATE}</a>
+											<div id="moderate_imageblock_{imageblock.S_ROW_COUNT}_imagerow_{imageblock.imagerow.image.IMAGE_ID}" style="display: none;">
+												<!-- IF imageblock.imagerow.image.U_REPORT -->&#187; <a href="{imageblock.imagerow.image.U_REPORT}" class="reported-images-number">{L_READ_REPORT}</a><br /><!-- ENDIF -->
+												<!-- IF imageblock.imagerow.image.U_STATUS -->&#187; <a href="{imageblock.imagerow.image.U_STATUS}">{imageblock.imagerow.image.L_STATUS}</a><br /><!-- ENDIF -->
+												<!-- IF imageblock.imagerow.image.U_MOVE -->&#187; <a href="{imageblock.imagerow.image.U_MOVE}">{L_MOVE}</a><br /><!-- ENDIF -->
+												<!-- IF imageblock.imagerow.image.U_EDIT -->&#187; <a href="{imageblock.imagerow.image.U_EDIT}">{L_EDIT_IMAGE}</a><br /><!-- ENDIF -->
+												<!-- IF imageblock.imagerow.image.U_DELETE -->&#187; <a href="{imageblock.imagerow.image.U_DELETE}">{L_DELETE_IMAGE}</a><br /><!-- ENDIF -->
+											</div>
+											<!-- ENDIF -->
+										</div>
+									</div>
+								</div >
+							</div>
+						</div>
+						<!-- END image -->
+						<!-- BEGIN no_image --> 
+							<div class="bg2 row"  >
+								<div class="forumline">
+                                                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                                                        <div style="height: {S_THUMBNAIL_SIZE}px;" class="bg1"></div>
+								</div ></div>
+							</div> 
+						<!-- END no_image -->
+					</div >
+					<!-- END imagerow -->
+				</div>
+			</li>
+		</ul>
+		<span class="corners-bottom"><span></span></span>
+	</div>
+</div>
+<!-- END imageblock -->

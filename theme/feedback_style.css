@@ -1,0 +1,9 @@
+/* Color of role buyer/seller/trade */
+.buyer{color:none;}
+.seller{color:none;}
+.trade{color:none;}
+
+/* Color of feedback positive/neutral/negative */
+.positive{color:green;}
+.neutral{color:black;}
+.negative{color:red;}

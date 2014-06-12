@@ -1,0 +1,57 @@
+
+    <!-- IF S_VIEWTOPIC -->
+<div class="row ">
+    <div class="col-md-6 col-xs-6">
+         <ul class="breadcrumb hidden-xs small">
+                    <li>
+                         <a href="{U_INDEX}" class="hidden-sm">{L_INDEX}</a> <!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks -->
+                    </li>
+         </ul>
+    	  <a href="{U_VIEW_FORUM}" class="btn btn-default hidden-sm hidden-xl hidden-lg hidden-md " accesskey="r"><i class="fa fa-angle-left"></i> <span class="hidden-inline-xs">{L_RETURN_TO}</span> {FORUM_NAME}</a>
+    </div>
+    <!-- ELSEIF S_VIEWFORUM -->
+    <div class="row">
+        <div class="col-md-6 col-xs-6">
+        	    <a href="{U_INDEX}" class="btn btn-default " accesskey="r"><span class="hidden-inline-xs"><i class="fa fa-angle-left"></i> {L_RETURN_TO} </span>{L_INDEX}</a>
+        </div>
+    <!-- ELSEIF SEARCH_TOPIC -->
+    <div class="row">
+        <div class="col-md-6 col-xs-6">
+            <a class="btn btn-default" href="{U_SEARCH_TOPIC}" accesskey="r"><i class="fa fa-angle-left"></i> <span class="hidden-inline-xs">{L_RETURN_TO}:</span> {SEARCH_TOPIC}</a>
+        </div>
+    <!-- ELSEIF S_SEARCH_ACTION -->
+    <div class="row">
+    	<div class="col-md-6 col-xs-6">
+    	    <a class="btn btn-default left" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a>
+	    </div>
+    	<!-- ELSE -->
+    <div class="row ">
+        <div class="col-md-6 col-xs-6"></div>
+    <!-- ENDIF -->
+
+
+
+    <!-- IF S_DISPLAY_JUMPBOX -->
+        <div class="col-md-6 col-xs-6">
+            <form method="post" id="jumpbox" action="{S_JUMPBOX_ACTION}" onsubmit="if(this.f.value == -1){return false;}" class="pull-right">
+    
+    	<!-- IF $CUSTOM_FIELDSET_CLASS -->
+    		<div class="{$CUSTOM_FIELDSET_CLASS} form-inline">
+    	<!-- ELSE -->
+    		<div class="jumpbox form-inline">
+    	<!-- ENDIF -->
+                    <label for="f" accesskey="j"><!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF -->:</label>
+                    <select class="form-control" name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+                    <!-- BEGIN jumpbox_forums -->
+                            <!-- IF jumpbox_forums.S_FORUM_COUNT == 1 --><option value="-1">------------------</option><!-- ENDIF -->
+                            <option value="{jumpbox_forums.FORUM_ID}"{jumpbox_forums.SELECTED}><!-- BEGIN level -->&nbsp; &nbsp;<!-- END level -->{jumpbox_forums.FORUM_NAME}</option>
+                    <!-- END jumpbox_forums -->
+                    </select>
+                    <input class="btn" type="submit" value="{L_GO}" />
+    		</div>
+    	</form>
+    </div>
+<!-- ELSE -->
+<!-- ENDIF -->
+
+</div>
