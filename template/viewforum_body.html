@@ -143,7 +143,6 @@
 		</ul>
 		</div>
 	</div>
-	<span class="endtopicSwitch"></span>
 	<!-- ENDIF -->
     
    	
@@ -168,19 +167,20 @@
         					<div class="col-md-7 col-xs-9 col-sm-9
         					<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
         					 title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+                                                    <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle
+        					 <!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
+        					 ">{topicrow.TOPIC_FOLDER_IMG} {topicrow.TOPIC_TITLE}</a>
+            					 
         					 <!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
         					 <!-- IF topicrow.S_POST_GLOBAL --><span class="label label-warning pull-right">GLOBAL</span> <!-- ENDIF -->
         					 <!-- IF topicrow.S_POST_ANNOUNCE --><span class="label label-info pull-right">ANNOUNCEMENT</span> <!-- ENDIF -->
         					 <!-- IF topicrow.S_POST_STICKY --><span class="label label-success pull-right">STICKY</span> <!-- ENDIF -->
-        					 <!-- <i class="pcon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i> -->
+        					 <!--<i class="pcon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i> -->
         					 <!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}"/><!-- ENDIF -->
-        					 <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle
-        					 <!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
-        					 "> {topicrow.TOPIC_TITLE}</a>
-            					 <!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+        					 <!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
             					<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF --><br />
             					<!-- IF topicrow.PAGINATION --><div class="p-pagination pull-right"><span>{topicrow.PAGINATION}</span></div><!-- ENDIF -->
-            					<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
+                                                <!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><small><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
             					<!-- IF topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID --> &raquo; {L_IN} <a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->
             				</div>
             				<div class=" text-center col-lg-1 hidden-md hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="badge ">{topicrow.REPLIES}</span></div>

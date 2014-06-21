@@ -31,7 +31,9 @@
     	<!-- IF not forumrow.S_IS_CAT -->
 	            <div class="row forumrow">
     				<div class="col-xl-7 col-lg-7 col-md-7 col-sm-9 col-xs-7" title="{forumrow.FORUM_FOLDER_IMG_ALT}" >
-    				<!-- <i class="pcon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i>-->
+    				<span class="hidden-xs">{forumrow.FORUM_FOLDER_IMG}</span>
+				
+                                <!-- <i class="pcon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i>-->
     				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
     				    <a class="feed-icon-forum" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}">
                                         <img src="{T_THEME_PATH}/images/feed.gif" alt="{L_FEED} - {forumrow.FORUM_NAME}" /></a> 
