@@ -42,21 +42,13 @@
 	var style_cookie_settings = '{A_COOKIE_SETTINGS}';
 	var onload_functions = new Array();
 	var onunload_functions = new Array();
-	// www.phpBB-SEO.com SEO TOOLKIT BEGIN
-	var seo_delim_start = '{SEO_START_DELIM}';
-	var seo_static_pagination = '{SEO_SATIC_PAGE}';
-	var seo_ext_pagination = '{SEO_EXT_PAGE}';
-	var seo_external = {SEO_EXTERNAL};
-	var seo_external_sub = {SEO_EXTERNAL_SUB};
-	var seo_ext_classes = {SEO_EXT_CLASSES};
-	var seo_hashfix = {SEO_HASHFIX};
-	// www.phpBB-SEO.com SEO TOOLKIT END
 	<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
 		var url = '{UA_POPUP_PM}';
 		window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
-        <!-- ELSE -->
+        <!-- ELSE IF S_NEW_PM-->
 		var url = '{UA_POPUP_PM}';
-		$('#new-pm').show((url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
+                //window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
+		//jQuery('#new-pm').show((url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400'));
 	<!-- ENDIF -->
 
 	/**
@@ -89,7 +81,7 @@
 
 // ]]>
 </script>
-<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/styleswitcher.js"></script>
+<!-- <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/styleswitcher.js"></script> -->
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 
 <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
