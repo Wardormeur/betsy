@@ -199,7 +199,7 @@
 						<i class="icon-plus-sign"></i>
 						<span class="caret"></span>
 						</a>
-					<ul class="dropdown-menu">
+					<ul id="icon-actions" class="dropdown-menu">
 					<!-- IF postrow.U_MSN --><li class="msnm"><a href="{postrow.U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}"><i class="icon-comment"></i> MSN</a></li><!-- ENDIF -->
 					<!-- IF postrow.U_ICQ --><li class="icq"><a href="{postrow.U_ICQ}" onclick="popup(this.href, 550, 320); return false;" title="{L_ICQ}"><i class="icon-comment"></i> ICQ</a></li><!-- ENDIF -->
 					<!-- IF postrow.U_YIM --><li class="yahoo"><a href="{postrow.U_YIM}" onclick="popup(this.href, 780, 550); return false;" title="{L_YIM}"><i class="icon-comment"></i> YIM</a></li><!-- ENDIF -->
@@ -307,9 +307,14 @@
 
 	<div class="col-xl-4 col-lg-4 col-md-2 col-sm-2 col-xs-4">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
-	    
 		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
 	<!-- ENDIF -->
+        <!-- IF S_QUICK_REPLY -->
+        <!-- QuickAnswer Button trigger modal -->
+            <button class="btn btn-default hidden-xs" data-toggle="modal" data-target="#quickReply">
+                {L_QUICKREPLY}
+            </button>
+        <!-- ENDIF --> 
 	</div>
 	
 	<!-- IF PAGINATION or TOTAL_POSTS -->
