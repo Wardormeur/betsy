@@ -81,25 +81,24 @@
 
 // ]]>
 </script>
-<!-- <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/styleswitcher.js"></script> -->
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 
 <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
 <link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
 
 <link href="{T_THEME_PATH}/font-awesome-4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" />
-<!-- MOD: GURU adaptation to bootstrap style -->
-<link href="{T_THEME_PATH}/tn.css" rel="stylesheet" type="text/css" />
-<!-- END: GURU adaptation to bootstrap style -->
-
-<!-- <link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" />
-<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
-<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
--->
 
 <!-- MOD: SHMK USER FEEDBACK -->
 <link href="{T_THEME_PATH}/feedback_style.css" rel="stylesheet" type="text/css" />
 <!-- END: SHMK USER FEEDBACK -->
+
+<!-- MOD: GURU adaptation to bootstrap style -->
+<link href="{T_THEME_PATH}/tn.css" rel="stylesheet" type="text/css" />
+<!-- END: GURU adaptation to bootstrap style -->
+
+
+
+
 
 <!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
 	<!-- <link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /> -->
@@ -126,8 +125,8 @@
 			<nav role="navigation"  >
 			    
         		<div class="btn-group navbar-right">
-        			<a class="btn btn-success dropdown-toggle <!-- IF S_USER_NEW_PRIVMSG --> link-new<!-- ENDIF --> " data-toggle="dropdown" href="#">
-        				<!-- IF PRIVATE_MESSAGE_INFO_UNREAD --><i class="fa fa-envelope-o"></i><!-- ENDIF --> {S_USERNAME}
+        			<a class="btn btn-success dropdown-toggle  " data-toggle="dropdown" href="#">
+                                    <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG --><span class="unread"> {S_USER_NEW_PRIVMSG} </span> /<!-- ENDIF --><!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> {S_USER_UNREAD_PRIVMSG} <!-- ENDIF --><i class="fa fa-envelope-o"></i> {S_USERNAME}
         				<span class="caret"></span>
         			</a>
         			<div class="divider"></div>
@@ -136,7 +135,9 @@
         			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
         				<!-- IF S_DISPLAY_PM --> 
         				<li>	
-                                            <a href="{U_PRIVATEMSGS}" class="<!-- IF S_USER_NEW_PRIVMSG --> unread<!-- ENDIF -->"><!-- IF S_USER_UNREAD_PRIVMSG --><i class="fa fa-envelope-o"></i> <!-- ENDIF --> <!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->{PRIVATE_MESSAGE_INFO_UNREAD} <!-- ELSE --> {PRIVATE_MESSAGE_INFO}<!-- ENDIF --></a>
+                                            <a href="{U_PRIVATEMSGS}" class="<!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> unread<!-- ENDIF -->">
+                                                <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --><i class="fa fa-envelope-o"></i> <!-- ENDIF -->
+                                                {PRIVATE_MESSAGE_INFO} <!-- IF PRIVATE_MESSAGE_INFO_UNREAD --></br>{PRIVATE_MESSAGE_INFO_UNREAD} <!-- ENDIF --></a>
         				</li><!-- ENDIF -->
         	
         				<!-- MOD: SHMK USER FEEDBACK -->

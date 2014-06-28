@@ -25,7 +25,7 @@
 	     <a href="{U_VIEW_FORUM}" class="btn btn-default " accesskey="r"><i class="fa fa-angle-left"></i> {FORUM_NAME}</a>
 	</div>
 
-	<div class="col-xl-4 col-lg-4 col-md-2 col-sm-2 col-xs-4">
+	<div class="col-xl-3 col-lg-3 col-md-2 col-sm-2 col-xs-4">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 	    
 		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
@@ -33,7 +33,7 @@
 	</div>
 	
 	<!-- IF PAGINATION or TOTAL_POSTS -->
-        <div class="p-pagination col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <div class="p-pagination col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="text-center">
     		<!-- IF PAGE_NUMBER -->
     			<!-- IF PAGINATION --> 
@@ -56,13 +56,13 @@
 	<!-- ENDIF -->
 	
 	<!-- IF S_DISPLAY_SEARCHBOX -->
-		<div class="col-xl-4 col-lg-4 col-md-4 hidden-sm hidden-xs">
-			<form method="get" id="topic-search" action="{S_SEARCHBOX_ACTION}" class="form-inline pull-right" style="margin:0;">
+		<div class="col-xl-3 col-lg-3 col-md-4 hidden-sm hidden-xs">
+			<form method="get" id="topic-search" action="{S_SEARCHBOX_ACTION}" class="form-inline pull-right" >
     			<div class="form-inline">
     				<input class="form-control"  type="text" name="keywords" id="search_keywords"  value="{L_SEARCH_TOPIC}" 
     				onclick="if(this.value=='{LA_SEARCH_TOPIC}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_TOPIC}';" />
     				
-    				<input class="btn btn-default " type="submit" value="{L_SEARCH}" ></input>
+    				<input class="btn btn-default btn-sm" type="submit" value="{L_SEARCH}" ></input>
     				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
     			</div>
 			</form>
@@ -126,7 +126,7 @@
        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <!-- BEGIN postrow -->
 	<!-- IF postrow.S_FIRST_UNREAD --><a id="unread"></a><!-- ENDIF -->
-	<div id="p{postrow.POST_ID}" class="row ">
+	<div id="p{postrow.POST_ID}" class="row postrow">
 		<div class="post<!-- IF postrow.S_UNREAD_POST --> alert-info<!-- ENDIF --><!-- IF postrow.S_POST_REPORTED --> alert-danger<!-- ENDIF -->">
 		
 		<!-- IF not postrow.S_IGNORE_POST -->
@@ -253,7 +253,7 @@
                                        <!-- ELSE --><a href="{postrow.U_MINI_POST}">{postrow.MINI_POST_IMG}</a><!-- ENDIF -->
 
                             <!-- ENDIF -->
-                            <a href="{U_VIEW_TOPIC}#p{postrow.POST_ID}" <!-- IF postrow.S_FIRST_ROW -->class="first"<!-- ELSE --> class="hidden-xs"<!-- ENDIF -->>{postrow.POST_SUBJECT}</a><small><span class="hidden-lg hidden-xl hidden-md">{L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong>  &raquo; </span>{postrow.POST_DATE} </small>
+                            <a href="{U_VIEW_TOPIC}#p{postrow.POST_ID}" <!-- IF postrow.S_FIRST_ROW -->class="first"<!-- ELSE --> class="hidden-xs"<!-- ENDIF -->>{postrow.POST_SUBJECT}</a><small><span class="hidden-lg hidden-xl hidden-md"> {L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong>  &raquo; </span>{postrow.POST_DATE} </small>
              
 </h4>
                      
@@ -305,7 +305,7 @@
 	     <a href="{U_VIEW_FORUM}" class="btn btn-default " accesskey="r"><i class="fa fa-angle-left"></i> {FORUM_NAME}</a>
 	</div>
 
-	<div class="col-xl-4 col-lg-4 col-md-2 col-sm-2 col-xs-4">
+	<div class="col-xl-3 col-lg-3 col-md-2 col-sm-2 col-xs-4">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-primary<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
 	<!-- ENDIF -->
@@ -318,7 +318,7 @@
 	</div>
 	
 	<!-- IF PAGINATION or TOTAL_POSTS -->
-        <div class="p-pagination col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <div class=" col-xl-6 col-lg-6 col-md-7 col-sm-6 col-xs-12">
             <div class="text-center">
     		<!-- IF PAGE_NUMBER -->
     			<!-- IF PAGINATION --> 
@@ -341,8 +341,16 @@
 	<!-- ENDIF -->
 	
 	<!-- IF S_DISPLAY_SEARCHBOX -->
-		<div class="col-xl-4 col-lg-4 col-md-4 hidden-sm hidden-xs">
-                   
+		<div class="col-xl-3 col-lg-3 col-md-3 hidden-sm hidden-xs">
+                   <form method="get" id="topic-search" action="{S_SEARCHBOX_ACTION}" class="form-inline pull-right" >
+    			<div class="form-inline">
+    				<input class="form-control"  type="text" name="keywords" id="search_keywords"  value="{L_SEARCH_TOPIC}" 
+    				onclick="if(this.value=='{LA_SEARCH_TOPIC}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_TOPIC}';" />
+    				
+    				<input class="btn btn-default btn-sm " type="submit" value="{L_SEARCH}" ></input>
+    				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
+    			</div>
+			</form>
                 </div>
 	<!-- ENDIF -->
 	
