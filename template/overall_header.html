@@ -46,8 +46,7 @@
 		var url = '{UA_POPUP_PM}';
 		window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
         <!-- ELSE IF S_NEW_PM-->
-		var url = '{UA_POPUP_PM}';
-                //window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
+		 //window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
 		//jQuery('#new-pm').show((url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400'));
 	<!-- ENDIF -->
 
@@ -126,7 +125,7 @@
 			    
         		<div class="btn-group navbar-right">
         			<a class="btn btn-success dropdown-toggle  " data-toggle="dropdown" href="#">
-                                    <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG --><span class="unread"> {S_USER_NEW_PRIVMSG} </span> /<!-- ENDIF --><!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> {S_USER_UNREAD_PRIVMSG} <!-- ENDIF --><i class="fa fa-envelope-o"></i> {S_USERNAME}
+                                    <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG --><span class="unread"> {S_USER_NEW_PRIVMSG} </span> /<!-- ENDIF --><!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> {S_USER_UNREAD_PRIVMSG} <!-- ENDIF --> <!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD or S_NEW_PM or S_USER_NEW_PRIVMSG --><i class="fa fa-envelope-o"></i><!-- ENDIF --> {S_USERNAME}
         				<span class="caret"></span>
         			</a>
         			<div class="divider"></div>
@@ -182,9 +181,9 @@
     				
     			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Les news <b class="caret"></b></a>
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/">Voir le blog</a></li>
+                                <li><a href="/">Les News</a></li>
                                 <li><a href="/wp-admin/post-new.php">Ecrire une news</a></li>
                                 <li><a href="/forum/ucp.php?i=pm&mode=compose&action=post&add_to=Ajout+[A]&group_list[]=9">Informer les newsers</a></li>
                             </ul>

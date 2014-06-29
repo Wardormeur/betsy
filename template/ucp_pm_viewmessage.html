@@ -18,7 +18,7 @@
 <div class="inner">
 
 
-	<dl class="postprofile hidden-xs col-sm-2 col-md-2 col-lg-2" id="profile{MESSAGE_ID}" >
+	<dl class="postprofile hidden-xs col-sm-3 col-md-2 col-lg-2" id="profile{MESSAGE_ID}" >
 		<dt><!-- IF AUTHOR_AVATAR --><a href="{U_MESSAGE_AUTHOR}" class="hidden-sm">{AUTHOR_AVATAR}</a><br /><!-- ENDIF -->{MESSAGE_AUTHOR_FULL} <!-- IF S_ONLINE --><span class="label label-success">online</span><!-- ENDIF --></dt>
 		<!-- IF RANK_TITLE --><dd>{RANK_TITLE}</dd><!-- ENDIF -->
 		<!-- IF RANK_IMG --><dd>{RANK_IMG}</dd><!-- ENDIF -->
@@ -31,12 +31,13 @@
 
 	</dl>
 
-	<div class="postbody col-xs-12 col-sm-10 col-md-10  col-lg-10">
+	<div class="postbody col-xs-12 col-sm-9 col-md-10  col-lg-10">
 
 	
             <div class="row">
-                        <h3 class="col-xs-4 col-sm-4 col-md-4 col-lg-4">{SUBJECT}</h3>
-
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <h3 >{SUBJECT}</h3>
+                    </div>
                     <p class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                         <div class="pull-right"><strong>{L_SENT_AT}:</strong> {SENT_DATE}</div>
                         <div class="pull-right"><strong>{L_PM_FROM}:</strong> {MESSAGE_AUTHOR_FULL}

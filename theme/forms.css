@@ -257,10 +257,7 @@ fieldset.submit-buttons input {
 	vertical-align: middle;
 }
 
-/* Main message box */
-#message-box {
-	width: 80%;
-}
+
 
 #message-box textarea {
 	font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;
@@ -271,11 +268,6 @@ fieldset.submit-buttons input {
 	color: #333333;
 }
 
-/* Emoticons panel */
-#smiley-box {
-	width: 18%;
-	float: right;
-}
 
 #smiley-box img {
 	margin: 3px;

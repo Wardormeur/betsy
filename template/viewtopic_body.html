@@ -60,7 +60,7 @@
 			<form method="get" id="topic-search" action="{S_SEARCHBOX_ACTION}" class="form-inline pull-right" >
     			<div class="form-inline">
     				<input class="form-control"  type="text" name="keywords" id="search_keywords"  value="{L_SEARCH_TOPIC}" 
-    				onclick="if(this.value=='{LA_SEARCH_TOPIC}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_TOPIC}';" />
+    				onclick="if(this.value=='{LA_SEARCH_TOPIC}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_TOPIC}';" size="10" />
     				
     				<input class="btn btn-default btn-sm" type="submit" value="{L_SEARCH}" ></input>
     				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
@@ -253,9 +253,9 @@
                                        <!-- ELSE --><a href="{postrow.U_MINI_POST}">{postrow.MINI_POST_IMG}</a><!-- ENDIF -->
 
                             <!-- ENDIF -->
-                            <a href="{U_VIEW_TOPIC}#p{postrow.POST_ID}" <!-- IF postrow.S_FIRST_ROW -->class="first"<!-- ELSE --> class="hidden-xs"<!-- ENDIF -->>{postrow.POST_SUBJECT}</a><small><span class="hidden-lg hidden-xl hidden-md"> {L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong>  &raquo; </span>{postrow.POST_DATE} </small>
+                            <a href="{U_VIEW_TOPIC}#p{postrow.POST_ID}" <!-- IF postrow.S_FIRST_ROW -->class="first"<!-- ELSE --> class="hidden-xs"<!-- ENDIF -->>{postrow.POST_SUBJECT}</a><small><span class="hidden-lg hidden-xl hidden-md"> {L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong>  &raquo; </span> {postrow.POST_DATE} </small>
              
-</h4>
+                        </h4>
                      
 			<!-- IF postrow.S_POST_UNAPPROVED or postrow.S_POST_REPORTED -->
 				<p class="rules">
@@ -345,7 +345,7 @@
                    <form method="get" id="topic-search" action="{S_SEARCHBOX_ACTION}" class="form-inline pull-right" >
     			<div class="form-inline">
     				<input class="form-control"  type="text" name="keywords" id="search_keywords"  value="{L_SEARCH_TOPIC}" 
-    				onclick="if(this.value=='{LA_SEARCH_TOPIC}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_TOPIC}';" />
+    				onclick="if(this.value=='{LA_SEARCH_TOPIC}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_TOPIC}';" size="10"/>
     				
     				<input class="btn btn-default btn-sm " type="submit" value="{L_SEARCH}" ></input>
     				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
