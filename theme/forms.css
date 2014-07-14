@@ -38,7 +38,7 @@ option.disabled-option {
 
 textarea {
 	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
-	width: 60%;
+	width: 100%;
 	padding: 2px;
 	font-size: 1em;
 	line-height: 1.4em;
@@ -298,7 +298,7 @@ input.narrow	{ width: 25%; }
 input.tiny		{ width: 125px; }
 
 textarea.inputbox {
-	width: 85%;
+	width: 100%;
 }
 
 .autowidth {

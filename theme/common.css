@@ -120,15 +120,6 @@ p.right {
 	margin-top: 20px;
 }
 
-#logo {
-	float: left;
-	width: auto;
-	padding: 50px 13px 20px 10px;
-}
-
-a#logo:hover {
-	text-decoration: none;
-}
 
 /* Search box
 --------------------------------------------- */
@@ -173,10 +164,6 @@ a#logo:hover {
 }
 
 /* Site description and logo */
-#site-description {
-	
-	width: 70%;
-}
 
 #site-description h1 {
 	margin-right: 0;

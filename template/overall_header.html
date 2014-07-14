@@ -92,7 +92,7 @@
 <!-- END: SHMK USER FEEDBACK -->
 
 <!-- MOD: GURU adaptation to bootstrap style -->
-<link href="{T_THEME_PATH}/tn.css" rel="stylesheet" type="text/css" />
+<!-- <link href="{T_THEME_PATH}/tn.css" rel="stylesheet" type="text/css" /> -->
 <!-- END: GURU adaptation to bootstrap style -->
 
 
@@ -188,20 +188,10 @@
                                 <li><a href="/forum/ucp.php?i=pm&mode=compose&action=post&add_to=Ajout+[A]&group_list[]=9">Informer les newsers</a></li>
                             </ul>
                         </li>
-	                    <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Forum <b class="caret"></b></a>
+	                    <li class="dropdown <!-- IF S_VIEWFORUM or S_VIEWTOPIC or S_INDEX --> active <!-- ENDIF -->">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle ">Forum <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                            <!-- IF S_VIEWTOPIC -->
-                                <li><a href="{U_POST_REPLY_TOPIC}">Répondre au sujet</a></li>
-                            <!-- ENDIF -->
-                            <!-- IF S_VIEWFORUM -->
-                                <li><a href="{U_POST_NEW_TOPIC}">Nouveau sujet</a></li>
-                            <!-- ENDIF -->
-                                <li class="hidden-xl hidden-lg hidden-md"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
-        					<!-- MOD: SHMK USER FEEDBACK -->
-            					<li class="hidden-xl hidden-lg hidden-md"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
-        					<!-- END: SHMK USER FEEDBACK -->
-                                <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
+                          <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
                                 	<!-- IF S_DISPLAY_SEARCH -->
         		<!-- IF S_USER_LOGGED_IN --> <li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a></li><!-- ENDIF --> 
                         <!-- IF S_LOAD_UNREADS --> <li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li><!-- ENDIF -->
@@ -224,11 +214,11 @@
     					<li class="divider-vertical"></li>
     					<li class=""><a href="/kiwi/?nick={S_USERNAME}">IRC</a></li>
     					<li class="divider-vertical"></li>
-    					<li class="hidden-xs hidden-sm"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
+    					<li class="hidden-xs hidden-sm <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
         					<!-- MOD: SHMK USER FEEDBACK -->
             			<li class="divider-vertical"></li>
     				
-    					<li class="hidden-xs hidden-sm"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
+    					<li class="hidden-xs hidden-sm <!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
         					<!-- END: SHMK USER FEEDBACK -->
     					<li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">L'asso <b class="caret"></b></a>
@@ -271,10 +261,10 @@
 	<a id="start_here"></a>
 	<div  class="container" >
 		<div class="row">
-    		<div id="site-description">
-				<a href="{U_INDEX}" title="{L_INDEX}" id="logo" >
-				<!-- {SITE_LOGO_IMG}-->
-				    <img src="{T_IMAGESET_PATH}/logo_new.svg" class="hidden-xs" />
+    		<div  id="site-description" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+				<a href="{U_INDEX}" title="{L_INDEX}" id="logo"  >
+                                    
+				   {SITE_LOGO_IMG} 
 				</a>
 	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 		    </div>

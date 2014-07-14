@@ -1,0 +1,37 @@
+
+
+
+
+<!-- BEGIN postrow -->
+	
+    
+	<!-- IF postrow.S_FIRST_ROW  or postrow.S_NO_CAT  -->
+                <div class="row panel panel-default">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		      <div class=" row panel-heading">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 panel-title">Derniers articles</div>
+                    </div>
+                  
+		
+                    <div class=" row ">
+                
+                        <div class="col-xl-12 col-lg-12 col-md-12 hidden-sm hidden-xs">
+        	<!-- ENDIF -->
+                            <div class="row forumrow">
+                                   <a title="{postrow.U_POSTTITLE}" href="{postrow.U_POSTLINK}">{postrow.U_POSTTITLE}</a>
+                              
+                            </div>
+            	
+	<!-- IF postrow.S_LAST_ROW -->        
+		        </div>
+                    </div>
+                </div>
+                </div>
+			   <!-- Ward: last-row -->
+	<!-- ELSE -->
+            <!-- Ward: not-last-row -->
+	<!-- ENDIF -->
+
+<!-- BEGINELSE -->
+	<!-- NOthing , no post, fucker ! -->
+<!-- END postrow -->

@@ -5784,7 +5784,7 @@ button.close {
   padding-top: 5px;
   padding-bottom: 5px;
   color: #fff;
-  background-color: #477694;
+  background-color: #195479;
 }
 .nav li a {
   color: #222;
@@ -5839,14 +5839,23 @@ button.close {
 .navbar-search .search-query::-webkit-input-placeholder {
   color: #999;
 }
-#site-description img {
-  max-width: 75%;
-  height: auto;
+a#logo {
+  float: left;
+  width: 100%;
+  padding: 50px 13px 0 10px;
+  margin: auto;
+  text-align: center;
+}
+a#logo:hover {
+  text-decoration: none;
 }
 h2.topic-title {
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
+}
+h3.panel-title {
+  margin-top: 0;
 }
 .navbar-search .search-query:focus,
 .navbar-search .search-query.focused {
@@ -5899,6 +5908,9 @@ h2.topic-title {
 }
 .forumpanel {
   margin-bottom: 10px;
+}
+.subforums-list {
+  margin-left: 27px;
 }
 /*ugly hack to get the footer on REAL bottom*/
 .navbar-static-bottom {
