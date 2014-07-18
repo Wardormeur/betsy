@@ -260,15 +260,17 @@
 
 	<a id="start_here"></a>
 	<div  class="container" >
+            <!-- IF  S_VIEWFORUM == false and S_VIEWTOPIC == false and S_IN_UCP == false -->
 		<div class="row">
-    		<div  id="site-description" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <div  id="site-description" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 				<a href="{U_INDEX}" title="{L_INDEX}" id="logo"  >
                                     
 				   {SITE_LOGO_IMG} 
 				</a>
 	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 		    </div>
-    	</div>
+                </div>
+            <!-- ENDIF -->
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div id="information" class=" row rules">
 			<div class="well">
