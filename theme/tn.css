@@ -5842,7 +5842,7 @@ button.close {
 a#logo {
   float: left;
   width: 100%;
-  padding: 50px 13px 0 10px;
+  padding: 10px 13px 0 10px;
   margin: auto;
   text-align: center;
 }
@@ -5910,6 +5910,7 @@ h3.panel-title {
   margin-bottom: 10px;
 }
 .subforums-list {
+  margin-bottom: 2px;
   margin-left: 27px;
 }
 /*ugly hack to get the footer on REAL bottom*/
@@ -5946,6 +5947,9 @@ blockquote {
 .postrow {
   padding-top: 51px;
   margin-top: -51px;
+}
+body {
+  padding-top: 60px;
 }
 .clearfix:before,
 .clearfix:after,

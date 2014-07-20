@@ -26,6 +26,7 @@ hr {
 	border-top-color: #CCCCCC;
 }
 
+
 hr.dashed {
 	border-top-color: #CCCCCC;
 }
@@ -281,6 +282,14 @@ Colours and backgrounds for links.css
 
 .search .postprofile a:hover {
 	color: #D31141;
+}
+
+.delete a{    
+    color:red;
+}
+
+.report a{
+    color:orange;
 }
 
 /* Back to top of page */

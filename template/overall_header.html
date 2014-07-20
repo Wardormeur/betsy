@@ -117,8 +117,10 @@
     				<span class="icon-bar"></span>
     				<span class="icon-bar"></span>
     		    </button>
-    		    <a class="navbar-brand hidden-sm hidden-md hidden-lg hidden-xl" href="{U_INDEX}">TN</a>
-    		  
+                            <!-- IF  S_VIEWFORUM == true or S_VIEWTOPIC == true or S_IN_UCP == true -->
+                     
+                                <a class="navbar-brand " href="{U_INDEX}">TN</a>
+                            <!-- ENDIF -->
 		 	</div>
 		 	
 			<nav role="navigation"  >
@@ -260,17 +262,18 @@
 
 	<a id="start_here"></a>
 	<div  class="container" >
-            <!-- IF  S_VIEWFORUM == false and S_VIEWTOPIC == false and S_IN_UCP == false -->
-		<div class="row">
+        	<div class="row">
                     <div  id="site-description" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-				<a href="{U_INDEX}" title="{L_INDEX}" id="logo"  >
+		    <!-- IF  S_VIEWFORUM == false and S_VIEWTOPIC == false and S_IN_UCP == false -->
+                        <a href="{U_INDEX}" title="{L_INDEX}" id="logo"  >
                                     
 				   {SITE_LOGO_IMG} 
 				</a>
+                        
+                        <!-- ENDIF -->
 	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 		    </div>
                 </div>
-            <!-- ENDIF -->
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div id="information" class=" row rules">
 			<div class="well">
@@ -279,10 +282,15 @@
 		</div>
 		<!-- ENDIF -->
         <div class="row">
-        	<ul class="breadcrumb hidden-xs pull-right ">
+         <!-- IF  S_VIEWFORUM == true or S_VIEWTOPIC == true or S_IN_UCP == true -->
+                   	
+            <ul class="breadcrumb hidden-xs pull-right ">
             	<li>
-            	    <a href="{U_INDEX}" class="hidden-sm">{L_INDEX}</a><!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks -->
-    		    </li>
+                        <a href="{U_INDEX}" class="hidden-sm">{L_INDEX}</a>
+                   
+                    <!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks -->
+    		</li>
             </ul>
+          <!-- ENDIF --> 
             <!--<a href="{PREVIOUS_PAGE}" class="btn btn-default hidden-sm hidden-md hidden-lg hidden-xl"><i class="fa fa-angle-left"></i> {L_PREVIOUS}</a> -->
             <!-- We do not close the row so that we gain place with the next row that is containing actions-->
