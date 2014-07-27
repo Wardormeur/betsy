@@ -5881,8 +5881,9 @@ h3.panel-title {
   border-bottom: solid #ddd .5px;
 }
 .post {
-  border-top: 1.5px dashed #999;
-  border-left: 1.5px dashed #999;
+  padding: 8px;
+  border-top: 1px solid #fff;
+  border-left: 2px solid #195479;
 }
 .row:nth-of-type(even) .post {
   background-color: #f2f3f4;

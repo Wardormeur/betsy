@@ -6,9 +6,11 @@
 </div>
 
 
-<!-- IF S_DISPLAY_HISTORY and (U_VIEW_PREVIOUS_HISTORY or U_VIEW_NEXT_HISTORY) -->
-	<div class="display-options clearfix form-group">
-		<!-- IF U_VIEW_PREVIOUS_HISTORY --><a href="{U_VIEW_PREVIOUS_HISTORY}" class="btn  btn-default btn-sm "><i class="fa fa-angle-left"></i>{L_VIEW_PREVIOUS_HISTORY}</a><!-- ENDIF -->
+<!-- IF S_DISPLAY_HISTORY and (U_VIEW_PREVIOUS_HISTORY or U_VIEW_NEXT_HISTORY) or S_VIEW_MESSAGE -->
+	<div class="display-options clearfix form-group row">
+		<!-- IF S_VIEW_MESSAGE --><a class="btn btn-default btn-sm" href="{U_CURRENT_FOLDER}"><i class="fa fa-angle-left"></i>{L_RETURN_TO} {CUR_FOLDER_NAME}</a><!-- ENDIF -->
+			
+            <!-- IF U_VIEW_PREVIOUS_HISTORY --><a href="{U_VIEW_PREVIOUS_HISTORY}" class="btn  btn-default btn-sm "><i class="fa fa-angle-left"></i>{L_VIEW_PREVIOUS_HISTORY}</a><!-- ENDIF -->
 		<!-- IF U_VIEW_NEXT_HISTORY --><a href="{U_VIEW_NEXT_HISTORY}" class="btn btn-default btn-sm pull-right">{L_VIEW_NEXT_HISTORY}<i class="fa fa-angle-right"></i></a><!-- ENDIF -->
 	</div>
 <!-- ENDIF -->

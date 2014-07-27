@@ -574,25 +574,25 @@ fieldset.polls dd div {
 ----------------------------------------*/
 .postprofile {
 	color: #666666;
-	border-left-color: #ddd;
-	border-left-style: dashed;
+	border-right-color: #ddd;
+	border-right-style: solid;
 }
 
 .rtl .postprofile {
 	border-right-color: #ddd;
-	border-left-color: transparent;
-	border-right-style: dashed;
+	border-right-color: transparent;
+	border-right-style: solid;
 }
 
 .pm .postprofile {
-	border-left-color: #DDDDDD;
-	border-left-style: dashed;
+	border-right-color: #DDDDDD;
+	border-right-style: solid;
 }
 
 .rtl .pm .postprofile {
 	border-right-color: #DDDDDD;
-	border-left-color: transparent;
-	border-right-style: dashed;
+	border-right-color: transparent;
+	border-right-style: solid;
 }
 
 .postprofile strong {

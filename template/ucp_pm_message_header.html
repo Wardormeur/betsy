@@ -1,33 +1,32 @@
-<h2>{L_TITLE}<!-- IF CUR_FOLDER_NAME -->: {CUR_FOLDER_NAME}<!-- ENDIF --></h2>
+<h2 class="breadcrumb-h2">{L_TITLE}<!-- IF CUR_FOLDER_NAME -->: {CUR_FOLDER_NAME}<!-- ENDIF --></h2>
 
 <form id="viewfolder" method="post" action="{S_PM_ACTION}">
 
-<div class="panel">
-	<div class="inner">
+<div class="row">
+	<div >
 
 	<!-- IF FOLDER_STATUS and FOLDER_MAX_MESSAGES neq 0 --><p class="hidden-xs">{FOLDER_STATUS}</p><!-- ENDIF -->
 	<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM -->
-		<div class="buttons">
+		<div class="buttons btn-group">
 			<!-- IF U_POST_REPLY_PM --><div class="pmreply"><a class="btn btn-primary" title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}"><span></span>{L_POST_REPLY_PM}</a></div>
-			<!-- ELSEIF U_POST_NEW_TOPIC --><div class="newpm"><a class="btn btn-primary" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}">{L_UCP_PM_COMPOSE}</a></div><!-- ENDIF -->
+			<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><div class=""><a class="btn btn-default" class="left" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}">{L_REPLY_TO_ALL}</a></div><!-- ENDIF -->			
+		
+                        <!-- ELSEIF U_POST_NEW_TOPIC --><div class="newpm"><a class="btn btn-primary" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}">{L_UCP_PM_COMPOSE}</a></div><!-- ENDIF -->
 			<!-- IF U_FORWARD_PM --><div class="forwardpm"><a class="btn btn-default" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a></div><!-- ENDIF -->
-			<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><div class="reply-all"><a class="btn btn-default" class="left" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}">{L_REPLY_TO_ALL}</a></div><!-- ENDIF -->			
 		</div>
 	<!-- ENDIF -->
 
 	<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->
 	<ul class="linklist">
-		<li class="pull-right ">
-			<!-- IF S_VIEW_MESSAGE --><a class="btn btn-default btn-sm" href="{U_CURRENT_FOLDER}"><i class="fa fa-angle-left"></i>{L_RETURN_TO} {CUR_FOLDER_NAME}</a><!-- ENDIF -->
-			<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
-				<!-- IF TOTAL_MESSAGES -->
-				    
-				</li>
-    		    <li class="pull-right pagination">
-    			<span class="hidden-xs">{TOTAL_MESSAGES}</span>
-    				<!-- IF PAGINATION --><span >{PAGINATION}</span><!-- ENDIF -->
-    			<!-- ENDIF -->
-			<!-- ENDIF -->
-		</li>
+            <!-- IF FOLDER_CUR_MESSAGES neq 0 -->
+                    <!-- IF TOTAL_MESSAGES -->
+
+                    <li class="pull-right pagination">
+                    <span class="hidden-xs">{TOTAL_MESSAGES}</span>
+                            <!-- IF PAGINATION --><span >{PAGINATION}</span><!-- ENDIF -->
+
+                    </li>
+                    <!-- ENDIF -->
+            <!-- ENDIF -->
 	</ul>
 	<!-- ENDIF -->

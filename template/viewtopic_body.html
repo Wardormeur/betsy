@@ -75,7 +75,7 @@
 <!-- IF S_HAS_POLL -->
 	<form method="post" action="{S_POLL_ACTION}">
 
-	<div class="row panel well">
+	<div class="row well">
 
 		<div class="content">
 			<h2>{POLL_QUESTION}</h2>
@@ -122,12 +122,12 @@
 	</form>
 	<hr />
 <!-- ENDIF -->
-<div class="well row">
+<div class="row">
        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <!-- BEGIN postrow -->
 	<!-- IF postrow.S_FIRST_UNREAD --><a id="unread"></a><!-- ENDIF -->
-	<div id="p{postrow.POST_ID}" class="row <!-- IF postrow.S_FIRST_ROW --> <!-- ELSE -->postrow<!-- ENDIF -->">
-		<div class="post<!-- IF postrow.S_UNREAD_POST --> alert-info<!-- ENDIF --><!-- IF postrow.S_POST_REPORTED --> alert-danger<!-- ENDIF -->">
+	<div id="p{postrow.POST_ID}" class=" row <!-- IF postrow.S_FIRST_ROW --> <!-- ELSE -->postrow<!-- ENDIF -->">
+		<div class="well post<!-- IF postrow.S_UNREAD_POST --> alert-info<!-- ENDIF --><!-- IF postrow.S_POST_REPORTED --> alert-danger<!-- ENDIF -->">
 		
 		<!-- IF not postrow.S_IGNORE_POST -->
                

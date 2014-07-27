@@ -193,10 +193,10 @@ p.right {
 
 
 .post {
-
-	margin-bottom: 4px;
-	background-repeat: no-repeat;
-	background-position: 100% 0;
+    padding:8px;
+    margin-bottom: 4px;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
 }
 
 .post:target .content {
