@@ -467,9 +467,6 @@ dl.details dd {
 ---------------------------------------- */
 .pagination {
 	height: 1%; /* IE tweak (holly hack) */
-	width: auto;
-	text-align: right;
-	margin-top: 5px;
 }
 
 .pagination span.page-sep {
@@ -503,7 +500,7 @@ li.pagination {
 	background-color: #eeeeee;
 	border: 1px solid #bababa;
 	font-size: 0.9em;
-	line-height: 1.5em;
+	//line-height: 1.5em;
 }
 
 .pagination span a:hover {
@@ -519,15 +516,11 @@ li.pagination {
 
 /* Pagination in viewforum for multipage topics */
 .row .pagination {
-	width: auto;
-	margin-top: 0;
-	padding: 1px 0 1px 15px;
+	//width: auto;
+	//margin-top: 0;
+	//padding: 1px 0 1px 15px;
 	font-size: 0.9em;
 	background: none 0 50% no-repeat;
-}
-
-.row .pagination span a, li.pagination span a {
-	background-color: #FFFFFF;
 }
 
 .row .pagination span a:hover, li.pagination span a:hover {

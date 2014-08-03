@@ -5789,6 +5789,10 @@ button.close {
 .nav li a {
   color: #222;
 }
+.pagination {
+  padding-left: inherit;
+  margin: 0 0 0 0 ;
+}
 .search-query {
   padding-right: 14px;
   padding-right: 4px \9;
@@ -5886,8 +5890,7 @@ h3.panel-title {
   border-left: 2px solid #195479;
 }
 .row:nth-of-type(even) .post {
-  background-color: #f2f3f4;
-  /*@solight;*/
+  background-color: #eee;
 }
 .row:nth-of-type(even) .post button.dropdown-toggle {
   background-color: #f7fbfd;

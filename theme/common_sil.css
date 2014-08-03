@@ -521,12 +521,12 @@ li.pagination {
 	font-weight: normal;
 	text-decoration: none;
 	color: #747474;
-	margin: 0 2px;
+	/*margin: 0 2px;
 	padding: 0 2px;
-	background-color: #eeeeee;
+	*/background-color: #eeeeee;
 	border: 1px solid #bababa;
 	font-size: 0.9em;
-	line-height: 1.5em;
+	//line-height: 1.5em;
 }
 
 .pagination span a:hover {
@@ -542,11 +542,11 @@ li.pagination {
 
 /* Pagination in viewforum for multipage topics */
 .row .pagination {
-	display: block;
-	float: right;
-	width: auto;
+	//display: block;
+	//float: right;
+	//width: auto;
 	margin-top: 0;
-	padding: 1px 0 1px 15px;
+	//padding: 1px 0 1px 15px;
 	font-size: 0.9em;
 	background: none 0 50% no-repeat;
 }

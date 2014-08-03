@@ -168,14 +168,6 @@ dl.details dd {
 	border-color: #B4BAC0;
 }
 
-/* Pagination in viewforum for multipage topics */
-.row .pagination {
-	background-image: url("./images/icon_pages.gif");
-}
-
-.row .pagination span a, li.pagination span a {
-	background-color: #FFFFFF;
-}
 
 .row .pagination span a:hover, li.pagination span a:hover {
 	background-color: #368AD2;
