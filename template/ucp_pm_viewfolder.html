@@ -24,8 +24,8 @@
     	</div>
     	<div  class="submit-buttons form-group">
     		<input type="hidden" name="export_option" value="CSV" />
-    		<input class="btn btn-default" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
-    		<input class="btn btn-default" type="reset" value="Reset" name="reset" />&nbsp;
+    		<input class="btn btn-default btn-sm" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
+    		<input class="btn btn-default btn-sm" type="reset" value="Reset" name="reset" />&nbsp;
     		{S_FORM_TOKEN}
     	</div>
 	</form>
@@ -120,10 +120,15 @@
         </div>
 	<hr />
         <div class="display-actions form-group row">
-		<div class=" hidden-xs hidden-sm col-md-6"><label for="export_option">{L_EXPORT_FOLDER}: <select name="export_option" id="export_option"><option value="CSV">{L_EXPORT_AS_CSV}</option><option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option><option value="XML">{L_EXPORT_AS_XML}</option></select></label> <input class="btn" type="submit" name="submit_export" value="{L_GO}" /><br /></div>
+		<div class=" hidden-xs hidden-sm col-md-6"><label for="export_option">{L_EXPORT_FOLDER}: 
+                        <select name="export_option" id="export_option">
+                            <option value="CSV">{L_EXPORT_AS_CSV}</option>
+                            <option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option>
+                            <option value="XML">{L_EXPORT_AS_XML}</option>
+                        </select></label> <input class="btn btn-sm" type="submit" name="submit_export" value="{L_GO}" /><br /></div>
 		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 		    <select name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS}</select> 
-		    <input class="btn btn-default btn-sm" type="submit" name="submit_mark" value="{L_GO}" />
+		    <input class="btn  btn-sm" type="submit" name="submit_mark" value="{L_GO}" />
 		    <a href="#" onclick="marklist('viewfolder', 'marked_msg', true); return false;" class="btn btn-default btn-sm" >{L_MARK_ALL}</a>  
 		    <a href="#" onclick="marklist('viewfolder', 'marked_msg', false); return false;"  class="btn btn-default btn-sm">{L_UNMARK_ALL}</a>
 		</div>
@@ -133,7 +138,7 @@
 		<div class="col-xl-12 col-lg-12 col-md-12 hiddden-sm hidden-xs">
                     <label>{L_DISPLAY}: {S_SELECT_SORT_DAYS}</label>
                     <label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-                    <label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" /></label>
+                    <label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-sm" /></label>
                     <input type="hidden" name="cur_folder_id" value="{CUR_FOLDER_ID}" />
                 </div>
 		

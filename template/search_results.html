@@ -199,9 +199,13 @@
 </div>	
 <!-- ENDIF -->
 
-<!-- IF S_SHOW_TOPICS or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->
+
 <div class="row well topic-actions hidden-sm hidden-xs">
-      <!-- IF  S_SHOW_TOPICS or S_SELECT_SORT_KEY -->
+   <div class="col-md-12 col-lg-12 col-xl-12">
+<!-- INCLUDE jumpbox.html -->
+   </div>
+<!-- IF (S_SHOW_TOPICS or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS) and .searchresults -->
+    <!-- IF  S_SHOW_TOPICS or S_SELECT_SORT_KEY -->
         
         <form method="post" action="{S_SEARCH_ACTION}" class="col-md-12 col-lg-12 col-xl-12 form-inline">
         	<fieldset class="display-options">
@@ -212,22 +216,18 @@
     	<!-- ENDIF -->
         
     	<!-- IF  SEARCH_IN_RESULTS-->
-		<form method="post" action="{S_SEARCH_ACTION}" class="col-md-12 col-lg-12 col-xl-12 form-inline no-margin">
-    		<div class="pull-left">
-    			<!-- IF SEARCH_IN_RESULTS -->
+		<form method="post" action="{S_SEARCH_ACTION}" class="col-md-12 col-lg-12 col-xl-12 form-inline no-margin text-center">
+    		<!-- IF SEARCH_IN_RESULTS -->
     				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
     				<input class="btn" type="submit" name="submit" value="{L_SEARCH}" />
-    		    <!-- ENDIF -->
-    			
-    		</div>
+                <!-- ENDIF -->
     	</form>
 
 	<!-- ENDIF -->
 
 
-</div>
 <!-- ENDIF -->
+</div>
 
-<!-- INCLUDE jumpbox.html -->
 
 <!-- INCLUDE overall_footer.html -->
