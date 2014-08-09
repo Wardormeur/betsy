@@ -20,10 +20,15 @@
     
 </div>                                
  <!-- ENDIF --> 
-    <small><a>
+    <small>
+        <a id="bottom" accesskey="z"></a>
+	
+        <a>
             {CREDIT_LINE}
             <!-- IF TRANSLATION_INFO -->{TRANSLATION_INFO}<!-- ENDIF -->
-    </a></small>
+        </a>
+        <!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+	</small>
         </div>
     </div>
 </div>
@@ -60,10 +65,7 @@
 		</div>
 	</div>
 
-<div>
-	<a id="bottom" accesskey="z"></a>
-	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
-</div>
+
 
 
 <!-- Dev mode -->

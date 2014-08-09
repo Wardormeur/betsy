@@ -4,20 +4,20 @@
 <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 
         </div>
-        <div class="hidden-xs hidden-sm row ">
-            <div class="btn-group"><!-- IF S_DISPLAY_SEARCH -->
-        		<a class="btn btn-default btn-sm" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
-        		<!-- IF S_LOAD_UNREADS --> <a class="btn btn-default btn-sm" href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a><!-- ENDIF -->
-        		<!-- IF S_USER_LOGGED_IN --> <a class="btn btn-default btn-sm" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a><!-- ENDIF --> 
-        		<a  class="btn btn-default btn-sm" href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a>
-        	<!-- ENDIF -->
-        	</div>
-        	<div class="btn-group pull-right">
-        	<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-        	    <a class="btn btn-default btn-sm" href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a>
-    	    <!-- ENDIF -->
+        <div class="row ">
+                   <div class=" hidden-xs hidden-sm btn-group btn-group-justified">
+                        <!-- IF S_DISPLAY_SEARCH -->
+                                <a class="btn btn-default btn-sm" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
+                                <!-- IF S_LOAD_UNREADS --> <a class="btn btn-default btn-sm" href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a><!-- ENDIF -->
+                                <!-- IF S_USER_LOGGED_IN --> <a class="btn btn-default btn-sm" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a><!-- ENDIF --> 
+                                <a  class="btn btn-default btn-sm" href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a>
+
+                                <!-- ENDIF -->
+                                 <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+                                    <a class="btn btn-default btn-sm" href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a>
+                                <!-- ENDIF -->
+                        </div>
         	
-            </div>
         <div class="btn-group dropdown pull-right  hidden-md hidden-lg hidden-xl ">
             <a class="btn btn-inverse dropdown-toggle " data-toggle="dropdown" href="#" >
               <i class="icon-wrench icon-white"></i>

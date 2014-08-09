@@ -488,7 +488,7 @@ li.pagination {
 	color: #FFFFFF;
 	background-color: #bfbfbf;
 	border: 1px solid #bfbfbf;
-	font-size: 0.9em;
+	font-size: 1.1em;
 }
 
 .pagination span a, .pagination span a:link, .pagination span a:visited, .pagination span a:active {
@@ -499,7 +499,7 @@ li.pagination {
 	padding: 0 2px;
 	background-color: #eeeeee;
 	border: 1px solid #bababa;
-	font-size: 0.9em;
+	font-size: 1em;
 	//line-height: 1.5em;
 }
 
