@@ -6093,7 +6093,7 @@ body {
   line-height: 60px;
   color: #fff;
 }
-@media (min-width: 1092px) and (max-width: 1200px), (min-width: 1275px) and (max-width: 1600px), (min-width: 1675px) {
+@media (min-width: 1092px) and (max-width: 1200px), (min-width: 1425px) and (max-width: 1599px), (min-width: 1700px) {
   #wrapper {
     padding-right: 250px;
   }
