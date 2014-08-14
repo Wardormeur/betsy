@@ -5800,6 +5800,9 @@ header {
 .nav li:hover {
   background-color: #154564;
 }
+.nav li #search:hover {
+  background-color: #195479;
+}
 /*Background color for pills isnt implemented in BS3 (bullshit3) so we need to override the WHOLE process. Great.*/
 #p-tabs > .nav-pills > li > a:hover {
   background-color: #999;
@@ -5811,6 +5814,7 @@ header {
   background-color: #195479;
 }
 .pagination {
+  display: block !important;
   padding-left: inherit;
   margin: 0 0 0 0 ;
 }
@@ -5833,7 +5837,6 @@ header {
   display: inline-block;
   padding: 0 5px 2px 5px;
   margin: 5px 0 5px 0;
-  border-right: 1px #eee solid;
 }
 /*.nav-pills > li{
   body-background:@solight;
@@ -5908,13 +5911,13 @@ h3.panel-title {
 .forumrow:hover {
   position: relative;
   z-index: 5;
-  background-color: rgba(240, 173, 78, .5);
-  filter: progid:DXImageTransform.Microsoft.Shadow(color=#428bca, Direction=134, Strength=5);
-  -webkit-box-shadow: 2px 2px 5px 0 #428bca;
-     -moz-box-shadow: 2px 2px 5px 0 #428bca;
-          box-shadow: 2px 2px 5px 0 #428bca;
+  background-color: rgba(245, 120, 42, .2);
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#477694, Direction=134, Strength=5);
+  -webkit-box-shadow: 2px 2px 5px 0 #477694;
+     -moz-box-shadow: 2px 2px 5px 0 #477694;
+          box-shadow: 2px 2px 5px 0 #477694;
 
-       -o-box-shadow: 2px 2px 5px 0 #428bca;
+       -o-box-shadow: 2px 2px 5px 0 #477694;
 }
 .forumrow:nth-of-type(even) {
   background-color: #e6f2fa;
@@ -5922,13 +5925,13 @@ h3.panel-title {
 .forumrow:nth-of-type(even):hover {
   position: relative;
   z-index: 4;
-  background-color: rgba(240, 173, 78, .5);
-  filter: progid:DXImageTransform.Microsoft.Shadow(color=#428bca, Direction=134, Strength=5);
-  -webkit-box-shadow: 2px 2px 5px 0 #428bca;
-     -moz-box-shadow: 2px 2px 5px 0 #428bca;
-          box-shadow: 2px 2px 5px 0 #428bca;
+  background-color: rgba(245, 120, 42, .2);
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#477694, Direction=134, Strength=5);
+  -webkit-box-shadow: 2px 2px 5px 0 #477694;
+     -moz-box-shadow: 2px 2px 5px 0 #477694;
+          box-shadow: 2px 2px 5px 0 #477694;
 
-       -o-box-shadow: 2px 2px 5px 0 #428bca;
+       -o-box-shadow: 2px 2px 5px 0 #477694;
 }
 .post {
   padding: 8px;
@@ -6000,6 +6003,113 @@ blockquote {
 }
 body {
   padding-top: 60px;
+}
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+/* Toggle Styles */
+#wrapper {
+  position: relative;
+  padding-right: 0;
+  margin-top: -10px;
+  -webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+       -o-transition: all .5s ease;
+          transition: all .5s ease;
+  /*i really dont know why*/
+}
+#wrapper.toggled {
+  padding-right: 250px;
+}
+#sidebar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 250px;
+  bottom: 0;
+  z-index: 1000;
+  width: 0;
+  margin-right: -250px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  background-color: #195479;
+  -webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+       -o-transition: all .5s ease;
+          transition: all .5s ease;
+}
+#wrapper.toggled #sidebar-wrapper {
+  display: block;
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis-word;
+  white-space: nowrap;
+}
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+/* Sidebar Styles */
+.sidebar-nav {
+  top: 0;
+  display: inline-block;
+  width: 250px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis-word;
+  white-space: nowrap;
+  list-style: none;
+}
+.sidebar-nav ul {
+  width: 250px;
+}
+.sidebar-nav li {
+  line-height: 2em;
+  text-indent: 20px;
+}
+.sidebar-nav li:hover {
+  background-color: #154564;
+}
+.sidebar-nav li a {
+  display: block;
+  width: 250px;
+  max-width: 250px;
+  color: #eee;
+  text-decoration: none;
+  background-color: #477694;
+}
+.sidebar-nav li a:hover {
+  background-color: #154564;
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+  color: #fff;
+}
+@media (min-width: 1092px) and (max-width: 1200px), (min-width: 1275px) and (max-width: 1600px), (min-width: 1675px) {
+  #wrapper {
+    padding-right: 250px;
+  }
+  #wrapper.toggled {
+    padding-right: 0;
+  }
+  #sidebar-wrapper {
+    width: 250px;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
 }
 .clearfix:before,
 .clearfix:after,

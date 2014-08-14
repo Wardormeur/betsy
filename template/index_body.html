@@ -1,49 +1,15 @@
 
     <!-- INCLUDE overall_header.html -->
-
-<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
-
-        </div>
-        <div class="row ">
-                   <div class=" hidden-xs hidden-sm btn-group btn-group-justified">
-                        <!-- IF S_DISPLAY_SEARCH -->
-                                <a class="btn btn-default btn-sm" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
-                                <!-- IF S_LOAD_UNREADS --> <a class="btn btn-default btn-sm" href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a><!-- ENDIF -->
-                                <!-- IF S_USER_LOGGED_IN --> <a class="btn btn-default btn-sm" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a><!-- ENDIF --> 
-                                <a  class="btn btn-default btn-sm" href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a>
-
-                                <!-- ENDIF -->
-                                 <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-                                    <a class="btn btn-default btn-sm" href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a>
-                                <!-- ENDIF -->
-                        </div>
-        	
-        <div class="btn-group dropdown pull-right  hidden-md hidden-lg hidden-xl ">
-            <a class="btn btn-inverse dropdown-toggle " data-toggle="dropdown" href="#" >
-              <i class="icon-wrench icon-white"></i>
-              <span class="caret "></span>
-            </a>
-            <ul class="dropdown-menu ">
-        	<!-- IF S_DISPLAY_SEARCH -->
-        		<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
-        		<!-- IF S_LOAD_UNREADS --> <li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li><!-- ENDIF -->
-        		<!-- IF S_USER_LOGGED_IN --> <li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a></li><!-- ENDIF --> 
-        		<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
-        	<!-- ENDIF -->
-        	<!-- IF not S_IS_BOT and U_MARK_FORUMS --><li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li><!-- ENDIF -->
-        	
-            </ul>
-        </div>
-</div>
-<!-- ENDIF -->
-<div class="row ">
+  </div>
+      
+<div class="row">
     
-        <div class=" col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
+        <div class="col-xl-12 col-lg-12 col-md-10 col-sm-12 col-xs-12 ">
           <!-- INCLUDE forumlist_body.html -->
         </div>
-        <div class=" col-xl-2 col-lg-2 col-md-2 hidden-sm hidden-xs ">
-          <!-- INCLUDE wp_recent_posts.html -->
-            <div class="row panel panel-default">
+       <!-- <div class=" col-xl-2 col-lg-2 col-md-2 hidden-sm hidden-xs "> -->
+          <!-- INCL wp_recent_posts.html -->
+          <!--  <div class="row panel panel-default">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 panel-heading">
                     <div class=" panel-title">WhatAboutSome pics?</div>
                 </div>
@@ -58,9 +24,89 @@
                     <div class=" panel-title">Or some playlist ?</div>
                 </div>
             </div>
+        </div> -->
+</div>
+    </div>
+    <!-- IF S_INDEX -->
+    <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                
+                <!-- INCLUDE wp_recent_posts.html -->
+            </ul>
+        
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    Must-read
+                    
+                </li>
+                <li>
+                    <a href="/lassociation-tellement-nomade/">L'association</a>
+                </li>
+                <li>
+                    <a href="/guide-de-noel-2013/">Guide 2013</a>
+                </li>
+                <li>
+                    <a href="/forum/viewtopic.php?f=47&t=4739">Charte des PAs</a>
+                </li>
+                <li>
+                    <a href="/wiki/doku.php">Se servir de la galerie</a>
+                </li>
+                <li>
+                    <a href="#">Se servir du Wiki</a>
+                </li>
+            </ul>
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    Nos partenaires
+                    
+                </li>
+                <li>
+                    <a href="www.audiophonics.fr">Audiophonics</a>
+                </li>
+                <li>
+                    <a href="www.jdslabs.com">JDSLabs</a>
+                </li>
+                <li>
+                    <a href="www.earsonics.com">Earsonics</a>
+                </li>
+                <li>
+                    <a href="www.thecustomart.com">CustomArt</a>
+                </li>
+                <li>
+                    <a href="www.conceptstoreaudiotechnica.fr">AudioTechnica</a>
+                </li>
+            </ul>
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    Les playlists
+                    
+                </li>
+                <li>
+                    <a href="#">A venir...</a>
+                </li>
+            </ul>
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    Ca chauffe !
+                    
+                </li>
+                <li>
+                    <a href="#">A venir...</a>
+                </li>
+            </ul>
+             <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    Sur IRC
+                    
+                </li>
+                <li>
+                    <a href="#">A venir...</a>
+                </li>
+            </ul>
         </div>
 </div>
-	
+ <!-- ENDIF -->
+<div class="container">
 <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
 <div class="row well">
 	<form method="post" action="{S_LOGIN_ACTION}" class="form-horizontal no-margin col-md-12 col-sm-12 col-xs-12 col-xl-12">

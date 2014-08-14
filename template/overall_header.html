@@ -11,6 +11,7 @@
 <meta name="distribution" content="global" />
 <meta name="keywords" content="casque,intra,dac,ampli,dap,test,feedback,review" />
 <meta name="description" content="Tellement Nomade, l'actu de l'audio nomade!" />
+
 {META}
 <title>{SITENAME}  <!-- IF S_IN_MCP -->{L_MCP}  <!-- ELSEIF S_IN_UCP -->{L_UCP}  <!-- ENDIF -->{PAGE_TITLE}</title>
 
@@ -23,6 +24,7 @@
 	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
 	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
 <!-- ENDIF -->
+<link rel="icon" type="image/png" href="/wp-content/uploads/favicon.gif" />
 
 <!--
 	phpBB style name: proBoot3
@@ -260,7 +262,10 @@
 
 
 	<a id="start_here"></a>
-	<div  class="container" >
+      <!-- IF S_INDEX -->
+        <div id="wrapper">
+      <!-- ENDIF -->  
+	<div  id="page-content-wrapper" class="container " >
         	<div class="row">
                     <div  id="site-description" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 hidden-xs ">
 		    <!-- IF S_INDEX == true  -->

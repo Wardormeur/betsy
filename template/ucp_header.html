@@ -1,8 +1,23 @@
 <!-- INCLUDE overall_header.html -->
 
 <h2>{L_UCP}</h2>
+<span class="hidden-xl hidden-lg hidden-md hidden-sm col-xs-12 pull-right">
+    <a class="btn btn-success dropdown-toggle  " data-toggle="dropdown" href="#">
+            Navigation
+            <span class="caret"></span>
+    </a>
+    <div class="divider"></div>
 
-<div id="p-tabs" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <ul class="dropdown-menu">
+        <!-- BEGIN t_block1 -->
+		<li <!-- IF t_block1.S_SELECTED -->class="active"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>
+        <!-- END t_block1 -->
+    </ul>
+                                
+</span>
+</div>
+
+<div id="p-tabs" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 hidden-xs">
 	<ul class="nav nav-pills pull-right">
 		<!-- BEGIN t_block1 -->
 		<li <!-- IF t_block1.S_SELECTED -->class="active"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>

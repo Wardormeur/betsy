@@ -337,7 +337,7 @@
 <h2>{L_FB_FEEDBACK} {L_FB_BEST_USERS}</h2>
 </div> <!-- End of overall header -->
 <div class="forumbg row">
-    <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_RANK}</div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_USER}</div>
@@ -346,30 +346,30 @@
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_NEU}</div>
                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_NEG}</div>
                     <!-- ELSE -->
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{L_FB_SCORE}</div><!-- ENDIF -->
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">{L_FB_SCORE}</div><!-- ENDIF -->
                 </div>
             
             
                 <!-- BEGIN best(1) -->
                 <div class="row <!-- IF best.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->" >
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">{best.S_ROW_COUNT}</div>
-                   <!-- <div style="text-align:left;">
-                        <ul class="profile-icons" style="padding:0;">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <!--<ul class="profile-icons" style="padding:0;">
                             <li class="msnm-icon"><a href="{best.FB_PROFILE}" title="{L_READ_PROFILE}"><span>{L_READ_PROFILE}</span></a></li>
-                        </ul>
+                        </ul>-->
                         <a href="{best.FB_LINK}" style="color:{best.FB_USER_COL}; vertical-align:middle;">{best.FB_USER}</a>
-                    </div>-->
+                    </div>
                     <!-- IF FB_S_SCORE == 0 -->
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="positive">{best.FB_POS}</span></div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="neudival">{best.FB_NEU}</span></div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="negative">{best.FB_NEG}</span></div>
                     <!-- ELSE -->
-                    <!-- IF best.FB_SCORE > 0-->
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="positive">{best.FB_SCORE}</span></div>
-                    <!-- ELSEIF best.FB_SCORE == 0-->
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="neudival">{best.FB_SCORE}</span></div>
+                    <!-- IF best.FB_SCORE > 0 -->
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><span class="positive">{best.FB_SCORE}</span></div>
+                    <!-- ELSEIF best.FB_SCORE == 0 -->
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><span class="neudival">{best.FB_SCORE}</span></div>
                     <!-- ELSE -->
-                    <div  class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="negative">{best.FB_SCORE}</span></div>
+                    <div  class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"><span class="negative">{best.FB_SCORE}</span></div>
                     <!-- ENDIF -->
                     <!-- ENDIF -->
                 </div>

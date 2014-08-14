@@ -6,27 +6,17 @@
 	
     
 	<!-- IF postrow.S_FIRST_ROW  or postrow.S_NO_CAT  -->
-                <div class="row panel panel-default">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		      <div class=" row panel-heading">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 panel-title">Derniers articles</div>
-                    </div>
-                  
-		
-                    <div class=" row ">
-                
-                        <div class="col-xl-12 col-lg-12 col-md-12 hidden-sm hidden-xs">
+                     <li class=" sidebar-brand">
+                         Derniers articles
+                    </li>
+                       
         	<!-- ENDIF -->
-                            <div class="row forumrow" >
+                            <li >
                                    <a title="{postrow.U_POSTTITLE}" href="{postrow.U_POSTLINK}">{postrow.U_POSTTITLE}</a>
                               
-                            </div>
+                            </li>
             	
-	<!-- IF postrow.S_LAST_ROW -->        
-		        </div>
-                    </div>
-                </div>
-                </div>
+	<!-- IF postrow.S_LAST_ROW -->
 			   <!-- Ward: last-row -->
 	<!-- ELSE -->
             <!-- Ward: not-last-row -->

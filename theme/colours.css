@@ -424,6 +424,10 @@ blockquote blockquote blockquote {
 
 
 
+.unread{
+    color:#F5782A;
+}
+
 /* Code block */
 dl.codebox {
 	background-color: #FFFFFF;

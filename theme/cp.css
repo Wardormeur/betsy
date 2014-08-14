@@ -380,38 +380,34 @@ ol.def-rules li {
 }
 
 /* PM marking colours */
-.pmlist li.bg1 {
-	padding: 0 3px;
+.pmlist  .row {
+	padding: 0 2px;
 }
 
-.pmlist li.bg2 {
-	padding: 0 3px;
-}
-
-.pmlist li.pm_message_reported_colour, .pm_message_reported_colour {
+.pmlist  .row.pm_message_reported_colour, .pm_message_reported_colour {
 	border-left-color: #bcbcbc;
 	border-right-color: #bcbcbc;
 }
 
-.pmlist li.pm_marked_colour, .pm_marked_colour {
+.pmlist  .row.pm_marked_colour, .pm_marked_colour {
 	padding: 0;
 	border: solid 3px #ffffff;
 	border-width: 0 3px;
 }
 
-.pmlist li.pm_replied_colour, .pm_replied_colour {
+.pmlist  .row.pm_replied_colour, .pm_replied_colour {
 	padding: 0;
 	border: solid 3px #c2c2c2;
 	border-width: 0 3px;
 }
 
-.pmlist li.pm_friend_colour, .pm_friend_colour {
+.pmlist  .row.pm_friend_colour, .pm_friend_colour {
 	padding: 0;
 	border: solid 3px #bdbdbd;
 	border-width: 0 3px;
 }
 
-.pmlist li.pm_foe_colour, .pm_foe_colour {
+.pmlist  .row.pm_foe_colour, .pm_foe_colour {
 	padding: 0;
 	border: solid 3px #000000;
 	border-width: 0 3px;
