@@ -86,12 +86,7 @@
 
 <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
 <link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
-
 <link href="{T_THEME_PATH}/font-awesome-4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" />
-
-<!-- MOD: SHMK USER FEEDBACK -->
-<link href="{T_THEME_PATH}/feedback_style.css" rel="stylesheet" type="text/css" />
-<!-- END: SHMK USER FEEDBACK -->
 
 <!-- MOD: GURU adaptation to bootstrap style -->
 <!-- <link href="{T_THEME_PATH}/tn.css" rel="stylesheet" type="text/css" /> -->
@@ -202,7 +197,7 @@
         		<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
         		<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
         	<!-- ENDIF -->
-        	<!-- IF not S_IS_BOT and U_MARK_FORUMS --><li class="rightside"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li><!-- ENDIF -->
+        	<!-- IF not S_IS_BOT and U_MARK_FORUMS --><li class="pull-right"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li><!-- ENDIF -->
         	<!-- IF S_HAS_SUBFORUM -->
         <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
             	<li><a href="{U_MARK_FORUMS}">{L_MARK_SUBFORUMS_READ}</a></li>
@@ -287,14 +282,15 @@
 		<!-- ENDIF -->
         <div class="row">
          <!-- IF  S_INDEX == false -->
-                   	
-            <ul class="breadcrumb hidden-xs pull-right ">
-            	<li>
-                        <a href="{U_INDEX}" class="hidden-sm">{L_INDEX}</a>
-                   
-                    <!-- BEGIN navlinks --> <strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks -->
-    		</li>
-            </ul>
+            <span class="hidden-xs hidden-sm col-xl-6 col-lg-6 col-md-6 ">       	
+                <ul class="breadcrumb ">
+                    <li>
+                            <a href="{U_INDEX}" >{L_INDEX}</a>
+
+                        <!-- BEGIN navlinks --><strong>&rsaquo;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a> <!-- END navlinks -->
+                    </li>
+                </ul>
+            </span>
           <!-- ENDIF --> 
             <!--<a href="{PREVIOUS_PAGE}" class="btn btn-default hidden-sm hidden-md hidden-lg hidden-xl"><i class="fa fa-angle-left"></i> {L_PREVIOUS}</a> -->
             <!-- We do not close the row so that we gain place with the next row that is containing actions-->

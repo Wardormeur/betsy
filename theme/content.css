@@ -125,19 +125,9 @@ dl.icon dt {
 	background-position: 5px 95%;		/* Position of topic icon */
 }
 
-dd.posts, dd.topics, dd.views {
-	width: 8%;
-	text-align: center;
-	line-height: 2.2em;
-	font-size: 1.2em;
-}
 
 /* List in forum description */
-dl.icon dt ol,
-dl.icon dt ul {
-	list-style-position: inside;
-	margin-left: 1em;
-}
+
 
 dl.icon dt li {
 	display: list-item;
@@ -158,10 +148,8 @@ dd.moderation {
 	font-size: 1.1em;
 }
 
-dd.lastpost span, ul.topiclist dd.searchby span, ul.topiclist dd.info span, ul.topiclist dd.time span, dd.redirect span, dd.moderation span {
-	display: block;
-	padding-left: 5px;
-}
+
+
 
 dd.time {
 	width: auto;
@@ -315,10 +303,6 @@ div[class].topic-actions {
 	list-style-type: inherit;
 }
 
-.content ul, .content ol {
-	margin-bottom: 1em;
-	margin-left: 3em;
-}
 
 .posthilit {
 	background-color: #f3f3f3;

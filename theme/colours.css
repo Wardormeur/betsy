@@ -73,21 +73,6 @@ hr.dashed {
 	background-color: #E7E8EA;
 }
 
-span.corners-top {
-	background-image: url("./images/corners_left.png");
-}
-
-span.corners-top span {
-	background-image: url("./images/corners_right.png");
-}
-
-span.corners-bottom {
-	background-image: url("./images/corners_left.png");
-}
-
-span.corners-bottom span {
-	background-image: url("./images/corners_right.png");
-}
 
 /* Horizontal lists
 ----------------------------------------*/
@@ -104,7 +89,7 @@ table.table1 tbody tr {
 	border-color: #BFC1CF;
 }
 
-table.table1 tbody tr:hover, table.table1 tbody tr.hover {
+table.table1 tbody tr:hover{
 	background-color: #CFE1F6;
 	color: #000;
 }
@@ -213,21 +198,14 @@ Colours and backgrounds for links.css
 
 
 /* Links on gradient backgrounds */
-#search-box a:link, .navbg a:link, .forumbg .header a:link, .forabg .header a:link, th a:link {
-	color: #FFFFFF;
-}
 
-#search-box a:visited, .navbg a:visited, .forumbg .header a:visited, .forabg .header a:visited, th a:visited {
-	color: #FFFFFF;
-}
+
+
 
 #search-box a:hover, .navbg a:hover, .forumbg .header a:hover, .forabg .header a:hover, th a:hover {
 	color: #A8D8FF;
 }
 
-#search-box a:active, .navbg a:active, .forumbg .header a:active, .forabg .header a:active, th a:active {
-	color: #C8E6FF;
-}
 
 
 /* Post body links */
@@ -400,27 +378,7 @@ ul.topiclist dd.searchextra {
 
 /* BB Code styles
 ----------------------------------------*/
-/* Quote block */
-/*blockquote {
-background-color: #EBEADD;
-	background-image: url("./images/quote.gif");
-	border-color:#DBDBCE;
-}
 
-.rtl blockquote {
-	background-image: url("./images/quote_rtl.gif");
-}
-
-blockquote blockquote {/*
-	/* Nested quotes */
-/*	background-color:#EFEED9;
-}
-
-blockquote blockquote blockquote {
-	/* Nested quotes */
-/*	background-color: #EBEADD;
-}
-*/
 
 
 
@@ -724,9 +682,7 @@ ul.cplist {
 	border-top-color: #B5C1CB;
 }
 
-#cp-main .panel li.header dd, #cp-main .panel li.header dt {
-	color: #000000;
-}
+
 
 #cp-main table.table1 thead th {
 	color: #333333;
@@ -823,38 +779,8 @@ ul.cplist {
 	background-color: #FFFFFF;
 }
 
-#cp-main span.corners-top, #cp-menu span.corners-top {
-	background-image: url("./images/corners_left2.gif");
-}
 
-#cp-main span.corners-top span, #cp-menu span.corners-top span {
-	background-image: url("./images/corners_right2.gif");
-}
 
-#cp-main span.corners-bottom, #cp-menu span.corners-bottom {
-	background-image: url("./images/corners_left2.gif");
-}
-
-#cp-main span.corners-bottom span, #cp-menu span.corners-bottom span {
-	background-image: url("./images/corners_right2.gif");
-}
-
-/* Topicreview */
-#cp-main .panel #topicreview span.corners-top, #cp-menu .panel #topicreview span.corners-top {
-	background-image: url("./images/corners_left.gif");
-}
-
-#cp-main .panel #topicreview span.corners-top span, #cp-menu .panel #topicreview span.corners-top span {
-	background-image: url("./images/corners_right.gif");
-}
-
-#cp-main .panel #topicreview span.corners-bottom, #cp-menu .panel #topicreview span.corners-bottom {
-	background-image: url("./images/corners_left.gif");
-}
-
-#cp-main .panel #topicreview span.corners-bottom span, #cp-menu .panel #topicreview span.corners-bottom span {
-	background-image: url("./images/corners_right.gif");
-}
 
 /* Friends list */
 .cp-mini {
@@ -972,35 +898,11 @@ fieldset.quick-login input.inputbox {
 /* Form button styles
 ---------------------------------------- */
 
-a.button1, input.button1, input.button3, a.button2, input.button2 {
-	color: #000;
-	background-color: #FAFAFA;
-	background-image: url("./images/bg_button.gif");
-}
 
-a.button1, input.button1 {
-	border-color: #666666;
-}
 
-input.button3 {
-	background-image: none;
-}
+
 
 /* Alternative button */
-a.button2, input.button2, input.button3 {
-	border-color: #666666;
-}
-
-/* <a> button in the style of the form buttons */
-a.button1, a.button1:link, a.button1:visited, a.button1:active, a.button2, a.button2:link, a.button2:visited, a.button2:active {
-	color: #000000;
-}
-
-/* Hover states */
-a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
-	border-color: #BC2A4D;
-	color: #BC2A4D;
-}
 
 input.disabled {
 	color: #666666;

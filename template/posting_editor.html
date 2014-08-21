@@ -9,7 +9,6 @@
 
 	<!-- IF S_PRIVMSGS and not S_SHOW_DRAFTS -->
             <div class="row">
-		<div class="">
 		<!-- IF S_ALLOW_MASS_PM -->
 			<!-- IF .to_recipient -->
 				<div>
@@ -34,19 +33,17 @@
 				</div>
 			<!-- ENDIF -->
 			<!-- IF not S_EDIT_POST -->
-			<div class="pmlist ">
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
-				<textarea  name="username_list" class="" cols="50" rows="2"></textarea>
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-5 col-xs-5">
+				<textarea  name="username_list" class="form-control" cols="50" rows="2"></textarea>
 				
                             </div>
-                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-1 col-xs-1">
 				<span class="btn-group">
-                                    <span><a class="btn btn-default" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></span>
-                                    <button type="submit" name="add_to" value="{L_ADD}" class="btn btn-primary">{L_ADD}</button>
-                                    <button type="submit" name="add_bcc" value="{L_ADD_BCC}" class="btn btn-default" />{L_ADD_BCC}</button>
+                                    <span><a class="btn btn-default btn-sm" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></span>
+                                    <button type="submit" name="add_to" value="{L_ADD}" class="btn btn-primary btn-sm">{L_ADD}</button>
+                                    <button type="submit" name="add_bcc" value="{L_ADD_BCC}" class="btn btn-default btn-sm" />{L_ADD_BCC}</button>
 				</span>
                             </div>
-			</div>
 			<!-- ENDIF -->
 		<!-- ELSE -->
 			<div>
@@ -66,12 +63,11 @@
 			</div>
 		<!-- ENDIF -->
 
-		</div>
 
 		<!-- IF S_GROUP_OPTIONS -->
-			<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				
-                            <label for="group_list">{L_USERGROUPS}:</label> <select name="group_list[]" id="group_list" multiple="multiple" size="4" class="inputbox">{S_GROUP_OPTIONS}</select>
+                            <label for="group_list" class="hidden-xs">{L_USERGROUPS}:</label> <select name="group_list[]" id="group_list" multiple="multiple" size="4" class="form-inline">{S_GROUP_OPTIONS}</select>
 				
 			</div>
 		<!-- ENDIF -->
@@ -107,7 +103,7 @@
 	<!-- IF S_POST_ACTION or S_PRIVMSGS or S_EDIT_DRAFT -->
 	<dl class="row">
 		<dt class="col-xl-12 col-lg-12 col-md-12 col-sm-12 hidden-xs"><label for="subject">{L_SUBJECT}:</label></dt>
-		<dd class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"><input type="text" name="subject" id="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="inputbox autowidth" /></dd>
+		<dd class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"><input type="text" name="subject" id="subject" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="form-control" /></dd>
 	</dl>
 	<!-- IF S_URL -->
 	<dl class="row">
@@ -126,11 +122,12 @@
         <div class="col-xl-9 col-lg-9 col-md-9  col-sm-10 col-xs-10">
             <div >
                     <textarea 
+                     class="form-control"
                     <!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->
                     name="signature" id="signature" style="height: 9em;"
                     <!-- ELSE -->
                     name="message" id="message"<!-- ENDIF --> 
-                    rows="15" cols="76" tabindex="4" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" class="inputbox">{MESSAGE}{DRAFT_MESSAGE}{SIGNATURE}</textarea>
+                    rows="15" cols="76" tabindex="4"  onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" class="inputbox">{MESSAGE}{DRAFT_MESSAGE}{SIGNATURE}</textarea>
             </div>
         <!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
 		<div id="submit">

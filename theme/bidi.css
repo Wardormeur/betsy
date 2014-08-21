@@ -65,30 +65,6 @@
 	margin-left: 5px;
 }
 
-.rtl ul.linklist li.rightside, .rtl p.rightside {
-	float: left;
-	margin-right: 5px;
-	margin-left: 0;
-	text-align: left;
-}
-
-.rtl ul.leftside li, .rtl ul.rightside li {
-	float: left;
-}
-
-.rtl ul.leftside {
-	float: right;
-	margin-left: 5px;
-	margin-right: 0;
-	text-align: right;
-}
-
-.rtl ul.rightside {
-	float: left;
-	margin-left: -5px;
-	margin-right: 5px;
-	text-align: left;
-}
 
 /* Table styles
 ----------------------------------------*/

@@ -17,10 +17,7 @@ a {
 }
 
 /* Links on gradient backgrounds */
-#search-box a:link, .navbg a:link, .forumbg .header a:link, .forabg .header a:link, th a:link {
-	color: #FFFFFF;
-	text-decoration: none;
-}
+
 
 #search-box a:visited, .navbg a:visited, .forumbg .header a:visited, .forabg .header a:visited, th a:visited {
 	color: #FFFFFF;
