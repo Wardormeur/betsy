@@ -121,7 +121,7 @@
 		 	
 			<nav role="navigation"  >
 			    
-        		<div class="btn-group navbar-right">
+        		<div class="btn-group navbar-right pull-right">
         			<a class="btn btn-success dropdown-toggle  " data-toggle="dropdown" href="#">
                                     <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG --><span class="unread"> {S_USER_NEW_PRIVMSG} </span> /<!-- ENDIF --><!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> {S_USER_UNREAD_PRIVMSG} <!-- ENDIF --> <!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD or S_NEW_PM or S_USER_NEW_PRIVMSG --><i class="fa fa-envelope-o"></i><!-- ENDIF --> {S_USERNAME}
         				<span class="caret"></span>
@@ -136,77 +136,75 @@
                                                 <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --><i class="fa fa-envelope-o"></i> <!-- ENDIF -->
                                                 {PRIVATE_MESSAGE_INFO} <!-- IF PRIVATE_MESSAGE_INFO_UNREAD --></br>{PRIVATE_MESSAGE_INFO_UNREAD} <!-- ENDIF --></a>
         				</li><!-- ENDIF -->
-        	
+                                        <li class="bb-ucp">
+                                            <a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user"></i> {L_PROFILE}</a>
+                                        </li>
         				<!-- MOD: SHMK USER FEEDBACK -->
         				<li>
-							<a href="{U_MY_FEEDBACK}"><i class="fa fa-thumbs-o-up"></i> {MY_FEEDBACK}</a> 
+                                            <a href="{U_MY_FEEDBACK}"><i class="fa fa-thumbs-o-up"></i> {MY_FEEDBACK}</a> 
         				</li>
         				<!-- END: SHMK USER FEEDBACK -->
-        				<li class="bb-ucp">
-            							<a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user"></i> {L_PROFILE}</a>
-            			</li>
-            			<li class="divider"></li>
-        			<!-- ENDIF -->				
-            			<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
-            				<i class="fa fa-sign-in "></i> {L_LOGIN_LOGOUT}</a>
-            			</li>
-        			<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
-            			<li class="bb-register">
-            				<a href="{U_REGISTER}"><i class="fa fa-user "></i> {L_REGISTER}</a>
-            					
-            			</li>
+                                        <li>
+                                            <a href="{U_YOUR_PERSONAL_GALLERY}">{L_YOUR_PERSONAL_ALBUM}</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <!-- ENDIF -->				
+                                        <li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
+                                                <i class="fa fa-sign-in "></i> {L_LOGIN_LOGOUT}</a>
+                                        </li>
+                                        <!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+                                        <li class="bb-register">
+                                                <a href="{U_REGISTER}"><i class="fa fa-user "></i> {L_REGISTER}</a>
+
+                                        </li>
             							
         			<!-- ENDIF -->
-        		  </ul>
+                            </ul>
         		  
         		</div><!--btn group-->
-			    <div class="collapse navbar-collapse bs-navbar-collapse">
-    				<ul class="nav navbar-nav " >
-    				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-    					<li>
-    						<form action="{U_SEARCH}" method="get" id="search" class="navbar-search ">
-    							<fieldset>
-    								<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
-    								 {S_SEARCH_HIDDEN_FIELDS}
-    						        <a class="" id="adv-search" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">
-    						     	    <i class="fa fa-plus-circle"></i>
-    						        </a >	
-    							</fieldset>
-    						</form>
-    					</li>
-    				
-    				<!-- ENDIF -->
-    				
+                        
+                        <div class="collapse navbar-collapse bs-navbar-collapse">
+                            <ul class="nav navbar-nav " >
+                            <!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+                                <li>
+                                    <form action="{U_SEARCH}" method="get" id="search" class="navbar-search ">
+                                            <fieldset>
+                                                    <input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+                                                     {S_SEARCH_HIDDEN_FIELDS}
+                                            <a class="" id="adv-search" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">
+                                                <i class="fa fa-plus-circle"></i>
+                                            </a >	
+                                            </fieldset>
+                                    </form>
+                                </li>
+
+                            <!-- ENDIF -->
+
     			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/">Les News</a></li>
-                                <li><a href="/wp-admin/post-new.php">Ecrire une news</a></li>
-                                <li><a href="/forum/ucp.php?i=pm&mode=compose&action=post&add_to=Ajout+[A]&group_list[]=9">Informer les newsers</a></li>
-                            </ul>
-                        </li>
-	                    <li class="dropdown <!-- IF S_VIEWFORUM or S_VIEWTOPIC or S_INDEX --> active <!-- ENDIF -->">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle ">Forum <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                          <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
-                                	<!-- IF S_DISPLAY_SEARCH -->
-        		<!-- IF S_USER_LOGGED_IN --> <li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a></li><!-- ENDIF --> 
-                        <!-- IF S_LOAD_UNREADS --> <li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li><!-- ENDIF -->
-        		<li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
-        		<li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
-        		<li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
-        	<!-- ENDIF -->
-        	<!-- IF not S_IS_BOT and U_MARK_FORUMS --><li class="pull-right"><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li><!-- ENDIF -->
-        	<!-- IF S_HAS_SUBFORUM -->
-        <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-            	<li><a href="{U_MARK_FORUMS}">{L_MARK_SUBFORUMS_READ}</a></li>
-            <!-- ENDIF -->
-            <!-- ENDIF -->
+                            <li class="dropdown ">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Blog <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/">Les News</a></li>
+                                    <li><a href="/wp-admin/post-new.php">Ecrire une news</a></li>
+                                    <li><a href="/forum/ucp.php?i=pm&mode=compose&action=post&add_to=Ajout+[A]&group_list[]=9">Informer les newsers</a></li>
+                                </ul>
+                            </li>
+	                    <li class="dropdown <!-- IF S_VIEWFORUM or S_VIEWTOPIC or S_INDEX --> active <!-- ENDIF --> ">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle ">Forum <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                              <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
+                                    <!-- IF S_DISPLAY_SEARCH -->
+                                        <!-- IF S_USER_LOGGED_IN --> <li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a></li><!-- ENDIF --> 
+                                        <!-- IF S_LOAD_UNREADS --> <li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li><!-- ENDIF -->
+                                        <li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
+                                        <li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+                                        <li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
+                                        <!-- ENDIF -->
+                                 <li ><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
+                               
                                 <!-- ENDIF -->
                             </ul>
                         </li>
-    					<li class="divider-vertical"></li>
     					<li class="divider-vertical"></li>
     					<li class=""><a href="http://wiki.tellementnomade.com">Wiki</a></li>
     					<li class="divider-vertical"></li>
@@ -214,18 +212,18 @@
     					<li class="divider-vertical"></li>
     					<li class="hidden-xs hidden-sm <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
         					<!-- MOD: SHMK USER FEEDBACK -->
-            			<li class="divider-vertical"></li>
+                                        <li class="divider-vertical"></li>
     				
     					<li class="hidden-xs hidden-sm <!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
         					<!-- END: SHMK USER FEEDBACK -->
-    					<li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">L'asso <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/lassociation-tellement-nomade/">Son rôle</a></li>
-                                <li><a href="/tn-needs-you/">Join the dark side</a></li>
-                                <li><a href="/forum/memberlist.php?mode=group&g=29">Ses acolytes</a></li>
-                            </ul>
-                        </li>
+    					<li class="dropdown ">
+                                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Participer<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/lassociation-tellement-nomade/">L'association</a></li>
+                                                <li><a href="/tn-needs-you/">Join the dark side</a></li>
+                                                <li><a href="/forum/memberlist.php?mode=group&g=29">Ses acolytes</a></li>
+                                            </ul>
+                                        </li>
 	                    
     					<!-- IF not S_IS_BOT -->
     						
@@ -280,9 +278,9 @@
 			</div>
 		</div>
 		<!-- ENDIF -->
-        <div class="row">
+        <div class="row ">
          <!-- IF  S_INDEX == false -->
-            <span class="hidden-xs hidden-sm col-xl-6 col-lg-6 col-md-6 ">       	
+            <span class="hidden-xs hidden-sm col-xl-6 col-lg-6 col-md-6 pull-left">       	
                 <ul class="breadcrumb ">
                     <li>
                             <a href="{U_INDEX}" >{L_INDEX}</a>
