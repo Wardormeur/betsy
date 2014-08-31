@@ -688,6 +688,7 @@ dd.searchby {
 .topic-actions {
   height: 28px;
   min-height: 28px;
+  margin-top: 3px;
   margin-bottom: 3px;
   font-size: 1.1em;
 }

@@ -1,13 +1,13 @@
 
 <!-- IF U_MCP or U_ACP -->
  <div class="row">
-       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">  <!-- IF U_MCP --><a class="btn btn-inverse pull-right" href="{U_MCP}" style=" display: block; ">{L_MCP}</a><!-- ENDIF --> </div>
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" >   <!-- IF U_ACP --><a class="btn btn-inverse pull-right" href="{U_ACP}" style=" display: block; ">{L_ACP}</a><!-- ENDIF --></div>
+       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">  <!-- IF U_MCP --><a class="btn btn-sm btn-inverse pull-right" href="{U_MCP}" style=" display: block; ">{L_MCP}</a><!-- ENDIF --> </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" >   <!-- IF U_ACP --><a class="btn btn-sm btn-inverse pull-right" href="{U_ACP}" style=" display: block; ">{L_ACP}</a><!-- ENDIF --></div>
     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
         <!-- IF S_TOPIC_MOD -->
              <form method="post" action="{S_MOD_ACTION}" class="form-inline">
                     <div class="quickmod form-group">
-                            {S_TOPIC_MOD} <input type="submit" value="{L_GO}" class="btn" />
+                            {S_TOPIC_MOD} <input type="submit" value="{L_GO}" class="btn btn-sm" />
                             {S_FORM_TOKEN}
                     </div>
                 </form>

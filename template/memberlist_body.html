@@ -133,7 +133,7 @@
 
 <!-- IF S_IN_SEARCH_POPUP and not S_SELECT_SINGLE -->
 <fieldset class="display-actions">
-	<input type="submit" name="submit" value="{L_SELECT_MARKED}" class="btn" />
+	<input type="submit" name="submit" value="{L_SELECT_MARKED}" class="btn btn-sm btn-primary " />
 	<div><a href="#" onclick="marklist('results', 'user', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('results', 'user', false); return false;">{L_UNMARK_ALL}</a></div>
 </fieldset>
 <!-- ENDIF -->
@@ -148,7 +148,7 @@
 	<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 	<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 	<label for="sk">{L_SELECT_SORT_METHOD}: <select name="sk" id="sk">{S_MODE_SELECT}</select></label> 
-	<label for="sd">{L_ORDER} <select name="sd" id="sd">{S_ORDER_SELECT}</select> <input type="submit" name="sort" value="{L_SUBMIT}" class="btn" /></label>
+	<label for="sd">{L_ORDER} <select name="sd" id="sd">{S_ORDER_SELECT}</select> <input type="submit" name="sort" value="{L_SUBMIT}" class="btn btn-sm btn-primary" /></label>
 </fieldset>
 <!-- ENDIF -->
 

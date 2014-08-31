@@ -51,10 +51,10 @@
 	<!-- IF U_DELETE or U_EDIT or U_QUOTE or U_REPORT -->
 		
 		<ul class="profile-icons" >
-		    <!-- IF U_EDIT --><li class="edit"><a class="btn" href="{U_EDIT}" title="{L_POST_EDIT_PM}"><i class="fa fa-pencil"></i></a></li><!-- ENDIF -->
+		    <!-- IF U_EDIT --><li class="edit"><a class="btn " href="{U_EDIT}" title="{L_POST_EDIT_PM}"><i class="fa fa-pencil"></i></a></li><!-- ENDIF -->
 			<!-- IF U_DELETE --><li class="delete"><a class="btn" href="{U_DELETE}" title="{L_DELETE_MESSAGE}"><i class="fa fa-times-circle"></i></a></li><!-- ENDIF -->
 			<!-- IF U_REPORT --><li><a class="btn " href="{U_REPORT}" title="{L_REPORT_PM}"><i class="fa fa-exclamation"></i></a></li><!-- ENDIF -->
-			<!-- IF U_QUOTE --><li><a class="btn" href="{U_QUOTE}" title="{{L_POST_QUOTE_PM}"><i class="fa fa-share-square-o"></i></a></li><!-- ENDIF -->
+			<!-- IF U_QUOTE --><li><a class="btn" href="{U_QUOTE}" title="{{L_POST_QUOTE_PM}"><i class="fa fa-quote-right"></i></a></li><!-- ENDIF -->
 		</ul>
 		<!-- ENDIF -->
 		<div class="content "><p>{MESSAGE}</p></div>
@@ -89,19 +89,19 @@
 
 <!-- IF S_VIEW_MESSAGE -->
 <div class="display-options form-inline row">
-	<!-- IF U_PREVIOUS_PM --><span class="col-xl-3 col-lg-3 col-sm-3 col-md-3 col-xs-3"><a href="{U_PREVIOUS_PM}" class="btn btn-default "><i class="fa fa-angle-left"></i>{L_VIEW_PREVIOUS_PM}</a></span><!-- ENDIF -->
+	<!-- IF U_PREVIOUS_PM --><span class="col-xl-3 col-lg-3 col-sm-3 col-md-3 col-xs-3"><a href="{U_PREVIOUS_PM}" class="btn btn-sm btn-default "><i class="fa fa-angle-left"></i>{L_VIEW_PREVIOUS_PM}</a></span><!-- ENDIF -->
 
 	 <span class="col-xl-6 col-lg-6 col-sm-6 col-md-6 col-xs-6">
        <!-- IF S_MARK_OPTIONS -->
-        <label for="mark_option"><select name="mark_option" id="mark_option" class="form-control"></label>{S_MARK_OPTIONS}</select>&nbsp;<input class="btn" type="submit" name="submit_mark" value="{L_GO}" /><!-- ENDIF -->
+        <label for="mark_option"><select name="mark_option" id="mark_option" class="form-control"></label>{S_MARK_OPTIONS}</select>&nbsp;<input class="btn btn-sm" type="submit" name="submit_mark" value="{L_GO}" /><!-- ENDIF -->
 	<!-- IF not S_UNREAD and not S_SPECIAL_FOLDER --><label for="dest_folder"><!-- IF S_VIEW_MESSAGE -->{L_MOVE_TO_FOLDER}: <!-- ELSE -->{L_MOVE_MARKED_TO_FOLDER}<!-- ENDIF -->
         </label> <select name="dest_folder" id="dest_folder" class="form-control">{S_TO_FOLDER_OPTIONS}</select>
-        <input class="btn" type="submit" name="move_pm" value="{L_GO}" /><!-- ENDIF -->
+        <input class="btn btn-sm" type="submit" name="move_pm" value="{L_GO}" /><!-- ENDIF -->
 	<input type="hidden" name="marked_msg_id[]" value="{MSG_ID}" />
 	<input type="hidden" name="cur_folder_id" value="{CUR_FOLDER_ID}" />
 	<input type="hidden" name="p" value="{MSG_ID}" />
         </span>
-	<!-- IF U_NEXT_PM --><span class="col-xl-3 col-lg-3 col-sm-3 col-md-3 col-xs-3"><a href="{U_NEXT_PM}" class=" btn btn-default pull-right">{L_VIEW_NEXT_PM}<i class="fa fa-angle-right"></i></a></span><!-- ENDIF -->
+	<!-- IF U_NEXT_PM --><span class="col-xl-3 col-lg-3 col-sm-3 col-md-3 col-xs-3"><a href="{U_NEXT_PM}" class=" btn btn-sm btn-default pull-right">{L_VIEW_NEXT_PM}<i class="fa fa-angle-right"></i></a></span><!-- ENDIF -->
 
 </div>
 <!-- ENDIF -->

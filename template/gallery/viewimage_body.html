@@ -142,7 +142,7 @@
 			<!-- IF S_QM_DELETE --><option value="images_delete">{L_QUEUE_A_DELETE}</option><!-- ENDIF -->
 			<!-- IF S_QM_REPORT and S_IMAGE_REPORTED --><option value="report_details">{L_READ_REPORT}</option><!-- ENDIF -->
 		</select>
-		<input type="submit" value="{L_GO}" class="button2" />
+		<input type="submit" value="{L_GO}" class="btn btn-default btn-sm" />
 		{S_FORM_TOKEN}
 	</fieldset>
 	</form>
@@ -177,7 +177,7 @@
 							<!-- END rate_scale -->
 							</select>
 							<!-- IF (not S_ALLOWED_TO_COMMENT or S_HIDE_COMMENT_INPUT) and .rate_scale -->
-								<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
+								<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-sm btn-primary" />
 							<!-- ENDIF -->
 						<!-- ELSE -->
 							{CONTEST_RATING}
@@ -223,7 +223,7 @@
 					<textarea name="message" id="message" rows="7" cols="76" tabindex="3" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" class="inputbox"></textarea>
 				</div>
 				<div><label for="attach_sig"><input type="checkbox" name="attach_sig" id="attach_sig"{S_SIGNATURE_CHECKED} /> {L_ATTACH_SIG}</label></div>
-				<div style="text-align: center;"><input style=" padding-bottom: 3px; padding-top: 3px; vertical-align: middle;"type="submit" name="submit" value="{L_SUBMIT}" class="button1" /></div>
+				<div style="text-align: center;"><input style=" padding-bottom: 3px; padding-top: 3px; vertical-align: middle;"type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-sm btn-primary" /></div>
 			</fieldset>
 		<!-- ELSE IF S_HIDE_COMMENT_INPUT -->
 			<!-- IF S_ALLOWED_TO_RATE --><hr class="dashed" /><!-- ENDIF -->
@@ -318,7 +318,7 @@
 
 	<form action="{S_ALBUM_ACTION}" method="post">
 	<fieldset class="display-options" >
-		<label>{L_ORDER}: <select name="sort_order"><option value="ASC"<!-- IF SORT_ASC --> selected="selected"<!-- ENDIF -->>{L_SORT_ASCENDING}</option><option value="DESC"<!-- IF not SORT_ASC --> selected="selected"<!-- ENDIF -->>{L_SORT_DESCENDING}</option></select>&nbsp;<input type="submit" name="submit" value="{L_GO}" class="button2" /></label>
+		<label>{L_ORDER}: <select name="sort_order"><option value="ASC"<!-- IF SORT_ASC --> selected="selected"<!-- ENDIF -->>{L_SORT_ASCENDING}</option><option value="DESC"<!-- IF not SORT_ASC --> selected="selected"<!-- ENDIF -->>{L_SORT_DESCENDING}</option></select>&nbsp;<input type="submit" name="submit" value="{L_GO}" class="btn btn-default btn-sm" /></label>
 	</fieldset>
 	</form>
 	<hr />
@@ -338,7 +338,7 @@
 		<select name="album_id" id="album_id" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
 			{ALBUM_JUMPBOX}
 		</select>
-		<input type="submit" value="{L_GO}" class="button2" />
+		<input type="submit" value="{L_GO}" class="btn btn-default btn-sm" />
 	</fieldset>
 </form>
 

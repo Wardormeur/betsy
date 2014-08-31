@@ -42,8 +42,8 @@
 </div>
 
 <fieldset class="submit-buttons">
-	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
-	<input type="submit" name="action[add_feedback]" value="{L_SUBMIT}" class="button1" />
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-sm btn-sm" />&nbsp;
+	<input type="submit" name="action[add_feedback]" value="{L_SUBMIT}" class="btn btn-sm btn-primary" />
 	{S_FORM_TOKEN}
 </fieldset>
 
@@ -52,7 +52,7 @@
 
 	<ul class="linklist">
 		<li class="pull-left">
-			{L_SEARCH_KEYWORDS}: <input type="text" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" />
+			{L_SEARCH_KEYWORDS}: <input type="text" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="btn btn-sm btn-primary" name="filter" value="{L_SEARCH}" />
 		</li>
 		<li class="pull-right pagination">
 			<!-- IF TOTAL_REPORTS -->{TOTAL_REPORTS} <!-- ENDIF -->
@@ -95,7 +95,7 @@
 		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 		<label>{L_DISPLAY_LOG}: {S_SELECT_SORT_DAYS}</label>
 		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>
-		<input type="submit" name="sort" value="{L_GO}" class="button2" />
+		<input type="submit" name="sort" value="{L_GO}" class="btn btn-sm btn-primary" />
 	</fieldset>
 
 	<hr />
@@ -112,8 +112,8 @@
 
 <!-- IF S_CLEAR_ALLOWED -->
 <fieldset class="display-actions">
-	<input class="button2" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
-	&nbsp;<input class="button1" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
+	<input class="btn btn-sm btn-default" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+	&nbsp;<input class="btn btn-sm btn-default" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
 </fieldset>
 
 <fieldset class="display-actions">

@@ -55,7 +55,7 @@
 	<fieldset>
 	<dl>
 		<dt><label for="group_colour">{L_GROUP_COLOR}:</label><br /><span>{L_GROUP_COLOR_EXPLAIN}</span></dt>
-		<dd><div class="input-append"><input name="group_colour" type="text" id="group_colour" value="{GROUP_COLOUR}" size="7" maxlength="7" class="input-small" style="background-color: #{GROUP_COLOUR};" /><a class="btn" type="button" href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;">{L_COLOUR_SWATCH}</a></div></dd>
+		<dd><div class="input-append"><input name="group_colour" type="text" id="group_colour" value="{GROUP_COLOUR}" size="7" maxlength="7" class="input-small" style="background-color: #{GROUP_COLOUR};" /><a class="btn btn-sm" type="button" href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;">{L_COLOUR_SWATCH}</a></div></dd>
 	</dl>
 	<dl>
 		<dt><label for="group_rank">{L_GROUP_RANK}:</label></dt>
@@ -70,10 +70,10 @@
 
 <fieldset class="submit-buttons">
 	{S_HIDDEN_FIELDS}
-	<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn btn-success" />&nbsp; <!-- ENDIF -->
-	<!-- IF S_IN_AVATAR_GALLERY --><input type="submit" name="cancel" value="{L_CANCEL}" class="btn" />&nbsp; <!-- ELSE -->
-	<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp; <!-- ENDIF -->
-	<input type="submit" name="update" value="{L_SUBMIT}" class="btn btn-inverse" />
+	<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn  btn-sm btn-success" />&nbsp; <!-- ENDIF -->
+	<!-- IF S_IN_AVATAR_GALLERY --><input type="submit" name="cancel" value="{L_CANCEL}" class="btn btn-sm" />&nbsp; <!-- ELSE -->
+	<input type="reset" value="{L_RESET}" name="reset" class="btn btn-sm" />&nbsp; <!-- ENDIF -->
+	<input type="submit" name="update" value="{L_SUBMIT}" class="btn btn-sm btn-inverse" />
 	{S_FORM_TOKEN}
 </fieldset>
 
@@ -168,8 +168,8 @@
 
 <fieldset class="display-actions">	
 	<select name="action"><option value="">{L_SELECT_OPTION}</option>{S_ACTION_OPTIONS}</select>
-	<input class="btn btn-inverse" type="submit" name="update" value="{L_SUBMIT}" />
-	<div><a class="btn btn-small" href="#" onclick="marklist('ucp', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-small" href="#" onclick="marklist('ucp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
+	<input class="btn btn-sm btn-inverse" type="submit" name="update" value="{L_SUBMIT}" />
+	<div><a class="btn btn-sm" href="#" onclick="marklist('ucp', 'mark', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-sm" href="#" onclick="marklist('ucp', 'mark', false); return false;">{L_UNMARK_ALL}</a></div>
 </fieldset>
 
 <div class="panel">
@@ -190,7 +190,7 @@
 	<dl>
 		<dt><label for="usernames">{L_USERNAME}:</label><br /><span>{L_USERNAMES_EXPLAIN}</span></dt>
 		<dd><textarea name="usernames" id="usernames" rows="3" cols="30" class="inputbox"></textarea></dd>
-		<dd><strong><a class="btn btn-small btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
+		<dd><strong><a class="btn btn-sm btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
 	</dl>
 	</fieldset>
 
@@ -198,7 +198,7 @@
 </div>
 
 <fieldset class="submit-buttons">
-	<input class="btn btn-inverse" type="submit" name="addusers" value="{L_SUBMIT}" />
+	<input class="btn btn-sm btn-inverse" type="submit" name="addusers" value="{L_SUBMIT}" />
 	{S_FORM_TOKEN}
 </fieldset>
 
@@ -222,7 +222,7 @@
 				<td><a href="{leader.U_EDIT}" class="topictitle"<!-- IF leader.GROUP_COLOUR --> style="color: #{leader.GROUP_COLOUR};"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
 					<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
 				</td>
-				<td class="option"><span><a class="btn btn-mini" href="{leader.U_EDIT}" >{L_EDIT}</a></span> <span><a class="btn btn-mini" href="{leader.U_LIST}">{L_GROUP_LIST}</a></span></td>
+				<td class="option"><span><a class="btn btn-xs" href="{leader.U_EDIT}" >{L_EDIT}</a></span> <span><a class="btn btn-xs" href="{leader.U_LIST}">{L_GROUP_LIST}</a></span></td>
 			</tr>
 		
 		<!-- END leader -->

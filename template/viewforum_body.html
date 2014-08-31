@@ -43,9 +43,9 @@
     	<div class="col-xl-4 col-lg-4 col-md-4  col-sm-4 col-xs-4">
     	<!-- IF S_IS_LOCKED -->
     	
-        	<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
+        	<a class="btn btn-sm btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
         	<!-- ELSE -->
-        	<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
+        	<a class="btn btn-sm btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
     	<!-- ENDIF -->
     	</div>
     	<!-- ENDIF -->
@@ -83,7 +83,7 @@
 					<input class="form-control" type="text" name="keywords" id="search_keywords" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
 			        {S_SEARCH_LOCAL_HIDDEN_FIELDS}
 				</div>
-				<button type="submit" class="btn btn-default">{L_SEARCH}</button>
+				<button type="submit" class="btn btn-sm btn-default">{L_SEARCH}</button>
 			    	
 
 			</form>
@@ -124,7 +124,7 @@
     				</dl>
     				<dl>
     					<dt>&nbsp;</dt>
-    					<dd><input type="submit" name="login" tabindex="5" value="{L_LOGIN}" class="btn" /></dd>
+    					<dd><input type="submit" name="login" tabindex="5" value="{L_LOGIN}" class="btn btn-sm" /></dd>
     				</dl>
     				{S_LOGIN_REDIRECT}
 				</div>
@@ -183,9 +183,9 @@
                                                 <!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><small><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
             					<!-- IF topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID --> &raquo; {L_IN} <a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->
             				</div>
-            				<div class=" text-center col-lg-1 hidden-md hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="badge ">{topicrow.REPLIES}</span></div>
-            				<div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="badge ">{topicrow.VIEWS}</span></div>
-            				<div class="text-center hidden-lg col-md-2 hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="badge ">{topicrow.VIEWS}</span></div>
+            				<div class=" text-center col-lg-1 hidden-md hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-info ">{topicrow.REPLIES}</span></div>
+            				<div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-info ">{topicrow.VIEWS}</span></div>
+            				<div class="text-center hidden-lg col-md-2 hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-info ">{topicrow.VIEWS}</span></div>
             				<div class="col-md-3 col-xs-3 col-sm-3 lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
             				    <span><dfn class="hidden-xs">{L_LAST_POST} </dfn><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.LAST_POST_AUTHOR_FULL}
             					<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}"> <br />{topicrow.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
@@ -227,9 +227,9 @@
     <div class="col-md-4 col-sm-4 col-xs-4 text-center">
     <!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
     	    <!-- IF S_IS_LOCKED -->
-        	    <a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
+        	    <a class="btn btn-danger btn-sm" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
         	<!-- ELSE -->
-            	<a class="btn btn-primary" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
+            	<a class="btn btn-primary btn-sm" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
         	<!-- ENDIF -->
     	
     <!-- ENDIF -->
@@ -249,7 +249,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-6">
                 <!-- IF not S_IS_BOT and U_MARK_TOPICS -->
-                    <a class="btn btn-default" href="{U_MARK_TOPICS}" accesskey="m"><i class="fa fa-check"></i> {L_MARK_TOPICS_READ}</a> 
+                    <a class="btn btn-default btn-sm" href="{U_MARK_TOPICS}" accesskey="m"><i class="fa fa-check"></i> {L_MARK_TOPICS_READ}</a> 
                 <!-- ENDIF -->
             </div>
              <div class="col-md-4 col-sm-4 col-xs-6 text-center pagination" >
@@ -277,7 +277,7 @@
                                         {S_SEARCH_LOCAL_HIDDEN_FIELDS}
 
                                     </div>
-                                     <button type="submit" class="btn btn-default">{L_SEARCH}</button>
+                                     <button type="submit" class="btn btn-default btn-sm">{L_SEARCH}</button>
                         </form>
                         <!-- ELSE -->
                          {TOTAL_TOPICS}
@@ -299,7 +299,7 @@
                             <label>{L_DISPLAY_TOPICS}:</label> {S_SELECT_SORT_DAYS}
                                     <label>{L_SORT_BY}</label> {S_SELECT_SORT_KEY}
                                     {S_SELECT_SORT_DIR}
-                                    <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
+                                    <input type="submit" name="sort" value="{L_GO}" class="btn btn-default btn-sm" />
                         <!-- ENDIF -->
 
                     </div>

@@ -16,8 +16,8 @@
 	</div>
 
 			<fieldset class="submit-buttons">
-				{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp;
-				<input type="submit" name="submit" value="{L_SAVE}" class="btn btn-inverse" />
+				{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-sm" />&nbsp;
+				<input type="submit" name="submit" value="{L_SAVE}" class="btn btn-sm btn-inverse" />
 				{S_FORM_TOKEN}
 			</fieldset>
 
@@ -62,8 +62,8 @@
 
 	<!-- IF .draftrow -->
 		<fieldset class="display-actions row">
-			<input class="btn btn-danger" type="submit" name="delete" value="{L_DELETE_MARKED}" /> &bull;
-			<a class="btn btn-small" href="#" onclick="marklist('postform', '', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-small" href="#" onclick="marklist('postform', '', false); return false;">{L_UNMARK_ALL}</a>
+			<input class="btn btn-sm btn-danger" type="submit" name="delete" value="{L_DELETE_MARKED}" /> &bull;
+			<a class="btn btn-sm" href="#" onclick="marklist('postform', '', true); return false;">{L_MARK_ALL}</a> &bull; <a class="btn btn-sm" href="#" onclick="marklist('postform', '', false); return false;">{L_UNMARK_ALL}</a>
 			{S_FORM_TOKEN}
 		</fieldset>
 	<!-- ENDIF -->

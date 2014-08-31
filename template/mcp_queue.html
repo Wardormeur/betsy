@@ -4,7 +4,7 @@
 
 <fieldset class="forum-selection">
 	<label for="fo">{L_FORUM}: <select name="f" id="fo">{S_FORUM_OPTIONS}</select></label>
-	<input type="submit" name="sort" value="{L_GO}" class="button2" />
+	<input type="submit" name="sort" value="{L_GO}" class="btn btn-sm btn-default" />
 	{S_FORM_TOKEN}
 </fieldset>
 
@@ -66,7 +66,7 @@
 			<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
 			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>
 			<!-- IF TOPIC_ID --><label><input type="checkbox" class="radio" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp; <strong>{L_ONLY_TOPIC}</strong></label><!-- ENDIF -->
-			<input type="submit" name="sort" value="{L_GO}" class="button2" />
+			<input type="submit" name="sort" value="{L_GO}" class="btn btn-sm btn-default" />
 		</fieldset>
 
 		<hr />
@@ -86,8 +86,8 @@
 
 <!-- IF .postrow -->
 	<fieldset class="display-actions">
-		<input class="button2" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
-		<input class="button1" type="submit" name="action[approve]" value="{L_APPROVE}" />
+		<input class="btn btn-sm btn-default" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
+		<input class="btn btn-sm btn-default" type="submit" name="action[approve]" value="{L_APPROVE}" />
 		<div><a href="#" onclick="marklist('mcp', 'post_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
 	</fieldset>
 <!-- ENDIF -->

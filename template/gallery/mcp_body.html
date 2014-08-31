@@ -111,7 +111,7 @@
 							<option<!-- IF S_SORT_DESC --> selected="selected"<!-- ENDIF --> value='DESC'>{L_SORT_DESCENDING}</option>
 							<option<!-- IF not S_SORT_DESC --> selected="selected"<!-- ENDIF --> value='ASC'>{L_SORT_ASCENDING}</option>
 						</select>
-					<input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+					<input type="submit" name="sort" value="{L_GO}" class="btn btn-default btn-sm" /></label>
 				</fieldset>
 			<!-- ELSE -->
 				<!-- IF NO_IMAGES_NOTE -->
@@ -153,7 +153,7 @@
 					<option value="reports_delete">{L_REPORT_A_DELETE}</option>
 				<!-- ENDIF -->
 			</select>
-			<input class="button2" type="submit" value="{L_SUBMIT}" />
+			<input class="btn btn-primary btn-sm" type="submit" value="{L_SUBMIT}" />
 			<div><a href="#" onclick="marklist('mcp', 'image_id_ary', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'image_id_ary', false); return false;">{L_UNMARK_ALL}</a></div>
 		</fieldset>
 		</form>
@@ -228,7 +228,7 @@
 						<option value="reports_delete">{L_REPORT_A_DELETE}</option>
 					<!-- ENDIF -->
 				</select>
-				<input class="button2" type="submit" value="{L_SUBMIT}" />
+				<input class="btn btn-primary btn-sm" type="submit" value="{L_SUBMIT}" />
 				<input type="hidden" value="{REPORT_ID}" name="image_id_ary[{REPORT_ID}]" />
 			</fieldset>
 		</form>
@@ -320,7 +320,7 @@
 		<h2>{L_MOVE}</h2>
 		<p>
 			{L_MOVE_TO_ALBUM} &nbsp; {S_ALBUM_SELECT} &nbsp;
-			<input class="button2" type="submit" name="move" value="{L_MOVE}" />
+			<input class="btn btn-default btn-sm" type="submit" name="move" value="{L_MOVE}" />
 			{S_HIDDEN_FIELDS}{S_FORM_TOKEN}
 		</p>
 	<span class="corners-bottom"><span></span></span></div>

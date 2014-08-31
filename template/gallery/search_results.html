@@ -38,7 +38,7 @@ function toggleElement(oElement)
 			<!-- IF SEARCH_IN_RESULTS -->
 				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="inputbox narrow" /></label>
 				<input type="hidden" name="show_results" value="posts" />
-				<input class="button2" type="submit" name="submit" value="{L_SEARCH}" />
+				<input class="btn btn-primary btn-sm" type="submit" name="submit" value="{L_SEARCH}" />
 			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
@@ -101,7 +101,7 @@ function toggleElement(oElement)
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 		<!-- IF S_SELECT_SORT_KEY and SEARCH_IN_RESULTS -->
 			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-default btn-sm" /></label>
 		<!-- ENDIF -->
 	</fieldset>
 

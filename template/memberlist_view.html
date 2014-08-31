@@ -7,7 +7,7 @@
 	<!-- IF AVATAR_IMG -->
 		<dl class="left-box">
 			<dt>{AVATAR_IMG}</dt>
-			<!-- IF RANK_TITLE --><dd style="text-align: center;"><span class="label">{RANK_TITLE}</span></dd><!-- ENDIF -->
+			<!-- IF RANK_TITLE --><dd style="text-align: center;"><span class="label label-default">{RANK_TITLE}</span></dd><!-- ENDIF -->
 			<!-- IF RANK_IMG --><dd style="text-align: center;">{RANK_IMG}</dd><!-- ENDIF -->
 		</dl>
 	<!-- ENDIF -->
@@ -29,7 +29,7 @@
 		<!-- IF AGE !== '' --><dt>{L_AGE}:</dt> <dd>{AGE}</dd><!-- ENDIF -->
 		<!-- IF OCCUPATION --><dt>{L_OCCUPATION}:</dt> <dd>{OCCUPATION}</dd><!-- ENDIF -->
 		<!-- IF INTERESTS --><dt>{L_INTERESTS}:</dt> <dd>{INTERESTS}</dd><!-- ENDIF -->
-		<!-- IF S_GROUP_OPTIONS --><dt>{L_USERGROUPS}:</dt> <dd><select name="g" class="no-margin">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="btn" /></dd><!-- ENDIF -->
+		<!-- IF S_GROUP_OPTIONS --><dt>{L_USERGROUPS}:</dt> <dd><select name="g" class="no-margin">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="btn-sm btn" /></dd><!-- ENDIF -->
 	    <!-- IF U_GALLERY --><dt>{L_GALLERY}:</dt> <dd><a href="{U_GALLERY}">{SHOW_PERSONAL_ALBUM_OF}</a></dd><!-- ENDIF -->
         <!-- MOD: SHMK USER FEEDBACK -->
     	<!-- IF FEEDBACK -->
