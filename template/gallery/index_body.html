@@ -2,7 +2,7 @@
 
 
 <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
-<!--<div class="row">-->
+
        <script>
             $('#recent a').click(function (e) {
                 e.preventDefault();
@@ -14,11 +14,14 @@
               });
 
         </script>
-        
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#recent" data-toggle="tab">Photos récentes</a></li>
-  <li><a href="#albums" data-toggle="tab">Galeries</a></li>
-</ul>   
+    <div id = "p-tabs">
+        <ul class="nav nav-pills pull-right" >
+            <li class="active"><a href="#recent" data-toggle="tab"><span>Photos récentes</span></a></li>
+          <li><a href="#albums" data-toggle="tab"><span>Galeries</span></a></li>
+        </ul>   
+    </div>
+</div>
+<div class="row">
     <div class="btn-group ">
         <!-- IF S_DISPLAY_SEARCH -->
                 <a class="btn btn-default btn-sm" href="{U_G_SEARCH_RECENT}">{L_VIEW_SEARCH_RECENT}</a> 

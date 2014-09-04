@@ -336,8 +336,6 @@ p.rules a {
 .clear {
   display: block;
   clear: both;
-  font-size: 1px;
-  line-height: 1px;
   background: transparent;
 }
 a {
@@ -1026,26 +1024,31 @@ fieldset.polls dd.resultbar {
   width: 50%;
 }
 .pollbar1 {
+  display: inline-block;
   background-color: #aaa;
   border-right: 1px solid #747474;
   border-bottom: 1px solid #747474;
 }
 .pollbar2 {
+  display: inline-block;
   background-color: #bebebe;
   border-right: 1px solid #8c8c8c;
   border-bottom: 1px solid #8c8c8c;
 }
 .pollbar3 {
+  display: inline-block;
   background-color: #d1d1d1;
   border-right: 1px solid #aaa;
   border-bottom: 1px solid #aaa;
 }
 .pollbar4 {
+  display: inline-block;
   background-color: #e4e4e4;
   border-right: 1px solid #bebebe;
   border-bottom: 1px solid #bebebe;
 }
 .pollbar5 {
+  display: inline-block;
   background-color: #f8f8f8;
   border-right: 1px solid #d1d1d1;
   border-bottom: 1px solid #d1d1d1;
@@ -8937,11 +8940,15 @@ header {
   background-color: #195479;
 }
 /*Background color for pills isnt implemented in BS3 (bullshit3) so we need to override the WHOLE process. Great.*/
+#p-tabs > .nav-pills > li > a {
+  border-radius: 4px 4px 4px 4px;
+}
 #p-tabs > .nav-pills > li > a:hover {
   background-color: #999;
 }
 #p-tabs > .nav-pills > li {
   background-color: #eee;
+  border-radius: 4px 4px 4px 4px;
 }
 #p-tabs > .nav-pills > li.active {
   background-color: #195479;
@@ -8949,6 +8956,10 @@ header {
 .pagination {
   padding-left: inherit;
   margin: 0 0 0 0 ;
+}
+.margin-container {
+  margin-right: 15px;
+  margin-left: 15px;
 }
 .search-query {
   padding-right: 14px;
@@ -9008,6 +9019,11 @@ a#logo {
 }
 a#logo:hover {
   text-decoration: none;
+}
+.headerrow {
+  font-size: 1.1em;
+  font-weight: bold;
+  border-bottom: 1px solid #195479;
 }
 h2.topic-title {
   display: inline-block;
@@ -9226,7 +9242,8 @@ body {
   color: #fff;
 }
 /* @media  ( min-width:(@screen-md-min + 100)) and (max-width:@screen-lg-min), ( min-width:(@screen-lg-min + 225)) and (max-width:(@screen-xl - 1)), ( min-width:(@screen-xl + 100)) */
-@media (min-width: 1067px) and (max-width: 1199px), (min-width: 1280px) and (max-width: 1600px), (min-width: 1700px) {
+/*@media  ( min-width:(@screen-md-min + 75 )) and (max-width:@screen-md-max), ( min-width:(@screen-lg-min + 80)) and (max-width:(@screen-xl)), ( min-width:(@screen-xl + 100))*/
+@media (min-width: 992px) {
   #wrapper {
     padding-right: 250px;
   }

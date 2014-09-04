@@ -12,26 +12,18 @@
 <!-- ENDIF -->
 
 <!-- IF S_FORUM_RULES -->
-	<div class="rules">
-		<div class="inner">
-
+	<div class="rules well row">
+           
 		<!-- IF U_FORUM_RULES -->
 			<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
 		<!-- ELSE -->
 			<strong>{L_FORUM_RULES}</strong><br />
 			{FORUM_RULES}
 		<!-- ENDIF -->
-
-		</div>
 	</div>
 <!-- ENDIF -->
 
 <!-- IF S_HAS_SUBFORUM -->
-<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-<div class=" row ">
-	    <div class=" col-xl-3 col-lg-3 col-md-3 col-sm-3  col-xs-3"></div>
-</div>
-<!-- ENDIF -->
 	<!-- INCLUDE forumlist_body.html -->
 	<span class="endforumlist"></span>
 <!-- ENDIF -->
@@ -183,9 +175,9 @@
                                                 <!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><small><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
             					<!-- IF topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID --> &raquo; {L_IN} <a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->
             				</div>
-            				<div class=" text-center col-lg-1 hidden-md hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-info ">{topicrow.REPLIES}</span></div>
-            				<div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-info ">{topicrow.VIEWS}</span></div>
-            				<div class="text-center hidden-lg col-md-2 hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-info ">{topicrow.VIEWS}</span></div>
+            				<div class=" text-center col-lg-1 hidden-md hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-success ">{topicrow.REPLIES}</span></div>
+            				<div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-success ">{topicrow.VIEWS}</span></div>
+            				<div class="text-center hidden-lg col-md-2 hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-success ">{topicrow.VIEWS}</span></div>
             				<div class="col-md-3 col-xs-3 col-sm-3 lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
             				    <span><dfn class="hidden-xs">{L_LAST_POST} </dfn><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.LAST_POST_AUTHOR_FULL}
             					<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}"> <br />{topicrow.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->

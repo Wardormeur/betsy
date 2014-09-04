@@ -1,8 +1,7 @@
 <!-- INCLUDE gallery/gallery_header.html -->
 
-<!-- IF not S_IN_GALLERY_POPUP and U_MCP --><p>[&nbsp;<a href="{U_MCP}">{L_MCP}</a>&nbsp;]</p><!-- ENDIF -->
-<h2><a href="{U_VIEW_ALBUM}">{ALBUM_NAME}</a></h2>
-
+<h2 class="h2-breadcrumb"><a href="{U_VIEW_ALBUM}">{ALBUM_NAME}</a></h2>
+</div>
 <!-- IF not S_IN_GALLERY_POPUP and ALBUM_DESC or MODERATORS or U_MCP -->
 <div>
 	<!-- NOTE: remove the style="display: none !important;" when you want to have the album description on the album body -->
@@ -126,4 +125,5 @@
 <!-- ENDIF -->
 
 
+<!-- IF not S_IN_GALLERY_POPUP and U_MCP --><p>[&nbsp;<a href="{U_MCP}">{L_MCP}</a>&nbsp;]</p><!-- ENDIF -->
 <!-- INCLUDE gallery/gallery_footer.html -->

@@ -4,7 +4,7 @@
 <!-- IF FB_PAGE === 'index' -->
 <h2>{L_FB_FEEDBACK}</h2>
 </div> <!-- end of overall header-->
-<div class="row">
+<div class="row well">
     <form class="form-inline" action="{FB_ACTION}" method="post"{S_FORM_ENCTYPE}>
         <div >{L_FB_SEARCH}</div>
             <div >
@@ -17,18 +17,19 @@
 
 <div class="row ">   
         <div class=" col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 " >
-        <h2 >{L_FB_BEST_USERS}</h2>
+            <div class="row">
+            <h2 >{L_FB_BEST_USERS}</h2>
     
-            <div class="panel panel-default">
-                        <div class="row panel-title">
+            <div class="panel panel-default col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row panel-title headerrow">
                             <div class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_RANK}</div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_USER}</div>
                             <!-- IF FB_S_SCORE == 0 -->
-                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_POS}</div>
-                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_NEU}</div>
-                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_NEG}</div>
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{L_FB_POS}</div>
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{L_FB_NEU}</div>
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{L_FB_NEG}</div>
                             <!-- ELSE -->
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_SCORE}</div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center">{L_FB_SCORE}</div>
                             <!-- ENDIF -->
                         </div>
                         <div class="panel-body">
@@ -42,16 +43,16 @@
                                     <a href="{best.FB_LINK}" style="color:{best.FB_USER_COL}; ">{best.FB_USER}</a>
                                 </div>
                                 <!-- IF FB_S_SCORE == 0 -->
-                                    <span class="positive col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{best.FB_POS}</span>
-                                    <span class="neudival col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{best.FB_NEU}</span>
-                                    <span class="negative col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{best.FB_NEG}</span>
+                                    <span class="positive col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">{best.FB_POS}</span>
+                                    <span class="neudival col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{best.FB_NEU}</span>
+                                    <span class="negative col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{best.FB_NEG}</span>
                                     <!-- ELSE -->
                                         <!-- IF best.FB_SCORE > 0-->
-                                        <span class="positive col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{best.FB_SCORE}</span>
+                                        <span class="positive col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center">{best.FB_SCORE}</span>
                                         <!-- ELSEIF best.FB_SCORE == 0-->
-                                        <span class="neudival col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{best.FB_SCORE}</span>
+                                        <span class="neudival col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center">{best.FB_SCORE}</span>
                                         <!-- ELSE -->
-                                        <span class="negative col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{best.FB_SCORE}</span>
+                                        <span class="negative col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center">{best.FB_SCORE}</span>
                                     <!-- ENDIF -->
                                 <!-- ENDIF -->
                             </div>
@@ -60,23 +61,23 @@
                             </div>
                         </div>
                     </div>
-                        
+        </div>       
        
           
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 " >
-            
-            <h2>{L_FB_WORST_USERS}</h2>
-            <div class="panel panel-default">
+            <div class="row">
+                <h2>{L_FB_WORST_USERS}</h2>
+                <div class="panel panel-default col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                  
-                        <div class="row panel-title">
+                        <div class="row panel-title headerrow">
                             <div class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_RANK}</div>
                             <div class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_USER}</div>
                             <!-- IF FB_S_SCORE == 0 -->
-                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_POS}</div>
-                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_NEU}</div>
-                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{L_FB_NEG}</div>
+                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{L_FB_POS}</div>
+                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{L_FB_NEU}</div>
+                             <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{L_FB_NEG}</div>
                             <!-- ELSE -->
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{L_FB_SCORE}</div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center">{L_FB_SCORE}</div>
                             <!-- ENDIF -->
                         </div>
                         <div class="panel-body">
@@ -90,25 +91,26 @@
                                     <a href="{worst.FB_LINK}" style="color:{worst.FB_USER_COL}; ">{worst.FB_USER}</a>
                                 </div>
                                 <!-- IF FB_S_SCORE == 0 -->
-                                <span class="positive col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{worst.FB_POS}</span>
-                                <span class="neudival col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{worst.FB_NEU}</span>
-                                <span class="negative col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1">{worst.FB_NEG}</span>
+                                <span class="positive col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{worst.FB_POS}</span>
+                                <span class="neudival col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{worst.FB_NEU}</span>
+                                <span class="negative col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1  text-center">{worst.FB_NEG}</span>
                                 <!-- ELSE -->
                                 <!-- IF worst.FB_SCORE > 0-->
-                                <span class="positive">{worst.FB_SCORE}</span>
+                                <span class="positive  col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">{worst.FB_SCORE}</span>
                                 <!-- ELSEIF worst.FB_SCORE == 0-->
-                                <span class="neudival">{worst.FB_SCORE}</span>
+                                <span class="neudival col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">{worst.FB_SCORE}</span>
                                 <!-- ELSE -->
-                                <span class="negative">{worst.FB_SCORE}</span>
+                                <span class="negative col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">{worst.FB_SCORE}</span>
                                 <!-- ENDIF -->
                                 <!-- ENDIF -->
                             </div>
                             <!-- END -->
                             <div class="bg1 row" ><a href="{FB_MOREWORST}">{L_FB_VIEWMORE}</a></div>
-                        
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 <!-- ENDIF -->
 
 <!-- IF FB_PAGE === 'show' -->
@@ -117,7 +119,7 @@
 
     <div class=" row text-center">
         <div class=" panel panel-default col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="panel-title row" >
+                <div class="panel-title row headerrow" >
                     <h4 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2 ">{L_FB_POS}</h4>
                     <h4 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_NEU}</h4>
                     <h4 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_NEG}</h4>
@@ -145,29 +147,34 @@
     </div>
 <div class="pull-right">
     <h3>{L_FB_FILTER}</h3>
-    <ul class="nav nav-pills">
-        <li class="active"><a href="{FB_FILTER_ALL}#fb_details">{L_FB_FILTER_ALL}</a></li>
-        <li><a href="{FB_FILTER_POS}#fb_details">{L_FB_FILTER_POS}</a></li>
-        <li><a href="{FB_FILTER_NEU}#fb_details">{L_FB_FILTER_NEU}</a></li>
-        <li><a href="{FB_FILTER_NEG}#fb_details">{L_FB_FILTER_NEG}</a></li>
-    </ul>
+    <div id="p-tabs">
+        <ul class="nav nav-pills">
+            <li class="active"><a href="{FB_FILTER_ALL}#fb_details">{L_FB_FILTER_ALL}</a></li>
+            <li><a href="{FB_FILTER_POS}#fb_details">{L_FB_FILTER_POS}</a></li>
+            <li><a href="{FB_FILTER_NEU}#fb_details">{L_FB_FILTER_NEU}</a></li>
+            <li><a href="{FB_FILTER_NEG}#fb_details">{L_FB_FILTER_NEG}</a></li>
+        </ul>
+    </div>
 </div>
 <!-- IF FB_S_ROLE -->
 <div class="pull-right">
     <h3>{L_FB_ROLE}</h3>
-    <ul class="nav nav-pills">
-        <li class="active"><a href="{FB_ROLE_ALL}#fb_details">{L_FB_ROLE_ALL}</a></li>
-        <li><a href="{FB_ROLE_BUYER}#fb_details">{L_FB_ROLE_BUYER}</a>
-        <li><a href="{FB_ROLE_SELLER}#fb_details">{L_FB_ROLE_SELLER}</a></li>
-        <li><a href="{FB_ROLE_TRADE}#fb_details">{L_FB_ROLE_TRADE}</a></li>
-    </ul>
+    
+    <div id="p-tabs">
+        <ul class="nav nav-pills">
+            <li class="active"><a href="{FB_ROLE_ALL}#fb_details">{L_FB_ROLE_ALL}</a></li>
+            <li><a href="{FB_ROLE_BUYER}#fb_details">{L_FB_ROLE_BUYER}</a>
+            <li><a href="{FB_ROLE_SELLER}#fb_details">{L_FB_ROLE_SELLER}</a></li>
+            <li><a href="{FB_ROLE_TRADE}#fb_details">{L_FB_ROLE_TRADE}</a></li>
+        </ul>
+    </div>
 </div>
 <!-- ENDIF -->
 <a name="fb_details"></a>
 <h2>{L_FB_DETAILS}</h2>
 <div class="forumbg row panel">
     <div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="table1 row panel-title">
+        <div class="table1 row panel-title headerrow">
                     <h3 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_FROM} <a href="{FB_ORDER_FROMA}">[&and;]</a><a href="{FB_ORDER_FROMD}">[&or;]</a></h3>
                     <!-- IF FB_SHOWIP -->
                     <h3 class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{L_FB_IP} <a href="{FB_ORDER_IPA}">[&and;]</a><a href="{FB_ORDER_IPD}">[&or;]</a></h3>

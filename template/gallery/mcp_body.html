@@ -234,14 +234,13 @@
 		</form>
 	<!-- ENDIF -->
 	</div>
-	<div class="clear"></div>
 
 	</div>
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 <!-- ELSEIF S_MODE_OVERVIEW -->
 <div class="panel bg3">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 	<div style="width: 100%;">
 	<div id="cp-menu">&nbsp;</div>
 
@@ -249,7 +248,7 @@
 	<h2>{SUBSECTION}</h2>
 
 	<div class="panel">
-		<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="inner">
 
 		<h3>{L_LATEST_IMAGES_UNAPPROVED}</h3>
 
@@ -304,26 +303,25 @@
 			<strong>{NO_REPORTED_IMAGE}</strong>
 		<!-- ENDIF -->
 
-		<span class="corners-bottom"><span></span></span></div>
+		<</div>
 	</div>
 
 	</div>
-	<div class="clear"></div>
 
 	</div>
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 <!-- ELSE -->
 <form method="post" id="mcp" action="{S_MCP_ACTION}">
 <div class="panel" id="message">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 		<h2>{L_MOVE}</h2>
 		<p>
 			{L_MOVE_TO_ALBUM} &nbsp; {S_ALBUM_SELECT} &nbsp;
 			<input class="btn btn-default btn-sm" type="submit" name="move" value="{L_MOVE}" />
 			{S_HIDDEN_FIELDS}{S_FORM_TOKEN}
 		</p>
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 </form>
 <!-- ENDIF -->

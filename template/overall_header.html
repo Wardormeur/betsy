@@ -145,12 +145,12 @@
         				</li>
         				<!-- END: SHMK USER FEEDBACK -->
                                         <li>
-                                            <a href="{U_YOUR_PERSONAL_GALLERY}">{L_YOUR_PERSONAL_ALBUM}</a>
+                                            <a href="{U_YOUR_PERSONAL_GALLERY}"><i class="fa fa-camera"></i> {L_YOUR_PERSONAL_ALBUM}</a>
                                         </li>
                                         <li class="divider"></li>
                                         <!-- ENDIF -->				
                                         <li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
-                                                <i class="fa fa-sign-in "></i> {L_LOGIN_LOGOUT}</a>
+                                                <i class="fa fa-sign-out "></i> {L_LOGIN_LOGOUT}</a>
                                         </li>
                                         <!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
                                         <li class="bb-register">
@@ -210,11 +210,11 @@
     					<li class="divider-vertical"></li>
     					<li class=""><a href="/kiwi/?nick={S_USERNAME}">IRC</a></li>
     					<li class="divider-vertical"></li>
-    					<li class="hidden-xs hidden-sm <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
+    					<li class=" hidden-sm <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
         					<!-- MOD: SHMK USER FEEDBACK -->
                                         <li class="divider-vertical"></li>
     				
-    					<li class="hidden-xs hidden-sm <!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
+    					<li class=" hidden-sm <!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
         					<!-- END: SHMK USER FEEDBACK -->
     					<li class="dropdown ">
                                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Participer<b class="caret"></b></a>
@@ -242,7 +242,7 @@
     					<li class="divider-vertical"></li>
     					<li class="bb-register"><a href="{U_REGISTER}"><i class=" "></i> {L_REGISTER}</a></li>
     					<li class="divider-vertical"></li>
-    					<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa icon-minus-sign "></i> {L_LOGIN_LOGOUT}</a></li>
+    					<li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-sign-out "></i> {L_LOGIN_LOGOUT}</a></li>
                   <!-- ENDIF -->
     					
     			</ul><!-- ul -->
