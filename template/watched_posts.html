@@ -1,0 +1,23 @@
+
+
+
+
+<!-- BEGIN watchtopicrow -->
+	
+    
+	<!-- IF watchtopicrow.S_FIRST_ROW and S_USER_LOGGED_IN  -->
+                     <li class=" sidebar-brand">
+                         Vos favoris
+                    </li>
+                       
+        	<!-- ENDIF -->
+                            <li >
+                                   <a title="{watchtopicrow.U_TOPICTITLE}" class="<!-- IF watchtopicrow.U_TOPICUNREAD -->unread<!-- ENDIF -->" href="{watchtopicrow.U_TOPICLINK}">{watchtopicrow.U_TOPICTITLE}</a>
+                              
+                            </li>
+            	
+
+
+<!-- BEGINELSE -->
+	<!-- NOthing , no post, fucker ! -->
+<!-- END watchtopicrow -->

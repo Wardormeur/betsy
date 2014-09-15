@@ -1,0 +1,55 @@
+
+
+	
+<li class=" sidebar-brand ">
+    Derniers articles
+</li>
+<li >
+    <article id="slider">
+    <!-- BEGIN postrow -->
+        <!-- IF postrow.S_ROW_COUNT < 1 -->
+            <input checked="" name="slider" class="hidden" id="slide{postrow.U_POSTCOUNT}" type="radio" >
+        <!-- ELSE -->
+              <input name="slider" class="hidden" id="slide{postrow.U_POSTCOUNT}" type="radio">    
+        <!-- ENDIF -->
+    <!-- END .postrow  -->
+	<div id="slides">
+		
+            <div id="overflow">
+
+                <div class="inner">
+
+    <!-- BEGIN postrow -->
+                    <article>
+                            <div class="info"> 
+                                <h3>{postrow.U_POSTTITLE}</h3>  
+                            </div>
+                        <a href="{postrow.U_POSTLINK}"><img src="{postrow.U_POSTPIC}"/></a>
+                    </article>
+    <!-- END .postrow  -->				
+
+                </div> 
+
+            </div> 
+
+         </div> 
+
+	
+     <!--   <div id="controls">-->
+            <!-- BEGIN postrow -->
+            <!--<label for="slide{postrow.U_POSTCOUNT}"></label>-->
+            <!-- END .postrow  -->				
+      <!--  </div> -->
+
+	
+        <div id="active">
+            <!-- BEGIN postrow -->
+            <label for="slide{postrow.U_POSTCOUNT}"></label>			
+            <!-- END .postrow  -->
+        </div> 
+        
+	
+    </article> 
+</li>
+	               
+           

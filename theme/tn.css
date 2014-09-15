@@ -8936,7 +8936,7 @@ header {
 .nav li:hover {
   background-color: #154564;
 }
-.nav li #search:hover {
+.nav li.noh:hover {
   background-color: #195479;
 }
 /*Background color for pills isnt implemented in BS3 (bullshit3) so we need to override the WHOLE process. Great.*/
@@ -8956,10 +8956,6 @@ header {
 .pagination {
   padding-left: inherit;
   margin: 0 0 0 0 ;
-}
-.margin-container {
-  margin-right: 15px;
-  margin-left: 15px;
 }
 .search-query {
   padding-right: 14px;
@@ -9019,6 +9015,9 @@ a#logo {
 }
 a#logo:hover {
   text-decoration: none;
+}
+a#logo img {
+  max-height: 9em;
 }
 .headerrow {
   font-size: 1.1em;
@@ -9152,6 +9151,12 @@ blockquote {
 body {
   padding-top: 60px;
 }
+@media (min-width: 992px) {
+  .margin-container {
+    margin-right: 20px;
+    margin-left: 40px;
+  }
+}
 /*!
  * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
@@ -9217,7 +9222,7 @@ body {
   line-height: 2em;
   text-indent: 20px;
 }
-.sidebar-nav li:hover {
+.sidebar-nav li.hover :hover {
   background-color: #154564;
 }
 .sidebar-nav li a {
