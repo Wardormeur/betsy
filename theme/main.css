@@ -65,7 +65,7 @@
 }
 
 #slider article img {
-    max-width:inherit;
+    max-width:75px;
 }
 #slider article a {
     background-color: #fff;
