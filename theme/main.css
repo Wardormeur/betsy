@@ -65,7 +65,8 @@
 }
 
 #slider article img {
-    max-width:200px;
+    max-width:240px;
+    max-height:240px;
 }
 #slider article a {
     background-color: #fff;
