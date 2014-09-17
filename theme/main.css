@@ -53,10 +53,10 @@
 }
 
 #slide1:checked ~ #slides .inner { margin-left:0; }
-#slide2:checked ~ #slides .inner { margin-left:-110%; }
-#slide3:checked ~ #slides .inner { margin-left:-220%; }
-#slide4:checked ~ #slides .inner { margin-left:-330%; }
-#slide5:checked ~ #slides .inner { margin-left:-440%; }
+#slide2:checked ~ #slides .inner { margin-left:-100%; }
+#slide3:checked ~ #slides .inner { margin-left:-200%; }
+#slide4:checked ~ #slides .inner { margin-left:-300%; }
+#slide5:checked ~ #slides .inner { margin-left:-400%; }
 
 
 #slider #overflow {
@@ -65,8 +65,7 @@
 }
 
 #slider article img {
-    max-width:250px;
-    width:250px;
+    width: 100%;
     max-height:250px;
 }
 
