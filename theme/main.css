@@ -53,10 +53,10 @@
 }
 
 #slide1:checked ~ #slides .inner { margin-left:0; }
-#slide2:checked ~ #slides .inner { margin-left:-90%; }
-#slide3:checked ~ #slides .inner { margin-left:-180%; }
-#slide4:checked ~ #slides .inner { margin-left:-270%; }
-#slide5:checked ~ #slides .inner { margin-left:-360%; }
+#slide2:checked ~ #slides .inner { margin-left:-110%; }
+#slide3:checked ~ #slides .inner { margin-left:-220%; }
+#slide4:checked ~ #slides .inner { margin-left:-330%; }
+#slide5:checked ~ #slides .inner { margin-left:-440%; }
 
 
 #slider #overflow {
