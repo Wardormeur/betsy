@@ -154,13 +154,11 @@
 #slider article a, #slider article h3{
     background-color: rgba(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.5);
+     text-align: left;
+    text-indent: 0;
+    max-width: 240px;
 }
 
-#slider article a{
-    text-align: left;
-    text-indent: 0;
-    
-}
 #slider .info {
 	line-height: 20px;
 	margin: 0 0 -150%;
