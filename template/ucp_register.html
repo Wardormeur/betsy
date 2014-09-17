@@ -1,5 +1,5 @@
 <!-- INCLUDE overall_header.html -->
-
+</div>
 <script type="text/javascript">
 // <![CDATA[
 	/**
@@ -20,11 +20,10 @@
 
 <form method="post" action="{S_UCP_ACTION}" id="register" class="form-horizontal">
 	<div class="panel row well">
-		<h3 class="box-heading">{SITENAME} - {L_REGISTRATION}</h3>
-		<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
-		<!-- IF L_REG_COND -->
-			<p><strong>{L_REG_COND}</strong></p>
-		<!-- ENDIF -->
+		<h2 class=" panel-title ">{SITENAME} - {L_REGISTRATION}</h2>
+                <hr/>
+                <!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+		
 		<div class="form-group">
 			<label for="username" class="col-sm-2 control-label">{L_USERNAME}:</label>
 			<div class="col-sm-6">
@@ -39,6 +38,11 @@
 			<div class="col-sm-6">
 				<input type="email" tabindex="2" name="email" id="email" size="25" maxlength="100" value="{EMAIL}" class="form-control" title="{L_EMAIL_ADDRESS}" />
 			</div>
+                        <div class="col-sm-4 form-explain">
+                            <!-- IF L_REG_COND -->
+                                    <p>{L_REG_COND}</p>
+                            <!-- ENDIF -->
+                        </div>
 		</div>
 		<div class="form-group">
 			<label for="email_confirm" class="col-sm-2 control-label">{L_CONFIRM_EMAIL}:</label>
@@ -99,22 +103,22 @@
 	<!-- ENDIF -->
 
 
-		<hr />
 
 		<!-- IF S_COPPA -->
 		<h3 class="box-heading">{L_COPPA_COMPLIANCE}</h3>
 
-		<div class="form-group">
-			<p>{L_COPPA_EXPLAIN}</p>
-		</div>
+                    <div class="form-group">
+                            <p>{L_COPPA_EXPLAIN}</p>
+                    </div>
 		
+		<hr />
 		<!-- ENDIF -->
 
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-6">
 				{S_HIDDEN_FIELDS}
 				<button type="reset" name="reset" class="btn btn-sm btn-default" >{L_RESET}</button>
-				<button type="submit" name="submit" tabindex="9" class="btn  btn-sm btn-default">{L_SUBMIT}</button>
+				<button type="submit" name="submit" tabindex="9" class="btn  btn-sm btn-primary">{L_SUBMIT}</button>
 			</div>
 			{S_FORM_TOKEN}
 		</div>

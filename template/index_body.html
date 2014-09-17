@@ -96,32 +96,32 @@
 <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
 <div class="row well">
 	<form method="post" action="{S_LOGIN_ACTION}" class="form-horizontal no-margin col-md-12 col-sm-12 col-xs-12 col-xl-12">
-    	<div class="btn-group  row">
-    	    <h4 class=" btn btn-default col-md-6"><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4>
-    	    <!-- IF S_REGISTER_ENABLED --><h4 class=" btn btn-default col-md-6"><a href="{U_REGISTER}">{L_REGISTER}</a></h4><!-- ENDIF -->
-    	</div>
-    	<p>
-    		<div class="quick-login form-group row">
-    			
-    			<label for="username">{L_USERNAME}:</label>&nbsp;<input type="text" name="username" id="username" size="10" class="inputbox form-control" title="{L_USERNAME}" />
-			</div>
-			<div class="quick-login form-group row">
-    			<label for="password">{L_PASSWORD}:</label>&nbsp;<input type="password" name="password" id="password" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
-			</div>
+    	 <div class=" form-group row">
+            <div class="col-md-6">
+                
+                <h4 ><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4>
+                <label for="username">{L_USERNAME}:</label>&nbsp;<input type="text" name="username" id="username" size="10" class="inputbox form-control" title="{L_USERNAME}" />
 
-			<div class="quick-login form-group row">
-    			<!-- IF S_AUTOLOGIN_ENABLED -->
-    				<label for="autologin"> <input type="checkbox" name="autologin" id="autologin" /> {L_LOG_ME_IN}</label>
-    			<!-- ENDIF -->
-    			<input type="submit" name="login" value="{L_LOGIN}" class="btn btn-sm btn-default" />
-    			{S_LOGIN_REDIRECT}
-    		</div>
-    	</p>
+                <label for="password">{L_PASSWORD}:</label>&nbsp;<input type="password" name="password" id="password" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
+        
+
+       
+        <!-- IF S_AUTOLOGIN_ENABLED -->
+                <label for="autologin"> <input type="checkbox" name="autologin" id="autologin" /> {L_LOG_ME_IN}</label>
+        <!-- ENDIF -->
+                <input type="submit" name="login" value="{L_LOGIN}" class="btn btn-sm btn-default" />
+                {S_LOGIN_REDIRECT}
+            </div>
+            <div class="col-md-6">
+                 <!-- IF S_REGISTER_ENABLED --><h4><a href="{U_REGISTER}">{L_REGISTER}</a></h4><!-- ENDIF -->
+                 <p>A venir : support pour des providers externes</p>
+            </div>
+        </div>
 	</form>
 </div>
 <!-- ENDIF -->
 
-<!-- IF S_DISPLAY_ONLINE_LIST -->
+<!-- IF S_DISPLAY_ONLINE_LIST and S_USER_LOGGED_IN-->
 <div class="row well hidden-xs">
 	<!-- IF U_VIEWONLINE -->
 	<h3 class="panel-title"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3 class="panel-title">{L_WHO_IS_ONLINE}</h3>
@@ -131,14 +131,14 @@
 </div>
 <!-- ENDIF -->
 
-<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST and S_USER_LOGGED_IN -->
 <div class="row well hidden-xs">
 	<h3 class="panel-title">{L_BIRTHDAYS}</h3>
 	<p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
 </div>
 <!-- ENDIF -->
 
-<!-- IF NEWEST_USER -->
+<!-- IF NEWEST_USER and S_USER_LOGGED_IN -->
 <div class="row well hidden-xs">
 	<h3 class="panel-title">{L_STATISTICS}</h3>
         <p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} <!-- IF TOTAL_IMAGES --> &bull; {TOTAL_IMAGES}<!-- ENDIF --> &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>

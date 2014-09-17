@@ -66,9 +66,11 @@
 
 #slider article img {
     max-width:240px;
+    width: 240px;
     max-height:240px;
 }
-#slider article a {
+
+#slider article a, #slider article h3{
     background-color: #fff;
 }
 #slides .inner {
