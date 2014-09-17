@@ -26,6 +26,7 @@
 
 #slider {
 	margin: 0 auto;
+        width: 220px;
 }
 #slider *{
             -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
@@ -39,13 +40,6 @@
 
 
 
-
-
-
-
-
-
-/* NEW EXPERIMENT */
 /* Slider Setup */
 
 #slider input .hidden {
