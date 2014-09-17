@@ -65,13 +65,13 @@
 }
 
 #slider article img {
-    max-width:240px;
-    width: 240px;
-    max-height:240px;
+    max-width:250px;
+    max-height:250px;
 }
 
 #slider article a, #slider article h3{
-    background-color: #fff;
+    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 #slides .inner {
 	width: 500%;
