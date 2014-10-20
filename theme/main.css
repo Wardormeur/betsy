@@ -1,10 +1,33 @@
+.pagination span a {
+    padding : 5px 2px 5px 2px ;
+    
+}
+
+#toTop{
+    display:none;
+    position:fixed;
+    right:20px;
+    left:auto!important;
+    top:auto;
+    bottom:20px;
+    cursor:pointer;
+    font-size:20px;
+    background:#0072ba;
+    padding:16px 20px;;
+    color:#fff;
+}
+
+
+
 .no-hover:hover{
     background-color: inherit;
     
 }
 
 #sidebar-wrapper{
-    overflow-x: hidden;
+    overflow: hidden;
+	position:fixed;
+    height:100%;
 }
 
 #slider {
@@ -16,6 +39,7 @@
 }
 
 
+
 #slider  label:hover,  #slider  a:hover {
 	color: #000 !important;
 }
@@ -25,8 +49,8 @@
 #slider .catch { display: block; height: 0; overflow: hidden; }
 
 #slider {
-	margin: 0 auto;
-        width: 240px;
+	margin: 0 1 0 1 ;
+        width: 248px;
 }
 #slider *{
             -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
@@ -60,8 +84,8 @@
 
 #slider article img {
     width: 100%;
-    max-width: 240px;
-    max-height:240px;
+    max-width: 245px;
+    max-height:230px;
 }
 
 
@@ -156,7 +180,7 @@
     background-color: rgba(0, 0, 0, 0.5);
      text-align: left;
     text-indent: 0;
-    max-width: 240px;
+    max-width: 242px;
 }
 
 #slider .info {
@@ -167,6 +191,10 @@
 	opacity: 0;
 	color: #000;
 	text-align: left;
+        text-overflow:ellipsis-word;
+        overflow: hidden;
+        white-space: nowrap;
+        
 }
 
 #slider .info h3 {
@@ -177,6 +205,28 @@
 	font-style: normal;
 }
 
+#slider .info:hover {
+	opacity: 0;
+	color: #000;
+        /*overflow:visible;*/
+        animation: slide infinite 3s alternate;
+}
+#slider article h3:hover{
+        max-width:100%;
+    
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 0px;
+  }
+  50% {
+    margin-left: -50%;
+  }
+  100%{
+    margin-left:-100%;
+  }
+}
 /* Slider Styling */
 
 #slider #slides {

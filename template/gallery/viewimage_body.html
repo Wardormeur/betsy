@@ -1,18 +1,23 @@
 <!-- INCLUDE gallery/gallery_header.html -->
-<h2><a href="{S_ALBUM_ACTION}">{IMAGE_NAME}</a></h2>
+<strong>&rsaquo;</strong> <strong><a href="{S_ALBUM_ACTION}">{IMAGE_NAME}</a></strong>
+            </li>
+        </ul>
+    </span>
 </div>
-<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="row">
+    <div class="col-xs-12">
 
-<div class="row post bg2<!-- IF S_IMAGE_REPORTED --> reported<!-- ENDIF -->">
-	<div class="inner">
-		<!-- IF UC_PREVIOUS --><p style="float: left; text-align: left;">{UC_PREVIOUS_IMAGE}<br />{UC_PREVIOUS}</p><!-- ENDIF -->
-		<!-- IF UC_NEXT --><p style="float: right; text-align: right;">{UC_NEXT_IMAGE}<br />{UC_NEXT}</p><!-- ENDIF -->
-		<div style="text-align: center; padding: 20px;">{UC_IMAGE}
-			<!-- IF S_IMAGE_REPORTED --><br /><br /><a href="{U_IMAGE_REPORTED}"><span class="error">{L_IMAGE_REPORTED}</span></a><!-- ENDIF -->
-		</div>
-	</div>
+        <div class="row post bg2<!-- IF S_IMAGE_REPORTED --> reported<!-- ENDIF -->">
+                <div class="inner">
+                        <!-- IF UC_PREVIOUS --><p style="float: left; text-align: left;">{UC_PREVIOUS_IMAGE}<br />{UC_PREVIOUS}</p><!-- ENDIF -->
+                        <!-- IF UC_NEXT --><p style="float: right; text-align: right;">{UC_NEXT_IMAGE}<br />{UC_NEXT}</p><!-- ENDIF -->
+                        <div style="text-align: center; padding: 20px;">{UC_IMAGE}
+                                <!-- IF S_IMAGE_REPORTED --><br /><br /><a href="{U_IMAGE_REPORTED}"><span class="error">{L_IMAGE_REPORTED}</span></a><!-- ENDIF -->
+                        </div>
+                </div>
+        </div>
+    </div>
 </div>
-
 <div id="details" class="panel row">
 	<div class="inner col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class=" row">
@@ -239,14 +244,15 @@
 <!-- IF S_ALLOWED_READ_COMMENTS -->
 <a name="comments"></a>
 <!-- IF not .commentrow or S_COMMENTS_DISABLED -->
-	<div id="comments" class="panel">
+	<div id="comments" class="panel row well">
 		<div class="inner">
 			<strong><!-- IF S_COMMENTS_DISABLED -->{L_IMAGE_COMMENTS_DISABLED}<!-- ELSE -->{L_NO_COMMENTS}<!-- ENDIF --></strong>
 		</div>
 	</div>
 <!-- ENDIF -->
 <!-- IF .commentrow -->
-	<div class="topic-actions">
+<div class="row well">
+	<div class="topic-actions ">
 		<div class="pagination">
 			{IMAGE_COMMENTS} {L_COMMENTS} &bull; {PAGE_NUMBER}<!-- IF PAGINATION --> &bull; <span>{PAGINATION}</span><!-- ENDIF -->
 		</div>
@@ -329,9 +335,10 @@
 			{IMAGE_COMMENTS} {L_COMMENTS} &bull; {PAGE_NUMBER}<!-- IF PAGINATION --> &bull; <span>{PAGINATION}</span><!-- ENDIF -->
 		</div>
 	</div>
+</div>
 <!-- ENDIF -->
 <!-- ENDIF -->
-<div class="row">
+<div class="row well">
     <a href="{U_RETURN_LINK}" class="btn btn-sm btn-default" accesskey="r"><i class="fa fa-chevron-left"></i><span class="hidden-xs">{L_RETURN_TO}</span> {S_RETURN_LINK}</a>
     <form method="post"  action="{S_JUMPBOX_ACTION}" onsubmit="if(document.jumpbox.album_id.value == -1){return false;}" class="form-inline pull-right">
             <fieldset >

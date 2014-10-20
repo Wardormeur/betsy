@@ -278,15 +278,13 @@
 		<!-- ENDIF -->
         <div class="row bottom-topic-actions">
          <!-- IF  S_INDEX == false -->
-            <span class="hidden-xs hidden-sm col-xl-6 col-lg-6 col-md-6 pull-left">       	
-                <ul class="breadcrumb ">
+            <span class="hidden-xs hidden-sm col-xl-10 col-lg-10 col-md-10 pull-left">       	
+                <ul class="breadcrumb row">
                     <li>
-                            <a href="{U_INDEX}" >{L_INDEX}</a>
-
+                        <a href="{U_INDEX}" ><i class="fa fa-home"></i> {L_INDEX}</a>
+                        
                         <!-- BEGIN navlinks --><strong>&rsaquo;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a> <!-- END navlinks -->
-                    </li>
-                </ul>
-            </span>
+                   
           <!-- ENDIF --> 
             <!--<a href="{PREVIOUS_PAGE}" class="btn btn-default hidden-sm hidden-md hidden-lg hidden-xl"><i class="fa fa-angle-left"></i> {L_PREVIOUS}</a> -->
             <!-- We do not close the row so that we gain place with the next row that is containing actions-->

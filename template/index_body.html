@@ -1,14 +1,70 @@
 
     <!-- INCLUDE overall_header.html -->
+    </li>
+    </ul>
   </div>
 </div>
 <div class="container-fluid margin-container" >
     <div class="row">
 
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+        <div class="col-xs-12 ">
           <!-- INCLUDE forumlist_body.html -->
         </div>
     </div>
+
+    <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+    <div class="row well">
+            <form method="post" action="{S_LOGIN_ACTION}" class="form-horizontal no-margin col-md-12 col-sm-12 col-xs-12 col-xl-12">
+             <div class=" form-group row">
+                <div class="col-md-6">
+
+                    <h4 ><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4>
+                    <label for="username">{L_USERNAME}:</label>&nbsp;<input type="text" name="username" id="username" size="10" class="inputbox form-control" title="{L_USERNAME}" />
+
+                    <label for="password">{L_PASSWORD}:</label>&nbsp;<input type="password" name="password" id="password" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
+
+
+
+            <!-- IF S_AUTOLOGIN_ENABLED -->
+                    <label for="autologin"> <input type="checkbox" name="autologin" id="autologin" /> {L_LOG_ME_IN}</label>
+            <!-- ENDIF -->
+                    <input type="submit" name="login" value="{L_LOGIN}" class="btn btn-sm btn-default" />
+                    {S_LOGIN_REDIRECT}
+                </div>
+                <div class="col-md-6">
+                     <!-- IF S_REGISTER_ENABLED --><h4><a href="{U_REGISTER}">{L_REGISTER}</a></h4><!-- ENDIF -->
+                     <p>A venir : support pour des providers externes</p>
+                </div>
+            </div>
+            </form>
+    </div>
+    <!-- ENDIF -->
+
+    <!-- IF S_DISPLAY_ONLINE_LIST and S_USER_LOGGED_IN-->
+    <div class="row well hidden-xs">
+            <!-- IF U_VIEWONLINE -->
+            <h3 class="panel-title"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3 class="panel-title">{L_WHO_IS_ONLINE}</h3>
+            <!-- ENDIF -->
+            <p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
+            <!-- IF LEGEND --><br /><em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF --></p>
+    </div>
+    <!-- ENDIF -->
+
+    <!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST and S_USER_LOGGED_IN -->
+    <div class="row well hidden-xs">
+            <h3 class="panel-title">{L_BIRTHDAYS}</h3>
+            <p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+    </div>
+    <!-- ENDIF -->
+
+    <!-- IF NEWEST_USER and S_USER_LOGGED_IN -->
+    <div class="row well hidden-xs">
+            <h3 class="panel-title">{L_STATISTICS}</h3>
+            <p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} <!-- IF TOTAL_IMAGES --> &bull; {TOTAL_IMAGES}<!-- ENDIF --> &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>
+    </div>
+    <!-- ENDIF -->
+
+    <!-- INCLUDE overall_footer.html -->
     <!-- IF S_INDEX -->
     <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -19,13 +75,10 @@
                 
                 <!-- INCLUDE watched_posts.html -->
             </ul>
-            <ul class="sidebar-nav">
+           <!-- <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     Must-read
                     
-                </li>
-                <li class="hover">
-                    <a href="/lassociation-tellement-nomade/">L'association</a>
                 </li>
                 <li class="hover">
                     <a href="/guide-de-noel-2013/">Guide 2013</a>
@@ -40,6 +93,7 @@
                     <a href="/wiki/doku.php">Se servir du Wiki</a>
                 </li>
             </ul>
+           -->
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     Nos partenaires
@@ -52,97 +106,16 @@
                     <a href="www.jdslabs.com">JDSLabs</a>
                 </li>
                 <li class="hover">
-                    <a href="www.earsonics.com">Earsonics</a>
-                </li>
-                <li class="hover">
                     <a href="www.thecustomart.com">CustomArt</a>
                 </li>
                 <li class="hover">
                     <a href="www.conceptstoreaudiotechnica.fr">AudioTechnica</a>
                 </li>
             </ul>
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    Les playlists
-                    
-                </li>
-                <li class="hover">
-                    <a href="#">A venir...</a>
-                </li>
-            </ul>
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    Ca chauffe !
-                    
-                </li>
-                <li class="hover">
-                    <a href="#">A venir...</a>
-                </li>
-            </ul>
-             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    Sur IRC
-                    
-                </li>
-                <li class="hover">
-                    <a href="#">A venir...</a>
-                </li>
+           
             </ul>
         </div>
     </div>
 </div>
  <!-- ENDIF -->
-<div class="container-fluid margin-container">
-<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
-<div class="row well">
-	<form method="post" action="{S_LOGIN_ACTION}" class="form-horizontal no-margin col-md-12 col-sm-12 col-xs-12 col-xl-12">
-    	 <div class=" form-group row">
-            <div class="col-md-6">
-                
-                <h4 ><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4>
-                <label for="username">{L_USERNAME}:</label>&nbsp;<input type="text" name="username" id="username" size="10" class="inputbox form-control" title="{L_USERNAME}" />
-
-                <label for="password">{L_PASSWORD}:</label>&nbsp;<input type="password" name="password" id="password" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
-        
-
-       
-        <!-- IF S_AUTOLOGIN_ENABLED -->
-                <label for="autologin"> <input type="checkbox" name="autologin" id="autologin" /> {L_LOG_ME_IN}</label>
-        <!-- ENDIF -->
-                <input type="submit" name="login" value="{L_LOGIN}" class="btn btn-sm btn-default" />
-                {S_LOGIN_REDIRECT}
-            </div>
-            <div class="col-md-6">
-                 <!-- IF S_REGISTER_ENABLED --><h4><a href="{U_REGISTER}">{L_REGISTER}</a></h4><!-- ENDIF -->
-                 <p>A venir : support pour des providers externes</p>
-            </div>
-        </div>
-	</form>
-</div>
-<!-- ENDIF -->
-
-<!-- IF S_DISPLAY_ONLINE_LIST and S_USER_LOGGED_IN-->
-<div class="row well hidden-xs">
-	<!-- IF U_VIEWONLINE -->
-	<h3 class="panel-title"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3 class="panel-title">{L_WHO_IS_ONLINE}</h3>
-	<!-- ENDIF -->
-	<p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
-	<!-- IF LEGEND --><br /><em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF --></p>
-</div>
-<!-- ENDIF -->
-
-<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST and S_USER_LOGGED_IN -->
-<div class="row well hidden-xs">
-	<h3 class="panel-title">{L_BIRTHDAYS}</h3>
-	<p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
-</div>
-<!-- ENDIF -->
-
-<!-- IF NEWEST_USER and S_USER_LOGGED_IN -->
-<div class="row well hidden-xs">
-	<h3 class="panel-title">{L_STATISTICS}</h3>
-        <p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} <!-- IF TOTAL_IMAGES --> &bull; {TOTAL_IMAGES}<!-- ENDIF --> &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>
-</div>
-<!-- ENDIF -->
-
-<!-- INCLUDE overall_footer.html -->
+<!--<div class="container-fluid margin-container">-->

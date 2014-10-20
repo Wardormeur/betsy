@@ -1,5 +1,9 @@
 <!-- INCLUDE overall_header.html -->
 
+    <strong>&rsaquo;</strong> <strong><a href="{navlinks.U_VIEW_FORUM}">{L_UCP}</a></strong>
+            </li>
+        </ul>
+    </span>
    <span class="hidden-xl hidden-lg hidden-md col-sm-3 col-xs-3 ">
         <a class="btn btn-success dropdown-toggle  " data-toggle="dropdown" href="#">
                 Navigation
@@ -14,10 +18,6 @@
         </ul>
 
     </span>
-
-    
- 
-    <h2 class="breadcrumb-h2 text-center">{L_UCP}</h2>
 
     <div class=" hidden-xl hidden-lg hidden-md hidden-sm col-xs-3">
                 <a href="#" data-toggle="dropdown" class="btn btn-success dropdown-toggle  ">
@@ -62,19 +62,20 @@
             </div>
 </div> <!-- endofrow -->
 
-
-<div id="p-tabs" class="col-xl-12 col-lg-12 col-md-12 hidden-sm hidden-xs">
-	<ul class="nav nav-pills pull-right">
-		<!-- BEGIN t_block1 -->
-		<li <!-- IF t_block1.S_SELECTED -->class="active"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>
-		<!-- END t_block1 -->
-	</ul>
+<div class="row">
+    <div id="p-tabs" class="col-xl-12 col-lg-12 col-md-12 hidden-sm hidden-xs">
+            <ul class="nav nav-pills pull-right">
+                    <!-- BEGIN t_block1 -->
+                    <li <!-- IF t_block1.S_SELECTED -->class="active"<!-- ENDIF -->><a href="{t_block1.U_TITLE}"><span>{t_block1.L_TITLE}</span></a></li>
+                    <!-- END t_block1 -->
+            </ul>
+    </div>
 </div>
 
 <!-- IF S_COMPOSE_PM -->
 <form id="postform" method="post" action="{S_POST_ACTION}"{S_FORM_ENCTYPE}>
 <!-- ENDIF -->
-
+<div class="row" >
 <div class="panel col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	
     

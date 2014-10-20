@@ -1,4 +1,8 @@
 <!-- INCLUDE gallery/gallery_header.html -->
+            </li>
+        </ul>
+    </span>
+</div>
 <script type="text/javascript">
 function getElement(iElementId)
 {
@@ -24,14 +28,16 @@ function toggleElement(oElement)
 	}
 }
 </script>
-<h2><!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF --><!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
+
+         <div class="row well">
+<h2 ><!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF --><!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
 <!-- IF IGNORED_WORDS --> <p>{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
 
 <!-- IF U_GALLERY_SEARCH --><p><a class="{S_CONTENT_FLOW_BEGIN}" href="{U_GALLERY_SEARCH}" title="{L_SEARCH_ADV}">{L_RETURN_TO_SEARCH_ADV}</a></p><!-- ENDIF -->
-
+         </div>
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
-	<form method="post" action="{S_SEARCH_ACTION}">
-	<div class="topic-actions">
+	<form method="post" class=" row well" action="{S_SEARCH_ACTION}">
+	<div class="topic-actions ">
 
 	<!-- IF SEARCH_MATCHES -->
 		<div class="search-box">
@@ -58,7 +64,6 @@ function toggleElement(oElement)
 		<!-- INCLUDE gallery/imageblock_body.html -->
 	<!-- ENDIF -->
 <!-- ENDIF -->
-
 <!-- IF .commentrow -->
 <div id="recent-comments">
 	<!-- BEGIN commentrow -->
@@ -94,7 +99,7 @@ function toggleElement(oElement)
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or .imagerow or ((S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS) and SEARCH_IN_RESULTS) -->
-	<form method="post" action="{S_SEARCH_ACTION}">
+	<form method="post" action="{S_SEARCH_ACTION}" class="row well">
 
 	<fieldset class="display-options">
 		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
@@ -107,15 +112,16 @@ function toggleElement(oElement)
 
 	</form>
 
-	<hr />
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or .imagerow or PAGE_NUMBER -->
+    <div class="row well">
 	<ul class="linklist">
 		<li class="pull-right pagination">
 			{SEARCH_MATCHES}<!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF -->
 		</li>
 	</ul>
+    </div>
 <!-- ENDIF -->
 
 <!-- INCLUDE gallery/gallery_footer.html -->
