@@ -1,12 +1,14 @@
 <!-- INCLUDE overall_header.html -->
-         <h2  class="topic-title pull-left">
-             <!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF -->
-             <!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
-             
-            <!-- IF IGNORED_WORDS --> <p>{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
-           
+
+<strong>&rsaquo;</strong> <strong>   <!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF -->
+             <!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></strong>
+            </li>
+        </ul>
+    </span>
+   
 </div><!-- end of header -->
 
+<!-- IF IGNORED_WORDS --> <p class="row well">{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
 
 <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
 

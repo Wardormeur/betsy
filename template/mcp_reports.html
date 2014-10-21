@@ -12,19 +12,18 @@
 
 <h2>{L_TITLE}</h2>
 
-<div class="panel">
-	<div class="inner"><span class="corners-top"><span></span></span>
+<div class="panel row">
 
 	<p>{L_EXPLAIN}</p>
 
 	<!-- IF .postrow -->
-		<ul class="linklist">
+		<ul class="linklist row">
 			<li class="pull-right pagination">
 				<!-- IF TOTAL -->{TOTAL_REPORTS}<!-- ENDIF -->
 				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
 			</li>
 		</ul>
-		<ul class="topiclist">
+		<ul class="topiclist row">
 			<li class="header">
 				<dl>
 					<dt>{L_VIEW_DETAILS}</dt>
@@ -33,7 +32,7 @@
 				</dl>
 			</li>
 		</ul>
-		<ul class="topiclist cplist">
+		<ul class="topiclist cplist ">
 
 		<!-- BEGIN postrow -->
 			<li class="row<!-- IF postrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
@@ -83,7 +82,6 @@
 		<p><strong>{L_NO_REPORTS}</strong></p>
 	<!-- ENDIF -->
 
-	<span class="corners-bottom"><span></span></span></div>
 </div>
 
 <!-- IF .postrow -->

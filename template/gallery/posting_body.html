@@ -43,7 +43,7 @@
 <form id="postform" action="{S_ALBUM_ACTION}" method="post" enctype="multipart/form-data">
 
 <div class="panel" id="postingbox">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 		<h3>{L_UPLOAD_IMAGE}</h3>
 		<fieldset class="fields1">
 			<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
@@ -103,7 +103,7 @@
 			//]]>
 			</script>
 		</fieldset>
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 
 <div class="panel bg2">
@@ -216,14 +216,14 @@
 </script>
 
 <div class="panel bg2">
-	<div class="inner"><span class="corners-top"><span></span></span>
+	<div class="inner">
 		<fieldset class="submit-buttons">
 			{S_HIDDEN_FIELDS}
 			<input type="reset" accesskey="r" tabindex="200" value="{L_RESET}" class="btn btn-default btn-sm" />&nbsp;
 			<input type="submit" accesskey="s" tabindex="201" name="submit" value="{L_SUBMIT}" class="btn btn-primary btn-sm" />&nbsp;
 		</fieldset>
 		{S_FORM_TOKEN}
-	<span class="corners-bottom"><span></span></span></div>
+	</div>
 </div>
 </form>
 <!-- ENDIF -->
