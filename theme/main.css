@@ -1,23 +1,21 @@
+#header-bar nav .navbar-nav > li{
+    float:none;
+}
+#header-bar nav ul.navbar-nav.nav-justified {
+    width:55%;
+    margin-left:5%;
+}
+
+.navbar-logo img{
+    display:inline;
+    padding:2px 0px 0px 0px;
+    max-height:45px;
+}
+
 .pagination span a {
     padding : 5px 2px 5px 2px ;
     
 }
-
-#toTop{
-    display:none;
-    position:fixed;
-    left:0px;
-    right:auto!important;
-    top:auto;
-    bottom:51px;
-    cursor:pointer;
-    font-size:20px;
-    background:#0072ba;
-    padding:5px 10px;
-    color:#fff;
-}
-
-
 
 .no-hover:hover{
     background-color: inherit;

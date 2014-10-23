@@ -71,6 +71,22 @@
                 
                 <!-- INCLUDE slider/wp_gallery_recent_posts.html -->
             </ul>
+            <ul class="sidebar-nav">
+                 <!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+                    <li class="noh">
+                        <form action="{U_SEARCH}" method="get" id="search" class="navbar-search ">
+                                <fieldset>
+                                        <input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+                                         {S_SEARCH_HIDDEN_FIELDS}
+                                            <a class="" id="adv-search" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">
+                                                <i class="fa fa-plus-circle"></i>
+                                            </a >	
+                                </fieldset>
+                        </form>
+                    </li>
+                <!-- ENDIF -->
+            </ul>
+        
              <ul class="sidebar-nav">
                 
                 <!-- INCLUDE watched_posts.html -->

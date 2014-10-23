@@ -49,11 +49,19 @@
                                         <li><a href="{U_MEMBERLIST}"><i class="fa fa-users"></i> {L_MEMBERLIST}</a></li>
 
                                 <!-- ENDIF -->
-                             
+                                <li class="divider-vertical"></li>
+                                <li class=" hidden-sm <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
+                                        <!-- MOD: SHMK USER FEEDBACK -->
+                                <li class="divider-vertical"></li>
+
+                                <li class=" hidden-sm <!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
+                                    <!-- END: SHMK USER FEEDBACK -->
                                 <!-- IF not S_IS_BOT -->
                                     <!-- IF not U_MCP -->
+                                    <li class="divider-vertical"></li>
                                     <li><a href="{BOARD_URL}/ucp.php?i=pm&mode=compose&action=post&add_to=Ajout+[A]&group_list[]=5,4">Signaler un problème</a></li> 
                                     <!-- ENDIF -->
+                                    <li class="divider-vertical"></li>
                                     <li><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a> </li><li class="divider-vertical"></li> 
                                 <!-- ENDIF -->     
         			<!--<li >{S_TIMEZONE}</li>-->

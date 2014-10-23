@@ -230,7 +230,7 @@
 		<!-- IF not S_IS_BOT -->
 			<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
                         <div class="pull-right btn-group hidden-xs btn-group-sm">
-                            <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
@@ -254,13 +254,14 @@
 		<!-- ENDIF -->
 
 			<h4 >
-                            <!-- IF postrow.POST_ICON_IMG --><a href="{postrow.U_MINI_POST}"><img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="" /> </a>
+                            <!-- IF postrow.POST_ICON_IMG --><a href="{postrow.U_MINI_POST}">
+                                <img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="" /> </a>
                             <!-- ELSE -->
                                        <!-- IF S_IS_BOT -->{postrow.MINI_POST_IMG}
                                        <!-- ELSE --><a href="{postrow.U_MINI_POST}">{postrow.MINI_POST_IMG}</a><!-- ENDIF -->
 
                             <!-- ENDIF -->
-                            <a href="{U_VIEW_TOPIC}#p{postrow.POST_ID}" <!-- IF postrow.S_FIRST_ROW -->class="first"<!-- ELSE --> class="hidden-xs"<!-- ENDIF -->>{postrow.POST_SUBJECT}</a><small><span class="hidden-lg hidden-xl hidden-md"> {L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong>  &raquo; </span> {postrow.POST_DATE} </small>
+                            <a href="{U_VIEW_TOPIC}#p{postrow.POST_ID}" <!-- IF postrow.S_FIRST_ROW -->class="first"<!-- ELSE --> class="hidden-xs hidden-sm hidden-md"<!-- ENDIF -->>{postrow.POST_SUBJECT}</a><small><span class="hidden-lg hidden-xl hidden-md"> {L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong>  &raquo; </span> {postrow.POST_DATE} </small>
              
                         </h4>
                      
@@ -272,7 +273,7 @@
 			<!-- ENDIF -->
             
             <div class=" hidden-lg hidden-xl hidden-md hidden-sm col-xs-1"></div>
-			<div class="content col-xl-12 col-lg-12 col-sm-12 col-md-12 col-xs-11">{postrow.MESSAGE}</div>
+			<div class="content col-xl-12 col-md-12 col-xs-11">{postrow.MESSAGE}</div>
 
 			<!-- IF postrow.S_HAS_ATTACHMENTS -->
 				<dl class="attachbox">
@@ -336,7 +337,7 @@
                     <span class="pagination"> <span>{PAGINATION}</span></span>
 			    <!-- ELSE --> 
     		        <!-- IF PREVIOUS_PAGE -->
-                        <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default"><i class=" fa fa-angle-left"> </i> <span class="hidden-xs hidden-sm">{L_PREVIOUS}</span></button>
+                        <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default"><i class=" fa fa-angle-left"> </i> <span class="hidden-xs hidden-sm">{L_PREVIOUS}</span></a>
                     <!-- ENDIF -->
     			    <span class="label label-default">{PAGE_NUMBER}</span><!-- ENDIF -->
         		<!-- ENDIF -->
