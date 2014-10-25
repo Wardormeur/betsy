@@ -128,11 +128,11 @@
 	<hr />
 <!-- ENDIF -->
 <div class="row">
-       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <div class="col-xl-12  col-xs-12">
 <!-- BEGIN postrow -->
 	<!-- IF postrow.S_FIRST_UNREAD --><a id="unread"></a><!-- ENDIF -->
 	<div id="p{postrow.POST_ID}" class=" row <!-- IF postrow.S_FIRST_ROW --> <!-- ELSE -->postrow<!-- ENDIF -->">
-		<div class="well post<!-- IF postrow.S_UNREAD_POST --> alert-info<!-- ENDIF --><!-- IF postrow.S_POST_REPORTED --> alert-danger<!-- ENDIF -->">
+		<div class="well post<!-- IF postrow.S_POST_REPORTED --> alert-danger<!-- ENDIF --> <!-- IF postrow.S_ROW_COUNT is even --> post-even<!-- ENDIF -->">
 		
 		<!-- IF not postrow.S_IGNORE_POST -->
                

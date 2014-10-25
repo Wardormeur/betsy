@@ -1970,24 +1970,22 @@ dl.details dd {
 }
 .pagination span a:hover {
   color: #fff;
-  background-color: #368ad2;
-  border-color: #368ad2;
+  background-color: #434343;
+  border-color: #434343;
 }
 .pagination span a:active {
   color: #5c758c;
   background-color: #ecedee;
   border-color: #b4bac0;
 }
-.pagination span a,
-.pagination span a:link,
 .pagination span a:visited {
   color: #5c758c;
-  background-color: #fff;
-  border-color: #b4bac0;
+  background-color: #434343;
+  border-color: #af2331;
 }
 .row .pagination span a:hover,
 li.pagination span a:hover {
-  background-color: #368ad2;
+  background-color: #434343;
 }
 .copyright {
   color: #555;
@@ -9125,23 +9123,22 @@ h3.panel-title {
 }
 .post {
   padding: 8px;
+  background-color: #e2e2e2;
   border-top: 1.5px solid #fff;
   border-left: 3px solid #363636;
 }
-.row:nth-of-type(even) .post {
+.post button.dropdown-toggle {
+  background-color: #fff;
+}
+/*WTF ? cant use nth-of-child cause of random fuzz*/
+.post-even {
   background-color: #fbfbfb;
 }
-.row:nth-of-type(even) .post button.dropdown-toggle {
+.post-even button.dropdown-toggle {
   background-color: #e7e7e7;
 }
 .label-default {
   color: #363636;
-}
-.row:nth-of-type(odd) .post {
-  background-color: #e2e2e2;
-}
-.row:nth-of-type(odd) .post button.dropdown-toggle {
-  background-color: #fff;
 }
 .oldpost {
   background-color: #e7e7e7;
