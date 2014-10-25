@@ -5,12 +5,13 @@
     width:55%;
     margin-left:5%;
 }
-
-img.navbar-logo {
+.navbar-log{
+    float:left;
+}
+.navbar-logo img{
     display:inline;
     padding:2px 0px 0px 0px;
     max-height:45px;
-    position:relative;
 }
 
 .pagination span a {
