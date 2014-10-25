@@ -10,6 +10,7 @@ img.navbar-logo {
     display:inline;
     padding:2px 0px 0px 0px;
     max-height:45px;
+    position:relative;
 }
 
 .pagination span a {
