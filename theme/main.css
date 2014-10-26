@@ -1,9 +1,17 @@
-#header-bar nav .navbar-nav > li{
+.search-button{
+    display:inline;
+}
+
+#search-li form{
+    display:none;
+}
+#search-li form input{
+}
+#header-bar nav .navbar-nav.nav-justified > li{
     float:none;
 }
-#header-bar nav ul.navbar-nav.nav-justified {
-    width:55%;
-    margin-left:5%;
+#topic-bar nav .navbar-nav.nav-justified > li{
+    float:none;
 }
 .navbar-logo{
     float:left;
