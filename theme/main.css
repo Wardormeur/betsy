@@ -1,3 +1,53 @@
+/*TO deportate */
+
+.panel-default .panel-heading{
+    //background-color:rgb(110,87,90);//rgb(130,107,110);
+    //background-color:#d93;
+}
+
+.label.label-success{
+  /*  background-color:rgb(120,120,120);*/
+}
+/* END */
+.forum0.panel-default .panel-heading{
+    background-color:rgba(192, 57, 43, 0.8);
+}
+
+.forum4.panel-default .panel-heading{
+    background-color:rgba(211, 84, 0, 0.8);
+}
+
+.forum7.panel-default .panel-heading{
+    background-color:rgba(243, 156, 18, 0.8);
+}
+
+.forum12.panel-default .panel-heading{
+    background-color:rgba(39, 174, 96, 0.8);
+}
+
+.forum14.panel-default .panel-heading{
+    background-color:rgba(22, 160, 133, 0.8);
+}
+
+.forum17.panel-default .panel-heading{
+    background-color:rgba(41, 128, 185, 0.8);
+}
+
+.forum22.panel-default .panel-heading{
+    
+    background-color:rgba(112, 97, 196, 0.8);
+}
+
+
+.forum28.panel-default .panel-heading{
+    background-color:rgba(142, 68, 173, 0.8);
+}
+
+.forum31.panel-default .panel-heading{
+    background-color: rgba(214,109,214, 0.8)
+}
+
+
 .search-button{
     display:inline;
 }
@@ -179,8 +229,8 @@
 #slider #slide3:checked ~ #active label:nth-child(3),
 #slider #slide4:checked ~ #active label:nth-child(4),
 #slider #slide5:checked ~ #active label:nth-child(5) {
-	background: #333;
-	border-color: #333 !important;
+	background: #c68421;//#333;
+	border-color: #c68421;//#333 !important;
 }
 
 /* Info Box */

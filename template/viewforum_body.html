@@ -27,14 +27,13 @@
 
 <!-- IF S_HAS_SUBFORUM -->
 	<!-- INCLUDE forumlist_body.html -->
-	<span class="endforumlist"></span>
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
     <div class="topic-actions  row" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 1em;"<!-- ENDIF -->>
     
     	<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-    	<div class="col-xl-4 col-lg-4 col-md-4  col-sm-4 col-xs-4">
+    	<div class="col-xs-4">
     	<!-- IF S_IS_LOCKED -->
     	
         	<a class="btn btn-sm btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
@@ -45,7 +44,7 @@
     	<!-- ENDIF -->
         
     	<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-    	<div class="p-pagination col-xl-4 col-lg-4 col-md-4 col-sm-8 col-xs-8">
+    	<div class="p-pagination col-md-4 col-xs-8">
             <div class="text-center pagination">
     		<!-- IF PAGE_NUMBER -->
     			<!-- IF PAGINATION --> 
@@ -68,7 +67,7 @@
         <!-- ENDIF -->
     
         <!-- IF S_DISPLAY_SEARCHBOX -->
-    	<div class="col-xl-4 col-lg-4 col-md-4 hidden-sm hidden-xs">	
+    	<div class="col-md-4 hidden-sm hidden-xs">	
     		<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-inline pull-right" >
 			
 			
@@ -143,10 +142,10 @@
 	<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
 
 	<!-- HEADERS -->
-	     <div class="panel  panel-default <!-- IF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) --> announcement<!-- ENDIF --> row">
-    		<div class=" table-striped  col-md-12 " >
+	     <div class="panel  panel-default <!-- IF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) --> announcement<!-- ENDIF --> row ">
+    		<div class="table-striped col-xs-12 " >
         		<div class="topiclist row panel-heading">
-        		    	<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 panel-title"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></div>
+        		    	<div class="col-xs-7 panel-title"><!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></div>
             			<div class="posts col-lg-1 col-md-2 hidden-xs hidden-sm text-center">{L_REPLIES}</div>
             			<div class="views col-lg-1 hidden-md hidden-xs hidden-sm text-center">{L_VIEWS}</div>
             			
@@ -154,7 +153,7 @@
         		</div>
         	</div>
     	    <!-- We open the div containing all the row of the forum-->
-    		    <div class="topiclist topics col-md-12 ">
+    		    <div class="topiclist topics col-xs-12 ">
     	<!-- ENDIF -->
                 		<div class=" forumrow row  <!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
         					<div class="col-md-7 col-xs-9
@@ -176,8 +175,8 @@
                                                 <!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><small><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
             					<!-- IF topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID --> &raquo; {L_IN} <a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->
             				</div>
-            				<div class=" text-center col-lg-1 col-md-2 hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-success ">{topicrow.REPLIES}</span></div>
-            				<div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-success ">{topicrow.VIEWS}</span></div>
+            				<div class=" text-center col-lg-1 col-md-2 hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-default ">{topicrow.REPLIES}</span></div>
+            				<div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-default ">{topicrow.VIEWS}</span></div>
             				<div class="col-xs-3 lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
             				    <span><dfn class="hidden-xs">{L_LAST_POST} </dfn><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.LAST_POST_AUTHOR_FULL}
             					<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}"> <br />{topicrow.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
@@ -210,13 +209,13 @@
 <!-- END topicrow -->
 
 <div class="row">
-    <div class="col-md-4 col-sm-4 col-xs-4">
+    <div class="col-xs-4">
     <!-- IF PREVIOUS_PAGE -->
          <a   href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm "><i class="fa fa-angle-left"></i> {L_PREVIOUS}</a>
     <!-- ENDIF -->
     </div>
     
-    <div class="col-md-4 col-sm-4 col-xs-4 text-center">
+    <div class=" col-xs-4 text-center">
     <!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
     	    <!-- IF S_IS_LOCKED -->
         	    <a class="btn btn-danger btn-sm" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
@@ -226,7 +225,7 @@
     	
     <!-- ENDIF -->
 	</div>
-	<div class="col-md-4 col-sm-4 col-xs-4  ">
+	<div class="col-xs-4  ">
 	<!-- IF NEXT_PAGE -->
 	        <a href="{NEXT_PAGE}" class="btn btn-default pull-right btn-sm">{L_NEXT} <i class="fa fa-angle-right"> </i></a>
     <!-- ENDIF -->
