@@ -5,7 +5,7 @@
 <!-- IF not S_PM -->
 <fieldset class="forum-selection">
 	<label for="fo">{L_FORUM}: <select name="f" id="fo">{S_FORUM_OPTIONS}</select></label>
-	<input type="submit" name="sort" value="{L_GO}" class="btn btn-sm btn-primary" />
+	<input type="submit" name="sort" value="{L_GO}" class="btn btn-sm btn-success" />
 	{S_FORM_TOKEN}
 </fieldset>
 <!-- ENDIF -->
@@ -68,7 +68,7 @@
 			<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
 			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>
 			<!-- IF TOPIC_ID --><label><input type="checkbox" class="radio" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp; <strong>{L_ONLY_TOPIC}</strong></label><!-- ENDIF -->
-			<input type="submit" name="sort" value="{L_GO}" class="btn btn-sm btn-primary" />
+			<input type="submit" name="sort" value="{L_GO}" class="btn btn-sm btn-success" />
 		</fieldset>
 		<hr />
 		<ul class="linklist">
@@ -87,7 +87,7 @@
 <!-- IF .postrow -->
 	<fieldset class="display-actions">
 		<input class="btn btn-sm btn-default" type="submit" value="{L_DELETE_REPORTS}" name="action[delete]" />
-		<!-- IF not S_CLOSED -->&nbsp;<input class="btn btn-sm btn-primary" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
+		<!-- IF not S_CLOSED -->&nbsp;<input class="btn btn-sm btn-success" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
 		<div><a href="#" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
 	</fieldset>
 <!-- ENDIF -->

@@ -43,8 +43,8 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="row text-center ">
 				<strong  class="btn-group btn-group-sm ">
-				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER --><a href="{U_FIND_MEMBER}" class="btn btn-primary btn-sm" >{L_FIND_USERNAME}</a> 
-                                <!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP --><a href="{U_HIDE_FIND_MEMBER}" class="btn btn-primary btn-sm" >{L_HIDE_MEMBER_SEARCH}</a> <!-- ENDIF -->
+				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER --><a href="{U_FIND_MEMBER}" class="btn btn-success btn-sm" >{L_FIND_USERNAME}</a> 
+                                <!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP --><a href="{U_HIDE_FIND_MEMBER}" class="btn btn-success btn-sm" >{L_HIDE_MEMBER_SEARCH}</a> <!-- ENDIF -->
                                 
                                 <!-- BEGIN first_char -->
 					<a href="{first_char.U_SORT}" class="btn btn-success btn-sm"  >{first_char.DESC}</a>
@@ -148,7 +148,7 @@
 
 <!-- IF S_IN_SEARCH_POPUP and not S_SELECT_SINGLE -->
 <fieldset class="display-actions">
-	<input type="submit" name="submit" value="{L_SELECT_MARKED}" class="btn btn-sm btn-primary " />
+	<input type="submit" name="submit" value="{L_SELECT_MARKED}" class="btn btn-sm btn-success " />
 	<div><a href="#" onclick="marklist('results', 'user', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('results', 'user', false); return false;">{L_UNMARK_ALL}</a></div>
 </fieldset>
 <!-- ENDIF -->
@@ -163,7 +163,7 @@
 	<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 	<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 	<label for="sk">{L_SELECT_SORT_METHOD}: <select name="sk" id="sk">{S_MODE_SELECT}</select></label> 
-	<label for="sd">{L_ORDER} <select name="sd" id="sd">{S_ORDER_SELECT}</select> <input type="submit" name="sort" value="{L_SUBMIT}" class="btn btn-sm btn-primary" /></label>
+	<label for="sd">{L_ORDER} <select name="sd" id="sd">{S_ORDER_SELECT}</select> <input type="submit" name="sort" value="{L_SUBMIT}" class="btn btn-sm btn-success" /></label>
 </fieldset>
 <!-- ENDIF -->
 

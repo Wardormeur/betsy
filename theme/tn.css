@@ -1965,13 +1965,13 @@ dl.details dd {
 }
 .pagination span strong {
   color: #fff;
-  background-color: #5a4346;
-  border-color: #5a4346;
+  background-color: #363636;
+  border-color: #363636;
 }
 .pagination span a:hover {
   color: #fff;
-  background-color: #694e51;
-  border-color: #694e51;
+  background-color: #434343;
+  border-color: #434343;
 }
 .pagination span a:active {
   color: #5c758c;
@@ -1983,7 +1983,7 @@ dl.details dd {
 }
 .row .pagination span a:hover,
 li.pagination span a:hover {
-  background-color: #694e51;
+  background-color: #434343;
 }
 .copyright {
   color: #555;
@@ -3655,10 +3655,10 @@ cite {
   color: #999;
 }
 .text-primary {
-  color: #5a4346;
+  color: #363636;
 }
 a.text-primary:hover {
-  color: #3d2d2f;
+  color: #1c1c1c;
 }
 .text-success {
   color: #3c763d;
@@ -3686,10 +3686,10 @@ a.text-danger:hover {
 }
 .bg-primary {
   color: #fff;
-  background-color: #5a4346;
+  background-color: #363636;
 }
 a.bg-primary:hover {
-  background-color: #3d2d2f;
+  background-color: #1c1c1c;
 }
 .bg-success {
   background-color: #dff0d8;
@@ -5418,8 +5418,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #5a4346;
-  border-color: #4b383b;
+  background-color: #363636;
+  border-color: #292929;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -5427,8 +5427,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #433234;
-  border-color: #281e1f;
+  background-color: #222;
+  border-color: #0b0b0b;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -5450,11 +5450,11 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #5a4346;
-  border-color: #4b383b;
+  background-color: #363636;
+  border-color: #292929;
 }
 .btn-primary .badge {
-  color: #5a4346;
+  color: #363636;
   background-color: #fff;
 }
 .btn-success {
@@ -6394,7 +6394,7 @@ input[type="button"].btn-block {
 .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #5a4346;
+  background-color: #363636;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -6910,7 +6910,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #5a4346;
+  background-color: #363636;
 }
 .nav-stacked > li {
   float: none;
@@ -7359,7 +7359,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse {
   background-color: #363636;
-  border-color: #1c1c1c;
+  border-color: #363636;
 }
 .navbar-inverse .navbar-brand {
   color: #eee;
@@ -7414,10 +7414,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #1c1c1c;
+    border-color: #363636;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #1c1c1c;
+    background-color: #363636;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #eee;
@@ -7513,8 +7513,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   z-index: 2;
   color: #fff;
   cursor: default;
-  background-color: #5a4346;
-  border-color: #5a4346;
+  background-color: #363636;
+  border-color: #363636;
 }
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
@@ -7628,11 +7628,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #cecece;
 }
 .label-primary {
-  background-color: #5a4346;
+  background-color: #363636;
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
-  background-color: #3d2d2f;
+  background-color: #1c1c1c;
 }
 .label-success {
   background-color: #d93;
@@ -7867,7 +7867,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #5a4346;
+  background-color: #363636;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
           box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
   -webkit-transition: width .6s ease;
@@ -7981,8 +7981,8 @@ a.list-group-item.active:hover,
 a.list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #5a4346;
-  border-color: #5a4346;
+  background-color: #363636;
+  border-color: #363636;
 }
 a.list-group-item.active .list-group-item-heading,
 a.list-group-item.active:hover .list-group-item-heading,
@@ -7992,7 +7992,7 @@ a.list-group-item.active:focus .list-group-item-heading {
 a.list-group-item.active .list-group-item-text,
 a.list-group-item.active:hover .list-group-item-text,
 a.list-group-item.active:focus .list-group-item-text {
-  color: #bfaaac;
+  color: #9c9c9c;
 }
 .list-group-item-success {
   color: #3c763d;
@@ -8292,7 +8292,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-default > .panel-heading {
   color: #333;
-  background-color: #f5f5f5;
+  background-color: rgba(53, 6, 8, .8);
   border-color: #ddd;
 }
 .panel-default > .panel-heading + .panel-collapse .panel-body {
@@ -8302,18 +8302,18 @@ a.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #5a4346;
+  border-color: #363636;
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #5a4346;
-  border-color: #5a4346;
+  background-color: #363636;
+  border-color: #363636;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #5a4346;
+  border-top-color: #363636;
 }
 .panel-primary > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #5a4346;
+  border-bottom-color: #363636;
 }
 .panel-success {
   border-color: #d6e9c6;
@@ -8968,7 +8968,7 @@ header {
   padding-top: 5px;
   padding-bottom: 5px;
   color: #fff;
-  background-color: #363636;
+  background-color: rgba(53, 6, 8, .8);
 }
 .nav li a {
   color: #222;
@@ -9145,7 +9145,7 @@ h3.panel-title {
   background-color: #e7e7e7;
 }
 .label-default {
-  color: #5a4346;
+  color: #363636;
 }
 .oldpost {
   background-color: #e7e7e7;

@@ -228,9 +228,14 @@
                                         <li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
                                         <li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
                                         <!-- ENDIF -->
-                                 <li ><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
-                               
+                                       
                                 <!-- ENDIF -->
+                                        <li class="divider"></li>
+                                        <li class=" hidden-sm <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
+                                               <!-- MOD: SHMK USER FEEDBACK -->
+                                        <li class="divider"></li>
+                                        <li class=" hidden-sm <!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
+                                           <!-- END: SHMK USER FEEDBACK -->
                                 </ul>
                             </li>
                             <li class=""><a href="http://wiki.tellementnomade.com">Wiki</a></li>
