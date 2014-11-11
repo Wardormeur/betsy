@@ -112,11 +112,6 @@
 <link href="{T_THEME_PATH}/font-awesome-4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="{T_THEME_PATH}/main.css" rel="stylesheet" type="text/css" media="screen, projection" />
 
-<!-- MOD: GURU adaptation to bootstrap style -->
-<!-- <link href="{T_THEME_PATH}/tn.css" rel="stylesheet" type="text/css" /> -->
-<!-- END: GURU adaptation to bootstrap style -->
-
-
 
 
 
@@ -147,12 +142,24 @@
                                 <a href="{U_INDEX}" title="{L_INDEX}" class="navbar-logo"> <!-- hidden-md visible-xs visible-sm"  >-->
 				   <img src="{T_IMAGESET_PATH}/minimal_logo.png"/>
 				</a>
+                              
                            
 		 	</div>
 		 	
 			<nav role="navigation"  >
-			    
+                       
+                        <!-- IF S_INDEX == false -->    
+                        <ul class="navbar-logo social-icons pull-right">
+                             <li>
+                                 <a target="_blank" class="facebook" title="Suivez nous sur Facebok" href="http://www.facebook.com/pages/TellementNomade/165805823444969"><i class=" fa fa-facebook"></i></a>
+                             </li>
+                             <li>
+                                 <a target="_blank" class="twitter" title="Suivez nous sur Twitter" href="http://twitter.com/tellementnomade"><i class=" fa fa-twitter"></i></a>
+                             </li>
+                         </ul>  
+                        <!-- ENDIF -->
         		<div class="btn-group navbar-right ">
+                             
         			<a class="btn btn-success dropdown-toggle  " data-toggle="dropdown" href="#">
                                     <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG --><span class="unread"> {S_USER_NEW_PRIVMSG} </span> /<!-- ENDIF --><!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> {S_USER_UNREAD_PRIVMSG} <!-- ENDIF --> <!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD or S_NEW_PM or S_USER_NEW_PRIVMSG --><i class="fa fa-envelope-o"></i><!-- ENDIF --> {S_USERNAME}
         				<span class="caret"></span>
@@ -175,9 +182,11 @@
                                             <a href="{U_MY_FEEDBACK}"><i class="fa fa-thumbs-o-up"></i> {MY_FEEDBACK}</a> 
         				</li>
         				<!-- END: SHMK USER FEEDBACK -->
+                                        <!-- IF U_YOUR_PERSONAL_GALLERY -->
                                         <li>
                                             <a href="{U_YOUR_PERSONAL_GALLERY}"><i class="fa fa-camera"></i> {L_YOUR_PERSONAL_ALBUM}</a>
                                         </li>
+                                        <!-- ENDIF -->
                                         <!-- IF not S_IS_BOT -->
                                             <!-- IF U_RESTORE_PERMISSIONS -->
                                         <li>
@@ -193,12 +202,11 @@
                                         <!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
                                         <li class="bb-register">
                                                 <a href="{U_REGISTER}"><i class="fa fa-user "></i> {L_REGISTER}</a>
-
                                         </li>
             							
         			<!-- ENDIF -->
                             </ul>
-        		  
+                            
         		</div><!--btn group-->
                         
                         <div class="collapse navbar-collapse bs-navbar-collapse ">
@@ -228,7 +236,9 @@
                                         <li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
                                         <li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
                                         <!-- ENDIF -->
-                                       
+                                       <!-- IF U_MARK_FORUMS -->
+                                        <li ><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
+                                        <!-- ENDIF -->
                                 <!-- ENDIF -->
                                         <li class="divider"></li>
                                         <li class=" hidden-sm <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
@@ -358,16 +368,15 @@
                             <li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
                             <li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
                             <!-- ENDIF -->
-                     <li ><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
-
+                            <!-- IF U_MARK_FORUMS -->
+                            <li ><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
+                            <!-- ENDIF -->
                     <!-- ENDIF -->
                      </ul>
                  </li>  
                 <!-- IF PREVIOUS_PAGE -->
                  <li>
-                        
-                        <a href="{PREVIOUS_PAGE}" ><i class=" fa fa-angle-left"> </i> <span class="hidden-xs hidden-sm">{L_PREVIOUS}</span></a>
-                    
+                    <a href="{PREVIOUS_PAGE}" ><i class=" fa fa-angle-left"> </i> <span class="hidden-xs hidden-sm">{L_PREVIOUS}</span></a>
                 </li>
                 <!-- ENDIF -->
                 <!-- IF S_USER_LOGGED_IN --> 
@@ -411,16 +420,21 @@
       <!-- ENDIF -->  
 	<div  id="page-content-wrapper" class="container " >
         	<div class="row">
-                    <div  id="site-description" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 hidden-xs ">
-		    <!-- IF S_INDEX == true  -->
+                  <!-- IF S_INDEX == true  -->
+                    <div class="social-icons col-xs-5 col-sm-1">
+                        <a target="_blank" class="facebook" title="Suivez nous surFacebok" href="http://www.facebook.com/pages/TellementNomade/165805823444969"><i class=" fa fa-facebook"></i></a>
+                        <a target="_blank" class="twitter" title="Suivez nous surTwitter" href="http://twitter.com/tellementnomade"><i class=" fa fa-twitter"></i></a>
+                    </div>
+                    <div  id="site-description" class="col-sm-11 hidden-xs ">
+		    
                         <a href="{U_INDEX}" title="{L_INDEX}" id="logo"  >
                                     
 				   {SITE_LOGO_IMG} 
                         </a>
                         
-                        <!-- ENDIF -->
-	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
 		    </div>
+                                             <!-- ENDIF -->
+
                 </div>
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div id="information" class=" row rules">
@@ -429,9 +443,13 @@
 			</div>
 		</div>
 		<!-- ENDIF -->
+               
+	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
+                        
         <div class="row bottom-topic-actions">
+           
          <!-- IF  S_INDEX == false -->
-            <span class="hidden-xs hidden-sm col-xl-10 col-lg-10 col-md-10 pull-left">       	
+            <span class="hidden-xs hidden-sm col-md-9 pull-left">       	
                 <ul class="breadcrumb row">
                     <li>
                         <a href="{U_INDEX}" ><i class="fa fa-home"></i> {L_INDEX}</a>
