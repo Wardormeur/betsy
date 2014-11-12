@@ -132,24 +132,24 @@
         <header role="banner">
             <div id="header-bar" class="navbar navbar-inverse navbar-fixed-top bs-docs-nav ">
                 <div class="container">
-			<div class="navbar-header pull-left ">
-                            <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
-                                    <span class="sr-only">Dérouler la navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                            </button>
-                                <a href="{U_INDEX}" title="{L_INDEX}" class="navbar-logo"> <!-- hidden-md visible-xs visible-sm"  >-->
-				   <img src="{T_IMAGESET_PATH}/minimal_logo.png"/>
-				</a>
-                              
-                           
-		 	</div>
-		 	
-			<nav role="navigation"  >
+                    <div class="navbar-header pull-left ">
+                        <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+                                <span class="sr-only">Dérouler la navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                        </button>
+                            <a href="{U_INDEX}" title="{L_INDEX}" class="navbar-logo"> <!-- hidden-md visible-xs visible-sm"  >-->
+                               <img src="{T_IMAGESET_PATH}/minimal_logo.png"/>
+                            </a>
+
+
+                    </div>
+
+                    <nav role="navigation"  >
                        
                         <!-- IF S_INDEX == false -->    
-                        <ul class="navbar-logo social-icons pull-right">
+                        <ul class="navbar-logo social-icons pull-right hidden-xs">
                              <li>
                                  <a target="_blank" class="facebook" title="Suivez nous sur Facebok" href="http://www.facebook.com/pages/TellementNomade/165805823444969"><i class=" fa fa-facebook"></i></a>
                              </li>
@@ -300,7 +300,14 @@
             </div>
 
             <nav role="navigation"  >
-
+            <ul class="navbar-logo social-icons pull-right hidden-xs">
+                 <li>
+                     <a target="_blank" class="facebook" title="Suivez nous sur Facebok" href="http://www.facebook.com/pages/TellementNomade/165805823444969"><i class=" fa fa-facebook"></i></a>
+                 </li>
+                 <li>
+                     <a target="_blank" class="twitter" title="Suivez nous sur Twitter" href="http://twitter.com/tellementnomade"><i class=" fa fa-twitter"></i></a>
+                 </li>
+             </ul>  
             <div class="btn-group navbar-right pull-right">
                     <a class="btn btn-success dropdown-toggle  " data-toggle="dropdown" href="#">
                         <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG --><span class="unread"> {S_USER_NEW_PRIVMSG} </span> /<!-- ENDIF --><!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> {S_USER_UNREAD_PRIVMSG} <!-- ENDIF --> <!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD or S_NEW_PM or S_USER_NEW_PRIVMSG --><i class="fa fa-envelope-o"></i><!-- ENDIF --> {S_USERNAME}
@@ -421,9 +428,9 @@
 	<div  id="page-content-wrapper" class="container " >
         	<div class="row">
                   <!-- IF S_INDEX == true  -->
-                    <div class="social-icons col-xs-5 col-sm-1">
-                        <a target="_blank" class="facebook" title="Suivez nous surFacebok" href="http://www.facebook.com/pages/TellementNomade/165805823444969"><i class=" fa fa-facebook"></i></a>
-                        <a target="_blank" class="twitter" title="Suivez nous surTwitter" href="http://twitter.com/tellementnomade"><i class=" fa fa-twitter"></i></a>
+                    <div class="social-icons col-xs-8 col-sm-1">
+                        <a target="_blank" class="facebook" title="Suivez nous sur Facebok" href="http://www.facebook.com/pages/TellementNomade/165805823444969"><i class=" fa fa-facebook"></i></a>
+                        <a target="_blank" class="twitter" title="Suivez nous sur Twitter" href="http://twitter.com/tellementnomade"><i class=" fa fa-twitter"></i></a>
                     </div>
                     <div  id="site-description" class="col-sm-11 hidden-xs ">
 		    
