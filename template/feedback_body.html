@@ -215,17 +215,13 @@
             <!-- ENDIF -->
             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2">{feedback.FB_VOTE}</div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <!-- IF feedback.FB_DELETE -->
-                <!-- <ul class="profile-icons" style="float:{S_CONTENT_FLOW_END}; padding:0;">
-                    <li class="delete-icon"><a href="{feedback.FB_DELETEURL}" title="{L_FB_DELETE}"><span>{L_FB_DELETE}</span></a></li>
-                </ul> -->
+                {feedback.FB_COMMENT}
+                 <!-- IF feedback.FB_DELETE -->
+                <a href="{feedback.FB_DELETEURL}" title="{L_FB_DELETE}"><i class="fa fa-times-circle"></i></a>
                 <!-- ENDIF -->
                 <!-- IF feedback.FB_EDIT -->
-                <!--<ul class="profile-icons" style="float:{S_CONTENT_FLOW_END}; padding:0;">
-                    <li class="edit-icon"><a href="{feedback.FB_EDITURL}" title="{L_FB_EDIT}"><span>{L_FB_EDIT}</span></a></li>
-                </ul> -->
+                <a href="{feedback.FB_EDITURL}" title="{L_FB_EDIT}"><i class="fa fa-pencil"></i></a>
                 <!-- ENDIF -->
-                {feedback.FB_COMMENT}
             </div>
         
         </div>    
@@ -299,7 +295,7 @@
         </ul>
     </span>
 </div> <!-- End of overall header -->
-<form action="{FB_ACTION}" method="post"{S_FORM_ENCTYPE}>
+<form action="{FB_ACTION}" method="post"{S_FORM_ENCTYPE} class="form-inline">
     <div class=" row well">
         <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class=" row">
