@@ -178,7 +178,7 @@
             				<div class=" text-center col-lg-1 col-md-2 hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-default ">{topicrow.REPLIES}</span></div>
             				<div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-default ">{topicrow.VIEWS}</span></div>
             				<div class="col-xs-3 lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
-            				    <span><dfn class="hidden-xs">{L_LAST_POST} </dfn><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.LAST_POST_AUTHOR_FULL}
+            				    <span>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
             					<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}"> <br />{topicrow.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
             			    </div>
                 

@@ -18,7 +18,7 @@
 
         <div class="topic-actions row">
 
-		<div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-6">
+		<div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-12">
 			<!-- IF SEARCH_TOPIC -->
         	<a class="btn btn-sm btn-success" href="{U_SEARCH_TOPIC}"><i class="fa fa-angle-left"> </i>{L_RETURN_TO}: {SEARCH_TOPIC}</a>
                         <!-- ELSE -->
@@ -29,11 +29,14 @@
 		<div class="col-xl-2 col-lg-2 col-md-2 hidden-sm hidden-xs">
                     {SEARCH_MATCHES}
 		</div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-6">
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-12">
 	    
                     <!-- IF SEARCH_IN_RESULTS -->
-			<label for="add_keywords inline">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium form-control" /></label>
-			<input class="btn btn-sm" type="submit" name="submit" value="{L_SEARCH}" />	
+                    <div class="form-group form-inline">
+			<label for="add_keywords inline">{L_SEARCH_IN_RESULTS}:
+                        <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium form-control" /></label>
+			<input class="btn btn-sm" type="submit" name="submit" value="{L_SEARCH}" />
+                    </div>
                     <!-- ENDIF -->
                 </div>
 
@@ -53,7 +56,7 @@
 		<!-- ENDIF -->
 		</div>
 		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center pagination">
-			<!-- IF PAGINATION -->{PAGE_NUMBER} &bull; <span >{PAGINATION}</span><!-- ELSE --> <span >{PAGE_NUMBER}</span><!-- ENDIF -->
+                    <!-- IF PAGINATION --><div class="hidden-xs">{PAGE_NUMBER} &bull; </div><span >{PAGINATION}</span><!-- ELSE --> <span >{PAGE_NUMBER}</span><!-- ENDIF -->
 		</div>
 	
 		<!-- IF NEXT_PAGE -->
@@ -76,11 +79,11 @@
 	<!-- IF .searchresults -->
 	
 	     <div class="panel  panel-default <!-- IF searchresults.S_TOPIC_TYPE_SWITCH and (searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL) --> announcement<!-- ENDIF --> row">
-    		<div class=" table-striped  col-md-12 " >
+    		<div class=" table-striped  col-xs-12 " >
         		<div class="topiclist row panel-heading">
-        		    	<div class="col-xl-7 col-lg-7 col-md-7 col-sm-9 col-xs-9 panel-title"><!-- IF S_DISPLAY_ACTIVE -->{L_TOPICS}<!-- ELSEIF searchresults.S_TOPIC_TYPE_SWITCH and (searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></div>
-            				
-            			<div class="col-xl-5 col-lg-5 col-md-5 col-sm-3 hidden-xs"><span>{L_LAST_POST}</span></div>
+        		    	<div class="col-md-6 col-xs-9 panel-title"><!-- IF S_DISPLAY_ACTIVE -->{L_TOPICS}<!-- ELSEIF searchresults.S_TOPIC_TYPE_SWITCH and (searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></div>
+                                <div class="col-md-2"></div>	
+            			<div class="col-md-4 col-sm-3 hidden-xs ">{L_LAST_POST}</div>
         		</div>
         	</div>
 	
@@ -89,7 +92,7 @@
 
 		<!-- BEGIN searchresults -->
 			    <div class=" forumrow row  <!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
-        					<div class=" col-xl-7 col-lg-7 col-md-7 col-sm-9 col-xs-9
+                                        <div class="   col-sm-5 col-xs-8
         					<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
         					 title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
         					 <!-- IF searchresults.S_UNREAD_TOPIC --><a href="{searchresults.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
@@ -100,17 +103,26 @@
         					 <!-- IF searchresults.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}"/><!-- ENDIF -->
         					 <a href="{searchresults.U_VIEW_TOPIC}" class="topictitle
         					 <!-- IF searchresults.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
-        					 "> {searchresults.TOPIC_TITLE}</a>
-            					 <!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
-            					<!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF --><br />
-            					<!-- IF searchresults.PAGINATION --><div class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></div><!-- ENDIF -->
-            					<!-- IF searchresults.ATTACH_ICON_IMG -->{searchresults.ATTACH_ICON_IMG} <!-- ENDIF --><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {searchresults.TOPIC_AUTHOR_FULL} &raquo; {searchresults.FIRST_POST_TIME}
-            					<!-- IF searchresults.S_POST_GLOBAL and FORUM_ID != searchresults.FORUM_ID --> &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a><!-- ENDIF -->
+        					 "> {searchresults.TOPIC_TITLE}</a><br/>
+                                                 <!-- IF searchresults.ATTACH_ICON_IMG -->{searchresults.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL}<span class="hidden-xs"> &raquo; {searchresults.FIRST_POST_TIME}</span>
             				</div>
-            					<div class="col-xl-5 col-lg-5 col-md-5 col-sm-3 col-xs-3 lastpost<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
-            				    <span><dfn class="hidden-xs">{L_LAST_POST} </dfn><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {searchresults.LAST_POST_AUTHOR_FULL}
-            					<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}"> <br class=" hidden-md hidden-lg hidden-xl"/>{searchresults.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
-            			    </div>
+                                        <div class="col-sm-3 hidden-xs">
+                                            <!-- IF searchresults.S_TOPIC_GLOBAL -->
+                                                    <p class="gensmall">{L_GLOBAL}</p>
+                                            <!-- ELSE -->
+                                                    <p class="gensmall">{L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></p>
+                                            <!-- ENDIF -->
+                                            <!-- IF searchresults.S_POST_GLOBAL and FORUM_ID != searchresults.FORUM_ID --> &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a><!-- ENDIF -->
+            				    <!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+            					<!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF -->
+            					<!-- IF searchresults.PAGINATION --><div class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></div><!-- ENDIF -->
+                                            
+                                        </div>
+                                        <div class="col-sm-4 col-xs-4 lastpost<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
+                                                    <span>
+                                                        {L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
+            					<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}"> <br class=" hidden-xs "/>{searchresults.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
+                                        </div>
                 
 	            </div>
 			
