@@ -368,14 +368,13 @@
                 
                
 	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
-        <!-- IF not S_IS_BOT && not $CA_SKIP_PM_NOTIFY && S_USER_LOGGED_IN && S_DISPLAY_PM && (  S_USER_NEW_PRIVMSG || S_USER_UNREAD_PRIVMSG ) && not S_INDEX -->
+        <!-- IF not S_IS_BOT && not $CA_SKIP_PM_NOTIFY && S_USER_LOGGED_IN && S_DISPLAY_PM && (  S_USER_NEW_PRIVMSG || S_USER_UNREAD_PRIVMSG ) && not S_INDEX && not S_UCP -->
         <!-- Duplicated in index in order to match the forum size --> 
         <div class="row ">
                <div class=" col-xs-12  text-center  alert-warning ">
                 <!-- IF S_USER_NEW_PRIVMSG -->
                         <div class="pm-notify-new"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
                 <!-- ELSEIF S_USER_UNREAD_PRIVMSG -->
-                        <div class="pm-notify-unread"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
                 <!-- ENDIF -->
                 </div> 
         </div>
