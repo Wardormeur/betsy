@@ -5,22 +5,57 @@
   </div>
 </div>
 <div class="container-fluid margin-container" >
-    
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 col-xs-12">
-              <!-- INCLUDE forumlist_body.html -->
+      <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+    <div class="row">
+            <form method="post" action="{S_LOGIN_ACTION}" class="form-inline no-margin col-sm-10 col-sm-offset-1 col-xs-12 ">
+             <div class="row input-group-sm">
+                <div class="col-sm-10 hidden-xs">
+                   <input autofocus type="text" name="username" id="username" placeholder="{L_USERNAME}" size="10" class="inputbox form-control " title="{L_USERNAME}" />
+
+                   <input type="password" name="password" id="password" placeholder="{L_PASSWORD}" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
+
+          
+                    <input type="submit" name="login" value="{L_LOGIN}" class="btn btn-sm btn-success" />
+                    {S_LOGIN_REDIRECT}
+                    <!-- IF S_AUTOLOGIN_ENABLED -->
+                    <input type="checkbox" name="autologin" id="autologin" /><span class="hidden-xs"> {L_LOG_ME_IN}</span>
+                    <!-- ENDIF -->
+                </div>
+                <div class="hidden-xs col-sm-1 text-center">
+                    
+                     <!-- IF S_REGISTER_ENABLED --><a href="{U_REGISTER}" class="btn btn-sm btn-default ">{L_REGISTER}</a><!-- ENDIF -->
+                </div>
             </div>
+            </form>
+    </div>
+    <!-- ENDIF -->
+     <!-- IF not S_IS_BOT && not $CA_SKIP_PM_NOTIFY && S_USER_LOGGED_IN && S_DISPLAY_PM && (  S_USER_NEW_PRIVMSG || S_USER_UNREAD_PRIVMSG ) -->
+        <div class="row ">
+               <div class=" col-sm-10 col-sm-offset-1 col-xs-12 text-center  alert-warning ">
+                <!-- IF S_USER_NEW_PRIVMSG -->
+                        <div class="pm-notify-new"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
+                <!-- ELSEIF S_USER_UNREAD_PRIVMSG -->
+                        <div class="pm-notify-unread"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
+                <!-- ENDIF -->
+                </div> 
         </div>
+        <!-- ENDIF --> 
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+          <!-- INCLUDE forumlist_body.html -->
+        </div>
+    </div>
+    
     <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
-    <div class="row-fluid ">
+    <div class="row ">
             <form method="post" action="{S_LOGIN_ACTION}" class="form-horizontal no-margin col-xs-12 well">
              <div class=" form-group row">
                 <div class="col-xs-6">
 
-                    <h4 ><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4>
-                    <label for="username">{L_USERNAME}:</label>&nbsp;<input type="text" name="username" id="username" size="10" class="inputbox form-control" title="{L_USERNAME}" />
+                    <h4 ><a href="{U_LOGIN_LOGOUT}" >{L_LOGIN_LOGOUT}</a></h4>
+                    <label for="username" class="hidden-xs">{L_USERNAME}:</label>&nbsp;<input type="text" name="username" id="username" placeholder="{L_USERNAME}" size="10" class="inputbox form-control" title="{L_USERNAME}" />
 
-                    <label for="password">{L_PASSWORD}:</label>&nbsp;<input type="password" name="password" id="password" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
+                    <label for="password" class="hidden-xs">{L_PASSWORD}:</label>&nbsp;<input type="password" name="password" id="password" placeholder="{L_PASSWORD}" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
 
 
 
@@ -32,7 +67,7 @@
                 </div>
                 <div class="col-xs-6">
                      <!-- IF S_REGISTER_ENABLED --><h4><a href="{U_REGISTER}">{L_REGISTER}</a></h4><!-- ENDIF -->
-                     <p>A venir : support pour des providers externes</p>
+                    
                 </div>
             </div>
             </form>

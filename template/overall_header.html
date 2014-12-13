@@ -47,13 +47,10 @@
 	var style_cookie_settings = '{A_COOKIE_SETTINGS}';
 	var onload_functions = new Array();
 	var onunload_functions = new Array();
-	<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+	<!-- IF S_USER_PM_POPUP -->
 		var url = '{UA_POPUP_PM}';
 		window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
-        <!-- ELSE IF S_NEW_PM-->
-		 //window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
-		//jQuery('#new-pm').show((url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400'));
-	<!-- ENDIF -->
+      <!-- ENDIF -->
 
 	/**
 	* Find a member
@@ -99,7 +96,7 @@
             
             $('.search-button').click(function(){ 
                 if("none" == $('#search-li form').css('display')){
-                    $('#search-li form').fadeIn().css("display","inline-block");$('#search-button').css("display","inline");} //inb4 ugly hax for inline css
+                    $('#search-li form').fadeIn().css("display","inline-block");$('#search-button').css("display","inline"); $('#search-li input').focus();} //inb4 ugly hax for inline css
                 else{$('#search-li form').hide();$('#search-button').css("display","block");}
             });
             
@@ -187,7 +184,7 @@
                                             <!-- ENDIF -->
                                         <!-- ENDIF -->
                                         <li class="divider"></li>
-                                        <!-- ENDIF -->				
+                                    <!-- ENDIF -->				
                                         <li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
                                                 <i class="fa fa-sign-out "></i> {L_LOGIN_LOGOUT}</a>
                                         </li>
@@ -195,8 +192,8 @@
                                         <li class="bb-register">
                                                 <a href="{U_REGISTER}"><i class="fa fa-user "></i> {L_REGISTER}</a>
                                         </li>
-            							
-        			<!-- ENDIF -->
+                                       
+                                        <!-- ENDIF -->
                             </ul>
                             
         		</div><!--btn group-->
@@ -420,7 +417,7 @@
                         <a target="_blank" class="facebook" title="Suivez nous sur Facebok" href="http://www.facebook.com/pages/TellementNomade/165805823444969"><i class=" fa fa-facebook"></i></a>
                         <a target="_blank" class="twitter" title="Suivez nous sur Twitter" href="http://twitter.com/tellementnomade"><i class=" fa fa-twitter"></i></a>
                     </div>
-                    <div  id="site-description" class="col-sm-8 hidden-xs ">
+                    <div  id="site-description" class="col-sm-8 col-sm-offset-1  hidden-xs ">
 		    
                         <a href="{U_INDEX}" title="{L_INDEX}" id="logo"  >
                                     
@@ -438,11 +435,23 @@
 			</div>
 		</div>
 		<!-- ENDIF -->
+                
                
 	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
-                        
-        <div class="row bottom-topic-actions">
-           
+        <!-- IF not S_IS_BOT && not $CA_SKIP_PM_NOTIFY && S_USER_LOGGED_IN && S_DISPLAY_PM && (  S_USER_NEW_PRIVMSG || S_USER_UNREAD_PRIVMSG ) && not S_INDEX -->
+        <!-- Duplicated in index in order to match the forum size --> 
+        <div class="row ">
+               <div class=" col-xs-12  text-center  alert-warning ">
+                <!-- IF S_USER_NEW_PRIVMSG -->
+                        <div class="pm-notify-new"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
+                <!-- ELSEIF S_USER_UNREAD_PRIVMSG -->
+                        <div class="pm-notify-unread"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
+                <!-- ENDIF -->
+                </div> 
+        </div>
+        <!-- ENDIF --> 
+        <div class="row bottom-topic-actions " >
+       
          <!-- IF  S_INDEX == false -->
             <span class="hidden-xs hidden-sm col-md-9 pull-left">       	
                 <ul class="breadcrumb row">
@@ -452,5 +461,4 @@
                         <!-- BEGIN navlinks --><strong>&rsaquo;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a> <!-- END navlinks -->
                    
           <!-- ENDIF --> 
-            <!--<a href="{PREVIOUS_PAGE}" class="btn btn-default hidden-sm hidden-md hidden-lg hidden-xl"><i class="fa fa-angle-left"></i> {L_PREVIOUS}</a> -->
             <!-- We do not close the row so that we gain place with the next row that is containing actions-->

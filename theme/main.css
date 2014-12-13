@@ -1,8 +1,10 @@
+.postrow .label {
+    white-space: pre;
+}
+
 .post ul{
     padding-left:15px;
 }
-
-
 
 
 .social-icons.navbar-logo a{
@@ -387,6 +389,7 @@ ul.social-icons.navbar-logo {
 		margin: -28% 0 0 24%;
 		width: 50%;
 		height: 50px;
+                
 	}
 
 	#slider #active {
@@ -411,6 +414,6 @@ ul.social-icons.navbar-logo {
 		-ms-transform: scale(0.6);
 		transform: scale(0.6);
 	}
-
+        
 }
 

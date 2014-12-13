@@ -9349,6 +9349,11 @@ body {
     margin-right: 0;
   }
 }
+@media (max-width: 991px) {
+  #sidebar-wrapper {
+    overflow: hidden;
+  }
+}
 .clearfix:before,
 .clearfix:after,
 .container:before,
