@@ -14,7 +14,7 @@
 
 	<!-- IF SEARCH_MATCHES -->
 <div class="row">
-	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin col-xl-12 col-md-12 col-lg-12 col-sm-12 col-xs-12">
+	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin col-xs-12">
 
         <div class="topic-actions row">
 
@@ -49,18 +49,18 @@
      <!-- IF .searchresults -->
             <!-- IF PAGINATION -->
         <div class="row well">
-		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		<div class="col-xs-4">
 		<!-- IF PREVIOUS_PAGE -->
 
                     <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default "><i class="fa fa-angle-left"> </i>{L_PREVIOUS}</a>
 		<!-- ENDIF -->
 		</div>
-		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center pagination">
+		<div class="col-xs-4 text-center pagination">
                     <!-- IF PAGINATION --><div class="hidden-xs">{PAGE_NUMBER} &bull; </div><span >{PAGINATION}</span><!-- ELSE --> <span >{PAGE_NUMBER}</span><!-- ENDIF -->
 		</div>
 	
 		<!-- IF NEXT_PAGE -->
-		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
+		<div class=" col-xs-4 text-right">
 		    <a href="{NEXT_PAGE}" class="btn btn-sm btn-default">{L_NEXT}<i class="fa fa-angle-right"> </i></a>
 		</div>
 		<!-- ENDIF -->
@@ -92,7 +92,7 @@
 
 		<!-- BEGIN searchresults -->
 			    <div class=" forumrow row  <!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
-                                        <div class="   col-sm-5 col-xs-8
+                                        <div class=" col-xs-8
         					<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
         					 title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
         					 <!-- IF searchresults.S_UNREAD_TOPIC --><a href="{searchresults.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
@@ -103,22 +103,23 @@
         					 <!-- IF searchresults.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}"/><!-- ENDIF -->
         					 <a href="{searchresults.U_VIEW_TOPIC}" class="topictitle
         					 <!-- IF searchresults.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
-        					 "> {searchresults.TOPIC_TITLE}</a><br/>
+        					 "> {searchresults.TOPIC_TITLE}</a>
+                                                    <!-- IF searchresults.S_TOPIC_GLOBAL -->
+                                                          <span>{L_GLOBAL}</span>
+                                                    <!-- ELSE -->
+                                                          <span>{L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a>
+                                        <!-- IF searchresults.S_POST_GLOBAL and FORUM_ID != searchresults.FORUM_ID --> &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a><!-- ENDIF -->
+                                                          </span>
+                                                    <!-- ENDIF -->
+                                                    </br>
                                                  <!-- IF searchresults.ATTACH_ICON_IMG -->{searchresults.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL}<span class="hidden-xs"> &raquo; {searchresults.FIRST_POST_TIME}</span>
-            				</div>
-                                        <div class="col-sm-3 hidden-xs">
-                                            <!-- IF searchresults.S_TOPIC_GLOBAL -->
-                                                    <p class="gensmall">{L_GLOBAL}</p>
-                                            <!-- ELSE -->
-                                                    <p class="gensmall">{L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></p>
-                                            <!-- ENDIF -->
-                                            <!-- IF searchresults.S_POST_GLOBAL and FORUM_ID != searchresults.FORUM_ID --> &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a><!-- ENDIF -->
-            				    <!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+         
+                                                <!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
             					<!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF -->
             					<!-- IF searchresults.PAGINATION --><div class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></div><!-- ENDIF -->
                                             
                                         </div>
-                                        <div class="col-sm-4 col-xs-4 lastpost<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
+                                        <div class="col-xs-4 lastpost<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
                                                     <span>
                                                         {L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
             					<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}"> <br class=" hidden-xs "/>{searchresults.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
@@ -185,43 +186,43 @@
 	<!-- END searchresults -->
 <!-- ENDIF -->
 
-<!-- IF PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->
+<!-- IF (PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS) and ( PREVIOUS_PAGE or NEXT_PAGE ) -->
 <div class="row well">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<!-- IF PREVIOUS_PAGE -->
-		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-		    <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default "><i class="fa fa-angle-left"> </i>{L_PREVIOUS}</a>
-		    
-		</div>
-		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center ">
-                    <span >{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <span class="pagination"><span >{PAGINATION}</span></span><!-- ELSE --> &bull;{PAGE_NUMBER}<!-- ENDIF -->
-		</div>
+    <div class="col-xs-12">
+        <!-- IF PREVIOUS_PAGE -->
+            <div class="col-xs-4">
+                <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default "><i class="fa fa-angle-left"> </i>{L_PREVIOUS}</a>
 
-		<!-- ELSE -->
-                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
-                    <span >{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <span class="pagination"><span>{PAGINATION}<span></span><!-- ELSE --> &bull; <span >{PAGE_NUMBER}</span><!-- ENDIF -->
-		</div>
-		
-		<!-- ENDIF -->
-	
-		<!-- IF NEXT_PAGE -->
-		<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">
-		    <a href="{NEXT_PAGE}" class="btn btn-sm btn-default">{L_NEXT}<i class="fa fa-angle-right"> </i></a>
-		</div>
-		<!-- ENDIF -->
+            </div>
+            <div class="col-xs-4 text-center ">
+                <span >{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <span class="pagination"><span >{PAGINATION}</span></span><!-- ELSE --> &bull;{PAGE_NUMBER}<!-- ENDIF -->
+            </div>
+
+        <!-- ELSE -->
+            <div class="col-xs-4 col-xs-offset-4 text-center">
+               <span >{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <span class="pagination"><span>{PAGINATION}<span></span><!-- ELSE --> &bull; <span >{PAGE_NUMBER}</span><!-- ENDIF -->
+           </div>
+
+        <!-- ENDIF -->
+
+        <!-- IF NEXT_PAGE -->
+            <div class="col-xs-4 text-right">
+                <a href="{NEXT_PAGE}" class="btn btn-sm btn-default">{L_NEXT}<i class="fa fa-angle-right"> </i></a>
+            </div>
+        <!-- ENDIF -->
     </div>
 </div>	
 <!-- ENDIF -->
 
 
 <div class="row well topic-actions hidden-sm hidden-xs">
-   <div class="col-md-12 col-lg-12 col-xl-12">
+   <div class="col-xl-12">
 <!-- INCLUDE jumpbox.html -->
    </div>
 <!-- IF (S_SHOW_TOPICS or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS) and .searchresults -->
     <!-- IF  S_SHOW_TOPICS or S_SELECT_SORT_KEY -->
         
-        <form method="post" action="{S_SEARCH_ACTION}" class="col-md-12 col-lg-12 col-xl-12 form-inline">
+        <form method="post" action="{S_SEARCH_ACTION}" class="ccol-xl-12 form-inline">
         	<fieldset class="display-options">
           			<label><!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}</label><label><!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --></label> <label>{S_SELECT_SORT_KEY}</label>
         			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="btn btn-sm" /></label>
@@ -230,7 +231,7 @@
     	<!-- ENDIF -->
         
     	<!-- IF  SEARCH_IN_RESULTS-->
-		<form method="post" action="{S_SEARCH_ACTION}" class="col-md-12 col-lg-12 col-xl-12 form-inline no-margin text-center">
+		<form method="post" action="{S_SEARCH_ACTION}" class="col-xl-12 form-inline no-margin text-center">
     		<!-- IF SEARCH_IN_RESULTS -->
     				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
     				<input class="btn btn-sm" type="submit" name="submit" value="{L_SEARCH}" />

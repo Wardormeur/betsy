@@ -162,12 +162,14 @@
                                         <li><a href="{U_MARK_TOPICS}">{L_MARK_TOPICS_READ}</a> </li>
                                         <!-- ENDIF -->
                                 <!-- ENDIF -->
+                                        <!-- IF (S_USER_LOGGED_IN and not S_IS_BOT) -->
                                         <li class="divider"></li>
-                                        <li class=" hidden-sm <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
-                                               <!-- MOD: SHMK USER FEEDBACK -->
+                                        <li class=" <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
+                                        <!-- MOD: SHMK USER FEEDBACK -->
                                         <li class="divider"></li>
-                                        <li class=" hidden-sm <!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
+                                        <li class="<!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
                                            <!-- END: SHMK USER FEEDBACK -->
+                                        <!-- ENDIF -->
                                 </ul>
                             </li>
                             <li class=""><a href="http://wiki.tellementnomade.com">Wiki</a></li>
