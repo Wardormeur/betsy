@@ -4,11 +4,10 @@
 {SEO_BASE_HREF}
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
-<meta http-equiv="content-style-type" content="text/css" />
-<meta http-equiv="content-language" content="{S_USER_LANG}" />
+<!--[if IE]>
 <meta http-equiv="imagetoolbar" content="no" />
-<meta name="resource-type" content="document" />
-<meta name="distribution" content="global" />
+<![endif]-->
+<meta name="dcterms.audience" content="Global" />
 <meta name="keywords" content="casque,intra,dac,ampli,dap,test,feedback,review" />
 <meta name="description" content="Tellement Nomade, l'actu de l'audio nomade!" />
 <meta name="theme-color" content="#555" />
@@ -87,43 +86,44 @@
         		 
         			<ul class="dropdown-menu">
         			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-        				<!-- IF S_DISPLAY_PM --> 
+                                    <!-- IF S_DISPLAY_PM --> 
         				<li>	
                                             <a href="{U_PRIVATEMSGS}" class="<!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> unread<!-- ENDIF -->">
-                                                <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --><i class="fa fa-envelope-o"></i> <!-- ENDIF -->
+                                            <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --><i class="fa fa-envelope-o"></i> <!-- ENDIF -->
                                                 {PRIVATE_MESSAGE_INFO} <!-- IF PRIVATE_MESSAGE_INFO_UNREAD --></br>{PRIVATE_MESSAGE_INFO_UNREAD} <!-- ENDIF --></a>
-        				</li><!-- ENDIF -->
+        				</li>
+                                    <!-- ENDIF -->
                                         <li class="bb-ucp">
                                             <a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user"></i> {L_PROFILE}</a>
                                         </li>
-        				<!-- MOD: SHMK USER FEEDBACK -->
+                                    <!-- MOD: SHMK USER FEEDBACK -->
         				<li>
                                             <a href="{U_MY_FEEDBACK}"><i class="fa fa-thumbs-o-up"></i> {MY_FEEDBACK}</a> 
         				</li>
-        				<!-- END: SHMK USER FEEDBACK -->
-                                        <!-- IF S_INDEX -->
+                                    <!-- END: SHMK USER FEEDBACK -->
+                                    <!-- IF S_INDEX -->
                                         <li>
                                             <a href="{U_YOUR_PERSONAL_GALLERY}"><i class="fa fa-camera"></i> {L_YOUR_PERSONAL_ALBUM}</a>
                                         </li>
                                         <!-- ENDIF -->
-                                        <!-- IF not S_IS_BOT -->
-                                            <!-- IF U_RESTORE_PERMISSIONS -->
+                                    <!-- IF not S_IS_BOT -->
+                                        <!-- IF U_RESTORE_PERMISSIONS -->
                                         <li>
                                                 <a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
                                         </li>
-                                            <!-- ENDIF -->
                                         <!-- ENDIF -->
+                                    <!-- ENDIF -->
                                         <li class="divider"></li>
                                     <!-- ENDIF -->				
                                         <li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
                                                 <i class="fa fa-sign-out "></i> {L_LOGIN_LOGOUT}</a>
                                         </li>
-                                        <!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+                                    <!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
                                         <li class="bb-register">
                                                 <a href="{U_REGISTER}"><i class="fa fa-user "></i> {L_REGISTER}</a>
                                         </li>
-                                       
-                                        <!-- ENDIF -->
+                                    
+                                    <!-- ENDIF -->
                             </ul>
                             
         		</div><!--btn group-->
@@ -219,7 +219,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-logo " href="{U_INDEX}"><img src="{T_IMAGESET_PATH}/minimal_logo.png"/></a>
+                <a class="navbar-logo " href="{U_INDEX}"><img src="{T_IMAGESET_PATH}/minimal_logo.png" alt="alternative minimalist logo"/></a>
 
             </div>
 
@@ -384,7 +384,7 @@
         <div class="row bottom-topic-actions " >
        
          <!-- IF  S_INDEX == false -->
-            <span class="hidden-xs hidden-sm col-md-9 pull-left">       	
+            <div class="hidden-xs hidden-sm col-md-9 pull-left">       	
                 <ul class="breadcrumb row">
                     <li>
                         <a href="{U_INDEX}" ><i class="fa fa-home"></i> {L_INDEX}</a>

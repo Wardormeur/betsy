@@ -2,7 +2,7 @@
 
 <strong>&rsaquo;</strong> <strong><a href="{navlinks.U_VIEW_FORUM}">{TOPIC_TITLE} </a></strong></li>
                 </ul>
-            </span>
+            </div>
     <!-- we close the breadcrumb -->        
     <div class="btn btn-group pull-right">
         <!-- IF U_WATCH_TOPIC --><a class="btn btn-xs btn-default" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="fa fa-star"></i></a><!-- ENDIF -->
@@ -293,7 +293,7 @@
 			<!-- ENDIF -->
 
 			<!-- IF postrow.BUMPED_MESSAGE --><div class="notice hidden-xs hidden-sm"><br /><br />{postrow.BUMPED_MESSAGE}</div><!-- ENDIF -->
-			<!-- IF postrow.SIGNATURE --><div id="sig{postrow.POST_ID}" class="signature hidden-xs hidden-sm hidden-sm col-md-12 col-lg-12 col-xl-12">{postrow.SIGNATURE}</div><!-- ENDIF -->
+			<!-- IF postrow.SIGNATURE --><div id="sig{postrow.POST_ID}" class="signature hidden-xs hidden-sm hidden-sm col-md-12">{postrow.SIGNATURE}</div><!-- ENDIF -->
 			
 		<!-- ENDIF -->
 
@@ -377,12 +377,12 @@
 
     <div class="row hidden-xs hidden-sm">
     	<div class="col-md-12 sm-hidden xs-hidden">
-    	    <center>
+    	    <div class="text-center">
     	    	<!-- IF not S_IS_BOT -->
         		<label>{L_DISPLAY_POSTS}: </label>{S_SELECT_SORT_DAYS}
         		<label>{L_SORT_BY} </label>{S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-sm" /></label>
         		<!-- ENDIF -->
-    	    </center>
+    	    </div>
     	</div>
     </div>
     
