@@ -1,10 +1,11 @@
 
     <!-- INCLUDE overall_header.html -->
     </div>
-      <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
-                <form method="post" action="{S_LOGIN_ACTION}" class="form-inline no-margin col-sm-10 col-sm-offset-1 col-xs-12 ">
+            
+      <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+            <form method="post" action="{S_LOGIN_ACTION}" class="form-inline no-margin col-sm-10 col-sm-offset-1 col-xs-12 ">
              <div class="row input-group-sm">
                 <div class="col-sm-10 hidden-xs">
                    <input autofocus type="text" name="username" id="username" placeholder="{L_USERNAME}" size="10" class="inputbox form-control " title="{L_USERNAME}" />
@@ -36,7 +37,7 @@
         </div>
         <!-- ENDIF --> 
     <div class="row">
-        <div class=" col-xs-12">
+        <div class="col-xs-12">
           <!-- INCLUDE forumlist_body.html -->
         </div>
     </div>
