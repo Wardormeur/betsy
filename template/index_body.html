@@ -1,11 +1,10 @@
 
     <!-- INCLUDE overall_header.html -->
-    
-</div>
-<div class="container-fluid margin-container" >
+    </div>
       <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
     <div class="row">
-            <form method="post" action="{S_LOGIN_ACTION}" class="form-inline no-margin col-sm-10 col-sm-offset-1 col-xs-12 ">
+        <div class="col-xs-10 col-xs-offset-1">
+                <form method="post" action="{S_LOGIN_ACTION}" class="form-inline no-margin col-sm-10 col-sm-offset-1 col-xs-12 ">
              <div class="row input-group-sm">
                 <div class="col-sm-10 hidden-xs">
                    <input autofocus type="text" name="username" id="username" placeholder="{L_USERNAME}" size="10" class="inputbox form-control " title="{L_USERNAME}" />
@@ -25,7 +24,6 @@
                 </div>
             </div>
             </form>
-    </div>
     <!-- ENDIF -->
      <!-- IF not S_IS_BOT && not $CA_SKIP_PM_NOTIFY && S_USER_LOGGED_IN && S_DISPLAY_PM && (  S_USER_NEW_PRIVMSG || S_USER_UNREAD_PRIVMSG ) -->
         <div class="row ">
@@ -38,7 +36,7 @@
         </div>
         <!-- ENDIF --> 
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+        <div class=" col-xs-12">
           <!-- INCLUDE forumlist_body.html -->
         </div>
     </div>
@@ -101,8 +99,10 @@
     </div>
     <!-- ENDIF -->
 
-    <!-- INCLUDE overall_footer.html -->
-    <!-- IF S_INDEX -->
+    </div>
+    </div>
+</div>     
+<!-- IF S_INDEX -->
     <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 
@@ -113,13 +113,16 @@
                 
                 <!-- INCLUDE watched_posts.html -->
             </ul>
-           <!-- <ul class="sidebar-nav">
+            <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     Must-read
                     
                 </li>
                 <li class="hover">
-                    <a href="/guide-de-noel-2013/">Guide 2013</a>
+                    <a href="/wiki/doku.php?id=qu_est-ce_que_tn">TN (en large)</a>
+                </li>
+                <li class="hover">
+                    <a href="/guide-de-noel-2014-lannee-de-tellementnomade-en-accelere/">Guide 2014</a>
                 </li>
                 <li class="hover">
                     <a href="/forum/viewtopic.php?f=47&t=4739">Charte des PAs</a>
@@ -127,11 +130,7 @@
                 <li class="hover">
                     <a href="/forum/viewtopic.php?f=109&t=8919">Guide pour les feedbacks</a>
                 </li>
-                <li class="hover">
-                    <a href="/wiki/doku.php">Se servir du Wiki</a>
-                </li>
             </ul>
-           -->
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     Nos partenaires
@@ -152,7 +151,7 @@
             </ul>
            
         </div>
-    </div>
-</div>
+
  <!-- ENDIF -->
-<!--<div class="container-fluid margin-container">-->
+    <!-- INCLUDE overall_footer.html -->
+    

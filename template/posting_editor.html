@@ -243,13 +243,12 @@
 			<!-- IF S_NOTIFY_ALLOWED -->
 				<div><label for="notify"><input type="checkbox" name="notify" id="notify"{S_NOTIFY_CHECKED} /> {L_NOTIFY_REPLY}</label></div>
 			<!-- ENDIF -->
-			<!-- IF S_LOCK_TOPIC_ALLOWED -->
-				<div><label for="lock_topic"><input type="checkbox" name="lock_topic" id="lock_topic"{S_LOCK_TOPIC_CHECKED} /> {L_LOCK_TOPIC}</label></div>
+			<!-- IF S_LOCK_TOPIC_ALLOWED -->	
+                                <div><label for="lock_topic"><input type="checkbox" name="lock_topic" id="lock_topic"{S_LOCK_TOPIC_CHECKED} /> {L_LOCK_TOPIC}</label></div>
 			<!-- ENDIF -->
-			<!-- IF S_LOCK_POST_ALLOWED -->
-				<div><label for="lock_post"><input type="checkbox" name="lock_post" id="lock_post"{S_LOCK_POST_CHECKED} /> {L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</label></div>
-			<!-- ENDIF -->
-
+                        <!-- IF S_LOCK_POST_ALLOWED -->
+                                <div><label for="lock_post"><input type="checkbox" name="lock_post" id="lock_post"{S_LOCK_POST_CHECKED} /> {L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</label></div>
+                        <!-- ENDIF -->
 			<!-- IF S_TYPE_TOGGLE or S_TOPIC_TYPE_ANNOUNCE or S_TOPIC_TYPE_STICKY -->
 			<hr class="dashed" />
 			<!-- ENDIF -->

@@ -88,8 +88,10 @@
         			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
                                     <!-- IF S_DISPLAY_PM --> 
         				<li>	
-                                            <a href="{U_PRIVATEMSGS}" class="<!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> unread<!-- ENDIF -->">
-                                            <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --><i class="fa fa-envelope-o"></i> <!-- ENDIF -->
+                                            <a href="{U_PRIVATEMSGS}" >
+                                            <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --><span class="<!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> unread<!-- ENDIF -->">
+                                                <i class="fa fa-envelope-o"></i> </span>
+                                            <!-- ENDIF -->
                                                 {PRIVATE_MESSAGE_INFO} <!-- IF PRIVATE_MESSAGE_INFO_UNREAD --><br/>{PRIVATE_MESSAGE_INFO_UNREAD} <!-- ENDIF --></a>
         				</li>
                                     <!-- ENDIF -->
@@ -186,7 +188,7 @@
                             <li id="search-li" >
                                 <a class="search-button" id="search-button" href="#"><i class="fa fa-search"></i></a>
                                 <form action="{U_SEARCH}" method="get"class="form-inline ">
-                                        <input name="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="form-control input-sm" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->" onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" />
+                                        <input name="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="form-control input-sm" placeholder="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->"  />
                                          {S_SEARCH_HIDDEN_FIELDS}
                                         <a class="hidden-sm hidden-xs" id="adv-search" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">
                                             <i class="fa fa-plus-circle"></i>
@@ -235,8 +237,11 @@
                     <!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
                             <!-- IF S_DISPLAY_PM --> 
                             <li>	
-                                <a href="{U_PRIVATEMSGS}" class="<!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> unread<!-- ENDIF -->">
-                                    <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --><i class="fa fa-envelope-o"></i> <!-- ENDIF -->
+                                <a href="{U_PRIVATEMSGS}" >
+                                    <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD -->
+                                        <span class="<!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> unread<!-- ENDIF -->">
+                                            <i class="fa fa-envelope-o"></i> 
+                                        </span><!-- ENDIF -->
                                     {PRIVATE_MESSAGE_INFO} <!-- IF PRIVATE_MESSAGE_INFO_UNREAD --><br/>{PRIVATE_MESSAGE_INFO_UNREAD} <!-- ENDIF --></a>
                             </li><!-- ENDIF -->
                             <li class="bb-ucp">
@@ -342,7 +347,8 @@
       <!-- IF S_INDEX -->
         <div id="wrapper">
       <!-- ENDIF -->  
-	<div  id="page-content-wrapper" class="container" >
+	<div  id="page-content-wrapper"  >
+            <div class="<!-- IF S_INDEX -->container-fluid <!-- ELSE --> container <!-- ENDIF -->">
         	<div class="row">
                   <!-- IF S_INDEX == true  -->
                     <div class="social-icons col-xs-8 col-sm-1">

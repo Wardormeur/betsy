@@ -31,9 +31,18 @@
 
 	<div class="col-xl-3 col-lg-3 col-md-2 col-sm-2 col-xs-4">
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
-	    
-		<a class="btn btn-sm <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-success<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
-	<!-- ENDIF -->
+              <a class="btn btn-sm <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-success<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-lock icon-white"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-comment icon-white"></i> {L_POST_REPLY}<!-- ENDIF --></a>
+                <!-- IF not S_IS_LOCKED and S_LOCK_TOPIC_ALLOWED -->
+                    <form class="inline" method="post" action="{U_QR_ACTION}" >
+                       <div class="form-group">
+                        {S_FORM_TOKEN}
+                        {QR_HIDDEN_FIELDS}
+                        <input type="hidden" name="lock_topic" id="lock_topic" value="1"/> 
+                        <button type="submit" class="btn btn-sm btn-default" ><i class="fa fa-lock"></i> {L_LOCK_TOPIC}</button>
+                       </div>
+                    </form>
+                <!-- ENDIF -->
+        <!-- ENDIF -->
 	</div>
 	
 	<!-- IF PAGINATION or TOTAL_POSTS -->
