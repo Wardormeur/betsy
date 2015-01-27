@@ -30,7 +30,7 @@
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-    <div class="topic-actions  row" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 1em;"<!-- ENDIF -->>
+    <section class="topic-actions  row" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 1em;"<!-- ENDIF -->>
     
     	<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
     	<div class="col-xs-4">
@@ -84,7 +84,7 @@
         <!-- ENDIF -->
     
     
-    </div>
+    </section>
 <!-- ENDIF -->
 
 <!-- IF S_NO_READ_ACCESS -->
@@ -99,7 +99,7 @@
 
 		<form action="{S_LOGIN_ACTION}" method="post">
 
-		<div class="row well">
+		<section class="row well">
 					<h3 class="box-heading"><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
 			<div class="content">
 				
@@ -122,7 +122,7 @@
     				{S_LOGIN_REDIRECT}
 				</div>
 			</div>
-		</div>
+		</section>
 
 		</form>
 
@@ -155,34 +155,34 @@
     	    <!-- We open the div containing all the row of the forum-->
     		    <div class="topiclist topics col-xs-12 ">
     	<!-- ENDIF -->
-                		<div class=" forumrow row  <!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
-        					<div class="col-md-7 col-xs-9
-        					<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
-        					 title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
-                                                    <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle
-        					 <!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
-        					 ">{topicrow.TOPIC_FOLDER_IMG} {topicrow.TOPIC_TITLE}</a>
-            					 
-        					 <!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
-        					 <!-- IF topicrow.S_POST_GLOBAL --><span class="label label-warning pull-right">GLOBAL</span> <!-- ENDIF -->
-        					 <!-- IF topicrow.S_POST_ANNOUNCE --><span class="label label-info pull-right">ANNOUNCEMENT</span> <!-- ENDIF -->
-        					 <!-- IF topicrow.S_POST_STICKY --><span class="label label-success pull-right">STICKY</span> <!-- ENDIF -->
-        					 <!--<i class="pcon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i> -->
-        					 <!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}"/><!-- ENDIF -->
-        					 <!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
-            					<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF --><br />
-            					<!-- IF topicrow.PAGINATION --><div class="p-pagination pull-right"><span>{topicrow.PAGINATION}</span></div><!-- ENDIF -->
-                                                <!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><small><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
-            					<!-- IF topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID --> &raquo; {L_IN} <a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->
-            				</div>
-            				<div class=" text-center col-lg-1 col-md-2 hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-default ">{topicrow.REPLIES}</span></div>
-            				<div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-default ">{topicrow.VIEWS}</span></div>
-            				<div class="col-xs-3 lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
-            				    <span>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
-            					<!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}"> <br />{topicrow.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
-            			    </div>
+                    <article class=" forumrow row  <!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
+                                    <div class="col-md-7 col-xs-9
+                                    <!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
+                                     title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+                                        <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle
+                                     <!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
+                                     ">{topicrow.TOPIC_FOLDER_IMG} {topicrow.TOPIC_TITLE}</a>
+
+                                     <!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
+                                     <!-- IF topicrow.S_POST_GLOBAL --><span class="label label-warning pull-right">GLOBAL</span> <!-- ENDIF -->
+                                     <!-- IF topicrow.S_POST_ANNOUNCE --><span class="label label-info pull-right">ANNOUNCEMENT</span> <!-- ENDIF -->
+                                     <!-- IF topicrow.S_POST_STICKY --><span class="label label-success pull-right">STICKY</span> <!-- ENDIF -->
+                                     <!--<i class="pcon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i> -->
+                                     <!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}"/><!-- ENDIF -->
+                                     <!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+                                    <!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF --><br />
+                                    <!-- IF topicrow.PAGINATION --><div class="p-pagination pull-right"><span>{topicrow.PAGINATION}</span></div><!-- ENDIF -->
+                                    <!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><small><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
+                                    <!-- IF topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID --> &raquo; {L_IN} <a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->
+                            </div>
+                            <div class=" text-center col-lg-1 col-md-2 hidden-xs hidden-sm posts<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-default ">{topicrow.REPLIES}</span></div>
+                            <div class="text-center col-lg-1 hidden-md hidden-xs hidden-sm views<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"><span class="label label-default ">{topicrow.VIEWS}</span></div>
+                            <div class="col-xs-3 lastpost<!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
+                                <span>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
+                                    <!-- IF not S_IS_BOT --><a href="{topicrow.U_LAST_POST}"> <br />{topicrow.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
+                        </div>
                 
-	            </div>
+	            </article>
                 
        
                 

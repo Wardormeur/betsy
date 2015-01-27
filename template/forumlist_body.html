@@ -31,9 +31,9 @@
 	            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         	<!-- ENDIF -->
     	<!-- IF not forumrow.S_IS_CAT -->
-	            <div class="row forumrow">
+	            <article class="row forumrow">
     				<div class="col-xl-7 col-lg-7 col-md-7 col-sm-9 col-xs-7" title="{forumrow.FORUM_FOLDER_IMG_ALT}" >
-    				<span class="hidden-xs">{forumrow.FORUM_FOLDER_IMG}</span>
+                                    <span class="hidden-xs">{forumrow.FORUM_FOLDER_IMG}</span>
 				
                                 <!-- <i class="pcon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i>-->
     				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
@@ -42,7 +42,7 @@
     				 <!-- ENDIF -->
     
     					<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
-    					<a href="{forumrow.U_VIEWFORUM}" class="forumtitle <!-- IF forumrow.S_UNREAD_FORUM --> unread<!-- ENDIF -->">{forumrow.FORUM_NAME}</a>
+                                        <a href="{forumrow.U_VIEWFORUM}" class="forumtitle inline <!-- IF forumrow.S_UNREAD_FORUM --> unread<!-- ENDIF -->"><h4>{forumrow.FORUM_NAME}</h4></a>
                                         <!-- IF forumrow.FORUM_DESC -->
                                         <span class="hidden-xs hidden-sm hidden-md">
                                         <br/>
@@ -87,7 +87,7 @@
                                             <!-- ELSE -->{L_NO_POSTS}</br>&nbsp;<!-- ENDIF -->
                                         </span>
                                     </div>  
-				</div>	<!-- end of row -->
+				</article>	<!-- end of row -->
 				<!-- ENDIF -->
     	<!-- ENDIF -->
             	

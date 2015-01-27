@@ -23,7 +23,7 @@
 	</div>
 <!-- ENDIF -->
 
-<div class="row topic-actions  ">
+<section class="row topic-actions  ">
 
 	<div class="col-xs-8 hidden-sm hidden-md hidden-lg hidden-xl">
 	     <a href="{U_VIEW_FORUM}" class="btn btn-default btn-sm" accesskey="r"><i class="fa fa-angle-left"></i> {FORUM_NAME}</a>
@@ -82,7 +82,7 @@
 		</div>
 	<!-- ENDIF -->
 	
-</div>
+</section>
 
 <!-- IF S_HAS_POLL -->
 	<form method="post" action="{S_POLL_ACTION}">
@@ -137,10 +137,10 @@
 	<hr />
 <!-- ENDIF -->
 <div class="row">
-       <div class="col-xl-12  col-xs-12">
+       <article class="col-xl-12  col-xs-12">
 <!-- BEGIN postrow -->
 	<!-- IF postrow.S_FIRST_UNREAD --><a id="unread"></a><!-- ENDIF -->
-	<div id="p{postrow.POST_ID}" class=" row <!-- IF postrow.S_FIRST_ROW --> <!-- ELSE -->postrow<!-- ENDIF -->">
+	<section id="p{postrow.POST_ID}" class=" row <!-- IF postrow.S_FIRST_ROW --> <!-- ELSE -->postrow<!-- ENDIF -->">
 		<div class="well post<!-- IF postrow.S_POST_REPORTED --> alert-danger<!-- ENDIF --> <!-- IF postrow.S_ROW_COUNT is even --> post-even<!-- ENDIF -->">
 		
 		<!-- IF not postrow.S_IGNORE_POST -->
@@ -310,13 +310,13 @@
 		<div class="back2top"><a href="{U_VIEW_TOPIC}#wrap" class="top" title="{L_BACK_TO_TOP}">{L_BACK_TO_TOP}</a></div>
 
 		</div>
-	</div>
+	</section>
 
 <!-- END postrow -->
-       </div>
+       </article>
 </div>
 
-<div class="row bottom-topic-actions">
+<section class="row bottom-topic-actions">
 
 	<div class="col-xs-8 hidden-sm hidden-md hidden-lg hidden-xl">
 	     <a href="{U_VIEW_FORUM}" class="btn btn-default btn-sm" accesskey="r"><i class="fa fa-angle-left"></i> {FORUM_NAME}</a>
@@ -371,7 +371,7 @@
                 </div>
 	<!-- ENDIF -->
 	
-</div>
+</section>
 
 <!-- IF S_QUICK_REPLY -->
 	<!-- INCLUDE quickreply_editor.html -->
