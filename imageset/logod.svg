@@ -16,7 +16,20 @@
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="header.svg">
   <defs
-     id="defs3775" />
+     id="defs3775" >
+	 <style type="text/css">
+      <![CDATA[
+		@font-face {
+			font-family: 215000E;
+			src: url("215000E.eot") /* EOT file for IE */
+		}
+		@font-face {
+			font-family: 215000E;
+			src: url("215000E.ttf") /* TTF file for CSS3 browsers */
+		}
+      ]]>
+   </style>
+	</defs
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"

@@ -2,7 +2,7 @@
     <!-- INCLUDE overall_header.html -->
     </div>
     <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
             
       <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
         <section class="row">    
@@ -105,56 +105,66 @@
     </div>
     </div>
 </div>     
-<!-- IF S_INDEX -->
+<!-- IF S_INDEX or U_VIEWFORUM -->
 <aside id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                
-                <!-- INCLUDE slider/wp_gallery_recent_posts.html -->
-            </ul>
-         
-             <ul class="sidebar-nav">
-                
-                <!-- INCLUDE watched_posts.html -->
-            </ul>
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    Must-read
-                    
-                </li>
-                <li class="hover">
-                    <a href="/wiki/doku.php?id=qu_est-ce_que_tn">TN (en large)</a>
-                </li>
-                <li class="hover">
-                    <a href="/guide-de-noel-2014-lannee-de-tellementnomade-en-accelere/">Guide 2014</a>
-                </li>
-                <li class="hover">
-                    <a href="/forum/viewtopic.php?f=47&amp;t=4739">Charte des PAs</a>
-                </li>
-                <li class="hover">
-                    <a href="/forum/viewtopic.php?f=109&amp;t=8919">Guide pour les feedbacks</a>
-                </li>
-            </ul>
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    Nos partenaires
-                    
-                </li>
-                <li class="hover">
-                    <a href="http://www.audiophonics.fr">Audiophonics</a>
-                </li>
-                <li class="hover">
-                    <a href="http://www.jdslabs.com">JDSLabs</a>
-                </li>
-                <li class="hover">
-                    <a href="http://www.thecustomart.com">CustomArt</a>
-                </li>
-                <li class="hover">
-                    <a href="http://www.conceptstoreaudiotechnica.fr">AudioTechnica</a>
-                </li>
-            </ul>
-           
-        </aside>
+    <ul class="sidebar-nav">
+        <!-- INCLUDE slider/wp_gallery_recent_posts.html -->
+    </ul>
+<!-- IF S_INDEX -->
+    <ul class="sidebar-nav">
+        <!-- INCLUDE watched_posts.html -->
+    </ul>
+    
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            Must-read
+        </li>
+        <li class="hover">
+            <a href="/wiki/doku.php?id=qu_est-ce_que_tn">Qu'est-ce que TN ?</a>
+        </li>
+        <li class="hover">
+            <a href="/guide-de-noel-2014-lannee-de-tellementnomade-en-accelere/">Guide 2014</a>
+        </li>
+        <li class="hover">
+            <a href="/forum/viewtopic.php?f=109&amp;t=8919">Guide pour les feedbacks</a>
+        </li>
+    </ul>
+    
+<!-- ELSEIF U_VIEWFORUM -->
+    <ul>
+        <li class="sidebar-brand">
+            Must-read
+        </li>
+    <!-- BEGIN topicrow -->
+        <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_STICKY-->
+        <li>
+             <a href="{topicrow.U_VIEW_TOPIC}" class=<!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF -->">{topicrow.TOPIC_TITLE}</a>
+        </li>
+        <!-- ENDIF -->
+    </ul>
+    <!-- END topicrow -->
+<!-- ENDIF -->
+
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            Nos partenaires
+        </li>
+        <li class="hover">
+            <a href="http://www.audiophonics.fr">Audiophonics</a>
+        </li>
+        <li class="hover">
+            <a href="http://www.jdslabs.com">JDSLabs</a>
+        </li>
+        <li class="hover">
+            <a href="http://www.thecustomart.com">CustomArt</a>
+        </li>
+        <li class="hover">
+            <a href="http://www.conceptstoreaudiotechnica.fr">AudioTechnica</a>
+        </li>
+    </ul>
+            
+</aside>
 
  <!-- ENDIF -->
-    <!-- INCLUDE overall_footer.html -->
+<!-- INCLUDE overall_footer.html -->
     
