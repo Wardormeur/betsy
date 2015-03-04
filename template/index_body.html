@@ -28,143 +28,75 @@
             </form>
         </section>
     <!-- ENDIF -->
-     <!-- IF not S_IS_BOT && not $CA_SKIP_PM_NOTIFY && S_USER_LOGGED_IN && S_DISPLAY_PM && (  S_USER_NEW_PRIVMSG || S_USER_UNREAD_PRIVMSG ) -->
-        <div class="row ">
-               <div class=" col-sm-10 col-sm-offset-1 col-xs-12 text-center  alert-warning ">
-                <!-- IF S_USER_NEW_PRIVMSG -->
-                        <div class="pm-notify-new"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
-                <!-- ELSEIF S_USER_UNREAD_PRIVMSG -->
-                <!-- ENDIF -->
-                </div> 
-        </div>
-        <!-- ENDIF --> 
-    <section class="row">
-        <div class="col-xs-12">
-          <!-- INCLUDE forumlist_body.html -->
-        </div>
-    </section>
-    
-    <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
-    <section class="row ">
-            <form method="post" action="{S_LOGIN_ACTION}" class="form-horizontal no-margin col-xs-12 well">
-             <div class=" form-group row">
-                <div class="col-xs-6">
-
-                    <h4 ><a href="{U_LOGIN_LOGOUT}" >{L_LOGIN_LOGOUT}</a></h4>
-                    <label for="username" class="hidden-xs">{L_USERNAME}:</label>&nbsp;<input type="text" name="username" id="username" placeholder="{L_USERNAME}" size="10" class="inputbox form-control" title="{L_USERNAME}" />
-
-                    <label for="password" class="hidden-xs">{L_PASSWORD}:</label>&nbsp;<input type="password" name="password" id="password" placeholder="{L_PASSWORD}" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
-
-
-
-            <!-- IF S_AUTOLOGIN_ENABLED -->
-                    <label for="autologin"> <input type="checkbox" name="autologin" id="autologin" /> {L_LOG_ME_IN}</label>
-            <!-- ENDIF -->
-                    <input type="submit" name="login" value="{L_LOGIN}" class="btn btn-sm btn-default" />
-                    {S_LOGIN_REDIRECT}
-                </div>
-                <div class="col-xs-6">
-                     <!-- IF S_REGISTER_ENABLED --><h4><a href="{U_REGISTER}">{L_REGISTER}</a></h4><!-- ENDIF -->
-                    
-                </div>
+    <!-- INCLUDE parts/alert-msg.html -->
+        <section class="row">
+            <div class="col-xs-12">
+              <!-- INCLUDE forumlist_body.html -->
             </div>
-            </form>
-    </section>
-    <!-- ENDIF -->
+        </section>
 
-    <!-- IF S_DISPLAY_ONLINE_LIST and S_USER_LOGGED_IN-->
-    <div class="row hidden-xs">
-        <div class="well col-sm-12">
-            <!-- IF U_VIEWONLINE -->
-            <h3 class="panel-title"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3 class="panel-title">{L_WHO_IS_ONLINE}</h3>
-            <!-- ENDIF -->
-            <p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
-            <!-- IF LEGEND --><br /><em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF --></p>
+        <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+        <section class="row ">
+                <form method="post" action="{S_LOGIN_ACTION}" class="form-horizontal no-margin col-xs-12 well">
+                 <div class=" form-group row">
+                    <div class="col-xs-6">
+
+                        <h4 ><a href="{U_LOGIN_LOGOUT}" >{L_LOGIN_LOGOUT}</a></h4>
+                        <label for="username" class="hidden-xs">{L_USERNAME}:</label>&nbsp;<input type="text" name="username" id="username" placeholder="{L_USERNAME}" size="10" class="inputbox form-control" title="{L_USERNAME}" />
+
+                        <label for="password" class="hidden-xs">{L_PASSWORD}:</label>&nbsp;<input type="password" name="password" id="password" placeholder="{L_PASSWORD}" size="10" class="inputbox form-control" title="{L_PASSWORD}" />
+
+
+
+                <!-- IF S_AUTOLOGIN_ENABLED -->
+                        <label for="autologin"> <input type="checkbox" name="autologin" id="autologin" /> {L_LOG_ME_IN}</label>
+                <!-- ENDIF -->
+                        <input type="submit" name="login" value="{L_LOGIN}" class="btn btn-sm btn-default" />
+                        {S_LOGIN_REDIRECT}
+                    </div>
+                    <div class="col-xs-6">
+                         <!-- IF S_REGISTER_ENABLED --><h4><a href="{U_REGISTER}">{L_REGISTER}</a></h4><!-- ENDIF -->
+
+                    </div>
+                </div>
+                </form>
+        </section>
+        <!-- ENDIF -->
+
+        <!-- IF S_DISPLAY_ONLINE_LIST and S_USER_LOGGED_IN-->
+        <div class="row hidden-xs">
+            <div class="well col-sm-12">
+                <!-- IF U_VIEWONLINE -->
+                <h3 class="panel-title"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3 class="panel-title">{L_WHO_IS_ONLINE}</h3>
+                <!-- ENDIF -->
+                <p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
+                <!-- IF LEGEND --><br /><em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF --></p>
+            </div>
         </div>
-    </div>
-    <!-- ENDIF -->
+        <!-- ENDIF -->
 
-    <!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST and S_USER_LOGGED_IN -->
-    <div class="row  hidden-xs">
-        <div class="well col-sm-12">
-            <h3 class="panel-title ">{L_BIRTHDAYS}</h3>
-            <p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+        <!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST and S_USER_LOGGED_IN -->
+        <div class="row  hidden-xs">
+            <div class="well col-sm-12">
+                <h3 class="panel-title ">{L_BIRTHDAYS}</h3>
+                <p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+            </div>
         </div>
-    </div>
-    <!-- ENDIF -->
+        <!-- ENDIF -->
 
-    <!-- IF NEWEST_USER and S_USER_LOGGED_IN -->
-    <div class="row  hidden-xs">
-        <div class="well col-sm-12">
-            <h3 class="panel-title">{L_STATISTICS}</h3>
-            <p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} <!-- IF TOTAL_IMAGES --> &bull; {TOTAL_IMAGES}<!-- ENDIF --> &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>
+        <!-- IF NEWEST_USER and S_USER_LOGGED_IN -->
+        <div class="row  hidden-xs">
+            <div class="well col-sm-12">
+                <h3 class="panel-title">{L_STATISTICS}</h3>
+                <p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} <!-- IF TOTAL_IMAGES --> &bull; {TOTAL_IMAGES}<!-- ENDIF --> &bull; {TOTAL_USERS} &bull; {NEWEST_USER}</p>
+            </div>
         </div>
-    </div>
-    <!-- ENDIF -->
+        <!-- ENDIF -->
 
-    </div>
+        </div>
     </div>
 </div>     
-<!-- IF S_INDEX or U_VIEWFORUM -->
-<aside id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <!-- INCLUDE slider/wp_gallery_recent_posts.html -->
-    </ul>
-<!-- IF S_INDEX -->
-    <ul class="sidebar-nav">
-        <!-- INCLUDE watched_posts.html -->
-    </ul>
-    
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            Must-read
-        </li>
-        <li class="hover">
-            <a href="/wiki/doku.php?id=qu_est-ce_que_tn">Qu'est-ce que TN ?</a>
-        </li>
-        <li class="hover">
-            <a href="/guide-de-noel-2014-lannee-de-tellementnomade-en-accelere/">Guide 2014</a>
-        </li>
-        <li class="hover">
-            <a href="/forum/viewtopic.php?f=109&amp;t=8919">Guide pour les feedbacks</a>
-        </li>
-    </ul>
-    
-<!-- ELSEIF U_VIEWFORUM -->
-    <ul>
-        <li class="sidebar-brand">
-            Must-read
-        </li>
-    <!-- BEGIN topicrow -->
-        <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_STICKY-->
-        <li>
-             <a href="{topicrow.U_VIEW_TOPIC}" class=<!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF -->">{topicrow.TOPIC_TITLE}</a>
-        </li>
-        <!-- ENDIF -->
-    </ul>
-    <!-- END topicrow -->
-<!-- ENDIF -->
 
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            Nos partenaires
-        </li>
-        <li class="hover">
-            <a href="http://www.audiophonics.fr">Audiophonics</a>
-        </li>
-        <li class="hover">
-            <a href="http://www.jdslabs.com">JDSLabs</a>
-        </li>
-        <li class="hover">
-            <a href="http://www.thecustomart.com">CustomArt</a>
-        </li>
-        <li class="hover">
-            <a href="http://www.conceptstoreaudiotechnica.fr">AudioTechnica</a>
-        </li>
-    </ul>
-            
-</aside>
-
- <!-- ENDIF -->
+<!-- INCLUDE parts/sidebar.html -->
 <!-- INCLUDE overall_footer.html -->
     

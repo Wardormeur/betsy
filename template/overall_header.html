@@ -142,7 +142,7 @@
                                     <li><a href="/">Les News</a></li>
                                 <!-- IF S_USER_LOGGED_IN  -->  
                                     <li><a href="/wp-admin/post-new.php">Ecrire une news</a></li>
-                                    <li><a href="/forum/ucp.php?i=pm&mode=compose&action=post&add_to=Ajout+[A]&group_list[]=9">Informer les newsers</a></li>
+                                    <li><a href="/forum/ucp.php?i=pm&mode=compose&action=post&amp;add_to=Ajout+[A]&amp;group_list[]=9">Informer les newsers</a></li>
                                 <!-- ENDIF -->
                                 </ul>
                             </li>
@@ -344,11 +344,11 @@
 
 
 	<a id="start_here"></a>
-      <!-- IF S_INDEX -->
+      <!-- IF S_INDEX or S_VIEWFORUM or S_SEARCH_ACTION -->
         <div id="wrapper">
       <!-- ENDIF -->  
 	<div  id="page-content-wrapper"  >
-            <div class="<!-- IF S_INDEX -->container-fluid <!-- ELSE --> container <!-- ENDIF -->">
+            <div class="<!-- IF S_INDEX or S_VIEWFORUM or S_SEARCH_ACTION -->container-fluid <!-- ELSE --> container <!-- ENDIF -->">
         	<div class="row">
                   <!-- IF S_INDEX == true  -->
                     <div class="social-icons col-xs-8 col-sm-1">
@@ -375,29 +375,17 @@
 		<!-- ENDIF -->
                 
                
-	         	<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
-        <!-- IF not S_IS_BOT && not $CA_SKIP_PM_NOTIFY && S_USER_LOGGED_IN && S_DISPLAY_PM && (  S_USER_NEW_PRIVMSG || S_USER_UNREAD_PRIVMSG ) && not S_INDEX && not S_UCP -->
-        <!-- Duplicated in index in order to match the forum size --> 
-        <div class="row ">
-            <div class=" col-xs-12  text-center  <!-- IF S_USER_NEW_PRIVMSG --> alert-warning <!-- ELSEIF S_USER_UNREAD_PRIVMSG --> alert-info <!-- ENDIF -->">
-            <!-- IF S_USER_NEW_PRIVMSG -->
-                    <div class="pm-notify-new"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
-            <!-- ELSEIF S_USER_UNREAD_PRIVMSG -->
-                    <div class="pm-notify-new"><div class="pm-notify-header">{L_PRIVATE_MESSAGES}</div><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a></div>
-                
-            <!-- ENDIF -->
-            </div> 
-        </div>
-        <!-- ENDIF --> 
-        <div class="row bottom-topic-actions " >
-       
-         <!-- IF  S_INDEX == false -->
-            <div class="hidden-xs hidden-sm col-md-9 pull-left">       	
-                <ul class="breadcrumb row">
-                    <li>
-                        <a href="{U_INDEX}" ><i class="fa fa-home"></i> {L_INDEX}</a>
-                        
-                        <!-- BEGIN navlinks --><strong>&rsaquo;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a> <!-- END navlinks -->
-                   
-          <!-- ENDIF --> 
-            <!-- We do not close the row so that we gain place with the next row that is containing actions-->
+                <p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
+               
+                <div class="row bottom-topic-actions " >
+
+                 <!-- IF  S_INDEX == false -->
+                    <div class="hidden-xs hidden-sm <!-- IF S_VIEWFORUM or S_SEARCH_ACTION --> col-md-8 col-md-offset-1 <!-- ELSE --> col-md-9 <!-- ENDIF -->pull-left">       	
+                        <ul class="breadcrumb row">
+                            <li>
+                                <a href="{U_INDEX}" ><i class="fa fa-home"></i> {L_INDEX}</a>
+
+                                <!-- BEGIN navlinks --><strong>&rsaquo;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a> <!-- END navlinks -->
+
+                  <!-- ENDIF --> 
+                    <!-- We do not close the row so that we gain place with the next row that is containing actions-->

@@ -1,0 +1,61 @@
+<!-- IF S_INDEX or S_VIEWFORUM or S_SEARCH_ACTION -->
+<aside id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <!-- INCLUDE slider/wp_gallery_recent_posts.html -->
+    </ul>
+<!-- IF S_INDEX or S_SEARCH_ACTION-->
+    <ul class="sidebar-nav">
+        <!-- INCLUDE parts/watched_posts.html -->
+    </ul>
+    
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            Must-read
+        </li>
+        <li class="hover">
+            <a href="/wiki/doku.php?id=qu_est-ce_que_tn">Qu'est-ce que TN ?</a>
+        </li>
+        <li class="hover">
+            <a href="/guide-de-noel-2014-lannee-de-tellementnomade-en-accelere/">Guide 2014</a>
+        </li>
+        <li class="hover">
+            <a href="/forum/viewtopic.php?f=109&amp;t=8919">Guide pour les feedbacks</a>
+        </li>
+    </ul>
+    
+<!-- ELSEIF S_VIEWFORUM -->
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            Must-read
+        </li>
+    <!-- BEGIN topicrow -->
+        <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_STICKY-->
+        <li class="hover">
+             <a href="{topicrow.U_VIEW_TOPIC}" class="<!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF -->">{topicrow.TOPIC_TITLE}</a>
+        </li>
+        <!-- ENDIF -->
+    <!-- END topicrow -->
+    </ul>
+<!-- ENDIF -->
+
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            Nos partenaires
+        </li>
+        <li class="hover">
+            <a href="http://www.audiophonics.fr">Audiophonics</a>
+        </li>
+        <li class="hover">
+            <a href="http://www.jdslabs.com">JDSLabs</a>
+        </li>
+        <li class="hover">
+            <a href="http://www.thecustomart.com">CustomArt</a>
+        </li>
+        <li class="hover">
+            <a href="http://www.conceptstoreaudiotechnica.fr">AudioTechnica</a>
+        </li>
+    </ul>
+            
+</aside>
+
+ <!-- ENDIF -->

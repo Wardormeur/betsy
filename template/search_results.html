@@ -7,242 +7,234 @@
     </div>
    
 </div><!-- end of header -->
-
-<!-- IF IGNORED_WORDS --> <p class="row well">{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
-
-<!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
-
-	<!-- IF SEARCH_MATCHES -->
 <div class="row">
-	<form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin col-xs-12">
+    <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+    
+        <!-- IF IGNORED_WORDS --> <p class="row well">{L_IGNORED_TERMS}: <strong>{IGNORED_WORDS}</strong></p><!-- ENDIF -->
 
-        <div class="topic-actions row">
+        <!-- IF PAGINATION or SEARCH_MATCHES or PAGE_NUMBER -->
 
-		<div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-12">
-			<!-- IF SEARCH_TOPIC -->
-        	<a class="btn btn-sm btn-success" href="{U_SEARCH_TOPIC}"><i class="fa fa-angle-left"> </i>{L_RETURN_TO}: {SEARCH_TOPIC}</a>
-                        <!-- ELSE -->
-        	<a class="btn btn-sm btn-success" href="{U_SEARCH}" title="{L_SEARCH_ADV}"><i class="fa fa-angle-left"> </i>{L_RETURN_TO_SEARCH_ADV}</a>
-                        <!-- ENDIF -->
-		</div>
-        
-		<div class="col-xl-2 col-lg-2 col-md-2 hidden-sm hidden-xs">
-                    {SEARCH_MATCHES}
-		</div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-12">
-	    
-                    <!-- IF SEARCH_IN_RESULTS -->
-                    <div class="form-group form-inline">
-			<label for="add_keywords inline">{L_SEARCH_IN_RESULTS}:
-                        <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium form-control" /></label>
-			<input class="btn btn-sm" type="submit" name="submit" value="{L_SEARCH}" />
-                    </div>
-                    <!-- ENDIF -->
+                <!-- IF SEARCH_MATCHES -->
+        <div class="row">
+            <form method="post" action="{S_SEARCH_ACTION}" class="well form-inline no-margin col-xs-12">
+
+                <div class="topic-actions row">
+
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                                <!-- IF SEARCH_TOPIC -->
+                        <a class="btn btn-sm btn-success" href="{U_SEARCH_TOPIC}"><i class="fa fa-angle-left"> </i>{L_RETURN_TO}: {SEARCH_TOPIC}</a>
+                                <!-- ELSE -->
+                        <a class="btn btn-sm btn-success" href="{U_SEARCH}" title="{L_SEARCH_ADV}"><i class="fa fa-angle-left"> </i>{L_RETURN_TO_SEARCH_ADV}</a>
+                                <!-- ENDIF -->
+                        </div>
+
+                        <div class="col-xl-2 col-lg-2 col-md-2 hidden-sm hidden-xs">
+                            {SEARCH_MATCHES}
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-12">
+
+                            <!-- IF SEARCH_IN_RESULTS -->
+                            <label for="add_keywords" >{L_SEARCH_IN_RESULTS}:</label>
+                                
+                            <div class="form-group form-inline">
+                                <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium form-control" /></label>
+                                <input class="btn btn-sm" type="submit" name="submit" value="{L_SEARCH}" />
+                            </div>
+                            <!-- ENDIF -->
+                        </div>
                 </div>
 
-		
-        
+            </form>
         </div>
-       
-        	</form>
-</div>
-     <!-- IF .searchresults -->
-            <!-- IF PAGINATION -->
-        <div class="row well">
-		<div class="col-xs-4">
-		<!-- IF PREVIOUS_PAGE -->
+             <!-- IF .searchresults -->
+                    <!-- IF PAGINATION -->
+                <div class="row well">
+                        <div class="col-xs-4">
+                        <!-- IF PREVIOUS_PAGE -->
 
-                    <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default "><i class="fa fa-angle-left"> </i>{L_PREVIOUS}</a>
-		<!-- ENDIF -->
-		</div>
-		<div class="col-xs-4 text-center pagination">
-                    <!-- IF PAGINATION --><div class="hidden-xs">{PAGE_NUMBER} &bull; </div><span >{PAGINATION}</span><!-- ELSE --> <span >{PAGE_NUMBER}</span><!-- ENDIF -->
-		</div>
-	
-		<!-- IF NEXT_PAGE -->
-		<div class=" col-xs-4 text-right">
-		    <a href="{NEXT_PAGE}" class="btn btn-sm btn-default">{L_NEXT}<i class="fa fa-angle-right"> </i></a>
-		</div>
-		<!-- ENDIF -->
-        </div>
-            <!-- ENDIF -->
+                            <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default "><i class="fa fa-angle-left"> </i>{L_PREVIOUS}</a>
+                        <!-- ENDIF -->
+                        </div>
+                        <div class="col-xs-4 text-center pagination">
+                            <!-- IF PAGINATION --><div class="hidden-xs">{PAGE_NUMBER} &bull; </div><span >{PAGINATION}</span><!-- ELSE --> <span >{PAGE_NUMBER}</span><!-- ENDIF -->
+                        </div>
+
+                        <!-- IF NEXT_PAGE -->
+                        <div class=" col-xs-4 text-right">
+                            <a href="{NEXT_PAGE}" class="btn btn-sm btn-default">{L_NEXT}<i class="fa fa-angle-right"> </i></a>
+                        </div>
+                        <!-- ENDIF -->
+                </div>
+                    <!-- ENDIF -->
+                <!-- ENDIF -->
         <!-- ENDIF -->
 
 
-<!-- ENDIF -->
-        
+        <!-- ENDIF -->
 
-<!-- ENDIF -->
+        <!-- IF S_SHOW_TOPICS -->
+                <!-- IF .searchresults -->
+                     <div class="panel  panel-default <!-- IF searchresults.S_TOPIC_TYPE_SWITCH and (searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL) --> announcement<!-- ENDIF --> row">
+                        <div class=" table-striped  col-xs-12 " >
+                                <div class="topiclist row panel-heading">
+                                        <div class="col-md-6 col-xs-9 panel-title"><!-- IF S_DISPLAY_ACTIVE -->{L_TOPICS}<!-- ELSEIF searchresults.S_TOPIC_TYPE_SWITCH and (searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></div>
+                                        <div class="col-md-2"></div>	
+                                        <div class="col-md-4 col-sm-3 hidden-xs ">{L_LAST_POST}</div>
+                                </div>
+                        </div>
+                       <!-- We open the div containing all the row of the forum-->
+                        <div class="topiclist topics col-md-12 ">
+                        <!-- BEGIN searchresults -->
+                            <div class=" forumrow row  <!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
+                                <div class=" col-xs-8
+                                    <!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
+                                    title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
+                                    <!-- IF searchresults.S_UNREAD_TOPIC --><a href="{searchresults.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
+                                    <!-- IF searchresults.S_POST_GLOBAL --><span class="label label-warning pull-right">GLOBAL</span> <!-- ENDIF -->
+                                    <!-- IF searchresults.S_POST_ANNOUNCE --><span class="label label-info pull-right">ANNOUNCEMENT</span> <!-- ENDIF -->
+                                    <!-- IF searchresults.S_POST_STICKY --><span class="label label-success pull-right">STICKY</span> <!-- ENDIF -->
+                                    <!-- <i class="pcon" style="background-image: url({searchresults.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i> -->
+                                    <!-- IF searchresults.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}"/><!-- ENDIF -->
+                                    <a href="{searchresults.U_VIEW_TOPIC}" class="topictitle
+                                    <!-- IF searchresults.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
+                                    "> {searchresults.TOPIC_TITLE}</a>
+                                       <!-- IF searchresults.S_TOPIC_GLOBAL -->
+                                             <span>{L_GLOBAL}</span>
+                                       <!-- ELSE -->
+                                             <span>{L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a>
+                           <!-- IF searchresults.S_POST_GLOBAL and FORUM_ID != searchresults.FORUM_ID --> &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a><!-- ENDIF -->
+                                             </span>
+                                       <!-- ENDIF -->
+                                       </br>
+                                    <!-- IF searchresults.ATTACH_ICON_IMG -->{searchresults.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL}<span class="hidden-xs"> &raquo; {searchresults.FIRST_POST_TIME}</span>
 
-<!-- IF S_SHOW_TOPICS -->
+                                    <!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+                                    <!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF -->
+                                    <!-- IF searchresults.PAGINATION --><div class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></div><!-- ENDIF -->
 
-	<!-- IF .searchresults -->
-	
-	     <div class="panel  panel-default <!-- IF searchresults.S_TOPIC_TYPE_SWITCH and (searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL) --> announcement<!-- ENDIF --> row">
-    		<div class=" table-striped  col-xs-12 " >
-        		<div class="topiclist row panel-heading">
-        		    	<div class="col-md-6 col-xs-9 panel-title"><!-- IF S_DISPLAY_ACTIVE -->{L_TOPICS}<!-- ELSEIF searchresults.S_TOPIC_TYPE_SWITCH and (searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF --></div>
-                                <div class="col-md-2"></div>	
-            			<div class="col-md-4 col-sm-3 hidden-xs ">{L_LAST_POST}</div>
-        		</div>
-        	</div>
-	
-		<!-- We open the div containing all the row of the forum-->
-    	    <div class="topiclist topics col-md-12 ">
+                                </div>
+                                <div class="col-xs-4 lastpost<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
+                                    <span>
+                                        {L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
+                                    <!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}"> <br class=" hidden-xs "/>{searchresults.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
+                                </div>
 
-		<!-- BEGIN searchresults -->
-			    <div class=" forumrow row  <!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
-                                        <div class=" col-xs-8
-        					<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
-        					 title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
-        					 <!-- IF searchresults.S_UNREAD_TOPIC --><a href="{searchresults.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
-        					 <!-- IF searchresults.S_POST_GLOBAL --><span class="label label-warning pull-right">GLOBAL</span> <!-- ENDIF -->
-        					 <!-- IF searchresults.S_POST_ANNOUNCE --><span class="label label-info pull-right">ANNOUNCEMENT</span> <!-- ENDIF -->
-        					 <!-- IF searchresults.S_POST_STICKY --><span class="label label-success pull-right">STICKY</span> <!-- ENDIF -->
-        					 <!-- <i class="pcon" style="background-image: url({searchresults.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i> -->
-        					 <!-- IF searchresults.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}"/><!-- ENDIF -->
-        					 <a href="{searchresults.U_VIEW_TOPIC}" class="topictitle
-        					 <!-- IF searchresults.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
-        					 "> {searchresults.TOPIC_TITLE}</a>
-                                                    <!-- IF searchresults.S_TOPIC_GLOBAL -->
-                                                          <span>{L_GLOBAL}</span>
-                                                    <!-- ELSE -->
-                                                          <span>{L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a>
-                                        <!-- IF searchresults.S_POST_GLOBAL and FORUM_ID != searchresults.FORUM_ID --> &raquo; {L_IN} <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_NAME}</a><!-- ENDIF -->
-                                                          </span>
-                                                    <!-- ENDIF -->
-                                                    </br>
-                                                 <!-- IF searchresults.ATTACH_ICON_IMG -->{searchresults.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR_FULL}<span class="hidden-xs"> &raquo; {searchresults.FIRST_POST_TIME}</span>
-         
-                                                <!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED --><a href="{searchresults.U_MCP_QUEUE}">{searchresults.UNAPPROVED_IMG}</a> <!-- ENDIF -->
-            					<!-- IF searchresults.S_TOPIC_REPORTED --><a href="{searchresults.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF -->
-            					<!-- IF searchresults.PAGINATION --><div class="p-pagination pull-right"><span>{searchresults.PAGINATION}</span></div><!-- ENDIF -->
-                                            
-                                        </div>
-                                        <div class="col-xs-4 lastpost<!-- IF searchresults.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF searchresults.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF searchresults.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF searchresults.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->">
-                                                    <span>
-                                                        {L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
-            					<!-- IF not S_IS_BOT --><a href="{searchresults.U_LAST_POST}"> <br class=" hidden-xs "/>{searchresults.LAST_POST_TIME} {LAST_POST_IMG}</a></span><!-- ENDIF -->
-                                        </div>
-                
-	            </div>
-			
-			
-		<!-- END searchresults -->
-    		</div>
-    	</div>
-	<!-- ELSE -->
-		<div class="row">
-			<div class="well">
-			<strong>{L_NO_SEARCH_RESULTS}</strong>
-			</div>
-		</div>
-	<!-- ENDIF -->
-
-<!-- ELSE -->
-
-	<!-- BEGIN searchresults -->
-<div class="row search post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
-			<div class="well">
-
-	<!-- IF searchresults.S_IGNORE_POST -->
-		<div class="postbody">
-			{searchresults.L_IGNORE_POST}
-		</div>
-	<!-- ELSE -->
-	
-		<dl class="postprofile col-md-2">
-			<dt class="author">{L_POST_BY_AUTHOR} {searchresults.POST_AUTHOR_FULL}</dt>
-			<dd>{searchresults.POST_DATE}</dd>
-			<dd>&nbsp;</dd>
-			<dd>{L_FORUM}: <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></dd>
-			<dd>{L_TOPIC}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
-			<dd>{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong></dd>
-			<dd>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></dd>
-		</dl>
-		
-		<div class="postbody col-md-7">
-			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
-			<div class="content">{searchresults.MESSAGE}</div>
-		</div>
-
-	
-	<!-- ENDIF -->
-
-	<!-- IF not searchresults.S_IGNORE_POST -->
-		<ul class="searchresults">
-			<li ><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
-		</ul>
-	<!-- ENDIF -->
-
-			</div>
-		</div>
-	<!-- BEGINELSE -->
-		<div class="row">
-			<div class="well">
-			<strong>{L_NO_SEARCH_RESULTS}</strong>
-			</div>
-		</div>
-	<!-- END searchresults -->
-<!-- ENDIF -->
-
-<!-- IF (PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS) and ( PREVIOUS_PAGE or NEXT_PAGE ) -->
-<div class="row well">
-    <div class="col-xs-12">
-        <!-- IF PREVIOUS_PAGE -->
-            <div class="col-xs-4">
-                <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default "><i class="fa fa-angle-left"> </i>{L_PREVIOUS}</a>
-
-            </div>
-            <div class="col-xs-4 text-center ">
-                <span >{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <span class="pagination"><span >{PAGINATION}</span></span><!-- ELSE --> &bull;{PAGE_NUMBER}<!-- ENDIF -->
-            </div>
+                            </div>
+                        <!-- END searchresults -->
+                    </div>
+                </div>
+                <!-- ELSE -->
+                <div class="row">
+                    <div class="well">
+                    <strong>{L_NO_SEARCH_RESULTS}</strong>
+                    </div>
+                </div>
+                <!-- ENDIF -->
 
         <!-- ELSE -->
-            <div class="col-xs-4 col-xs-offset-4 text-center">
-               <span >{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <span class="pagination"><span>{PAGINATION}<span></span><!-- ELSE --> &bull; <span >{PAGE_NUMBER}</span><!-- ENDIF -->
-           </div>
 
-        <!-- ENDIF -->
+                <!-- BEGIN searchresults -->
+                 <div class="row search post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
+                    <div class="well">
 
-        <!-- IF NEXT_PAGE -->
-            <div class="col-xs-4 text-right">
-                <a href="{NEXT_PAGE}" class="btn btn-sm btn-default">{L_NEXT}<i class="fa fa-angle-right"> </i></a>
-            </div>
-        <!-- ENDIF -->
-    </div>
-</div>	
-<!-- ENDIF -->
+                <!-- IF searchresults.S_IGNORE_POST -->
+                        <div class="postbody">
+                                {searchresults.L_IGNORE_POST}
+                        </div>
+                <!-- ELSE -->
+                        <dl class="postprofile col-md-2">
+                            <dt class="author">{L_POST_BY_AUTHOR} {searchresults.POST_AUTHOR_FULL}</dt>
+                            <dd>{searchresults.POST_DATE}</dd>
+                            <dd>&nbsp;</dd>
+                            <dd>{L_FORUM}: <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></dd>
+                            <dd>{L_TOPIC}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
+                            <dd>{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong></dd>
+                            <dd>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></dd>
+                        </dl>
+                        <div class="postbody col-md-7">
+                                <h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
+                                <div class="content">{searchresults.MESSAGE}</div>
+                        </div>
 
 
-<div class="row well topic-actions hidden-sm hidden-xs">
-   <div class="col-xl-12">
-<!-- INCLUDE jumpbox.html -->
-   </div>
-<!-- IF (S_SHOW_TOPICS or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS) and .searchresults -->
-    <!-- IF  S_SHOW_TOPICS or S_SELECT_SORT_KEY -->
-        
-        <form method="post" action="{S_SEARCH_ACTION}" class="ccol-xl-12 form-inline">
-        	<fieldset class="display-options">
-          			<label><!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}</label><label><!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --></label> <label>{S_SELECT_SORT_KEY}</label>
-        			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="btn btn-sm" /></label>
-        	</fieldset>
-    	</form>
-    	<!-- ENDIF -->
-        
-    	<!-- IF  SEARCH_IN_RESULTS-->
-		<form method="post" action="{S_SEARCH_ACTION}" class="col-xl-12 form-inline no-margin text-center">
-    		<!-- IF SEARCH_IN_RESULTS -->
-    				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
-    				<input class="btn btn-sm" type="submit" name="submit" value="{L_SEARCH}" />
                 <!-- ENDIF -->
-    	</form>
 
-	<!-- ENDIF -->
+                <!-- IF not searchresults.S_IGNORE_POST -->
+                        <ul class="searchresults">
+                                <li ><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
+                        </ul>
+                <!-- ENDIF -->
+
+                            </div>
+                        </div>
+                <!-- BEGINELSE -->
+                        <div class="row">
+                            <div class="well">
+                            <strong>{L_NO_SEARCH_RESULTS}</strong>
+                            </div>
+                        </div>
+                <!-- END searchresults -->
+        <!-- ENDIF -->
+
+        <!-- IF (PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS) and ( PREVIOUS_PAGE or NEXT_PAGE ) -->
+        <div class="row well">
+            <div class="col-xs-12">
+                <!-- IF PREVIOUS_PAGE -->
+                    <div class="col-xs-4">
+                        <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default "><i class="fa fa-angle-left"> </i>{L_PREVIOUS}</a>
+
+                    </div>
+                    <div class="col-xs-4 text-center ">
+                        <span >{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <span class="pagination"><span >{PAGINATION}</span></span><!-- ELSE --> &bull;{PAGE_NUMBER}<!-- ENDIF -->
+                    </div>
+
+                <!-- ELSE -->
+                    <div class="col-xs-4 col-xs-offset-4 text-center">
+                       <span >{SEARCH_MATCHES}</span><!-- IF PAGINATION --> &bull; <span class="pagination"><span>{PAGINATION}<span></span><!-- ELSE --> &bull; <span >{PAGE_NUMBER}</span><!-- ENDIF -->
+                   </div>
+
+                <!-- ENDIF -->
+
+                <!-- IF NEXT_PAGE -->
+                    <div class="col-xs-4 text-right">
+                        <a href="{NEXT_PAGE}" class="btn btn-sm btn-default">{L_NEXT}<i class="fa fa-angle-right"> </i></a>
+                    </div>
+                <!-- ENDIF -->
+            </div>
+        </div>	
+        <!-- ENDIF -->
 
 
-<!-- ENDIF -->
+        <div class="row well topic-actions hidden-sm hidden-xs">
+           <div class="col-xl-12">
+        <!-- INCLUDE jumpbox.html -->
+           </div>
+        <!-- IF (S_SHOW_TOPICS or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS) and .searchresults -->
+            <!-- IF  S_SHOW_TOPICS or S_SELECT_SORT_KEY -->
+
+                <form method="post" action="{S_SEARCH_ACTION}" class="ccol-xl-12 form-inline">
+                        <fieldset class="display-options">
+                                        <label><!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}</label><label><!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --></label> <label>{S_SELECT_SORT_KEY}</label>
+                                        <label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="btn btn-sm" /></label>
+                        </fieldset>
+                </form>
+                <!-- ENDIF -->
+
+                <!-- IF  SEARCH_IN_RESULTS-->
+                        <form method="post" action="{S_SEARCH_ACTION}" class="col-xl-12 form-inline no-margin text-center">
+                        <!-- IF SEARCH_IN_RESULTS -->
+                                        <label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="input-medium" /></label>
+                                        <input class="btn btn-sm" type="submit" name="submit" value="{L_SEARCH}" />
+                        <!-- ENDIF -->
+                </form>
+
+                <!-- ENDIF -->
+
+
+        <!-- ENDIF -->
+        </div>
+    </div>
 </div>
-
+<!-- INCLUDE parts/sidebar.html -->
 
 <!-- INCLUDE overall_footer.html -->
