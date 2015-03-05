@@ -1,9 +1,9 @@
 proBoot
 =======
 
-phpBB3 theme based on [Bootstrap3](http://twitter.github.com/bootstrap/) framework customised for Tellementnomade.org
+phpBB3 theme based on [Bootstrap3](http://twitter.github.com/bootstrap/) framework customised for Tellementnomade.org, with wordpress last articles integration
 
-**Base style:** proSilver
+**Base style:** proSilver / bootstrap 3
 
 **phpBB version:** phpBB 3
 
@@ -14,8 +14,6 @@ phpBB3 theme based on [Bootstrap3](http://twitter.github.com/bootstrap/) framewo
 **Discussion thread** 
 	http://www.tellementnomade.org/forum/viewtopic.php?f=25&t=7397
 	
-**Suffers from 
-https://github.com/twbs/bootstrap/issues/1768 on first posts (else what le margin disallow click on navigation & stuff)
-	ex : http://www.tellementnomade.org/forum/viewtopic.php?f=25&t=7397&start=210#p240141
+
 	
 	
