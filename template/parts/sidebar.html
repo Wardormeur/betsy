@@ -1,13 +1,14 @@
-<!-- IF S_INDEX or S_VIEWFORUM or S_SEARCH_ACTION -->
 <aside id="sidebar-wrapper">
+ <!-- IF SIDEBAR_WORDPRESS -->
     <ul class="sidebar-nav">
         <!-- INCLUDE slider/wp_gallery_recent_posts.html -->
     </ul>
-<!-- IF S_INDEX or S_SEARCH_ACTION-->
+ <!-- ENDIF -->
+<!-- IF (S_INDEX or S_SEARCH_ACTION) and SIDEBAR_FAVORITES -->
     <ul class="sidebar-nav">
         <!-- INCLUDE parts/watched_posts.html -->
     </ul>
-    
+<!--
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
             Must-read
@@ -22,8 +23,9 @@
             <a href="/forum/viewtopic.php?f=109&amp;t=8919">Guide pour les feedbacks</a>
         </li>
     </ul>
-    
-<!-- ELSEIF S_VIEWFORUM -->
+ --> 
+ <!-- ENDIF -->
+<!-- IF S_VIEWFORUM and SIDEBAR_FORUM_STICKY -->
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
             Must-read
@@ -37,7 +39,7 @@
     <!-- END topicrow -->
     </ul>
 <!-- ENDIF -->
-
+<!--
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
             Nos partenaires
@@ -55,7 +57,6 @@
             <a href="http://www.conceptstoreaudiotechnica.fr">AudioTechnica</a>
         </li>
     </ul>
-            
+-->            
 </aside>
 
- <!-- ENDIF -->

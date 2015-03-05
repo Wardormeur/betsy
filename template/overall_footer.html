@@ -149,16 +149,17 @@
 </script>
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 
+<!-- IF PIWIK == 1 -->
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-  _paq.push(["setCookieDomain", "*.tellementnomade.org"]);
+  _paq.push(["setCookieDomain", "*.{BOARD_URL}"]);
   _paq.push(["trackPageView"]);
   _paq.push(["enableLinkTracking"]);
 
   (function() {
-    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://www.tellementnomade.org/piwik/";
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://{PIWIK_URL}";
     _paq.push(["setTrackerUrl", u+"piwik.php"]);
     _paq.push(["setSiteId", "2"]);
     _paq.push(['setCustomVariable', '1','forum','{S_FORUM_ID}']);
@@ -169,5 +170,6 @@
   })();
 </script>
 <!-- End Piwik Code -->
+<!-- ENDIF -->
 </body>
 </html>

@@ -10,9 +10,10 @@
     </div>
 </div><!-- We close the div containg the breadcrumbs and the back button-->
 
+<!-- IF SIDEBAR and SIDEBAR_FORUM -->
 <div class="row">
         <div class="col-xs-12 col-sm-offset-1 col-sm-10">
-    
+<!-- ENDIF -->    
             <!-- IF FORUM_DESC or MODERATORS or U_MCP -->
             <div>
                     <!-- IF FORUM_DESC --><!--<div >{FORUM_DESC}<br /></div>--><!-- ENDIF -->
@@ -318,7 +319,9 @@
     
         </div>
     </div>
-</div>
+<!-- IF SIDEBAR and SIDEBAR_FORUM -->
+</div> <!-- end wrapper -->
+<!-- ENDIF -->
 <!-- INCLUDE parts/sidebar.html -->
 
 <!-- IF S_DISPLAY_POST_INFO -->
