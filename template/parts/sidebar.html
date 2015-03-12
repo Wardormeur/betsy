@@ -1,10 +1,10 @@
 <aside id="sidebar-wrapper">
- <!-- IF SIDEBAR_WORDPRESS -->
+ <!-- IF $SIDEBAR_WORDPRESS -->
     <ul class="sidebar-nav">
         <!-- INCLUDE slider/wp_gallery_recent_posts.html -->
     </ul>
  <!-- ENDIF -->
-<!-- IF (S_INDEX or S_SEARCH_ACTION) and SIDEBAR_FAVORITES -->
+<!-- IF (S_INDEX or S_SEARCH_ACTION) and $SIDEBAR_FAVORITES -->
     <ul class="sidebar-nav">
         <!-- INCLUDE parts/watched_posts.html -->
     </ul>
@@ -25,7 +25,7 @@
     </ul>
  --> 
  <!-- ENDIF -->
-<!-- IF S_VIEWFORUM and SIDEBAR_FORUM_STICKY -->
+<!-- IF S_VIEWFORUM and $SIDEBAR_FORUM_STICKY -->
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
             Must-read

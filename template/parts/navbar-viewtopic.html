@@ -1,0 +1,124 @@
+ <div id="topic-bar" class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+        <div class="container">
+            <div class="navbar-header pull-left">
+                <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+                        <span class="sr-only">Dérouler la navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-logo " href="{U_INDEX}"><img src="{T_IMAGESET_PATH}/minimal_logo.png" alt="alternative minimalist logo"/></a>
+
+            </div>
+
+            <nav role="navigation"  >
+           
+            <div class="btn-group navbar-right pull-right">
+                    <a class="btn btn-success dropdown-toggle  " data-toggle="dropdown" href="#">
+                        <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG --><span class="unread"> {S_USER_NEW_PRIVMSG} </span> /<!-- ENDIF --><!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> {S_USER_UNREAD_PRIVMSG} <!-- ENDIF --> <!-- IF S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD or S_NEW_PM or S_USER_NEW_PRIVMSG --><i class="fa fa-envelope-o"></i><!-- ENDIF --> {S_USERNAME}
+                            <span class="caret"></span>
+                    </a>
+                    <div class="divider"></div>
+                    <ul class="dropdown-menu">
+                    <!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+                            <!-- IF S_DISPLAY_PM --> 
+                            <li>	
+                                <a href="{U_PRIVATEMSGS}" >
+                                    <!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD -->
+                                        <span class="<!-- IF S_NEW_PM or S_USER_NEW_PRIVMSG or S_USER_UNREAD_PRIVMSG or PRIVATE_MESSAGE_INFO_UNREAD --> unread<!-- ENDIF -->">
+                                            <i class="fa fa-envelope-o"></i> 
+                                        </span><!-- ENDIF -->
+                                    {PRIVATE_MESSAGE_INFO} <!-- IF PRIVATE_MESSAGE_INFO_UNREAD --><br/>{PRIVATE_MESSAGE_INFO_UNREAD} <!-- ENDIF --></a>
+                            </li><!-- ENDIF -->
+                            <li class="bb-ucp">
+                                <a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user"></i> {L_PROFILE}</a>
+                            </li>
+                            <!-- MOD: SHMK USER FEEDBACK -->
+                            <li>
+                                <a href="{U_MY_FEEDBACK}"><i class="fa fa-thumbs-o-up"></i> {MY_FEEDBACK}</a> 
+                            </li>
+                            <!-- END: SHMK USER FEEDBACK -->
+                            <li>
+                                <a href="{U_YOUR_PERSONAL_GALLERY}"><i class="fa fa-camera"></i> {U_YOUR_PERSONAL_ALBUM}</a>
+                            </li>
+                            <!-- IF not S_IS_BOT -->
+                                <!-- IF U_RESTORE_PERMISSIONS -->
+                            <li class="divider-vertical">
+                                            <a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
+                            </li>
+                                <!-- ENDIF -->
+                            <!-- ENDIF -->
+                            <li class="divider"></li>
+                            <!-- ENDIF -->				
+                            <li class="bb-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
+                                    <i class="fa fa-sign-out "></i> {L_LOGIN_LOGOUT}</a>
+                            </li>
+                            <!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+                            <li class="bb-register">
+                                    <a href="{U_REGISTER}"><i class="fa fa-user "></i> {L_REGISTER}</a>
+
+                            </li>
+
+                    <!-- ENDIF -->
+                </ul>
+
+            </div><!--btn group-->
+            <div class="navbar-nav text-center hidden-xs" id="topic-name">
+                <a href="{navlinks.U_VIEW_FORUM}" class="navbar-text" >{TOPIC_TITLE}</a>
+            </div>
+            <div class="collapse navbar-collapse bs-navbar-collapse">
+
+                <ul class="nav navbar-nav nav-justified" >
+
+
+            <!-- IF not S_IS_BOT  -->
+                <li class="dropdown <!-- IF S_VIEWFORUM or S_VIEWTOPIC or S_INDEX --> active <!-- ENDIF --> ">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle ">Forum <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                  <!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
+                        <!-- IF S_DISPLAY_SEARCH -->
+                            <!-- IF S_USER_LOGGED_IN --> <li><a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a></li><!-- ENDIF --> 
+                            <!-- IF S_LOAD_UNREADS --> <li><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a></li><!-- ENDIF -->
+                            <li><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a></li>
+                            <li><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+                            <li><a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></li>
+                            <!-- ENDIF -->
+                            <!-- IF U_MARK_FORUMS -->
+                            <li ><a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a></li>
+                            <!-- ENDIF -->
+                    <!-- ENDIF -->
+                     </ul>
+                 </li>  
+                <!-- IF PREVIOUS_PAGE -->
+                 <li>
+                    <a href="{PREVIOUS_PAGE}" ><i class=" fa fa-angle-left"> </i> <span class="hidden-xs hidden-sm">{L_PREVIOUS}</span></a>
+                </li>
+                <!-- ENDIF -->
+                <!-- IF S_USER_LOGGED_IN --> 
+                 <li>
+                    <a  data-toggle="modal" data-target="#quickReply">
+                       {L_QUICKREPLY}
+                   </a>
+                 </li>
+                 <!-- ENDIF -->
+                <!-- IF NEXT_PAGE -->
+                 <li>        
+                        
+                                <a href="{NEXT_PAGE}" ><span class="hidden-xs hidden-sm">{L_NEXT}</span> <i class="fa fa-angle-right"> </i></a>
+                        
+                </li>
+                <!-- ENDIF -->
+                 <li >
+                    <a class="search-button" href="#"><i class="fa fa-search"></i></a>
+                   
+                 </li>
+         
+        <!-- ENDIF -->
+
+        </ul><!-- ul -->
+    	    </div>
+		
+        
+	   </nav>
+	</div><!-- container-->
+    </div>
