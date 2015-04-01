@@ -1,0 +1,140 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+@sidebar-size : 250px;
+#wrapper {
+    padding-right: 0;
+    /*-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;*/
+    position:relative;
+    margin-top:-10px; /*i really dont know why*/
+}
+
+#wrapper.toggled {
+    padding-right: @sidebar-size;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: absolute;
+    right: @sidebar-size;
+    width: 0;
+    bottom:0;
+    top:0;
+    margin-right: -@sidebar-size;
+    margin-bottom:10px;
+
+    overflow-y: auto;
+    background-color: @themecolor;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: @sidebar-size;
+    overflow : hidden;
+    white-space: nowrap;
+    display:block;
+    text-overflow: ellipsis-word;
+    
+}
+
+
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -@sidebar-size;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    top: 0;
+    width: @sidebar-size;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display:inline-block;
+    overflow : hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis-word;
+}
+.sidebar-nav ul{
+    width:@sidebar-size;
+}
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 2em;
+	&.hover :hover{
+		background-color:darken(@themecolor,5%);
+	} 
+}
+
+.sidebar-nav li a {
+    display: block;
+    width:@sidebar-size;    
+    max-width:@sidebar-size;
+    text-decoration: none;
+    color: #eee;
+    
+    background-color:lighten(@themecolor,5%);
+	&:hover{
+		background-color:darken(@themecolor,5%)
+	}
+}
+
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+    
+    color: #fff;
+}
+
+/* @media  ( min-width:(@screen-md-min + 100)) and (max-width:@screen-lg-min), ( min-width:(@screen-lg-min + 225)) and (max-width:(@screen-xl - 1)), ( min-width:(@screen-xl + 100)) */
+/*@media  ( min-width:(@screen-md-min + 75 )) and (max-width:@screen-md-max), ( min-width:(@screen-lg-min + 80)) and (max-width:(@screen-xl)), ( min-width:(@screen-xl + 100))*/
+@media ( min-width:(@screen-md-min))
+{
+    #wrapper {
+        padding-right: @sidebar-size;
+    }
+
+    #wrapper.toggled {
+        padding-right: 0;
+    }
+
+    #sidebar-wrapper {
+        width: @sidebar-size;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+@media ( max-width:(@screen-md - 1) ){
+  #sidebar-wrapper{
+   overflow:hidden;
+  }
+
+}

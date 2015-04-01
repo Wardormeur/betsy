@@ -33,16 +33,28 @@
     	<!-- IF not forumrow.S_IS_CAT -->
 	            <article class="row forumrow">
     				<div class="col-xl-7 col-lg-7 col-md-7 col-sm-9 col-xs-7" title="{forumrow.FORUM_FOLDER_IMG_ALT}" >
-                                    <span class="hidden-xs">{forumrow.FORUM_FOLDER_IMG}</span>
+                                    <span class="hidden-xs">
+                                        <!-- IF forumrow.S_IS_LINK -->
+                                                <i class="fa fa-globe fa-fw"></i>
+                                        <!-- ELSEIF forumrow.S_LOCKED_FORUM -->
+                                                <i class="fa fa-lock fa-fw"></i>
+                                        <!-- ELSEIF forumrow.FORUM_ICON -->
+                                                <i class="{forumrow.FORUM_ICON}"></i>
+                                        <!-- ELSEIF forumrow.FORUM_IMAGE -->
+                                                <span class="forum-image">{forumrow.FORUM_IMAGE}</span>
+                                        <!-- ELSEIF forumrow.FORUM_FOLDER_IMG -->
+                                                {forumrow.FORUM_FOLDER_IMG}
+                                        <!-- ELSE -->
+                                                <i class="fa fa-folder fa-fw"></i>
+                                        <!-- ENDIF -->
+                                    </span>
 				
-                                <!-- <i class="pcon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i>-->
-    				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
+                                <!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
     				    <a class="btn btn-xs hidden-xs pull-right" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}">
                                         <i class="fa fa-rss"></i></a> 
     				 <!-- ENDIF -->
     
-    					<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
-                                        <a href="{forumrow.U_VIEWFORUM}" class="forumtitle inline <!-- IF forumrow.S_UNREAD_FORUM --> unread<!-- ENDIF -->"><h4>{forumrow.FORUM_NAME}</h4></a>
+    					 <a href="{forumrow.U_VIEWFORUM}" class="forumtitle inline <!-- IF forumrow.S_UNREAD_FORUM --> unread<!-- ENDIF -->"><h4>{forumrow.FORUM_NAME}</h4></a>
                                         <!-- IF forumrow.FORUM_DESC -->
                                         <span class="hidden-xs hidden-sm hidden-md">
                                         <br/>

@@ -145,6 +145,16 @@
                 else{$('#search-li form').hide();$('#search-button').css("display","block");}
             });
             
+            /*we dont know how high will be the header bar, so we need js to resize it so that it handle every language/configuration */
+            $('#wrapper').css(
+                      'padding-top',$('#header-bar').height()-30  
+            ); 
+            <!-- IF $SIDEBAR -->
+               $('.sidebar-nav:nth-child(1)').css('padding-top',$('#header-bar').height() 
+            ); 
+            <!-- ENDIF -->
+
+            
         });
 // ]]>
 </script>

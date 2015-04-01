@@ -108,28 +108,26 @@
                     <form action="{S_LOGIN_ACTION}" method="post">
 
                     <section class="row well">
-                                            <h3 class="box-heading"><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
-                            <div class="content">
-
-
-                                    <div class="fields1 form-group">
-                                    <dl class="form-control">
-                                            <dt><label for="username">{L_USERNAME}:</label></dt>
-                                            <dd><input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="inputbox " /></dd>
-                                    </dl>
-                                    <dl  class="form-control">
-                                            <dt><label for="password">{L_PASSWORD}:</label></dt>
-                                            <dd><input type="password" tabindex="2" id="password" name="password" size="25" class="inputbox autowidth" /></dd>
-                                            <!-- IF S_AUTOLOGIN_ENABLED --><dd><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="3" /> {L_LOG_ME_IN}</label></dd><!-- ENDIF -->
-                                            <dd><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="4" /> {L_HIDE_ME}</label></dd>
-                                    </dl>
-                                    <dl>
-                                            <dt>&nbsp;</dt>
-                                            <dd><input type="submit" name="login" tabindex="5" value="{L_LOGIN}" class="btn btn-sm" /></dd>
-                                    </dl>
-                                    {S_LOGIN_REDIRECT}
-                                    </div>
+                        <h3 class="box-heading"><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></h3>
+                        <div class="content">
+                            <div class="fields1 form-group">
+                                <dl class="form-control">
+                                        <dt><label for="username">{L_USERNAME}:</label></dt>
+                                        <dd><input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="inputbox " /></dd>
+                                </dl>
+                                <dl  class="form-control">
+                                        <dt><label for="password">{L_PASSWORD}:</label></dt>
+                                        <dd><input type="password" tabindex="2" id="password" name="password" size="25" class="inputbox autowidth" /></dd>
+                                        <!-- IF S_AUTOLOGIN_ENABLED --><dd><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="3" /> {L_LOG_ME_IN}</label></dd><!-- ENDIF -->
+                                        <dd><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="4" /> {L_HIDE_ME}</label></dd>
+                                </dl>
+                                <dl>
+                                        <dt>&nbsp;</dt>
+                                        <dd><input type="submit" name="login" tabindex="5" value="{L_LOGIN}" class="btn btn-sm" /></dd>
+                                </dl>
+                            {S_LOGIN_REDIRECT}
                             </div>
+                        </div>
                     </section>
 
                     </form>
@@ -163,22 +161,44 @@
                 <!-- We open the div containing all the row of the forum-->
                         <div class="topiclist topics col-xs-12 ">
             <!-- ENDIF -->
-                        <article class=" forumrow row  <!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
+                        <article class=" forumrow row  
+                                 <!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF -->
+                                 <!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF -->
+                                 <!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF -->
+                                 <!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->"> 
                                         <div class="col-md-7 col-xs-9
-                                        <!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
+                                        <!-- IF topicrow.S_POST_GLOBAL --> warning-color<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> info-color<!-- ENDIF -->
+                                        <!-- IF topicrow.S_POST_STICKY --> success-color<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> danger-color<!-- ENDIF -->" 
                                          title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
                                             <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle
                                          <!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
-                                         ">{topicrow.TOPIC_FOLDER_IMG} {topicrow.TOPIC_TITLE}</a>
-
-                                         <!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF -->
+                                         "> <!-- IF topicrow.TOPIC_FOLDER_IMG -->
+                                                <!-- IF topicrow.S_TOPIC_LOCKED -->
+                                                        <i class="fa fa-lock fa-fw"></i>
+                                                <!-- ELSEIF topicrow.S_POST_GLOBAL -->
+                                                        <i class="fa fa-info-circle fa-fw"></i>
+                                                <!-- ELSEIF topicrow.S_POST_ANNOUNCE -->
+                                                        <i class="fa fa-bullhorn fa-fw"></i>
+                                                <!-- ELSEIF topicrow.S_POST_STICKY -->
+                                                        <i class="fa fa-thumb-tack fa-fw"></i>
+                                                <!-- ELSEIF topicrow.S_HAS_POLL -->
+                                                        <i class="fa fa-comment-o fa-fw"></i>
+                                                <!-- ELSE -->
+                                                        <i class="fa fa-file-text-o fa-fw"></i>
+                                                <!-- ENDIF --> 
+                                            <!-- ENDIF -->  {topicrow.TOPIC_TITLE}
+                                                          
+                                            </a>
+                                        <!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}"/><!-- ENDIF -->
+                                        
+                                         <!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}"> <i class="fa fa-external-link"></i></a> <!-- ENDIF -->
+                                      
                                          <!-- IF topicrow.S_POST_GLOBAL --><span class="label label-warning pull-right">GLOBAL</span> <!-- ENDIF -->
                                          <!-- IF topicrow.S_POST_ANNOUNCE --><span class="label label-info pull-right">ANNOUNCEMENT</span> <!-- ENDIF -->
                                          <!-- IF topicrow.S_POST_STICKY --><span class="label label-success pull-right">STICKY</span> <!-- ENDIF -->
                                          <!--<i class="pcon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i> -->
-                                         <!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}"/><!-- ENDIF -->
-                                         <!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
-                                        <!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="icon-exclamation-sign icon-white"></i></span></a><!-- ENDIF --><br />
+                                         <!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}"><i class="fa fa-exclamation-circle"></i></a> <!-- ENDIF -->
+                                        <!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="fa fa-exclamation-triangle"></i></span></a><!-- ENDIF --><br />
                                         <!-- IF topicrow.PAGINATION --><div class="p-pagination pull-right"><span>{topicrow.PAGINATION}</span></div><!-- ENDIF -->
                                         <!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><small><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
                                         <!-- IF topicrow.S_POST_GLOBAL and FORUM_ID != topicrow.FORUM_ID --> &raquo; {L_IN} <a href="{topicrow.U_VIEW_FORUM}">{topicrow.FORUM_NAME}</a><!-- ENDIF -->

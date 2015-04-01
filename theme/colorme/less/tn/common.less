@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 100%;
+    height: 101%;
+}
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    color: #828282;
+    background-color: #FFFFFF;
+    font-size: 10px;
+    margin: 0;
+    padding: 12px 0;
+}
+h1 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin-right: 200px;
+    color: #FFFFFF;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 2em;
+}
+h2 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: #3f3f3f;
+    font-size: 2em;
+    margin: 0.8em 0 0.2em 0;
+}
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 3px;
+    padding-bottom: 2px;
+    font-size: 1.05em;
+    color: #989898;
+    margin-top: 20px;
+}
+h4 {
+    font-family: "Trebuchet MS", Verdana, Helvetica, Arial, Sans-serif;
+    font-size: 1.3em;
+}
+p {
+    line-height: 1.3em;
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+}
+img {
+    border-width: 0;
+}
+hr {
+    border: 0 none #FFFFFF;
+    border-top: 1px solid #CCCCCC;
+    height: 1px;
+    margin: 5px 0;
+    display: block;
+    clear: both;
+}
+hr.dashed {
+    border-top: 1px dashed #CCCCCC;
+    margin: 10px 0;
+}
+hr.divider {
+    display: none;
+}
+p.right {
+    text-align: right;
+}
+#wrap {
+    padding: 0 20px;
+}
+#simple-wrap {
+    padding: 6px 10px;
+}
+#page-body {
+    margin: 4px 0;
+    clear: both;
+}
+#page-footer {
+    clear: both;
+    h3 {
+        margin-top: 20px;
+    }
+}
+#search-box {
+    color: #FFFFFF;
+    position: relative;
+    margin-top: 30px;
+    margin-right: 5px;
+    display: block;
+    float: right;
+    text-align: right;
+    white-space: nowrap;
+    #keywords {
+        width: 95px;
+        background-color: #FFF;
+    }
+    input {
+        border: 1px solid #b0b0b0;
+    }
+    input.button1 {
+        padding: 1px 5px;
+    }
+    li {
+        text-align: right;
+        margin-top: 4px;
+    }
+    img {
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+}
+#adv-search {
+    position: relative;
+    left: -35px;/*-22px;*/
+    top: 1px;
+    display:inline;
+    color:@link-color;
+    background-color:transparent;
+    &:hover{
+      background-color:transparent;
+      color:@link-hover-color;
+    }
+}
+#site-description {
+    h1 {
+        margin-right: 0;
+    }
+}
+.headerbar {
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+.forabg {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    clear: both;
+}
+.forumbg {
+    margin-bottom: 4px;
+    clear: both;
+}
+.post {
+    padding:8px;
+    margin-bottom: 4px;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+}
+.post:target {
+    .content {
+        color: #000000;
+    }
+    h3 {
+        a {
+            color: #000000;
+        }
+    }
+}
+.bg1 {
+    background-color: #f7f7f7;
+}
+.bg2 {
+    background-color: #f2f2f2;
+}
+.bg3 {
+    background-color: #ebebeb;
+}
+.rowbg {
+    margin: 5px 5px 2px 5px;
+}
+.ucprowbg {
+    background-color: #e2e2e2;
+}
+.fieldsbg {
+    background-color: #eaeaea;
+}
+ul.linklist {
+    display: block;
+    margin: 0;
+    li {
+        display: block;
+        list-style-type: none;
+        float: left;
+        width: auto;
+        margin-right: 5px;
+        margin-top: 10px;
+    }
+}
+ul.navlinks {
+    padding-bottom: 1px;
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+.column1 {
+    float: left;
+    clear: left;
+    width: 49%;
+}
+.column2 {
+    float: right;
+    clear: right;
+    width: 49%;
+}
+.left-box {
+    float: left;
+    width: auto;
+    text-align: left;
+}
+.right-box {
+    float: right;
+    width: auto;
+    text-align: right;
+}
+dl.details {
+    font-size: 1em;
+    dt {
+        float: left;
+        clear: left;
+        width: 30%;
+        text-align: right;
+        color: #000000;
+        display: block;
+    }
+    dd {
+        margin-left: 0;
+        padding-left: 5px;
+        margin-bottom: 5px;
+        color: #828282;
+        float: left;
+        width: 65%;
+    }
+}
+.pagination {
+    height: 1%;
+    span.page-sep {
+        display: none;
+    }
+    strong {
+        font-weight: normal;
+    }
+    span {
+        strong {
+            padding: 0 2px;
+            margin: 0 2px;
+            font-weight: normal;
+            color: #FFFFFF;
+            background-color: #bfbfbf;
+            border: 1px solid #bfbfbf;
+            font-size: 1.1em;
+        }
+        a:hover {
+            border-color: #d2d2d2;
+            background-color: #d2d2d2;
+            color: #FFF;
+            text-decoration: none;
+        }
+    }
+    img {
+        vertical-align: middle;
+    }
+}
+li.pagination {
+    margin-top: 0;
+}
+.pagination span a, .pagination span a:link, .pagination span a:visited, .pagination span a:active {
+    font-weight: normal;
+    text-decoration: none;
+    color: #747474;
+    margin: 0 2px;
+    padding: 0 2px;
+    background-color: #eeeeee;
+    border: 1px solid #bababa;
+    font-size: 1em;
+    //line-height: 1.5em;
+}
+.row {
+    .pagination {
+        //width: auto;
+        //margin-top: 0;
+        //padding: 1px 0 1px 15px;
+        font-size: 0.9em;
+        background: none 0 50% no-repeat;
+    }
+}
+.row .pagination span a:hover, li.pagination span a:hover {
+    background-color: #d2d2d2;
+}
+#forum-permissions {
+    float: right;
+    width: auto;
+    padding-left: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+    text-align: right;
+}
+.copyright {
+    padding: 5px;
+    text-align: center;
+    color: #555555;
+}
+.small {
+    font-size: 0.9em !important;
+}
+.titlespace {
+    margin-bottom: 15px;
+}
+.headerspace {
+    margin-top: 20px;
+}
+.error {
+    color: #bcbcbc;
+    font-weight: bold;
+    font-size: 1em;
+}
+.reported {
+    background-color: #f7f7f7;
+}
+li.reported:hover {
+    background-color: #ececec;
+}
+div.rules {
+    background-color: #ececec;
+    color: #bcbcbc;
+    padding: 0 10px;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+p.rules {
+    background-color: #ececec;
+    background-image: none;
+    padding: 5px;
+    img {
+        vertical-align: middle;
+        padding-top: 5px;
+    }
+    a {
+        vertical-align: middle;
+        clear: both;
+    }
+}
+#top {
+    position: absolute;
+    top: -20px;
+}
+.clear {
+    display: block;
+    clear: both;
+    background: transparent;
+}
+

@@ -1,0 +1,38 @@
+//
+// Mixins for Bootstrap Grid XL
+// --------------------------------------------------
+
+
+// Generate the extra large columns
+.make-xl-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  // Calculate width based on number of columns available
+  @media (min-width: @screen-xl) {
+  
+    float: left;
+    width: percentage((@columns / @grid-columns));
+	}
+}
+
+// Generate the large column offsets
+.make-xl-column-offset(@columns) {
+  @media (min-width: @screen-xl) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-xl-column-push(@columns) {
+  @media (min-width: @screen-xl) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-xl-column-pull(@columns) {
+  @media (min-width: @screen-xl) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
