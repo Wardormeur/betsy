@@ -3,7 +3,7 @@
 <form id="viewfolder" method="post" action="{S_PM_ACTION}">
 
 <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-xs-12">
+        <div class="col-xs-12">
 
 	<!-- IF FOLDER_STATUS and FOLDER_MAX_MESSAGES neq 0 --><p class="hidden-xs">{FOLDER_STATUS}</p><!-- ENDIF -->
 	<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM -->
@@ -13,22 +13,11 @@
 			<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><a class="btn btn-default" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}">{L_REPLY_TO_ALL}</a><!-- ENDIF -->			
 		
                         <!-- ELSEIF U_POST_NEW_TOPIC --><a class="btn btn-success" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}">{L_UCP_PM_COMPOSE}</a><!-- ENDIF -->
-			<!-- IF U_FORWARD_PM --><a class="btn btn-default" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a><!-- ENDIF -->
+			<!-- IF U_FORWARD_PM --><a class="btn btn-default" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span> {L_FORWARD_PM}</a><!-- ENDIF -->
 		</div>
             </div>
 	<!-- ENDIF -->
 
 	<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->
-	<ul class="linklist">
-            <!-- IF FOLDER_CUR_MESSAGES neq 0 -->
-                    <!-- IF TOTAL_MESSAGES -->
-
-                    <li class="pull-right pagination">
-                    <span class="hidden-xs">{TOTAL_MESSAGES}</span>
-                            <!-- IF PAGINATION --><span >{PAGINATION}</span><!-- ENDIF -->
-
-                    </li>
-                    <!-- ENDIF -->
-            <!-- ENDIF -->
-	</ul>
+            <!-- INCLUDE parts/pagination.html -->
 	<!-- ENDIF -->

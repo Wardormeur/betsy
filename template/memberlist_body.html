@@ -2,28 +2,20 @@
 	<!-- INCLUDE simple_header.html -->
 	<!-- INCLUDE memberlist_search.html -->
 	<form method="post" id="results" action="{S_MODE_ACTION}" onsubmit="insert_marked(this.user); return false">
-
-<!-- ELSEIF S_SEARCH_USER -->
-	<!-- INCLUDE overall_header.html -->	
-	
-             <!-- IF S_SHOW_GROUP --> <strong>&rsaquo;</strong> <strong><span <!-- IF GROUP_COLOR --> style="color:#{GROUP_COLOR};"<!-- ENDIF -->>{GROUP_NAME}</span></strong><!-- ENDIF -->
-            </li>
-        </ul>
-    </div>
-</div> <!-- on ferme le header -->
-        <!-- INCLUDE memberlist_search.html -->
-	<form method="post" action="{S_MODE_ACTION}">
-
 <!-- ELSE -->
 	<!-- INCLUDE overall_header.html -->
      <!-- IF S_SHOW_GROUP -->   <strong>&rsaquo;</strong> <strong><span <!-- IF GROUP_COLOR --> style="color:#{GROUP_COLOR};"<!-- ENDIF -->>{GROUP_NAME}</span></strong> 
      <!-- ELSE -->
      <strong>&rsaquo;</strong> <strong>{PAGE_TITLE}<!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></strong> 
      <!-- ENDIF -->
-            </li>
-        </ul>
-    </span>
-</div> <!-- on ferme le header -->
+                </li>
+            </ul>
+        </span>
+    </div>
+</div><!-- on ferme le header -->
+        <!-- IF S_SEARCH_USER -->
+         <!-- INCLUDE memberlist_search.html -->
+        <!-- ENDIF -->
 	<form method="post" action="{S_MODE_ACTION}">
 
 <!-- ENDIF -->
@@ -53,17 +45,7 @@
                    	
                     </div>
                     <div class="row  text-center">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{TOTAL_USERS}</div>  
-                        <!-- IF PAGINATION -->
-                            <span  class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 pagination">
-                                <span>
-                                {PAGINATION}
-                                </span>
-                            </span>
-                            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                            {PAGE_NUMBER}</a> 
-                            <!-- ELSE -->
-                            <div class="badge col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{PAGE_NUMBER}</div><!-- ENDIF -->
+                      <!-- INCLUDE parts/pagination_full.html -->
                     </div>
                 </div>
             </div>
@@ -171,16 +153,7 @@
 
 <div class=" row well text-center ">
 				
-    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{TOTAL_USERS}</div>  
-     <!-- IF PAGINATION -->
-        <div class="pagination col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-         <span >{PAGINATION}</span>
-        </div>
-         <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class=" col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
-         {PAGE_NUMBER}</a> 
-     <!-- ELSE -->
-         <div class="badge col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">{PAGE_NUMBER}</div><!-- ENDIF -->
-
+    <!-- INCLUDE parts/pagination_full.html -->
 
 
 <!-- IF S_IN_SEARCH_POPUP -->

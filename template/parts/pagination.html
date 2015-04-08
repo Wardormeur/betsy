@@ -1,0 +1,20 @@
+<!-- IF PAGINATION or TOTAL_POSTS -->
+            <div class="text-center">
+    		<!-- IF PAGE_NUMBER -->
+    			<!-- IF PAGINATION --> 
+    			    
+            	    <!-- IF PREVIOUS_PAGE -->
+                    <a   href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default  "><i class=" fa fa-angle-left"> </i> <span class="hidden-xs hidden-sm">{L_PREVIOUS}</span></a>
+                    <!-- ENDIF -->
+                    <span class="pagination"> <span>{PAGINATION}</span></span>
+			    <!-- ELSE --> 
+    		        <!-- IF PREVIOUS_PAGE -->
+                        <a href="{PREVIOUS_PAGE}" class="btn btn-sm btn-default"><i class=" fa fa-angle-left"> </i> <span class="hidden-xs hidden-sm">{L_PREVIOUS}</span></a>
+                    <!-- ENDIF -->
+    			    <span class="label label-default">{PAGE_NUMBER}</span><!-- ENDIF -->
+        		<!-- ENDIF -->
+    			<!-- IF NEXT_PAGE -->
+                        <a href="{NEXT_PAGE}" class="btn btn-sm btn-default "><span class="hidden-xs hidden-sm">{L_NEXT}</span> <i class="fa fa-angle-right"> </i></a>
+            	<!-- ENDIF -->
+            	</div>
+<!-- ENDIF -->

@@ -63,27 +63,9 @@
         </section>
         <!-- ENDIF -->
 
-        <!-- IF S_DISPLAY_ONLINE_LIST and S_USER_LOGGED_IN-->
-        <div class="row hidden-xs">
-            <div class="well col-sm-12">
-                <!-- IF U_VIEWONLINE -->
-                <h3 class="panel-title"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3 class="panel-title">{L_WHO_IS_ONLINE}</h3>
-                <!-- ENDIF -->
-                <p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
-                <!-- IF LEGEND --><br /><em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF --></p>
-            </div>
-        </div>
-        <!-- ENDIF -->
-
-        <!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST and S_USER_LOGGED_IN -->
-        <div class="row  hidden-xs">
-            <div class="well col-sm-12">
-                <h3 class="panel-title ">{L_BIRTHDAYS}</h3>
-                <p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
-            </div>
-        </div>
-        <!-- ENDIF -->
-
+       <!-- INCLUDE parts/online.html -->
+       <!-- INCLUDE parts/birthdays.html -->
+       
         <!-- IF NEWEST_USER and S_USER_LOGGED_IN -->
         <div class="row  hidden-xs">
             <div class="well col-sm-12">

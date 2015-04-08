@@ -9653,7 +9653,7 @@ body {
     transform: scale(0.6);
   }
 }
-li.sidebar_user_online a {
+li.sidebar_user_online {
   display: block;
   text-indent: 20px;
 }

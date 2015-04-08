@@ -74,22 +74,18 @@
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 2em;
-	&.hover :hover{
-		background-color:darken(@themecolor,5%);
-	} 
-}
-
-.sidebar-nav li a {
     display: block;
     width:@sidebar-size;    
     max-width:@sidebar-size;
-    text-decoration: none;
-    color: #eee;
-    
-    background-color:lighten(@themecolor,5%);
-	&:hover{
-		background-color:darken(@themecolor,5%)
-	}
+    &:hover{
+            background-color:darken(@themecolor,5%)
+    }
+}
+.sidebar-nav li a {
+   text-indent:0px;
+   color: #eee;
+   text-decoration: none;
+   display : inline-block;
 }
 
 
@@ -103,6 +99,10 @@
     font-size: 18px;
     line-height: 60px;
     
+    background-color:lighten(@themecolor,5%);
+    &:hover{
+        background-color:lighten(@themecolor,5%);
+    }
     color: #fff;
 }
 
