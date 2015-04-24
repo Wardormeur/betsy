@@ -56,7 +56,7 @@ ul.social-icons.navbar-logo {
 }
 #search-li form input{
 }
-#header-bar nav .navbar-nav.nav-justified > li{
+.header-bar nav .navbar-nav.nav-justified > li{
     float:none;
 }
 #topic-bar nav .navbar-nav.nav-justified > li{

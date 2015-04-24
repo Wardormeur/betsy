@@ -1,4 +1,4 @@
-    <div id="header-bar" class="navbar navbar-inverse navbar-fixed-top bs-docs-nav ">
+    <div id="action-bar" class="header-bar navbar navbar-inverse navbar-fixed-top bs-docs-nav ">
                 <div class="container">
                     <div class="navbar-header pull-left ">
                         <button data-target=".bs-navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
@@ -91,11 +91,9 @@
                             <!-- ENDIF -->
                                     <!-- IF (S_USER_LOGGED_IN and not S_IS_BOT) -->
                                         <!-- IF $GALLERY -->
-                                    <li class="divider"></li>
                                     <li class=" <!-- IF S_PERSONAL_GALLERY --> active <!-- ENDIF -->"><a href="{U_GALLERY_MOD}" title="{L_GALLERY_EXPLAIN}">{L_GALLERY}</a></li>
                                         <!-- ENDIF -->
                                         <!-- IF $FEEDBACK -->
-                                    <li class="divider"></li>
                                     <li class="<!-- IF FB_PAGE --> active <!-- ENDIF -->"><a href="{U_FEEDBACK}" title="{L_FB_FEEDBACK_EXPLAIN}">{L_FB_FEEDBACK}</a></li>
                                         <!-- ENDIF -->   
                                     <!-- ENDIF -->

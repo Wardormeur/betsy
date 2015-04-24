@@ -126,13 +126,24 @@
 	};
         $(document).ready(function(){
             $('body').append('<div id="toTop"><i class="icon-chevron-up fa fa-chevron-up"></i></div>');
+            
             $(window).scroll(function(){
                 if($(this).scrollTop()>1){
                     $('#toTop').fadeIn();
-                    <!-- IF U_VIEW_TOPIC -->$('#topic-bar').fadeIn(); $('#header-bar').fadeOut(); <!-- ENDIF -->
+                    <!-- IF U_VIEW_TOPIC -->$('#topic-bar').fadeIn(); 
+                        <!-- IF $NAVBAR_STATIC -->$('#universe-bar').fadeOut();<!-- ENDIF -->  
+                        <!-- IF not $NAVBAR_STATIC -->$('#action-bar').fadeOut();<!-- ENDIF --> 
+                    <!-- ENDIF -->
+                    <!-- IF S_INDEX and $NAVBAR_STATIC and not $NAVBAR_STATIC_ONLY -->$('#universe-bar').fadeOut(); $('#action-bar').fadeIn(); <!-- ENDIF -->     
+                     offseter();
                 }else{
-                    $('#toTop').fadeOut();
-                    <!-- IF U_VIEW_TOPIC -->$('#topic-bar').fadeOut(); $('#header-bar').fadeIn(); <!-- ENDIF -->
+                    $('#toTop').fadeOut(); 
+                    <!-- IF U_VIEW_TOPIC -->$('#topic-bar').fadeOut(); 
+                        <!-- IF $NAVBAR_STATIC -->$('#universe-bar').fadeIn();<!-- ENDIF -->  
+                        <!-- IF not $NAVBAR_STATIC -->$('#action-bar').fadeIn();<!-- ENDIF --> 
+                    <!-- ENDIF -->
+                    <!-- IF S_INDEX and $NAVBAR_STATIC and not $NAVBAR_STATIC_ONLY -->$('#universe-bar').fadeIn(); $('#action-bar').fadeOut(); <!-- ENDIF -->   
+                    offseter();
                 }
             });
             $('#toTop').click(function(){
@@ -145,17 +156,23 @@
                 else{$('#search-li form').hide();$('#search-button').css("display","block");}
             });
             
-            /*we dont know how high will be the header bar, so we need js to resize it so that it handle every language/configuration */
-            $('#page-content-wrapper').css(
-                      'padding-top',$('#header-bar').height()/3  
-            ); 
-            <!-- IF $SIDEBAR -->
-               $('#sidebar-wrapper').css('padding-top',$('#header-bar').height()
-            ); 
-            <!-- ENDIF -->
-
+         
+         offseter();
             
         });
+
+        function offseter(){
+               /*we dont know how high will be the header bar (regarding the language), so we need js to resize it so that it handle every language/configuration */
+            $('#page-content-wrapper').css(
+                      'padding-top',$('.header-bar:visible').height()/3  
+            ); 
+            <!-- IF $SIDEBAR -->
+               $('#sidebar-wrapper').css('padding-top',$('.header-bar:visible').height()
+            ); 
+            <!-- ENDIF -->
+            
+            
+        }
 // ]]>
 </script>
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
