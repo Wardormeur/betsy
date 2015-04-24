@@ -3,7 +3,7 @@
         </ul>
     </div>
  <!-- we close the breadcrumb -->        
-    <div class="btn btn-group col-xs-2 ">
+    <div class="btn btn-group hidden-xs col-md-2 ">
         <!-- IF U_FEED --> <a class="btn btn-xs btn-default pull-right" title="{L_FEED} - {FORUM_NAME}" href="{U_FEED}?f={FORUM_ID}"><i class="fa fa-rss"></i></a><!-- ENDIF -->
         <!-- IF S_WATCH_FORUM_LINK --><a class="btn btn-xs btn-default pull-right" href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="<!-- IF S_WATCHING_FORUM -->fa fa-star<!-- ELSE -->fa fa-star-o<!-- ENDIF -->"> </i> </a><!-- ENDIF -->
         <!-- IF U_BOOKMARK_FORUM --><a class="btn btn-xs btn-default pull-right" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="fa fa-bookmark"></i> </a><!-- ENDIF -->
@@ -274,7 +274,7 @@
                             <!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
                                     <!-- IF PAGE_NUMBER -->
                                                 <!-- IF PAGINATION --> 
-                                                    <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="hidden-xs"> 
+                                                    <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="hidden-md"> 
                                                            {PAGE_NUMBER}
                                                     </a>  
                                                     <span >{PAGINATION}</span>
