@@ -12,7 +12,7 @@
 
 <!-- IF $SIDEBAR and $SIDEBAR_FORUM -->
 <div class="row">
-        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10 "> 
 <!-- ENDIF -->    
             <!-- IF FORUM_DESC or MODERATORS or U_MCP -->
             <div>
@@ -40,54 +40,49 @@
     <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
         <section class="topic-actions  row" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 1em;"<!-- ENDIF -->>
 
-            <!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
+        <!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
             <div class="col-xs-4">
             <!-- IF S_IS_LOCKED -->
-
-                    <a class="btn btn-sm btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
-                    <!-- ELSE -->
-                    <a class="btn btn-sm btn-success" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
+                <a class="btn btn-sm btn-danger" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
+            <!-- ELSE -->
+                <a class="btn btn-sm btn-success" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
             <!-- ENDIF -->
             </div>
-            <!-- ENDIF -->
+        <!-- ENDIF -->
 
-            <!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
+        <!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
             <div class="p-pagination col-md-4 col-xs-8">
                 <div class="text-center pagination">
-                    <!-- IF PAGE_NUMBER -->
-                            <!-- IF PAGINATION --> 
-
+                <!-- IF PAGE_NUMBER -->
+                    <!-- IF PAGINATION --> 
                         <!-- IF PREVIOUS_PAGE -->
-                                <a   href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm "><i class=" fa fa-angle-left"> </i> {L_PREVIOUS}</a>
+                                <a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm "><i class=" fa fa-angle-left"> </i> {L_PREVIOUS}</a>
                         <!-- ENDIF -->
-                                    <span class="hidden-xs">{PAGINATION}</span>
-                                <!-- ELSE --> 
-                            <!-- IF PREVIOUS_PAGE -->
-                                <a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm"><i class=" fa fa-angle-left"> </i> {L_PREVIOUS}</button>
-                        <!-- ENDIF -->
-                                <div class=" hidden-xs">{PAGE_NUMBER}</div><!-- ENDIF -->
-                            <!-- ENDIF -->
-                            <!-- IF NEXT_PAGE -->
-                            <a href="{NEXT_PAGE}" class="btn btn-default btn-sm">{L_NEXT} <i class="fa fa-angle-right"> </i></a>
+                                <span class="hidden-xs">{PAGINATION}</span>
+                    <!-- ELSE --> 
+                        <!-- IF PREVIOUS_PAGE -->
+                            <a href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm"><i class=" fa fa-angle-left"> </i> {L_PREVIOUS}</button>
+                         <!-- ENDIF -->
+                            <div class=" hidden-xs">{PAGE_NUMBER}</div><!-- ENDIF -->
                     <!-- ENDIF -->
-                    </div>
+                    <!-- IF NEXT_PAGE -->
+                        <a href="{NEXT_PAGE}" class="btn btn-default btn-sm">{L_NEXT} <i class="fa fa-angle-right"> </i></a>
+                    <!-- ENDIF -->
+                
+                <!-- ENDIF -->
+                </div>
             </div>
-            <!-- ENDIF -->
-
+            
             <!-- IF S_DISPLAY_SEARCHBOX -->
             <div class="col-md-4 hidden-sm hidden-xs">	
-                    <form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-inline pull-right" >
+                <form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" class="form-inline pull-right" >
+                    <div class="form-group">
 
-
-                                    <div class="form-group">
-
-                                            <input class="form-control" type="text" name="keywords" id="search_keywords_up" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
-                                    {S_SEARCH_LOCAL_HIDDEN_FIELDS}
-                                    </div>
-                                    <button type="submit" class="btn btn-sm btn-default">{L_SEARCH}</button>
-
-
-                            </form>
+                            <input class="form-control" type="text" name="keywords" id="search_keywords_up" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+                    {S_SEARCH_LOCAL_HIDDEN_FIELDS}
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-default">{L_SEARCH}</button>
+                </form>
             </div>
             <!-- ENDIF -->
 
@@ -218,114 +213,106 @@
             <!-- Ward : here land our pb between full forum view and subforum views -->
 
                              </div> <!-- col-md-12 -->
-             <!--	</div>topiclist -->
                     <span class="topiclastrow"></span>
                 </div>
-                <!-- ELSE -->
-                  <!--   </div> closing container of rows-->
-                  <!-- Gosh, it's a pain in the ass to do such kind of debug.. -->
             <!-- ENDIF -->
 
-    <!-- BEGINELSE -->
-            <!-- IF S_IS_POSTABLE -->
-            <div class="panel">
-                    <div class="inner">
-                        <strong>{L_NO_TOPICS}</strong>
-                    </div>
+<!-- BEGINELSE -->
+    <!-- IF S_IS_POSTABLE -->
+    <div class="panel">
+            <div class="inner">
+                <strong>{L_NO_TOPICS}</strong>
             </div>
-            <!-- ENDIF -->
-    <!-- END topicrow -->
+    </div>
+    <!-- ENDIF -->
+<!-- END topicrow -->
 
-        <div class="row">
-            <div class="col-xs-4">
-            <!-- IF PREVIOUS_PAGE -->
-                 <a   href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm "><i class="fa fa-angle-left"></i> {L_PREVIOUS}</a>
-            <!-- ENDIF -->
-            </div>
-
-            <div class=" col-xs-4 text-center">
-            <!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-                    <!-- IF S_IS_LOCKED -->
-                            <a class="btn btn-danger btn-sm" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
-                        <!-- ELSE -->
-                        <a class="btn btn-success btn-sm" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
-                        <!-- ENDIF -->
-
-            <!-- ENDIF -->
-                </div>
-                <div class="col-xs-4  ">
-                <!-- IF NEXT_PAGE -->
-                        <a href="{NEXT_PAGE}" class="btn btn-default pull-right btn-sm">{L_NEXT} <i class="fa fa-angle-right"> </i></a>
-            <!-- ENDIF -->
-            </div>
-
+    <div class="row">
+        <div class="col-xs-4">
+        <!-- IF PREVIOUS_PAGE -->
+             <a   href="{PREVIOUS_PAGE}" class="btn btn-default btn-sm "><i class="fa fa-angle-left"></i> {L_PREVIOUS}</a>
+        <!-- ENDIF -->
         </div>
 
-        <div class="row well bottom-topic-actions">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <!-- IF S_SELECT_SORT_DAYS and not S_DISPLAY_ACTIVE -->
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <!-- IF not S_IS_BOT and U_MARK_TOPICS -->
-                            <a class="btn btn-default btn-sm" href="{U_MARK_TOPICS}" accesskey="m"><i class="fa fa-check"></i> {L_MARK_TOPICS_READ}</a> 
-                        <!-- ENDIF -->
-                    </div>
-                     <div class="col-md-4 col-sm-4 col-xs-6 text-center pagination" >
-                            <!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-                                    <!-- IF PAGE_NUMBER -->
-                                                <!-- IF PAGINATION --> 
-                                                    <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="hidden-md"> 
-                                                           {PAGE_NUMBER}
-                                                    </a>  
-                                                    <span >{PAGINATION}</span>
-                                                    <!-- ELSE -->  {PAGE_NUMBER}
-                                            <!-- ENDIF -->
-                                        <!-- ENDIF -->
+        <div class=" col-xs-4 text-center">
+        <!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
+                <!-- IF S_IS_LOCKED -->
+                        <a class="btn btn-danger btn-sm" href="{U_POST_NEW_TOPIC}"><span></span>{L_FORUM_LOCKED}</a>
+                    <!-- ELSE -->
+                    <a class="btn btn-success btn-sm" href="{U_POST_NEW_TOPIC}"><span></span><i class="icon-file icon-white"></i> {L_POST_TOPIC}</a>
                     <!-- ENDIF -->
-                    </div>
-                    <!-- IF TOTAL_TOPICS --> 
-                        <div class="col-md-4 col-sm-4 hidden-xs ">
 
-                                <!-- IF S_DISPLAY_SEARCHBOX -->
-                                <form action="{S_SEARCHBOX_ACTION}" method="get"  class="form-inline pull-right" role="form" >
-                                            <div class="form-group ">
-                                                <input class="form-control " type="text" name="keywords" id="search_keywords_down"  value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+        <!-- ENDIF -->
+            </div>
+            <div class="col-xs-4  ">
+            <!-- IF NEXT_PAGE -->
+                    <a href="{NEXT_PAGE}" class="btn btn-default pull-right btn-sm">{L_NEXT} <i class="fa fa-angle-right"> </i></a>
+        <!-- ENDIF -->
+        </div>
 
-                                                {S_SEARCH_LOCAL_HIDDEN_FIELDS}
+    </div>
 
-                                            </div>
-                                             <button type="submit" class="btn btn-default btn-sm">{L_SEARCH}</button>
-                                </form>
-                                <!-- ELSE -->
-                                 {TOTAL_TOPICS}
-                                <!-- ENDIF -->
+    <div class="row well bottom-topic-actions">
+        <div class=" col-xs-12">
+        <!-- IF S_SELECT_SORT_DAYS and not S_DISPLAY_ACTIVE -->
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <!-- IF not S_IS_BOT and U_MARK_TOPICS -->
+                        <a class="btn btn-default btn-sm" href="{U_MARK_TOPICS}" accesskey="m"><i class="fa fa-check"></i> {L_MARK_TOPICS_READ}</a> 
+                    <!-- ENDIF -->
+                </div>
+                 <div class="col-sm-4 col-xs-6 text-center pagination" >
+                    <!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
+                        <!-- IF PAGE_NUMBER -->
+                            <!-- IF PAGINATION --> 
+                                <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="hidden-md"> 
+                                       {PAGE_NUMBER}
+                                </a>  
+                                <span >{PAGINATION}</span>
+                            <!-- ELSE -->  {PAGE_NUMBER}
+                            <!-- ENDIF -->
+                        <!-- ENDIF -->
+                    <!-- ENDIF -->
+                </div>
+            <!-- IF TOTAL_TOPICS --> 
+                <div class="col-sm-4 hidden-xs ">
+                    <!-- IF S_DISPLAY_SEARCHBOX -->
+                    <form action="{S_SEARCHBOX_ACTION}" method="get"  class="form-inline pull-right" role="form" >
+                                <div class="form-group ">
+                                    <input class="form-control " type="text" name="keywords" id="search_keywords_down"  value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
 
-                            </div>
+                                    {S_SEARCH_LOCAL_HIDDEN_FIELDS}
+
+                                </div>
+                                 <button type="submit" class="btn btn-default btn-sm">{L_SEARCH}</button>
+                    </form>
+                    <!-- ELSE -->
+                     {TOTAL_TOPICS}
                     <!-- ENDIF -->
                 </div>
             <!-- ENDIF -->
+            </div>
+        <!-- ENDIF -->
 
             <!-- INCLUDE jumpbox.html -->
 
-            <!-- IF .topicrow and not S_DISPLAY_ACTIVE -->
+        <!-- IF .topicrow and not S_DISPLAY_ACTIVE -->
 
             <div class="row hidden-xs ">
-                <form method="post" action="{S_FORUM_ACTION}" class="col-md-12 col-sm-12 col-xs-12 ">
-                        <div class="display-options form-group text-center">
-                                <!-- IF not S_IS_BOT -->
-                                <label>{L_DISPLAY_TOPICS}:</label> {S_SELECT_SORT_DAYS}
-                                        <label>{L_SORT_BY}</label> {S_SELECT_SORT_KEY}
-                                        {S_SELECT_SORT_DIR}
-                                        <input type="submit" name="sort" value="{L_GO}" class="btn btn-default btn-sm" />
-                            <!-- ENDIF -->
+                <form method="post" action="{S_FORUM_ACTION}" class="col-sm-12 col-xs-12 ">
+                    <div class="display-options form-group text-center">
+                        <!-- IF not S_IS_BOT -->
+                            <label>{L_DISPLAY_TOPICS}:</label> {S_SELECT_SORT_DAYS}
+                            <label>{L_SORT_BY}</label> {S_SELECT_SORT_KEY}
+                            {S_SELECT_SORT_DIR}
+                            <input type="submit" name="sort" value="{L_GO}" class="btn btn-default btn-sm" />
+                        <!-- ENDIF -->
 
-                        </div>
+                    </div>
                 </form>
-
             </div>
-
-        </div>
     <!-- ENDIF -->
+        </div>
     </div>
 
 
@@ -338,9 +325,11 @@
     <!-- ENDIF -->
     
         </div>
-    </div>
 <!-- IF $SIDEBAR and $SIDEBAR_FORUM -->
-</div> <!-- end wrapper -->
+
+        </div><!-- cont -->
+    </div><!-- cont -->
+</div>   <!-- end wrapper -->
 <!-- ENDIF -->
 <!-- INCLUDE parts/sidebar.html -->
 
