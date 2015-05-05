@@ -127,25 +127,8 @@
         $(document).ready(function(){
             $('body').append('<div id="toTop"><i class="icon-chevron-up fa fa-chevron-up"></i></div>');
             
-            $(window).scroll(function(){
-                if($(this).scrollTop()>1){
-                    $('#toTop').fadeIn();
-                    <!-- IF U_VIEW_TOPIC -->$('#topic-bar').fadeIn(); 
-                        <!-- IF $NAVBAR_STATIC -->$('#universe-bar').fadeOut();<!-- ENDIF -->  
-                        <!-- IF not $NAVBAR_STATIC -->$('#action-bar').fadeOut();<!-- ENDIF --> 
-                    <!-- ENDIF -->
-                    <!-- IF S_INDEX and $NAVBAR_STATIC and not $NAVBAR_STATIC_ONLY -->$('#universe-bar').fadeOut(); $('#action-bar').fadeIn(); <!-- ENDIF -->     
-                     offseter();
-                }else{
-                    $('#toTop').fadeOut(); 
-                    <!-- IF U_VIEW_TOPIC -->$('#topic-bar').fadeOut(); 
-                        <!-- IF $NAVBAR_STATIC -->$('#universe-bar').fadeIn();<!-- ENDIF -->  
-                        <!-- IF not $NAVBAR_STATIC -->$('#action-bar').fadeIn();<!-- ENDIF --> 
-                    <!-- ENDIF -->
-                    <!-- IF S_INDEX and $NAVBAR_STATIC and not $NAVBAR_STATIC_ONLY -->$('#universe-bar').fadeIn(); $('#action-bar').fadeOut(); <!-- ENDIF -->   
-                    offseter();
-                }
-            });
+            $(window).scroll(set_visible_header);
+            set_visible_header();
             $('#toTop').click(function(){
                 $('body,html').animate({scrollTop:0},600)
             });
@@ -169,9 +152,27 @@
             <!-- IF $SIDEBAR -->
                $('#sidebar-wrapper').css('padding-top',$('.header-bar:visible').height()
             ); 
-            <!-- ENDIF -->
-            
-            
+            <!-- ENDIF -->  
+        }
+
+        function set_visible_header(){
+            if($(this).scrollTop()>1){
+                $('#toTop').fadeIn();
+                <!-- IF U_VIEW_TOPIC -->$('#topic-bar').fadeIn(); 
+                    <!-- IF $NAVBAR_STATIC -->$('#universe-bar').fadeOut();<!-- ENDIF -->  
+                    <!-- IF not $NAVBAR_STATIC -->$('#action-bar').fadeOut();<!-- ENDIF --> 
+                <!-- ENDIF -->
+                <!-- IF S_INDEX and $NAVBAR_STATIC and not $NAVBAR_STATIC_ONLY -->$('#universe-bar').fadeOut(); $('#action-bar').fadeIn(); <!-- ENDIF -->     
+                 offseter();
+            }else{
+                $('#toTop').fadeOut(); 
+                <!-- IF U_VIEW_TOPIC -->$('#topic-bar').fadeOut(); 
+                    <!-- IF $NAVBAR_STATIC -->$('#universe-bar').fadeIn();<!-- ENDIF -->  
+                    <!-- IF not $NAVBAR_STATIC -->$('#action-bar').fadeIn();<!-- ENDIF --> 
+                <!-- ENDIF -->
+                <!-- IF S_INDEX and $NAVBAR_STATIC and not $NAVBAR_STATIC_ONLY -->$('#universe-bar').fadeIn(); $('#action-bar').fadeOut(); <!-- ENDIF -->   
+                offseter();
+            }
         }
 // ]]>
 </script>

@@ -58,15 +58,19 @@
 
     <a id="top" accesskey="t"></a>
     <header role="banner">
-        <!-- IF $NAVBAR_STATIC == 1 -->
-            <!-- INCLUDE parts/navbar/navbar_universe_static.html -->
-        <!-- ENDIF -->
+         <!-- order by least importance for appearance on reload -->
+         <!-- IF U_VIEW_TOPIC == true -->
+            <!-- INCLUDE parts/navbar/navbar-viewtopic.html -->    
+        <!-- ENDIF -->  
+       
         <!-- IF ( $NAVBAR_STATIC == 1 and $NAVBAR_STATIC_ONLY == 0 and S_INDEX == true ) or  ( $NAVBAR_STATIC == 0 and U_VIEWTOPIC == true ) -->
             <!-- INCLUDE parts/navbar/navbar.html -->  
         <!-- ENDIF -->
-        <!-- IF U_VIEW_TOPIC == true -->
-            <!-- INCLUDE parts/navbar/navbar-viewtopic.html -->    
-        <!-- ENDIF -->        
+        
+         <!-- IF $NAVBAR_STATIC == 1 -->
+            <!-- INCLUDE parts/navbar/navbar_universe_static.html -->
+        <!-- ENDIF -->
+             
     </header>
 
 

@@ -168,19 +168,21 @@
                                             <a href="{topicrow.U_VIEW_TOPIC}" class="topictitle
                                          <!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF --> 
                                          "> <!-- IF topicrow.TOPIC_FOLDER_IMG -->
+                                                <i class="fa
                                                 <!-- IF topicrow.S_TOPIC_LOCKED -->
-                                                        <i class="fa fa-lock fa-fw"></i>
+                                                        fa-lock fa-fw
                                                 <!-- ELSEIF topicrow.S_POST_GLOBAL -->
-                                                        <i class="fa fa-info-circle fa-fw"></i>
+                                                        fa-info-circle fa-fw
                                                 <!-- ELSEIF topicrow.S_POST_ANNOUNCE -->
-                                                        <i class="fa fa-bullhorn fa-fw"></i>
+                                                        fa-bullhorn fa-fw
                                                 <!-- ELSEIF topicrow.S_POST_STICKY -->
-                                                        <i class="fa fa-thumb-tack fa-fw"></i>
+                                                        fa-thumb-tack fa-fw
                                                 <!-- ELSEIF topicrow.S_HAS_POLL -->
-                                                        <i class="fa fa-comment-o fa-fw"></i>
+                                                       fa-comment-o fa-fw
                                                 <!-- ELSE -->
-                                                        <i class="fa fa-file-text-o fa-fw"></i>
+                                                        fa-file-text-o fa-fw
                                                 <!-- ENDIF --> 
+                                                <!-- IF topicrow.S_UNREAD_TOPIC --> unread <!-- ENDIF --> "></i>
                                             <!-- ENDIF -->  {topicrow.TOPIC_TITLE}
                                                           
                                             </a>
@@ -257,17 +259,16 @@
         <!-- IF S_SELECT_SORT_DAYS and not S_DISPLAY_ACTIVE -->
             <div class="row">
                 <div class="col-sm-4 col-xs-6">
-                    <!-- IF not S_IS_BOT and U_MARK_TOPICS -->
+                    <div class="btn-group">
+                   <!-- IF not S_IS_BOT and U_MARK_TOPICS -->
                         <a class="btn btn-default btn-sm" href="{U_MARK_TOPICS}" accesskey="m"><i class="fa fa-check"></i> {L_MARK_TOPICS_READ}</a> 
                     <!-- ENDIF -->
+                    </div>
                 </div>
                  <div class="col-sm-4 col-xs-6 text-center pagination" >
                     <!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
                         <!-- IF PAGE_NUMBER -->
                             <!-- IF PAGINATION --> 
-                                <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="hidden-md"> 
-                                       {PAGE_NUMBER}
-                                </a>  
                                 <span >{PAGINATION}</span>
                             <!-- ELSE -->  {PAGE_NUMBER}
                             <!-- ENDIF -->
