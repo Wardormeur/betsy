@@ -1,0 +1,346 @@
+.header{
+    background-color:#F2F3F4;
+}
+header{
+	-moz-box-shadow: 0px 3px 5px 0px #656565;
+	-webkit-box-shadow: 0px 3px 5px 0px #656565;
+	-o-box-shadow: 0px 3px 5px 0px #656565;
+	box-shadow: 0px 3px 5px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=5);
+
+}    
+/*Breaking bootstrap default behavior of mobile menu*/
+.navbar-collapse {
+    transition : height 0.35s linear 0.1s;
+
+    &.in {
+        overflow-y:initial;
+    }
+}
+/*Fixing user menu on low reso*/
+header .open > .dropdown-menu{
+   left:-130px;
+
+}
+/*overriding default style of bootstrap to reduce the space between divs*/
+.well{
+    margin-bottom:5px;
+}
+/*HACK du to bootstrap beeing a bitch with > selector*/
+.panel-default .panel-heading{
+    background-color:@brand-secondary;//#828e8c;
+    color:#fff;
+    padding-top :5px;
+    border-bottom:3px solid @brand-success;
+    padding-bottom:5px;
+}
+.panel-heading .panel-title{
+  font-weight:bold;
+}
+
+nav .navbar-nav > li > a{   
+    padding:15px 0px;
+}
+.nav li a {
+	color : @gray-darker;
+}
+.nav li:hover{
+	background-color: darken(@themecolor,5%);
+}
+.nav li.noh:hover{
+	background-color: @themecolor;
+}
+
+
+/*Background color for pills isnt implemented in BS3 (bullshit3) so we need to override the WHOLE process. Great.*/
+#p-tabs > .nav-pills >li>a{
+	border-radius:4px 4px 4px 4px;
+	&:hover{
+		background-color:@gray-light;
+	}
+}
+#p-tabs> .nav-pills>li{
+	border-radius:4px 4px 4px 4px;
+	background-color: @gray-lighter;
+	&.active{
+		background-color:@themecolor;
+	}
+}
+.pagination{
+	//display:block !important;
+	margin: 0 0 0 0 ;
+	padding-left : inherit;
+//	height:inherit;
+
+}
+.search-query {
+  padding-right: 14px;
+  padding-right: 4px \9;
+  padding-left: 14px;
+  padding-left: 4px \9;
+  
+  margin-bottom: 0;
+  -webkit-border-radius: 14px;
+     -moz-border-radius: 14px;
+          border-radius: 14px;
+}
+.breadcrumb{
+  display:inline-block;
+  margin-bottom:0px;
+}
+.breadcrumb-h2{
+  display:inline-block;
+  margin: 5px 0px 5px 0px;
+  padding : 0px 5px 2px 5px;
+}
+/*.nav-pills > li{
+  body-background:@solight;
+}*/
+
+.navbar-search {
+  position: relative;
+  padding: 13px 0;
+}
+
+.navbar-search .search-query {
+  padding: 3px 9px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1;
+  border: 1px solid @gray-dark;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+.navbar-search .search-query:-moz-placeholder {
+  color: @gray-light;
+}
+
+.navbar-search .search-query::-webkit-input-placeholder {
+  color: @gray-light;
+}
+
+#topic-bar #topic-name{
+  max-width:200px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  .navbar-text{
+     max-height:20px;
+  }
+}
+
+
+a#logo{
+	float: left;
+	width:100%;
+	margin: auto;
+	padding: 10px 13px 0px 10px;
+	text-align:center;
+}
+
+a#logo:hover {
+	text-decoration: none;
+}
+a#logo img {
+	max-height:9em;
+}
+.headerrow{
+	font-weight:bold;
+	font-size:1.1em;
+	border-bottom:1px solid @themecolor;
+
+}
+
+h2.topic-title{
+  margin-top: 0;
+  display:inline-block;
+  margin-bottom:0;
+}
+h3.panel-title{
+  margin-top: 0;
+}
+
+.navbar-search .search-query:focus,
+.navbar-search .search-query.focused {
+  padding: 3px 10px;
+  color: #333333;
+  text-shadow: 0 1px 0 #ffffff;
+  background-color: #ffffff;
+  border: 0;
+  outline: 0;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-right {
+  float: right !important;
+  padding: 8px 0;
+}
+.half-linebreak{
+    line-height:1.5em; 
+}
+.forumrow{
+    padding-top:5px;
+    border-bottom : solid #DDDDDD 0.5px; 
+	&:hover{
+		/*background-color:fade(#F5782A,20%);*/
+		-moz-box-shadow: 2px 2px 5px 0px @brand-success;
+		-webkit-box-shadow: 2px 2px 5px 0px @brand-success;
+		-o-box-shadow: 2px 2px 5px 0px @brand-success;
+		box-shadow: 2px 2px 5px 0px @brand-success;
+		filter:progid:DXImageTransform.Microsoft.Shadow(color=@brand-success, Direction=134, Strength=5);
+	z-index:5;
+	position:relative;
+	}
+
+	&:nth-of-type(even){
+		background-color:@theme-light;
+		&:hover{
+			/*background-color:fade(#F5782A,20%);*/
+			-moz-box-shadow: 2px 2px 5px 0px @brand-success;
+        	        -webkit-box-shadow: 2px 2px 5px 0px @brand-success;
+	                -o-box-shadow: 2px 2px 5px 0px @brand-success;
+               		 box-shadow: 2px 2px 5px 0px @brand-success;
+               		 filter:progid:DXImageTransform.Microsoft.Shadow(color=@brand-success, Direction=134, Strength=5);
+		z-index:4;
+		position:relative;
+		}
+
+	}
+
+}
+.post {
+	border-top : 1.5px solid @solight;
+	border-left : 3px solid @themecolor;
+	padding:8px;
+        background-color:  lighten(@theme-light,2%);
+        button.dropdown-toggle{
+        	background-color:@solight;
+   	}
+
+}
+/*WTF ? cant use nth-of-child cause of random fuzz*/
+.post-even{
+	background-color: lighten(@gray-lighter,5%); //#F2F3F4; /*@solight;*/
+    
+    button.dropdown-toggle{
+     background-color:@theme-lighter;
+    }
+
+}
+.label-default{
+    color:@brand-primary;
+}
+
+.oldpost{
+    background-color:@oldpost;
+}
+.newpost{
+    background-color:@solight;
+}
+.forumpanel{
+    margin-bottom:10px;
+    
+}
+.subforums-list{
+    margin-left:27px;
+    margin-bottom:2px;
+}
+/*ugly hack to get the footer on REAL bottom*/
+.navbar-static-bottom {
+	margin-bottom:-20px;
+
+}
+/*quotes & so on*/
+blockquote{
+    backgroun-color: @theme-lighter;
+    font-size:1em;
+}
+.hidden-inline-xs {
+    display: inline !important;
+}
+
+
+@media (max-width: 767px) {
+   .hidden-inline-xs {
+    display: none !important;
+  }
+
+
+}
+@media (min-width:768px){
+  #smiley-list{
+    height:auto !important;
+    display:block;
+  }
+}
+
+.postbody img {
+	max-width: 100%;
+	height: auto;
+}
+#icon-actions .dropdown-menu {
+	min-width:50px;
+}
+.postrow{
+	padding-top: 51px; 
+	margin-top: -51px;
+}
+body {
+	padding-top:60px;
+}
+@media (min-width: @screen-sm){
+        .header-bar nav ul.navbar-nav.nav-justified{
+                width:(@screen-sm - 300px);
+        }
+	#topic-bar nav ul.navbar-nav.nav-justified{
+                width:(@screen-sm - 500px);
+        }
+	.navbar-collapse.bs-navbar-collapse.in{
+ 		display:inline-block;
+ 	 	width:100%;
+		height:100%;
+	}
+
+
+}
+
+@media (min-width: @screen-md) and (max-width:(@screen-lg - 1px)){
+	.margin-container{
+	        margin-left:40px;
+       		margin-right:20px;
+	}	
+	.header-bar nav ul.navbar-nav.nav-justified{
+		width:(@screen-md  - 300px);
+	}
+	#topic-bar nav ul.navbar-nav.nav-justified{
+                width:(@screen-md - 500px);
+        }
+
+} 
+@media (min-width: @screen-lg){
+        .header-bar nav ul.navbar-nav.nav-justified{
+                width:(@screen-lg - 300px);
+        }
+	#topic-bar nav ul.navbar-nav.nav-justified{
+                width:(@screen-lg - 500px);
+        }
+
+}
+@media (min-width: @screen-xl){
+        .header-bar nav ul.navbar-nav.nav-justified{
+                width:(@screen-xl - 300px);
+        }
+	#topic-bar nav ul.navbar-nav.nav-justified{
+                width:(@screen-xl - 500px);
+        }
+
+}

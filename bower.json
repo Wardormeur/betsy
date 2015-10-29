@@ -1,0 +1,9 @@
+{
+  "name": "betsy",
+  "description": "Phpbb theme based on bootstrap",
+
+  "dependencies":{
+    "bootstrap":"~3"
+  }
+
+}

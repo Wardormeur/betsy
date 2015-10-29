@@ -28,8 +28,8 @@
 
 <!--
 	phpBB style name: betsy
-	Based on style:   proBoot 
-	Original author:  shibulijack 
+	Based on style:   proBoot
+	Original author:  shibulijack
 	Modified by:    Wardormeur
 -->
 
@@ -45,13 +45,17 @@
 	<!-- <link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /> -->
 <!-- ENDIF -->
 
-<!-- INCLUDE gallery/plugins_header.html -->
 
 <!--[if lt IE 9]>
     <script src="{T_SUPER_TEMPLATE_PATH}/html5shiv.min.js"></script>
     <script src="{T_SUPER_TEMPLATE_PATH}/respond.min.js"></script>
 <![endif]-->
 
+<!-- EVENT overall_header_head_append -->
+
+{$STYLESHEETS}
+
+<!-- EVENT overall_header_stylesheets_after -->
 </head>
 
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
@@ -60,26 +64,26 @@
     <header role="banner">
          <!-- order by least importance for appearance on reload -->
          <!-- IF U_VIEW_TOPIC == true -->
-            <!-- INCLUDE parts/navbar/navbar-viewtopic.html -->    
-        <!-- ENDIF -->  
-       
-        <!-- IF ( $NAVBAR_STATIC == 1 and $NAVBAR_STATIC_ONLY == 0 and S_INDEX == true ) or  ( $NAVBAR_STATIC == 0 and U_VIEWTOPIC == true ) -->
-            <!-- INCLUDE parts/navbar/navbar.html -->  
+            <!-- INCLUDE parts/navbar/navbar-viewtopic.html -->
         <!-- ENDIF -->
-        
+
+        <!-- IF ( $NAVBAR_STATIC == 1 and $NAVBAR_STATIC_ONLY == 0 and S_INDEX == true ) or  ( $NAVBAR_STATIC == 0 and U_VIEWTOPIC == true ) -->
+            <!-- INCLUDE parts/navbar/navbar.html -->
+        <!-- ENDIF -->
+
          <!-- IF $NAVBAR_STATIC == 1 -->
             <!-- INCLUDE parts/navbar/navbar_universe_static.html -->
         <!-- ENDIF -->
-             
+
     </header>
 
 
 	<a id="start_here"></a>
       <!-- IF $SIDEBAR and (($SIDEBAR_INDEX and S_INDEX) or ($SIDEBAR_FORUM and S_VIEWFORUM) or ($SIDEBAR_FORUM and U_VIEW_FORUM and not S_VIEWTOPIC) or ($SIDEBAR_SEARCH and S_SEARCH_ACTION)) -->
-        <div id="wrapper">
-      <!-- ENDIF -->  
-	<div  id="page-content-wrapper"  >
-            <div class="<!-- IF $SIDEBAR and (($SIDEBAR_INDEX and S_INDEX) or ($SIDEBAR_FORUM and S_VIEWFORUM) or ($SIDEBAR_FORUM and U_VIEW_FORUM and not S_VIEWTOPIC) or ($SIDEBAR_SEARCH and S_SEARCH_ACTION)) -->container-fluid <!-- ELSE --> container <!-- ENDIF -->">
+      <div id="wrapper">
+      <!-- ENDIF -->
+    	<div  id="page-content-wrapper"  >
+        <div class="<!-- IF $SIDEBAR and (($SIDEBAR_INDEX and S_INDEX) or ($SIDEBAR_FORUM and S_VIEWFORUM) or ($SIDEBAR_FORUM and U_VIEW_FORUM and not S_VIEWTOPIC) or ($SIDEBAR_SEARCH and S_SEARCH_ACTION)) -->container-fluid <!-- ELSE --> container <!-- ENDIF -->">
         	<div class="row">
                 <!-- IF S_INDEX == true  -->
                     <div class="social-icons col-xs-8 col-sm-1">
@@ -87,39 +91,35 @@
                         <a target="_blank" class="twitter" title="Suivez nous sur Twitter" href="{TWITTER_URL}"><i class="fa fa-twitter"></i></a>
                     </div>
                     <div  id="site-description" class="col-sm-8 col-sm-offset-1  hidden-xs ">
-		    
+
                         <a href="{U_INDEX}" title="{L_INDEX}" id="logo"  >
-                                    
-				   {SITE_LOGO_IMG} 
+
+				   {SITE_LOGO_IMG}
                         </a>
-                        
-		    </div>
+
+                    </div>
                 <!-- ENDIF -->
 
-                </div>
-		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
-		<div id="information" class=" row rules">
-			<div class="well">
-				<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
-			</div>
-		</div>
-		<!-- ENDIF -->
-                
-               
-                <p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
-               
-                <div class="row bottom-topic-actions " >
+            </div>
+        		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+        		<div id="information" class=" row rules">
+        			<div class="well">
+        				<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
+        			</div>
+        		</div>
+        		<!-- ENDIF -->
 
-                 <!-- IF  S_INDEX == false -->
-                    <div class="hidden-xs hidden-sm <!-- IF $SIDEBAR and (($SIDEBAR_FORUM and S_VIEWFORUM) or ($SIDEBAR_FORUM and U_VIEW_FORUM and not S_VIEWTOPIC) or ($SIDEBAR_SEARCH and S_SEARCH_ACTION) ) --> col-md-8 col-md-offset-1 <!-- ELSE --> col-md-9 <!-- ENDIF -->pull-left">       	
-                        <ul class="breadcrumb row">
-                            <li>
-                                <a href="{U_INDEX}" ><i class="fa fa-home"></i> {L_INDEX}</a>
-                                <!-- BEGIN navlinks --><strong>&rsaquo;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a> <!-- END navlinks -->
-                    <!-- IF not (S_VIEWFORUM or S_VIEWTOPIC) -->           
-                    <!--        </li>
-                        </ul>
-                    </dvi> -->
-                    <!-- ENDIF --> 
-                <!-- ENDIF --> 
+           <!-- EVENT overall_header_page_body_before -->
+            <p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
+
+            <div class="row bottom-topic-actions " >
+
+             <!-- IF  S_INDEX == false -->
+                <div class="hidden-xs hidden-sm <!-- IF $SIDEBAR and (($SIDEBAR_FORUM and S_VIEWFORUM) or ($SIDEBAR_FORUM and U_VIEW_FORUM and not S_VIEWTOPIC) or ($SIDEBAR_SEARCH and S_SEARCH_ACTION) ) --> col-md-8 col-md-offset-1 <!-- ELSE --> col-md-9 <!-- ENDIF -->pull-left">
+                    <ul class="breadcrumb row">
+                        <li>
+                            <a href="{U_INDEX}" ><i class="fa fa-home"></i> {L_INDEX}</a>
+                            <!-- BEGIN navlinks --><strong>&rsaquo;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a> <!-- END navlinks -->
+                <!-- ENDIF -->
                     <!-- We do not close the row so that we gain place with the next row that is containing actions-->
+	<!-- EVENT overall_header_content_before -->

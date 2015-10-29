@@ -29,11 +29,15 @@
         </section>
     <!-- ENDIF -->
     <!-- INCLUDE parts/alert-msg.html -->
-        <section class="row">
+
+<!-- EVENT index_body_markforums_after -->    
+    <section class="row">
             <div class="col-xs-12">
               <!-- INCLUDE forumlist_body.html -->
             </div>
         </section>
+
+<!-- EVENT index_body_forumlist_body_after -->
 
         <!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
         <section class="row ">
@@ -62,6 +66,7 @@
                 </form>
         </section>
         <!-- ENDIF -->
+<!-- EVENT index_body_stat_blocks_before -->
 
        <!-- INCLUDE parts/online.html -->
        <!-- INCLUDE parts/birthdays.html -->
@@ -74,6 +79,7 @@
             </div>
         </div>
         <!-- ENDIF -->
+<!-- EVENT index_body_stat_blocks_after -->
 
         </div>
     </div>

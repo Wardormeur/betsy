@@ -1,0 +1,173 @@
+.buttons {
+    float: left;
+    width: auto;
+    height: auto;
+    div {
+        float: left;
+        margin: 0 5px 0 0;
+        background-position: 0 100%;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-position: 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        span {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        a:hover {
+            span {
+                background-position: 0 100%;
+            }
+        }
+    }
+    div.reply-icon {
+        width: 96px;
+        height: 25px;
+    }
+    div.post-icon {
+        width: 96px;
+        height: 25px;
+    }
+    div.locked-icon {
+        width: 88px;
+        height: 25px;
+    }
+    div.pmreply-icon {
+        width: 96px;
+        height: 25px;
+    }
+    div.newpm-icon {
+        width: 84px;
+        height: 25px;
+    }
+    div.forwardpm-icon {
+        width: 96px;
+        height: 25px;
+    }
+}
+.reply-icon {
+    span {
+        background: transparent none 0 0 no-repeat;
+    }
+}
+.post-icon {
+    span {
+        background: transparent none 0 0 no-repeat;
+    }
+}
+.locked-icon {
+    span {
+        background: transparent none 0 0 no-repeat;
+    }
+}
+.pmreply-icon {
+    span {
+        background: none 0 0 no-repeat;
+    }
+}
+.newpm-icon {
+    span {
+        background: none 0 0 no-repeat;
+    }
+}
+.forwardpm-icon {
+    span {
+        background: none 0 0 no-repeat;
+    }
+}
+ul.profile-icons {
+    list-style: none;
+    li {
+        float: left;
+        margin: 0 6px 3px 0;
+        background-position: 0 100%;
+        a {
+            display: block;
+            background-position: 0 0;
+        }
+        span {
+            display:none;
+        }
+        a:hover {
+            background: none;
+        }
+    }
+    li.email-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.aim-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.yahoo-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.web-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.msnm-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.icq-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.jabber-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.pm-icon {
+        width: 28px;
+        height: 20px;
+    }
+    li.quote-icon {
+        width: 54px;
+        height: 20px;
+        margin: 0 0 0 10px;
+    }
+    li.report-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.edit-icon {
+        width: 42px;
+        height: 20px;
+        margin: 0 0 0 3px;
+    }
+    li.delete-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.info-icon {
+        width: 20px;
+        height: 20px;
+    }
+    li.warn-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+.postbody {
+    ul.profile-icons {
+        float: right;
+        width: auto;
+        padding: 0;
+        li {
+            margin: 0 3px;
+        }
+    }
+}
+ul.profile-icons li.info-icon, ul.profile-icons li.report-icon {
+    margin: 0 3px 0 0;
+}
+

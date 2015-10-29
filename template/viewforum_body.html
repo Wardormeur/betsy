@@ -2,6 +2,8 @@
          </li>
         </ul>
     </div>
+    <h2 class="forum-title"><!-- EVENT viewforum_forum_name_prepend --><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a><!-- EVENT viewforum_forum_name_append --></h2>
+
  <!-- we close the breadcrumb -->        
     <div class="btn btn-group hidden-xs col-md-2 ">
         <!-- IF U_FEED --> <a class="btn btn-xs btn-default pull-right" title="{L_FEED} - {FORUM_NAME}" href="{U_FEED}?f={FORUM_ID}"><i class="fa fa-rss"></i></a><!-- ENDIF -->
@@ -39,7 +41,7 @@
 
     <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
         <section class="topic-actions  row" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 1em;"<!-- ENDIF -->>
-
+        <!-- EVENT viewforum_buttons_top_before -->
         <!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
             <div class="col-xs-4">
             <!-- IF S_IS_LOCKED -->
@@ -85,7 +87,7 @@
                 </form>
             </div>
             <!-- ENDIF -->
-
+        <!-- EVENT viewforum_buttons_top_after -->
 
         </section>
     <!-- ENDIF -->
@@ -186,15 +188,13 @@
                                             <!-- ENDIF -->  {topicrow.TOPIC_TITLE}
                                                           
                                             </a>
-                                        <!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}"/><!-- ENDIF -->
-                                        
-                                         <!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}"> <i class="fa fa-external-link"></i></a> <!-- ENDIF -->
-                                      
-                                         <!-- IF topicrow.S_POST_GLOBAL --><span class="label label-warning pull-right">GLOBAL</span> <!-- ENDIF -->
-                                         <!-- IF topicrow.S_POST_ANNOUNCE --><span class="label label-info pull-right">ANNOUNCEMENT</span> <!-- ENDIF -->
-                                         <!-- IF topicrow.S_POST_STICKY --><span class="label label-success pull-right">STICKY</span> <!-- ENDIF -->
-                                         <!--<i class="pcon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></i> -->
-                                         <!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}"><i class="fa fa-exclamation-circle"></i></a> <!-- ENDIF -->
+                                        <!-- EVENT topiclist_row_prepend -->
+                                        <!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}"/><!-- ENDIF -->                               
+                                        <!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}"> <i class="fa fa-external-link"></i></a> <!-- ENDIF -->
+                                        <!-- IF topicrow.S_POST_GLOBAL --><span class="label label-warning pull-right">GLOBAL</span> <!-- ENDIF -->
+                                        <!-- IF topicrow.S_POST_ANNOUNCE --><span class="label label-info pull-right">ANNOUNCEMENT</span> <!-- ENDIF -->
+                                        <!-- IF topicrow.S_POST_STICKY --><span class="label label-success pull-right">STICKY</span> <!-- ENDIF -->
+                                        <!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}"><i class="fa fa-exclamation-circle"></i></a> <!-- ENDIF -->
                                         <!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}"><span class="label label-important pull-right"><i class="fa fa-exclamation-triangle"></i></span></a><!-- ENDIF --><br />
                                         <!-- IF topicrow.PAGINATION --><div class="p-pagination pull-right"><span>{topicrow.PAGINATION}</span></div><!-- ENDIF -->
                                         <!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF --><small><span class="hidden-xs">{L_POST_BY_AUTHOR}</span> {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
@@ -213,10 +213,9 @@
 
             <!-- IF topicrow.S_LAST_ROW -->
             <!-- Ward : here land our pb between full forum view and subforum views -->
-
-                             </div> <!-- col-md-12 -->
-                    <span class="topiclastrow"></span>
-                </div>
+                <!-- EVENT topiclist_row_append -->
+                    </div> <!-- col-md-12 -->
+                 </div>
             <!-- ENDIF -->
 
 <!-- BEGINELSE -->
@@ -260,8 +259,12 @@
             <div class="row">
                 <div class="col-sm-4 col-xs-6">
                     <div class="btn-group">
-                   <!-- IF not S_IS_BOT and U_MARK_TOPICS -->
-                        <a class="btn btn-default btn-sm" href="{U_MARK_TOPICS}" accesskey="m"><i class="fa fa-check"></i> {L_MARK_TOPICS_READ}</a> 
+                    <!-- IF not S_IS_BOT  -->
+                    <!-- EVENT viewforum_buttons_bottom_before -->
+                    <!-- IF U_MARK_TOPICS -->
+                    <a class="btn btn-default btn-sm" href="{U_MARK_TOPICS}" accesskey="m"><i class="fa fa-check"></i> {L_MARK_TOPICS_READ}</a> 
+                    <!-- ENDIF -->
+                    <!-- EVENT viewforum_buttons_bottom_after -->
                     <!-- ENDIF -->
                     </div>
                 </div>

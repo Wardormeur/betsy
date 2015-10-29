@@ -27,6 +27,9 @@
 <form method="post" action="{S_UCP_ACTION}" id="register" class="form-horizontal">
 	<div class="panel row well">
 		<h2 class=" panel-title ">{SITENAME} - {L_REGISTRATION}</h2>
+                
+                <!-- EVENT ucp_register_credentials_before -->
+                
                 <hr/>
                 <!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
 		
@@ -71,15 +74,16 @@
 				<input type="password" tabindex="5" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" class="form-control" title="{L_CONFIRM_PASSWORD}" />
 			</div>
 		</div>
-
+                <!-- EVENT ucp_register_credentials_after -->        
 		<hr />
-
+                <!-- EVENT ucp_register_options_before -->
 		<div class="form-group">
 			<label for="lang" class="col-sm-2 control-label">{L_LANGUAGE}:</label>
 			<div class="col-sm-6">
 				<select name="lang" id="lang" class="form-control" onchange="change_language(this.value); return false;" tabindex="6" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
 			</div>
 		</div>
+                <!-- INCLUDE timezone_option.html -->
 		<div class="form-group">
 			<label for="tz" class="col-sm-2 control-label">{L_TIMEZONE}:</label>
 			<div class="col-sm-6">
@@ -88,7 +92,7 @@
 		</div>
 		
 		<hr />
-
+        <!-- EVENT ucp_register_profile_fields_before -->
 	<!-- IF .profile_fields -->
 		<p><strong>{L_ITEMS_REQUIRED}</strong></p>
 
@@ -107,7 +111,7 @@
 		<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
 		<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 	<!-- ENDIF -->
-
+        <!-- EVENT ucp_register_profile_fields_after -->
 
 
 		<!-- IF S_COPPA -->

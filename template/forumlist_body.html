@@ -12,7 +12,8 @@
 	<!-- ENDIF -->
 	
 	
-    
+        <!-- EVENT forumlist_body_category_header_before -->
+
 	<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW  or forumrow.S_NO_CAT  -->
             <!-- DEFINE $FORUMCLASS = forumrow.S_ROW_COUNT -->
             <div class="row panel panel-default forumpanel forum{forumrow.S_ROW_COUNT}">	
@@ -29,9 +30,14 @@
             <div class=" row ">
                 
 	            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        	<!-- ENDIF -->
+        <!-- ENDIF -->
+        <!-- EVENT forumlist_body_category_header_after -->
+        
     	<!-- IF not forumrow.S_IS_CAT -->
+            <!-- EVENT forumlist_body_forum_row_before -->
 	            <article class="row forumrow">
+                        <!-- EVENT forumlist_body_forum_row_prepend -->
+
     				<div class="col-xl-7 col-lg-7 col-md-7 col-sm-9 col-xs-7" title="{forumrow.FORUM_FOLDER_IMG_ALT}" >
                                     <span class="hidden-xs">
                                         <!-- IF forumrow.S_IS_LINK -->
@@ -64,7 +70,8 @@
     						<strong>{forumrow.L_MODERATOR_STR}:</strong> {forumrow.MODERATORS}
     					<!-- ENDIF -->
     					<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS -->
-    					    
+                                            <!-- EVENT forumlist_body_subforums_before -->
+						 
     					    
     					    <ul class="subforums-list hidden-md hidden-lg hidden-xl">
                                                 <li class=" dropdown list-unstyled list-inline ">
@@ -77,7 +84,8 @@
     					    <ul class="hidden-xs hidden-sm list-unstyled list-inline subforums-list">
     					        {forumrow.SUBFORUMS}
     					    </ul>
-					    <!-- ENDIF -->
+                                            	<!-- EVENT forumlist_body_subforums_after -->
+                                        <!-- ENDIF -->
     				</div>
 				<!-- IF forumrow.CLICKS -->
 					<div class="redirect"><span>{L_REDIRECTS}: {forumrow.CLICKS}</span></div>
@@ -97,9 +105,16 @@
                                                     <a href="{forumrow.U_LAST_POST}" class="<!-- IF forumrow.S_UNREAD_FORUM --> unread<!-- ENDIF -->"></br>{forumrow.LAST_POST_TIME}{LAST_POST_IMG}</a> 
                                                 <!-- ENDIF -->
                                             <!-- ELSE -->{L_NO_POSTS}</br>&nbsp;<!-- ENDIF -->
+                                            <!-- IF forumrow.S_DISPLAY_SUBJECT -->
+							<!-- EVENT forumlist_body_last_post_title_prepend -->
+							<a href="{forumrow.U_LAST_POST}" title="{forumrow.LAST_POST_SUBJECT}" class="lastsubject">{forumrow.LAST_POST_SUBJECT_TRUNCATED}</a> <br />
+                                            <!-- ENDIF -->
                                         </span>
-                                    </div>  
+                                    </div>
+                                <!-- EVENT forumlist_body_forum_row_append -->
 				</article>	<!-- end of row -->
+                                
+                        	<!-- EVENT forumlist_body_forum_row_after -->
 				<!-- ENDIF -->
     	<!-- ENDIF -->
             	
@@ -110,6 +125,7 @@
 		        </div>
                     </div>
 			   <!-- Ward: last-row -->
+	<!-- EVENT forumlist_body_last_row_after -->
 	<!-- ELSE -->
             <!-- Ward: not-last-row -->
 	<!-- ENDIF -->

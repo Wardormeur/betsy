@@ -11,7 +11,8 @@
 
 	<fieldset class="fields2">
 	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
-	<dl>
+        <!-- EVENT ucp_friend_list_before -->
+        <dl>
 		<dt><label <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FRIENDS}:</label><br /><span>{L_YOUR_FRIENDS_EXPLAIN}</span></dt>
 		<dd>
 			<!-- IF S_USERNAME_OPTIONS -->
@@ -20,14 +21,15 @@
 				<strong>{L_NO_FRIENDS}</strong>
 			<!-- ENDIF -->
 		</dd>
-	</dl>
+	</dl>	
+        <!-- EVENT ucp_friend_list_after -->
 	<dl>
 		<dt><label for="add">{L_ADD_FRIENDS}:</label><br /><span>{L_ADD_FRIENDS_EXPLAIN}</span></dt>
 		<dd><textarea name="add" id="add" rows="3" cols="30" class="inputbox">{USERNAMES}</textarea></dd>
 		<dd><strong><a class="btn btn-sm btn-success" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong></dd>
 	</dl>
 	</fieldset>
-
+        
 	</div>
 </div>
 
